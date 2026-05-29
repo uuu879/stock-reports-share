@@ -1002,16 +1002,42 @@
     .tw-copy-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 10px; }
     .tw-disclaimer { margin: -2px 0 12px; padding: 8px 10px; border: 1px solid var(--line-strong); border-left: 3px solid var(--amber); border-radius: 6px; background: var(--amber-soft); color: #6f3a04; font-size: 0.8rem; line-height: 1.55; max-width: 980px; }
     .tw-toolbar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+    .tw-segments { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+    .tw-segment { border: 1px solid var(--line-strong); border-radius: 6px; background: var(--panel); color: var(--ink); padding: 6px 10px; font-size: 0.8rem; font-weight: 700; cursor: pointer; }
+    .tw-segment:hover { border-color: var(--teal); color: var(--teal); }
+    .tw-segment.active { background: var(--teal); border-color: var(--teal); color: #fff; }
+    .tw-summary-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; margin-bottom: 12px; }
+    .tw-summary-item { border: 1px solid var(--line); border-radius: 6px; background: rgba(255, 255, 255, 0.75); padding: 8px 10px; }
+    .tw-summary-value { font-size: 1rem; font-weight: 800; line-height: 1.25; }
+    .tw-summary-label { margin-top: 3px; color: var(--muted); font-size: 0.72rem; line-height: 1.35; }
 
     .tw-table-wrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--line); }
     .tw-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
     .tw-table th { background: var(--panel-2); padding: 6px 10px; text-align: left; font-weight: 600; color: var(--muted); border-bottom: 1px solid var(--line); white-space: nowrap; }
     .tw-table td { padding: 6px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
     .tw-table tr:last-child td { border-bottom: 0; }
-    .tw-table tr:hover td { background: var(--soft); }
-    .tw-table td:nth-child(1) { color: var(--muted); font-size: 0.75rem; white-space: nowrap; }
-    .tw-table td:nth-child(6) { max-width: 160px; font-size: 0.78rem; color: var(--muted); }
-    .tw-table td:nth-child(7) { max-width: 200px; font-size: 0.78rem; color: var(--muted); }
+    .tw-summary-row:hover td { background: var(--soft); }
+    .tw-table td:nth-child(1) { color: var(--muted); font-size: 0.75rem; white-space: nowrap; width: 42px; }
+    .tw-target-cell { min-width: 150px; }
+    .tw-stock-title { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+    .tw-stock-code { font-weight: 800; color: var(--ink); }
+    .tw-stock-name { font-weight: 700; }
+    .tw-stock-meta { margin-top: 3px; color: var(--muted); font-size: 0.74rem; line-height: 1.35; }
+    .tw-source-cell { min-width: 145px; }
+    .tw-source-name { color: var(--muted); font-size: 0.76rem; line-height: 1.35; }
+    .tw-tags { display: flex; flex-wrap: wrap; gap: 4px; max-width: 280px; }
+    .tw-tag { border: 1px solid var(--line); border-radius: 4px; background: var(--panel-2); color: var(--muted); padding: 1px 5px; font-size: 0.72rem; line-height: 1.45; }
+    .tw-episode-cell { color: var(--muted); font-size: 0.76rem; line-height: 1.4; min-width: 110px; }
+    .tw-detail-toggle { border: 1px solid var(--line-strong); border-radius: 5px; background: var(--panel); color: var(--teal); padding: 4px 8px; font-size: 0.76rem; font-weight: 800; cursor: pointer; white-space: nowrap; }
+    .tw-detail-toggle:hover { background: var(--teal-soft); border-color: var(--teal); }
+    .tw-summary-row.expanded td { background: var(--soft); }
+    .tw-detail-row[hidden] { display: none; }
+    .tw-detail-cell { padding: 0 !important; background: var(--panel-2); }
+    .tw-detail-panel { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 12px; padding: 12px; border-top: 1px solid var(--line); }
+    .tw-detail-section-title { font-size: 0.76rem; font-weight: 800; color: var(--muted); margin-bottom: 5px; }
+    .tw-detail-list { margin: 0; padding-left: 18px; line-height: 1.55; color: var(--ink); font-size: 0.8rem; }
+    .tw-detail-list li + li { margin-top: 4px; }
+    .tw-detail-muted { color: var(--muted); font-size: 0.78rem; line-height: 1.55; }
 
     .tw-tier { border-radius: 4px; padding: 1px 6px; font-size: 0.72rem; font-weight: 700; margin-right: 4px; }
     .tw-tier-A { background: var(--teal-soft); color: var(--teal); }
@@ -1296,6 +1322,96 @@
       .tw-table td:nth-child(6),
       .tw-table td:nth-child(7) {
         max-width: none;
+      }
+
+      .tw-summary-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .tw-segments {
+        gap: 5px;
+      }
+
+      .tw-segment {
+        flex: 1 1 calc(50% - 5px);
+        padding: 7px 6px;
+        text-align: center;
+        font-size: 0.76rem;
+      }
+
+      .tw-table-wrap {
+        border: 0;
+        overflow: visible;
+      }
+
+      .tw-table,
+      .tw-table thead,
+      .tw-table tbody,
+      .tw-table tr,
+      .tw-table td {
+        display: block;
+        width: 100%;
+      }
+
+      .tw-table thead {
+        display: none;
+      }
+
+      .tw-summary-row {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--panel);
+        margin-bottom: 8px;
+        padding: 8px 10px;
+      }
+
+      .tw-summary-row td {
+        border-bottom: 0;
+        padding: 4px 0;
+      }
+
+      .tw-summary-row td::before {
+        content: attr(data-label);
+        display: block;
+        margin-bottom: 2px;
+        color: var(--muted);
+        font-size: 0.68rem;
+        font-weight: 800;
+      }
+
+      .tw-summary-row td.tw-target-cell::before,
+      .tw-summary-row td.tw-detail-action::before {
+        display: none;
+      }
+
+      .tw-tags {
+        max-width: none;
+      }
+
+      .tw-detail-action {
+        padding-top: 8px !important;
+      }
+
+      .tw-detail-toggle {
+        width: 100%;
+        min-height: 34px;
+      }
+
+      .tw-detail-row {
+        border: 1px solid var(--line);
+        border-top: 0;
+        border-radius: 0 0 var(--radius) var(--radius);
+        background: var(--panel-2);
+        margin: -8px 0 10px;
+      }
+
+      .tw-detail-cell {
+        border-bottom: 0 !important;
+      }
+
+      .tw-detail-panel {
+        grid-template-columns: 1fr;
+        padding: 10px;
       }
 
       .ai-meta-strip {
@@ -4266,6 +4382,15 @@ ${notes}`;
       disclaimer.textContent = "提醒：台股關注清單是研究與觀察池，非直接購買建議；請自行判斷進出場條件，例如均線糾結後是否轉為多頭排列、量價確認、支撐壓力與停損控管。";
       page.appendChild(disclaimer);
 
+      const sourceSegments = buildTwSourceSegments([
+        ["all", "全部"],
+        ["AI 優先研究候選", "AI 優先"],
+        ["Podcast 直接列名", "直接列名"],
+        ["網路新聞補充", "新聞補充"],
+        ["Podcast 主題關聯", "主題關聯"]
+      ]);
+      page.appendChild(sourceSegments);
+
       // Toolbar
       const toolbar = document.createElement("div");
       toolbar.className = "tw-toolbar";
@@ -4275,15 +4400,11 @@ ${notes}`;
           ["relevance", "近十集熱度"],
           ["tier", "依來源層級"],
           ["episode", "依集數"]
-        ], state.filters.twSort),
-        selectBox("twSource", "全部來源", [
-          ["AI 優先研究候選", "只看 AI 優先候選"],
-          ["Podcast 直接列名", "只看 Full Report 直接列名"],
-          ["網路新聞補充", "只看網路新聞補充"],
-          ["Podcast 主題關聯", "只看 Podcast 主題"]
-        ], state.filters.twSource)
+        ], state.filters.twSort)
       );
       page.appendChild(toolbar);
+
+      page.appendChild(buildTwSummaryStrip(allRecords, records, newestEp, sortKey));
 
       if (!records.length) {
         const empty = document.createElement("div");
@@ -4301,7 +4422,7 @@ ${notes}`;
 
       const thead = document.createElement("thead");
       const hrow = document.createElement("tr");
-      for (const col of ["#", "代碼", "名稱", "產業", "來源", "相關主題", "出現集數", "相關分數"]) {
+      for (const col of ["#", "標的", "來源", "主題摘要", "集數", "分數", "詳情"]) {
         const th = document.createElement("th");
         th.textContent = col;
         hrow.appendChild(th);
@@ -4314,58 +4435,252 @@ ${notes}`;
         const stockInfo = state.stockUniverse.find(s => String(s.code || "").replace(/\.TW$/i, "") === r.code);
         const name = stockInfo ? String(stockInfo.name || "") : "";
         const industry = stockInfo ? String(stockInfo.industry || "") : "";
-
-        const tierLabel = r.sources.includes("AI 優先研究候選") ? "A" : (r.sources.includes("Podcast 直接列名") || r.sources.includes("網路新聞補充")) ? "B" : "C";
+        const tierLabel = getTwTierLabel(r.sources);
         const rowScore = scoreValue(r);
-        const barPx = Math.round((rowScore / maxScore) * 60);
 
         const tr = document.createElement("tr");
+        tr.className = "tw-summary-row";
 
-        const tdNum = document.createElement("td"); tdNum.textContent = String(i + 1);
-        const tdCode = document.createElement("td"); tdCode.textContent = r.code;
-        tdCode.style.fontWeight = "600";
-        const tdName = document.createElement("td"); tdName.textContent = name || "-";
-        const tdInd = document.createElement("td"); tdInd.textContent = industry || "-";
+        const tdNum = document.createElement("td");
+        tdNum.dataset.label = "#";
+        tdNum.textContent = String(i + 1);
+
+        const tdTarget = document.createElement("td");
+        tdTarget.className = "tw-target-cell";
+        tdTarget.dataset.label = "標的";
+        const stockTitle = document.createElement("div");
+        stockTitle.className = "tw-stock-title";
+        const codeText = document.createElement("span");
+        codeText.className = "tw-stock-code";
+        codeText.textContent = r.code;
+        const nameText = document.createElement("span");
+        nameText.className = "tw-stock-name";
+        nameText.textContent = name || "-";
+        stockTitle.append(codeText, nameText);
+        const stockMeta = document.createElement("div");
+        stockMeta.className = "tw-stock-meta";
+        stockMeta.textContent = [industry, r.hostOwned ? "主持人持有" : ""].filter(Boolean).join(" · ") || "產業待查";
+        tdTarget.append(stockTitle, stockMeta);
 
         const tdTier = document.createElement("td");
+        tdTier.className = "tw-source-cell";
+        tdTier.dataset.label = "來源";
         const tierBadge = document.createElement("span");
         tierBadge.className = `tw-tier tw-tier-${tierLabel}`;
         tierBadge.textContent = tierLabel;
-        const tierText = document.createTextNode(" " + primaryTwSource(r.sources));
+        const tierText = document.createElement("div");
+        tierText.className = "tw-source-name";
+        tierText.textContent = primaryTwSource(r.sources) || "-";
         tdTier.append(tierBadge, tierText);
 
         const tdTheme = document.createElement("td");
-        tdTheme.textContent = r.themes.slice(0, 2).join("、") || "-";
+        tdTheme.dataset.label = "主題";
+        tdTheme.appendChild(buildTwTagList(r.themes, 2));
 
         const tdEps = document.createElement("td");
-        tdEps.textContent = r.episodes.slice(0, 3).join("、") || "-";
+        tdEps.className = "tw-episode-cell";
+        tdEps.dataset.label = "集數";
+        tdEps.textContent = r.latestEpisode ? `最新 EP${r.latestEpisode} · 共 ${r.episodes.length} 集` : (r.episodes.slice(0, 2).join("、") || "-");
 
         const tdScore = document.createElement("td");
-        const scoreBar = document.createElement("div");
-        scoreBar.className = "tw-score-bar";
-        const fill = document.createElement("div");
-        fill.className = "tw-score-bar-fill";
-        fill.style.width = `${barPx}px`;
-        const scoreNum = document.createElement("span");
-        scoreNum.textContent = String(rowScore);
-        if (r.hostOwned) {
-          const owned = document.createElement("span");
-          owned.style.cssText = "margin-left:4px;font-size:0.72rem;color:var(--teal);font-weight:700;";
-          owned.textContent = "持有";
-          scoreBar.append(fill, scoreNum, owned);
-        } else {
-          scoreBar.append(fill, scoreNum);
-        }
-        tdScore.appendChild(scoreBar);
+        tdScore.dataset.label = "分數";
+        tdScore.appendChild(buildTwScoreBar(rowScore, maxScore, r.hostOwned));
 
-        tr.append(tdNum, tdCode, tdName, tdInd, tdTier, tdTheme, tdEps, tdScore);
+        const tdAction = document.createElement("td");
+        tdAction.className = "tw-detail-action";
+        tdAction.dataset.label = "詳情";
+        const detailBtn = document.createElement("button");
+        detailBtn.type = "button";
+        detailBtn.className = "tw-detail-toggle";
+        detailBtn.textContent = "展開";
+        detailBtn.setAttribute("aria-expanded", "false");
+        tdAction.appendChild(detailBtn);
+
+        const detailRow = document.createElement("tr");
+        detailRow.className = "tw-detail-row";
+        detailRow.hidden = true;
+        const detailCell = document.createElement("td");
+        detailCell.className = "tw-detail-cell";
+        detailCell.colSpan = 7;
+        detailCell.appendChild(buildTwDetailPanel(r, { name, industry, tierLabel }));
+        detailRow.appendChild(detailCell);
+
+        detailBtn.addEventListener("click", () => {
+          const willOpen = detailRow.hidden;
+          detailRow.hidden = !willOpen;
+          tr.classList.toggle("expanded", willOpen);
+          detailBtn.textContent = willOpen ? "收合" : "展開";
+          detailBtn.setAttribute("aria-expanded", String(willOpen));
+        });
+
+        tr.append(tdNum, tdTarget, tdTier, tdTheme, tdEps, tdScore, tdAction);
         tbody.appendChild(tr);
+        tbody.appendChild(detailRow);
       });
 
       table.appendChild(tbody);
       wrap.appendChild(table);
       page.appendChild(wrap);
       dom.main.appendChild(page);
+    }
+
+    function buildTwSourceSegments(items) {
+      const wrap = document.createElement("div");
+      wrap.className = "tw-segments";
+      items.forEach(([value, label]) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = `tw-segment${state.filters.twSource === value ? " active" : ""}`;
+        btn.textContent = label;
+        btn.addEventListener("click", () => {
+          state.filters.twSource = value;
+          render();
+        });
+        wrap.appendChild(btn);
+      });
+      return wrap;
+    }
+
+    function buildTwSummaryStrip(allRecords, records, newestEp, sortKey) {
+      const sortLabels = {
+        latest: "最新集優先",
+        relevance: "近十集熱度",
+        tier: "依來源層級",
+        episode: "依集數"
+      };
+      const aiCount = allRecords.filter(r => arr(r.sources).includes("AI 優先研究候選")).length;
+      const latestCount = newestEp ? allRecords.filter(r => Number(r.latestEpisode) === newestEp).length : 0;
+      const items = [
+        ["目前顯示", `${records.length} / ${allRecords.length} 檔`],
+        ["AI 優先候選", `${aiCount} 檔`],
+        ["最新集標的", newestEp ? `EP${newestEp} · ${latestCount} 檔` : "-"],
+        ["排序", sortLabels[sortKey] || sortKey]
+      ];
+      const strip = document.createElement("div");
+      strip.className = "tw-summary-strip";
+      items.forEach(([label, value]) => {
+        const item = document.createElement("div");
+        item.className = "tw-summary-item";
+        const v = document.createElement("div");
+        v.className = "tw-summary-value";
+        v.textContent = value;
+        const l = document.createElement("div");
+        l.className = "tw-summary-label";
+        l.textContent = label;
+        item.append(v, l);
+        strip.appendChild(item);
+      });
+      return strip;
+    }
+
+    function getTwTierLabel(sources) {
+      const src = arr(sources);
+      if (src.includes("AI 優先研究候選")) return "A";
+      if (src.includes("Podcast 直接列名") || src.includes("網路新聞補充")) return "B";
+      return "C";
+    }
+
+    function buildTwTagList(values, limit = 2) {
+      const wrap = document.createElement("div");
+      wrap.className = "tw-tags";
+      const items = arr(values).filter(Boolean);
+      items.slice(0, limit).forEach(value => {
+        const tag = document.createElement("span");
+        tag.className = "tw-tag";
+        tag.title = String(value);
+        tag.textContent = shortenTwText(value, 26);
+        wrap.appendChild(tag);
+      });
+      if (items.length > limit) {
+        const more = document.createElement("span");
+        more.className = "tw-tag";
+        more.textContent = `+${items.length - limit}`;
+        wrap.appendChild(more);
+      }
+      if (!wrap.childElementCount) {
+        const empty = document.createElement("span");
+        empty.className = "tw-tag";
+        empty.textContent = "待查";
+        wrap.appendChild(empty);
+      }
+      return wrap;
+    }
+
+    function buildTwScoreBar(rowScore, maxScore, hostOwned) {
+      const scoreBar = document.createElement("div");
+      scoreBar.className = "tw-score-bar";
+      const fill = document.createElement("div");
+      fill.className = "tw-score-bar-fill";
+      fill.style.width = `${Math.round((rowScore / Math.max(1, maxScore)) * 60)}px`;
+      const scoreNum = document.createElement("span");
+      scoreNum.textContent = String(rowScore);
+      scoreBar.append(fill, scoreNum);
+      if (hostOwned) {
+        const owned = document.createElement("span");
+        owned.style.cssText = "margin-left:4px;font-size:0.72rem;color:var(--teal);font-weight:700;";
+        owned.textContent = "持有";
+        scoreBar.appendChild(owned);
+      }
+      return scoreBar;
+    }
+
+    function buildTwDetailPanel(record, stock) {
+      const panel = document.createElement("div");
+      panel.className = "tw-detail-panel";
+      appendTwDetailSection(panel, "入選理由", arr(record.reasons).slice(0, 4), "來源資料未提供入選理由");
+      appendTwDetailSection(panel, "下一步檢查", buildTwCheckpoints(record, stock), "先確認基本面、技術面與風控條件");
+      appendTwDetailSection(panel, "來源脈絡", [
+        `來源：${arr(record.sources).join("、") || "-"}`,
+        `主題：${arr(record.themes).slice(0, 4).join("、") || "-"}`,
+        `集數：${arr(record.episodes).slice(0, 5).join("、") || "-"}`
+      ], "來源脈絡待查");
+      return panel;
+    }
+
+    function appendTwDetailSection(panel, title, values, fallback) {
+      const section = document.createElement("div");
+      const h = document.createElement("div");
+      h.className = "tw-detail-section-title";
+      h.textContent = title;
+      const list = document.createElement("ol");
+      list.className = "tw-detail-list";
+      const rows = arr(values).filter(Boolean);
+      (rows.length ? rows : [fallback]).forEach(value => {
+        const li = document.createElement("li");
+        li.textContent = String(value);
+        list.appendChild(li);
+      });
+      section.append(h, list);
+      panel.appendChild(section);
+    }
+
+    function buildTwCheckpoints(record, stock) {
+      const checks = [];
+      const sources = arr(record.sources);
+      if (sources.includes("AI 優先研究候選")) {
+        checks.push("回頭查產品線、客戶驗證、月營收與毛利率，確認題材有沒有轉成實際數字。");
+      }
+      if (sources.includes("Podcast 直接列名")) {
+        checks.push("對照節目觀點與最新公告/法說會，確認主持人提到的假設是否仍成立。");
+      }
+      if (sources.includes("網路新聞補充")) {
+        checks.push("確認新聞是一次性事件還是訂單/價格/產能的連續變化。");
+      }
+      if (sources.includes("Podcast 主題關聯")) {
+        checks.push("主題關聯只是第一層掃描，需先查營收占比、產品關聯度與同業比較。");
+      }
+      if (stock.industry) {
+        checks.push(`產業歸類為「${stock.industry}」，先和同產業強勢股比價、比營收動能。`);
+      }
+      checks.push("技術面觀察 5/20/60 日均線是否由糾結轉為多頭排列，量能是否配合放大。");
+      checks.push("先訂支撐、壓力與停損，清單排名不能取代自己的進出場條件。");
+      return Array.from(new Set(checks));
+    }
+
+    function shortenTwText(value, maxLength) {
+      const text = String(value || "").trim();
+      if (text.length <= maxLength) return text;
+      return `${text.slice(0, Math.max(0, maxLength - 1))}…`;
     }
 
     // ─────────────────────────────────────────────────────────
