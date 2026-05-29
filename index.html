@@ -1052,6 +1052,226 @@
     .pf-tag-short { background: var(--amber-soft); color: var(--amber); }
     .pf-form-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 10px; }
     @media (max-width: 900px) { .pf-summary-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    @media (max-width: 700px) {
+      html,
+      body {
+        width: 100%;
+        overflow-x: hidden;
+      }
+
+      body {
+        background-size: 22px 22px;
+      }
+
+      .app {
+        display: block;
+        height: auto;
+        min-height: 100svh;
+        overflow: visible;
+      }
+
+      .topbar {
+        position: static;
+        align-items: stretch;
+        gap: 8px;
+        padding: 10px 12px;
+      }
+
+      .brand {
+        min-width: 0;
+        gap: 1px;
+      }
+
+      .brand-title {
+        font-size: 18px;
+        white-space: normal;
+      }
+
+      .brand-subtitle {
+        font-size: 12px;
+        white-space: normal;
+      }
+
+      #copyAllBtn,
+      .copy-status {
+        display: none;
+      }
+
+      .search {
+        min-height: 40px;
+        font-size: 16px;
+      }
+
+      .layout {
+        display: block;
+        min-height: auto;
+        overflow: visible;
+      }
+
+      .sidebar {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        max-height: none;
+        overflow: visible;
+        padding: 8px 12px 10px;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .watchlist-pinned-btn {
+        width: 100%;
+        margin: 0;
+        padding: 9px 8px;
+        text-align: center;
+        font-size: 0.82rem;
+      }
+
+      .episode-list {
+        grid-column: 1 / -1;
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        padding: 2px 0 4px;
+        scroll-snap-type: x proximity;
+      }
+
+      .episode-item {
+        flex: 0 0 min(76vw, 260px);
+        width: auto;
+        padding: 9px 10px;
+        scroll-snap-align: start;
+      }
+
+      .episode-name {
+        display: -webkit-box;
+        overflow: hidden;
+        font-size: 0.9rem;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+
+      .episode-meta {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .main {
+        width: 100%;
+        min-width: 0;
+        overflow-x: hidden;
+        overflow-y: visible;
+        padding: 12px;
+      }
+
+      .episode-header {
+        gap: 8px;
+        margin-bottom: 10px;
+      }
+
+      .episode-title {
+        font-size: 20px;
+        line-height: 1.25;
+      }
+
+      .metric-row {
+        gap: 6px;
+      }
+
+      .metric {
+        flex: 1 1 calc(50% - 6px);
+        min-width: 0;
+        padding: 8px;
+      }
+
+      .tabs {
+        margin-right: -12px;
+        margin-left: -12px;
+        padding-right: 12px;
+        padding-left: 12px;
+      }
+
+      .section-card,
+      .summary-block,
+      .analysis-page,
+      .tw-page {
+        padding: 12px;
+      }
+
+      .content-grid,
+      .summary-stack {
+        gap: 10px;
+      }
+
+      .body-text,
+      .quote,
+      .points,
+      .summary-list {
+        font-size: 0.96rem;
+        line-height: 1.65;
+      }
+
+      .table-wrap,
+      .tw-table-wrap,
+      .pf-table-wrap {
+        max-width: 100%;
+        overflow-x: auto;
+      }
+
+      table,
+      .analysis-table,
+      .tw-table,
+      .pf-table {
+        width: 100%;
+        min-width: 0;
+      }
+
+      th,
+      td,
+      .analysis-table th,
+      .analysis-table td,
+      .tw-table th,
+      .tw-table td {
+        padding: 8px;
+        font-size: 0.78rem;
+        white-space: normal;
+        overflow-wrap: anywhere;
+      }
+
+      .tw-table td:nth-child(6),
+      .tw-table td:nth-child(7) {
+        max-width: none;
+      }
+
+      .ai-meta-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .ai-meta-item {
+        border-right: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .ai-meta-item:nth-child(2n) {
+        border-right: 0;
+      }
+
+      .ai-meta-item:last-child {
+        border-bottom: 0;
+      }
+
+      .ai-meta-value {
+        font-size: 17px;
+      }
+
+      pre.raw {
+        max-width: 100%;
+        overflow-x: auto;
+        font-size: 12px;
+      }
+    }
   </style>
 </head>
 <body>
