@@ -1000,6 +1000,7 @@
     .tw-header h2 { font-size: 1.1rem; font-weight: 700; margin: 0; }
     .tw-meta { font-size: 0.78rem; color: var(--muted); }
     .tw-copy-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 10px; }
+    .tw-disclaimer { margin: -2px 0 12px; padding: 8px 10px; border: 1px solid var(--line-strong); border-left: 3px solid var(--amber); border-radius: 6px; background: var(--amber-soft); color: #6f3a04; font-size: 0.8rem; line-height: 1.55; max-width: 980px; }
     .tw-toolbar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
 
     .tw-table-wrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--line); }
@@ -4257,6 +4258,11 @@ ${notes}`;
         : "最新集優先保留完整股票池；近十集熱度保留 compositeScore";
       copyRow.append(copyBtn, note);
       page.appendChild(copyRow);
+
+      const disclaimer = document.createElement("div");
+      disclaimer.className = "tw-disclaimer";
+      disclaimer.textContent = "提醒：台股關注清單是研究與觀察池，非直接購買建議；請自行判斷進出場條件，例如均線糾結後是否轉為多頭排列、量價確認、支撐壓力與停損控管。";
+      page.appendChild(disclaimer);
 
       // Toolbar
       const toolbar = document.createElement("div");
