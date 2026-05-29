@@ -2993,7 +2993,7 @@ ${notes}`;
       appendTechnicalLevels(row, item.technicalLevels);
       appendValuationScenarios(row, item.valuationScenarios);
       appendAiReportRefs(row, item.aiReportRefs);
-      appendSourceLinks(row, item.sources);
+      appendStockAnalysisSourceLinks(row, item.sources);
       return row;
     }
 
@@ -3084,7 +3084,7 @@ ${notes}`;
       parent.appendChild(block);
     }
 
-    function appendSourceLinks(parent, sources) {
+    function appendStockAnalysisSourceLinks(parent, sources) {
       if (!arr(sources).length) return;
       const block = document.createElement("div");
       block.className = "analysis-section-block";
