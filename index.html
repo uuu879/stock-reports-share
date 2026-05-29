@@ -1397,12 +1397,18 @@
         min-height: 34px;
       }
 
+      .tw-summary-row.expanded {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        margin-bottom: 0;
+      }
+
       .tw-detail-row {
         border: 1px solid var(--line);
         border-top: 0;
         border-radius: 0 0 var(--radius) var(--radius);
         background: var(--panel-2);
-        margin: -8px 0 10px;
+        margin: 0 0 10px;
       }
 
       .tw-detail-cell {
@@ -1412,6 +1418,11 @@
       .tw-detail-panel {
         grid-template-columns: 1fr;
         padding: 10px;
+      }
+
+      .tw-detail-list {
+        overflow-wrap: anywhere;
+        word-break: break-word;
       }
 
       .ai-meta-strip {
