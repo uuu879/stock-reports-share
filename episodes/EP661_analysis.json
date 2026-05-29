@@ -1,0 +1,1150 @@
+{
+  "episode": 661,
+  "date": "2026-05-13",
+  "title": "被動元件主線與成熟製程補庫存辨識",
+  "source": "vocus.cc",
+  "sourceUrl": "https://vocus.cc/article/6a04f793fd89780001bcc48e",
+  "updatedAt": "2026-05-25T00:00:00+08:00",
+  "summary": "本集由 Haru 含春贊助，開場先用成人用品廣告與股票梗暖場，接著主持人分享台中家庭旅行、林口房市、台中城市感受，以及自己近期鑽研紅酒的過程。他從 DRC、Leroy、Wine-Searcher、Montrachet、Amarone、Lafite、Henri Jayer、Sassicaia 等例子談價格、稀缺性、保存與收藏，並把紅酒價格強弱拿來類比股票市場中強者恆強與價格訊號。投資主線從台股回檔開始。主持人認為大盤從高檔拉回幅度其實不大，但許多中小型科技股讓人很痛；他自己調整不多，因為前面獲利墊高。核心主題是被動元件：海外日本、美國、韓國相關股先漲，台灣才開始追上，類似記憶體題材海外先動、台股再醒。MLCC 部分他認為 47uF 最缺，Samsung、Murata 等供給吃緊，台灣廠雖未必切到最稀缺規格，但會受惠大廠轉高階後的供應鏈排擠與漲價外溢；鋁電容則看 Nichicon、Nippon Chemi-Con 股價強於營收，暗示產品組合改善與供需轉緊，台灣立隆、金山電、鈺邦、國巨、華新科、信昌電等跟著醒來。主持人強調 AI 伺服器 V 世代放量後會消耗大量被動元件，EMS 已開始向被動元件廠保產能，缺口可能在真正大量出貨後更明顯；Panasonic 退出 OS-CON 也使固態電容供應鏈需要時間重組。成熟製程段落則較保守：他認為許多 legacy/mature node 需求是漲價前的補庫存，不一定代表消費電子全面復甦；要分清成本推升的漲價與需求推升的漲價，世界先進因特殊製程與新加坡廠訂單能見度較像需求推升。傳統 IC 設計、DDIC 與消費曝險較高標的需小心。廠務工程方面，漢唐第一季獲利雖讓股價失望，但毛利率沒有市場想像差；聖暉與非純台積電敘事的工程股可能較受資金青睞。Q&A 延伸到小作文與消息辨識、散熱設計變更、NVIDIA 產品路線、光通族群、先進製程設備、CPU socket、新唐、台積電與聯發科權值防守、高通可能轉向 AI infrastructure/ASIC 敘事。整體結論是主持人仍不悲觀，但提醒被動元件已漲一大段，非專家追高要把手綁起來，較好的做法是等回檔後看誰仍有訂單、漲價、毛利與資金強度。",
+  "news": [
+    {
+      "title": "Haru 含春贊助與生活開場",
+      "category": "other",
+      "sourceRef": "非時間戳段落 001-005",
+      "event": "本集由 Haru 含春贊助。主持人先用床勢與股票走勢的比喻帶出廣告，之後分享台中家庭旅行、餐廳、林口房市與台中城市印象。",
+      "opinion": "生活段落不是投資主線，但呈現主持人把價格、城市、房市與體驗放在一起觀察的思考方式。"
+    },
+    {
+      "title": "紅酒稀缺性與股票價格訊號類比",
+      "category": "asset",
+      "sourceRef": "非時間戳段落 006-008",
+      "event": "主持人分享 DRC、Leroy、Grand Cru、Montrachet、Amarone、Margaux、Lafite、Henri Jayer、Sassicaia 等紅酒研究，並用 Wine-Searcher 檢查年份與價格。",
+      "opinion": "他把紅酒的稀缺、保存、控貨與價格強弱拿來類比股票；真正強的資產不一定會因為看起來貴就立刻便宜。"
+    },
+    {
+      "title": "台股回檔幅度有限，但中小型科技股痛感較重",
+      "category": "market",
+      "sourceRef": "非時間戳段落 009",
+      "event": "主持人說大盤從高點回落到 21300 多點，幅度其實不算大，但許多中小型科技股回檔讓人感受很痛。他自己沒有大幅調整，因為前面獲利墊較高。",
+      "opinion": "主持人對整體市場沒有轉空，重點是區分大盤指數的溫和修正與題材股內部的劇烈輪動。"
+    },
+    {
+      "title": "被動元件海外先動，台灣開始追上",
+      "category": "sector",
+      "sourceRef": "非時間戳段落 010",
+      "event": "主持人指出被動元件在日本、美國、韓國相關標的先動，台灣這幾天才開始醒來。他把這與記憶體行情類比，海外股價有時可作為台股偷看答案的線索。",
+      "opinion": "海外同業與上游報價可以當作台灣被動元件題材的先行指標。"
+    },
+    {
+      "title": "MLCC 47uF 最缺，22uF 與台廠受惠供應排擠",
+      "category": "sector",
+      "sourceRef": "非時間戳段落 011",
+      "event": "主持人認為 MLCC 中 47uF 最稀缺，Samsung、Murata 等供給吃緊；台灣廠可能以 22uF 或較低規格切入，雖未必是最缺料號，但仍可受惠大廠轉高階後的供應鏈排擠。",
+      "opinion": "MLCC 投資重點不是只看有沒有做最稀缺規格，而是看高階缺料是否把中低階與替代供應鏈一起推緊。"
+    },
+    {
+      "title": "鋁電容股價強於營收，暗示產品組合與供需改善",
+      "category": "sector",
+      "sourceRef": "非時間戳段落 012",
+      "event": "主持人提到 Nichicon、Nippon Chemi-Con 等日本鋁電容股價強，即使營收看起來平或微降，市場可能在反映產品組合改善。台灣立隆、金山電、鈺邦、國巨、華新科、信昌電等也跟著被資金注意。",
+      "opinion": "鋁電容的訊號不能只看總營收，還要看 AI/高階產品占比、毛利率、交期與報價是否改善。"
+    },
+    {
+      "title": "AI 伺服器 V 世代放量後，被動元件缺口可能更明顯",
+      "category": "sector",
+      "sourceRef": "非時間戳段落 013",
+      "event": "主持人說 NVIDIA 新世代伺服器會吃掉大量被動元件，EMS 廠已開始找被動元件廠保產能。市場一開始可能低估，因為被動元件看起來較容易擴產。",
+      "opinion": "真正的大量出貨可能才是供需壓力被看見的時點，現階段要追蹤保產能、交期與漲價是否持續。"
+    },
+    {
+      "title": "Panasonic 退出 OS-CON，固態電容供應鏈重組需要時間",
+      "category": "sector",
+      "sourceRef": "非時間戳段落 014",
+      "event": "主持人提到 Panasonic 退出 OS-CON 後，Nippon Chemi-Con 可能接手，但產能和客戶承接無法一夕完成。低階或標準品也可能因高階排擠而受惠。",
+      "opinion": "這是被動元件第二層機會：最缺的不一定只在高階，舊規格和標準品在供應緊張時也可能有超額毛利。"
+    },
+    {
+      "title": "被動元件已大漲，非專家不宜追高",
+      "category": "market",
+      "sourceRef": "非時間戳段落 015",
+      "event": "主持人提醒被動元件已經漲一大段，沒有部位或不懂產業的人最好把手綁起來，不要因為漲了才硬追。他偏好等拉回後再觀察量價與基本面。",
+      "opinion": "這是本集最重要的風險提示：主線偏多不等於任何價格都能買。"
+    },
+    {
+      "title": "成熟製程多為補庫存，不等於消費電子全面復甦",
+      "category": "sector",
+      "sourceRef": "非時間戳段落 016-017",
+      "event": "主持人整理聽眾從筆電、手機、晶圓代工端回饋，認為成熟製程與 legacy 需求多半是因漲價前補庫存，終端消費仍分歧；Apple 較好，Android 與低價筆電較弱。",
+      "opinion": "要分清成本推升漲價與需求推升漲價。若只是怕漲價而補庫存，持續性比真正需求復甦差。"
+    },
+    {
+      "title": "世界先進較像需求推升，傳統 IC 設計與 DDIC 仍需保守",
+      "category": "sector",
+      "sourceRef": "非時間戳段落 016-018",
+      "event": "主持人認為 TI、ROHM 等漲價可支持成熟製程供給緊張敘事，但傳統 IC 設計、DDIC 與消費曝險較高者可能只是成本推升。世界先進因台積電授權特殊製程與新加坡新廠產能被預訂，較像需求推升。",
+      "opinion": "成熟製程題材不能整籃買，應拆成特殊製程/產能被預訂與消費曝險較高兩種情境。"
+    },
+    {
+      "title": "漢唐財報讓股價失望，但毛利率未如預期惡化",
+      "category": "company",
+      "sourceRef": "非時間戳段落 018",
+      "event": "主持人提到漢唐第一季財報出來後股價表現讓人失望，但他注意到毛利率沒有市場原本擔心的那麼差。相對地，聖暉與非純台積電敘事的廠務工程股可能較受資金青睞。",
+      "opinion": "廠務工程不是沒有基本面，而是市場正在避開台積電相關工程毛利壓力敘事，資金偏好會影響短線評價。"
+    },
+    {
+      "title": "強勢族群轉弱時，台積電與低估值權值股可作防守",
+      "category": "market",
+      "sourceRef": "非時間戳段落 019-020",
+      "event": "主持人說台積電基本面與展望很好，但市場不太願意重估；若 IC 設計、散熱等強勢族群轉弱，低 forward P/E 與大型權值股可能成為防守與 fallback。",
+      "opinion": "他仍不悲觀，但提醒市場若對訂單利多沒反應，就要把它當成小警訊。"
+    },
+    {
+      "title": "Q&A 聚焦小作文、散熱消息、光通與設備持股",
+      "category": "qa",
+      "sourceRef": "非時間戳段落 021-029",
+      "event": "Q&A 討論市場小作文減少、消息與敘事文差異、散熱設計變更、NVIDIA 產品路線、光通美股強台股弱，以及聽眾持有志聖、均豪、惠特、嘉澤、新唐等標的。",
+      "opinion": "主持人提醒要交叉驗證消息來源；設計變更未必是取消，可能只是延到下一代。光通若海外持續強，台灣可能仍有醒來機會。"
+    },
+    {
+      "title": "高通可能從 AIPC 敘事轉向 AI infrastructure/ASIC",
+      "category": "company",
+      "sourceRef": "非時間戳段落 033",
+      "event": "主持人提到高通近期股價大漲，過去有人把高通當成聯發科避險，但它也跟著噴。他猜測市場可能不是買 AIPC，而是買 custom optical chip、ASIC 或 AI infrastructure 敘事。",
+      "opinion": "高通若要重新評價，關鍵可能不在一般消費 PC，而在 AI 基礎設施或自研晶片相關想像。"
+    }
+  ],
+  "hostDisclosure": [
+    {
+      "sourceRef": "非時間戳段落 009",
+      "speaker": "主持人",
+      "target": "整體持股",
+      "action": "沒有大幅調整",
+      "quote": "前面賺太多，所以回檔時感覺沒那麼嚴重。",
+      "context": "主持人描述市場回檔時，自己的部位因前期獲利墊較高而未大動作調整。"
+    },
+    {
+      "sourceRef": "非時間戳段落 010-014",
+      "speaker": "主持人",
+      "target": "被動元件主線",
+      "action": "偏多但提醒節奏",
+      "quote": "台灣是這幾天才開始比較醒過來。",
+      "context": "主持人用海外被動元件股與記憶體行情作為台股參考，認為台灣才剛跟上。"
+    },
+    {
+      "sourceRef": "非時間戳段落 015",
+      "speaker": "主持人",
+      "target": "追高被動元件",
+      "action": "警告",
+      "quote": "不懂就把手綁起來。",
+      "context": "主持人明確提醒被動元件已經大漲，沒有產業理解或沒有部位者不要硬追。"
+    },
+    {
+      "sourceRef": "非時間戳段落 026",
+      "speaker": "主持人",
+      "target": "台積電與聯發科",
+      "action": "揭露移動部分部位",
+      "quote": "有一些我也移到台積電跟聯發科。",
+      "context": "Q&A 中主持人回應聽眾把中小型科技股降比重、轉向權值與較專業題材的操作。"
+    },
+    {
+      "sourceRef": "非時間戳段落 032",
+      "speaker": "主持人",
+      "target": "個人價值觀與工作狀態",
+      "action": "自我揭露",
+      "quote": "不要完全複製我的價值觀。",
+      "context": "主持人回答職涯與偶像問題，提醒聽眾不要照單全收他的生活和工作方式。"
+    }
+  ],
+  "stockAnalysis": [
+    {
+      "name": "被動元件總主線",
+      "type": "sector",
+      "tickers": [
+        "2327",
+        "2492",
+        "6173",
+        "2375",
+        "2472",
+        "8042",
+        "6449"
+      ],
+      "sentiment": "bullish",
+      "risk": "已大漲後追高風險高；若 AI 伺服器拉貨不如預期、漲價落空或終端消費庫存回落，跟風標的可能先修正。",
+      "hostOwned": null,
+      "sourceRefs": [
+        "非時間戳段落 010-015"
+      ],
+      "analysis": "被動元件是本集最清楚的台股主線。主持人認為海外同業已先反映，日本、美國、韓國相關股都強，台灣近期才醒來。受惠邏輯包含 AI 伺服器用量提升、大廠轉高階後的供應排擠、EMS 保產能與漲價預期。不過他也明確提醒題材已漲一段，非專家或沒有部位者不適合追高。"
+    },
+    {
+      "name": "MLCC、47uF 與 22uF 料號",
+      "type": "sector",
+      "tickers": [
+        "2327",
+        "2492",
+        "6173"
+      ],
+      "sentiment": "bullish",
+      "risk": "若最缺規格主要由日韓大廠吃到，台灣廠只能間接受惠；需驗證產品規格、交期、報價與毛利率。",
+      "hostOwned": null,
+      "sourceRefs": [
+        "非時間戳段落 011"
+      ],
+      "analysis": "主持人認為 47uF 是目前最稀缺料號，Samsung、Murata 等供應緊張；台灣廠可能以 22uF 或較低規格受惠，重點是大廠轉高階後留下的需求與供應排擠。這是典型第二層受惠，不一定最純，但在供需緊張時仍有彈性。"
+    },
+    {
+      "name": "鋁電容、固態電容與 OS-CON",
+      "type": "sector",
+      "tickers": [
+        "2472",
+        "8042",
+        "6449",
+        "2375"
+      ],
+      "sentiment": "bullish",
+      "risk": "鋁電容題材比 MLCC 難懂，總營收可能不立刻反映；若產品組合改善沒有進到財報，股價容易回吐。",
+      "hostOwned": null,
+      "sourceRefs": [
+        "非時間戳段落 012-014"
+      ],
+      "analysis": "主持人觀察 Nichicon、Nippon Chemi-Con 等日廠股價表現強於營收，推測市場在反映產品組合與供需改善。Panasonic 退出 OS-CON 使固態電容供應鏈重組需要時間，低階或標準品也可能因高階排擠而受惠。"
+    },
+    {
+      "name": "AI 伺服器 V 世代與 EMS 保產能",
+      "type": "theme",
+      "tickers": [
+        "2382",
+        "3231",
+        "6669",
+        "2327",
+        "2492",
+        "2472"
+      ],
+      "sentiment": "bullish",
+      "risk": "若新世代伺服器量產時間延後，或被動元件擴產速度快於需求，供需緊張可能被重估。",
+      "hostOwned": null,
+      "sourceRefs": [
+        "非時間戳段落 013"
+      ],
+      "analysis": "主持人認為市場可能低估 AI 伺服器新世代放量後對被動元件的消耗。EMS 廠開始向被動元件廠保產能，是觀察供需是否真緊的重要訊號。"
+    },
+    {
+      "name": "成熟製程與 legacy 補庫存",
+      "type": "sector",
+      "tickers": [
+        "2303",
+        "5347"
+      ],
+      "sentiment": "watchful",
+      "risk": "若只是漲價前補庫存而非終端需求復甦，後續訂單可能回落；消費電子曝險較高標的需更嚴格驗證。",
+      "hostOwned": null,
+      "sourceRefs": [
+        "非時間戳段落 016-018"
+      ],
+      "analysis": "主持人把成熟製程需求拆成成本推升與需求推升。許多 legacy 產品看起來是漲價前補庫存，並不代表消費電子全面好轉；世界先進因特殊製程與新加坡廠能見度，較像需求推升案例。"
+    },
+    {
+      "name": "傳統 IC 設計、DDIC 與消費曝險",
+      "type": "sector",
+      "tickers": [],
+      "sentiment": "neutral",
+      "risk": "消費端沒有全面復甦時，成本推升漲價可能無法轉成長期獲利上修。",
+      "hostOwned": null,
+      "sourceRefs": [
+        "非時間戳段落 018"
+      ],
+      "analysis": "主持人對傳統 IC 設計與 DDIC 題材較保守，因為它們與 consumer exposure 連動較高。若終端需求未好轉，只靠成本或庫存補貨推升的價格，延續性可能不足。"
+    },
+    {
+      "name": "廠務工程：漢唐與聖暉",
+      "type": "sector",
+      "tickers": [
+        "2404",
+        "5536"
+      ],
+      "sentiment": "watchful",
+      "risk": "市場目前可能不喜歡台積電相關工程毛利壓力敘事，即使基本面好也可能需要等待資金輪動。",
+      "hostOwned": null,
+      "sourceRefs": [
+        "非時間戳段落 018",
+        "非時間戳段落 028"
+      ],
+      "analysis": "主持人提到漢唐財報後股價失望，但毛利率沒有原先擔心的差；聖暉較佳，非純台積電或非單一客戶敘事的廠務工程可能比較容易被市場接受。Q&A 也提到廠務並不差，只是短線資金喜好不在這裡。"
+    },
+    {
+      "name": "台積電、聯發科與權值防守",
+      "type": "company",
+      "tickers": [
+        "2330",
+        "2454"
+      ],
+      "sentiment": "watchful",
+      "risk": "大型權值股基本面好不等於市場立刻重估；若市場偏好高彈性題材，權值股可能只是防守而非主攻。",
+      "hostOwned": true,
+      "sourceRefs": [
+        "非時間戳段落 019-020",
+        "非時間戳段落 026"
+      ],
+      "analysis": "主持人認為台積電基本面與展望好，但市場不太重估；當中小型強勢股轉弱時，台積電、聯發科與低 forward P/E 標的可作為防守或 fallback。他在 Q&A 中也提到自己有些部位移到台積電與聯發科。"
+    },
+    {
+      "name": "散熱族群與小作文消息",
+      "type": "sector",
+      "tickers": [
+        "3017",
+        "3324",
+        "3653"
+      ],
+      "sentiment": "watchful",
+      "risk": "設計變更消息難驗證，市場敘事可能快速從利多變利空；若正式訂單沒有反應，股價會先受傷。",
+      "hostOwned": null,
+      "sourceRefs": [
+        "非時間戳段落 021-024"
+      ],
+      "analysis": "Q&A 中主持人把散熱消息區分為小作文與消息。他認為產品設計不太可能量產前臨時整個取消，較常見是延到下一代或路線調整。研究上要交叉驗證多方來源，不能只靠社群敘事。"
+    },
+    {
+      "name": "光通族群",
+      "type": "sector",
+      "tickers": [
+        "3081",
+        "3163",
+        "6442",
+        "3363",
+        "4979",
+        "4977",
+        "3450"
+      ],
+      "sentiment": "watchful",
+      "risk": "台灣資金有限且主題很多，海外光通強不一定立即連動台股；需要看台股是否放量轉強。",
+      "hostOwned": null,
+      "sourceRefs": [
+        "非時間戳段落 029"
+      ],
+      "analysis": "主持人指出美國光通仍高，但台灣光通相對弱。這不代表題材結束，台灣有時是海外先強、資金稍後才回來；若海外光通持續強，台灣族群仍可能重新被喚醒。"
+    },
+    {
+      "name": "先進製程設備、CPU Socket 與新唐",
+      "type": "theme",
+      "tickers": [
+        "2467",
+        "5443",
+        "6706",
+        "3533",
+        "4919"
+      ],
+      "sentiment": "watchful",
+      "risk": "聽眾持股組合偏交易邏輯，若市場擁擠度高，容易在殺盤與追價時同步被放大。",
+      "hostOwned": null,
+      "sourceRefs": [
+        "非時間戳段落 026"
+      ],
+      "analysis": "聽眾提到志聖、均豪、惠特、嘉澤、新唐等標的。主持人認為組合很專業，CPU Socket 可視為 CPU 主題外溢；新唐過去 Google/Microsoft 故事已被市場講過，真正要看 MCU 改善是否落地。"
+    },
+    {
+      "name": "高通 Qualcomm",
+      "type": "company",
+      "tickers": [
+        "QCOM"
+      ],
+      "sentiment": "watchful",
+      "risk": "若市場只是短線把 AI infrastructure/ASIC 題材套上去，缺乏訂單與財務驗證時估值可能回落。",
+      "hostOwned": null,
+      "sourceRefs": [
+        "非時間戳段落 033"
+      ],
+      "analysis": "主持人提到高通近期股價大漲，可能不是市場重新買 AIPC，而是把 custom optical chip、ASIC 或 AI infrastructure 想像放上去。這條線需要後續用產品與客戶訂單確認。"
+    }
+  ],
+  "qa": [
+    {
+      "sourceRef": "非時間戳段落 021",
+      "question": "聽眾用親子經驗開玩笑提到被小孩撞到要害。",
+      "answerPoints": [
+        "主持人主要以生活閒聊回應。",
+        "此段沒有形成投資結論。"
+      ],
+      "keyTakeaway": "非投資內容，不納入研究主線。"
+    },
+    {
+      "sourceRef": "非時間戳段落 021-023",
+      "question": "現在市場小作文是不是變少？散熱相關消息該怎麼看？",
+      "answerPoints": [
+        "主持人認為傳統長篇小作文變少，但消息仍很多。",
+        "要區分真正消息、敘事文與帶風向內容。",
+        "同一消息需交叉驗證多個來源。",
+        "散熱設計變更未必等於取消，可能是遞延到下一代。"
+      ],
+      "keyTakeaway": "消息交易要先辨識來源與量產時程，不能只看社群敘事。"
+    },
+    {
+      "sourceRef": "非時間戳段落 024",
+      "question": "NVIDIA 產品路線若變更，是否代表原本題材結束？",
+      "answerPoints": [
+        "主持人區分研發路線與量產路線。",
+        "設計若沒進當代量產，可能延到下一代，未必完全消失。",
+        "未來仍可能因 FOMO 被市場重新買回。"
+      ],
+      "keyTakeaway": "產品路線變更要看是取消、延後還是下一代導入。"
+    },
+    {
+      "sourceRef": "非時間戳段落 026",
+      "question": "聽眾降低中小型持股，但仍看好光通、先進製程設備、CPU Socket、新唐等題材。",
+      "answerPoints": [
+        "主持人認為這組合很專業，偏交易型邏輯。",
+        "CPU Socket 可視為 CPU 題材外溢。",
+        "新唐舊故事被重新拿出來講，真正要看 MCU 改善。",
+        "主持人也有把部分部位移到台積電與聯發科。"
+      ],
+      "keyTakeaway": "高低槓鈴配置合理，但熱門交易容易形成擁擠，需注意殺盤與追價節奏。"
+    },
+    {
+      "sourceRef": "非時間戳段落 027",
+      "question": "德律是否可單獨評論？",
+      "answerPoints": [
+        "主持人避免單一個股推薦。",
+        "他不喜歡被截圖或框成明牌。",
+        "更偏好談產業趨勢與研究方法。"
+      ],
+      "keyTakeaway": "單股結論要自己查證，節目更適合拿來建立題材框架。"
+    },
+    {
+      "sourceRef": "非時間戳段落 028-029",
+      "question": "廠務、玻纖或光通等題材為什麼弱？",
+      "answerPoints": [
+        "主持人認為廠務不是不好，只是市場暫時不喜歡。",
+        "基金資金會在市場寵兒之間輪動。",
+        "美國光通若持續強，台灣光通可能之後醒來。"
+      ],
+      "keyTakeaway": "題材弱不一定基本面壞，但需要等市場重新表態。"
+    },
+    {
+      "sourceRef": "非時間戳段落 032",
+      "question": "職涯與個人價值觀是否該學主持人？",
+      "answerPoints": [
+        "主持人提醒不要照單全收他的價值觀。",
+        "他承認自己個性和工作模式較極端。",
+        "現在階段也許比年輕時更值得參考。"
+      ],
+      "keyTakeaway": "非投資內容，但提醒聽眾不要把主持人的個人選擇當模板。"
+    },
+    {
+      "sourceRef": "非時間戳段落 033",
+      "question": "高通近期大漲與 AI 題材的關係？",
+      "answerPoints": [
+        "主持人認為高通近期股價很強。",
+        "市場可能不是買 AIPC，而是買 custom optical chip、ASIC 或 AI infrastructure 敘事。",
+        "早期 AIPC 消費應用展示不太吸引他。"
+      ],
+      "keyTakeaway": "高通若重新評價，需驗證 AI infrastructure 或 ASIC 是否真正落地。"
+    }
+  ],
+  "nextSteps": {
+    "episodeThesis": "EP661 的投資主線是被動元件供需緊張已從海外同業擴散到台股，但短線漲幅很大，不能用追高取代研究。優先驗證 MLCC 47uF/22uF、鋁電容、固態電容、EMS 保產能、AI 伺服器新世代放量與漲價傳導；成熟製程則要拆成補庫存與真需求，避免把消費電子庫存循環誤判成全面復甦。防守面可觀察台積電、聯發科與低 forward P/E 權值股，題材面則追蹤光通、先進製程設備、CPU socket、新唐與高通 AI infrastructure 敘事是否有財務驗證。",
+    "priorityThemes": [
+      {
+        "rank": 1,
+        "theme": "被動元件缺料與漲價主線",
+        "priority": "primary",
+        "whyItMatters": "這是本集最明確、最有台股連動性的主線。AI 伺服器用量提升、海外同業先動與 EMS 保產能，使市場開始重新評價台灣被動元件。",
+        "podcastEvidence": "主持人提到日本、美國、韓國被動元件先動，台灣剛醒；MLCC 47uF 最缺，鋁電容與固態電容也有供應重組。",
+        "relatedStockAnalysis": [
+          "被動元件總主線",
+          "MLCC、47uF 與 22uF 料號",
+          "鋁電容、固態電容與 OS-CON"
+        ],
+        "suggestedNextMove": "建立被動元件候選表，逐一驗證產品規格、交期、報價、月營收、毛利率與 AI 伺服器客戶曝險。"
+      },
+      {
+        "rank": 2,
+        "theme": "AI 伺服器 V 世代與 EMS 保產能",
+        "priority": "primary",
+        "whyItMatters": "主持人認為真正大量出貨後，市場才會更清楚看到被動元件用量與缺口。保產能是需求真實性的早期訊號。",
+        "podcastEvidence": "主持人說 EMS 廠已開始找被動元件廠保產能，V 世代伺服器會消耗大量零件。",
+        "relatedStockAnalysis": [
+          "AI 伺服器 V 世代與 EMS 保產能",
+          "被動元件總主線"
+        ],
+        "suggestedNextMove": "追蹤 AI 伺服器量產節奏、EMS/ODM 法說、被動元件交期與是否出現配額或客戶預付款。"
+      },
+      {
+        "rank": 3,
+        "theme": "成熟製程補庫存與真需求辨識",
+        "priority": "secondary",
+        "whyItMatters": "成熟製程與 legacy 題材容易被漲價訊號帶動，但若只是補庫存，持續性與估值空間會打折。",
+        "podcastEvidence": "主持人說筆電、手機與晶圓代工端回饋顯示，多數是漲價前補庫存；世界先進較像需求推升。",
+        "relatedStockAnalysis": [
+          "成熟製程與 legacy 補庫存",
+          "傳統 IC 設計、DDIC 與消費曝險"
+        ],
+        "suggestedNextMove": "把成熟製程標的分為特殊製程/產能預訂與消費曝險兩類，再看庫存、ASP、稼動率與新單能見度。"
+      },
+      {
+        "rank": 4,
+        "theme": "廠務工程與低估值防守",
+        "priority": "secondary",
+        "whyItMatters": "當強勢中小股轉弱，市場可能回頭找低 forward P/E、權值與基本面仍好的工程股，但短線要等資金轉向。",
+        "podcastEvidence": "主持人提到漢唐毛利率未如預期惡化，聖暉較強，也說有些部位移到台積電與聯發科。",
+        "relatedStockAnalysis": [
+          "廠務工程：漢唐與聖暉",
+          "台積電、聯發科與權值防守"
+        ],
+        "suggestedNextMove": "追蹤漢唐、聖暉營收毛利與接單，並觀察台積電、聯發科是否在題材股回檔時吸收資金。"
+      },
+      {
+        "rank": 5,
+        "theme": "消息辨識：散熱、光通、CPU socket 與新唐",
+        "priority": "background",
+        "whyItMatters": "Q&A 的重點在於如何處理市場消息與擁擠交易。這些題材不是不能做，而是要驗證訂單、量產時程與資金表態。",
+        "podcastEvidence": "主持人區分小作文與消息，提醒散熱設計變更可能是延後不是取消；光通美股強但台股弱，仍可觀察是否醒來。",
+        "relatedStockAnalysis": [
+          "散熱族群與小作文消息",
+          "光通族群",
+          "先進製程設備、CPU Socket 與新唐"
+        ],
+        "suggestedNextMove": "對每個消息建立來源、時程、產品、客戶與財報驗證欄位；沒有驗證前只當觀察，不當結論。"
+      }
+    ],
+    "candidateDiscovery": [
+      {
+        "theme": "被動元件缺料與漲價主線",
+        "priority": "primary",
+        "twIndustryCategories": [
+          "電子零組件"
+        ],
+        "searchKeywords": [
+          "被動元件",
+          "MLCC",
+          "47uF",
+          "22uF",
+          "鋁電容",
+          "固態電容",
+          "OS-CON",
+          "漲價",
+          "交期",
+          "AI 伺服器"
+        ],
+        "businessExposureToVerify": [
+          "是否有高壓 MLCC 或特定缺料規格",
+          "是否供應 AI 伺服器或電源相關應用",
+          "交期是否拉長",
+          "報價是否上調",
+          "毛利率是否改善"
+        ],
+        "candidatePoolRule": "先列出台灣 MLCC、鋁電容、固態電容與被動元件相關公司，再依產品規格、客戶與毛利率改善排序。",
+        "excludeIf": [
+          "只因族群漲停而跟漲但沒有產品曝險",
+          "公司法說未提交期或漲價",
+          "營收與毛利率沒有任何改善"
+        ],
+        "rankingChecks": [
+          "AI 應用占比",
+          "產品缺料程度",
+          "報價與交期",
+          "月營收動能",
+          "毛利率趨勢",
+          "回檔後相對強弱"
+        ],
+        "dataSourcesToCheck": [
+          "月營收",
+          "財報",
+          "法說會",
+          "年報",
+          "公開資訊觀測站",
+          "公司官網"
+        ],
+        "podcastBoundaries": "Podcast 有點名產品線和部分台灣公司，但沒有給買進價位；所有候選都需用公開資料驗證。"
+      },
+      {
+        "theme": "成熟製程補庫存與真需求辨識",
+        "priority": "secondary",
+        "twIndustryCategories": [
+          "半導體"
+        ],
+        "searchKeywords": [
+          "成熟製程",
+          "legacy",
+          "漲價",
+          "補庫存",
+          "特殊製程",
+          "稼動率",
+          "DDIC",
+          "MCU"
+        ],
+        "businessExposureToVerify": [
+          "漲價是成本推升還是需求推升",
+          "終端需求是否回補",
+          "稼動率是否改善",
+          "新產能是否被預訂",
+          "客戶組合是否偏消費電子"
+        ],
+        "candidatePoolRule": "把晶圓代工、傳統 IC 設計、DDIC、MCU 分開，不用整籃買成熟製程題材。",
+        "excludeIf": [
+          "只有補庫存沒有終端需求",
+          "庫存水位仍高",
+          "漲價無法轉嫁到毛利率",
+          "營收主要曝險弱消費電子"
+        ],
+        "rankingChecks": [
+          "稼動率",
+          "ASP",
+          "庫存天數",
+          "客戶結構",
+          "特殊製程占比",
+          "新產能預訂狀況"
+        ],
+        "dataSourcesToCheck": [
+          "法說會",
+          "月營收",
+          "財報",
+          "產業通路回饋",
+          "公司年報"
+        ],
+        "podcastBoundaries": "主持人較看好需求推升的特殊製程，對整體 consumer legacy 仍保守。"
+      },
+      {
+        "theme": "消息辨識與擁擠交易",
+        "priority": "background",
+        "twIndustryCategories": [
+          "電子零組件",
+          "半導體",
+          "通信網路"
+        ],
+        "searchKeywords": [
+          "散熱",
+          "光通",
+          "CPU Socket",
+          "先進製程設備",
+          "新唐",
+          "設計變更",
+          "量產",
+          "客戶認證"
+        ],
+        "businessExposureToVerify": [
+          "消息來源是否可交叉驗證",
+          "產品是否進入當代量產",
+          "若未進入是否延到下一代",
+          "訂單與財務是否反映",
+          "交易是否過度擁擠"
+        ],
+        "candidatePoolRule": "對熱門 Q&A 題材只建立觀察表，不因單一消息直接形成結論。",
+        "excludeIf": [
+          "消息無法交叉驗證",
+          "只有社群討論沒有公司或供應鏈證據",
+          "股價已大幅反映但財務未跟上"
+        ],
+        "rankingChecks": [
+          "訂單能見度",
+          "量產時程",
+          "客戶確認度",
+          "月營收反應",
+          "海外同業強弱",
+          "台股資金表態"
+        ],
+        "dataSourcesToCheck": [
+          "法說會",
+          "月營收",
+          "供應鏈新聞",
+          "公司公告",
+          "同業股價"
+        ],
+        "podcastBoundaries": "Q&A 多為主持人方法論與方向觀察，不是逐檔推薦。"
+      }
+    ],
+    "webDiscussion": [],
+    "opportunityCandidates": [
+      {
+        "rank": 1,
+        "ticker": "2327",
+        "companyName": "國巨",
+        "market": "TW",
+        "theme": "被動元件缺料與漲價主線",
+        "conviction": "medium",
+        "opportunityScore": 82,
+        "whySelected": "國巨是台灣被動元件代表標的，對應 EP661 的 MLCC、電阻、供應排擠與漲價主線。入選理由只來自 Podcast 主題連動，仍需確認產品規格、報價與 AI 應用占比。",
+        "podcastLink": "對應主持人提到台灣被動元件開始醒來，國巨也被列入台灣被動元件範圍。",
+        "externalEvidence": [],
+        "catalysts": [
+          "MLCC 或電阻報價上調",
+          "AI 伺服器相關交期拉長",
+          "月營收與毛利率改善"
+        ],
+        "risks": [
+          "已反映題材後追高風險",
+          "若台灣廠只間接受惠，獲利彈性可能低於市場期待",
+          "消費級需求回落"
+        ],
+        "invalidationConditions": [
+          "公司未見漲價或交期拉長",
+          "毛利率未改善",
+          "AI 應用占比無法驗證"
+        ],
+        "whatToCheckNext": [
+          "查最新法說是否提 MLCC/電阻交期與報價",
+          "追蹤月營收與毛利率",
+          "比較海外同業走勢"
+        ],
+        "sourceLinks": [],
+        "notInvestmentAdvice": "此為優先研究候選，不是買進建議。"
+      },
+      {
+        "rank": 2,
+        "ticker": "2492",
+        "companyName": "華新科",
+        "market": "TW",
+        "theme": "MLCC 與高階/中階規格外溢",
+        "conviction": "medium",
+        "opportunityScore": 80,
+        "whySelected": "華新科對應 EP661 的台灣 MLCC 供應排擠與漲價外溢主線。重點是確認 22uF、AI 應用或高壓規格是否能帶動實際毛利。",
+        "podcastLink": "對應主持人提到台灣被動元件、MLCC 規格與台廠開始跟上海外強勢。",
+        "externalEvidence": [],
+        "catalysts": [
+          "MLCC 規格供需吃緊",
+          "領頭羊漲價帶動台廠跟漲",
+          "AI 應用訂單提升"
+        ],
+        "risks": [
+          "產品規格若不在缺料核心，彈性可能被高估",
+          "股價已先反映",
+          "終端庫存修正"
+        ],
+        "invalidationConditions": [
+          "報價未上調",
+          "交期沒有拉長",
+          "毛利率無改善"
+        ],
+        "whatToCheckNext": [
+          "確認公司產品規格與 AI 伺服器曝險",
+          "追蹤月營收",
+          "比較 Murata、Samsung、TDK 供需訊號"
+        ],
+        "sourceLinks": [],
+        "notInvestmentAdvice": "此為優先研究候選，不是買進建議。"
+      },
+      {
+        "rank": 3,
+        "ticker": "2472",
+        "companyName": "立隆電",
+        "market": "TW",
+        "theme": "鋁電容與固態電容供應重組",
+        "conviction": "medium",
+        "opportunityScore": 79,
+        "whySelected": "立隆電對應 EP661 的鋁電容題材。主持人認為日本鋁電容股價強於營收，可能反映產品組合和供需改善，台灣鋁電容廠需進一步驗證。",
+        "podcastLink": "對應主持人點名台灣鋁電容族群跟著被動元件行情醒來。",
+        "externalEvidence": [],
+        "catalysts": [
+          "鋁電容交期拉長",
+          "固態電容供應重組",
+          "AI 電源與伺服器需求增加"
+        ],
+        "risks": [
+          "鋁電容總營收不一定立刻改善",
+          "產品組合若未升級，毛利彈性有限",
+          "題材股回檔"
+        ],
+        "invalidationConditions": [
+          "月營收轉弱",
+          "毛利率未改善",
+          "公司未提 AI 或高階應用需求"
+        ],
+        "whatToCheckNext": [
+          "查法說對鋁電容產品組合的描述",
+          "追蹤交期與報價",
+          "比較 Nichicon、Nippon Chemi-Con 走勢"
+        ],
+        "sourceLinks": [],
+        "notInvestmentAdvice": "此為優先研究候選，不是買進建議。"
+      },
+      {
+        "rank": 4,
+        "ticker": "8042",
+        "companyName": "金山電",
+        "market": "TW",
+        "theme": "鋁電容與標準品第二層受惠",
+        "conviction": "medium",
+        "opportunityScore": 77,
+        "whySelected": "金山電被列入 EP661 台灣鋁電容相關觀察。主持人特別提醒低階或標準品可能在高階產能排擠下受惠，因此需看報價與毛利是否反映。",
+        "podcastLink": "對應主持人提到台灣鋁電容廠跟隨海外強勢與供需變化。",
+        "externalEvidence": [],
+        "catalysts": [
+          "標準品供應被排擠",
+          "報價上調",
+          "月營收與毛利率改善"
+        ],
+        "risks": [
+          "若只是族群輪動而非實際漲價，續航力不足",
+          "需求偏消費時波動較大",
+          "流動性與題材擁擠風險"
+        ],
+        "invalidationConditions": [
+          "報價沒有變化",
+          "營收沒有跟上",
+          "毛利率下滑"
+        ],
+        "whatToCheckNext": [
+          "確認產品應用與客戶",
+          "追蹤月營收",
+          "比較同族群相對強弱"
+        ],
+        "sourceLinks": [],
+        "notInvestmentAdvice": "此為優先研究候選，不是買進建議。"
+      },
+      {
+        "rank": 5,
+        "ticker": "5347",
+        "companyName": "世界先進",
+        "market": "TW",
+        "theme": "成熟製程真需求辨識",
+        "conviction": "medium",
+        "opportunityScore": 75,
+        "whySelected": "世界先進是 EP661 成熟製程段落中較明確被主持人區分為需求推升的案例，原因是特殊製程與新加坡新廠產能能見度。",
+        "podcastLink": "對應主持人說世界先進較不像單純補庫存，因特殊製程與新加坡廠產能被預訂。",
+        "externalEvidence": [],
+        "catalysts": [
+          "成熟製程稼動率改善",
+          "特殊製程需求強",
+          "新加坡廠訂單能見度提升"
+        ],
+        "risks": [
+          "若終端消費電子弱勢擴散，成熟製程估值仍受壓",
+          "漲價若偏成本推升，毛利改善有限",
+          "新產能進度風險"
+        ],
+        "invalidationConditions": [
+          "稼動率未改善",
+          "庫存回補後訂單轉弱",
+          "ASP 或毛利率無法上修"
+        ],
+        "whatToCheckNext": [
+          "查法說對新加坡廠與特殊製程接單說法",
+          "追蹤稼動率",
+          "比較同業成熟製程價格"
+        ],
+        "sourceLinks": [],
+        "notInvestmentAdvice": "此為優先研究候選，不是買進建議。"
+      },
+      {
+        "rank": 6,
+        "ticker": "2404",
+        "companyName": "漢唐",
+        "market": "TW",
+        "theme": "廠務工程與低估值防守",
+        "conviction": "medium",
+        "opportunityScore": 73,
+        "whySelected": "漢唐是 EP661 廠務工程討論的核心標的。主持人指出財報後股價讓人失望，但毛利率並未如市場原先擔心惡化，適合放入防守/落後補漲觀察。",
+        "podcastLink": "對應主持人提到漢唐 Q1 財報、毛利率與市場對台積電相關工程股的疑慮。",
+        "externalEvidence": [],
+        "catalysts": [
+          "工程股資金輪動",
+          "毛利率穩定",
+          "半導體擴廠訂單延續"
+        ],
+        "risks": [
+          "市場短線不喜歡台積電工程毛利壓力敘事",
+          "即使基本面好也可能等很久",
+          "工程成本上升"
+        ],
+        "invalidationConditions": [
+          "毛利率惡化",
+          "新接單下降",
+          "主要客戶擴廠延後"
+        ],
+        "whatToCheckNext": [
+          "追蹤月營收與毛利率",
+          "比較聖暉、亞翔等工程股",
+          "看市場是否重回廠務工程族群"
+        ],
+        "sourceLinks": [],
+        "notInvestmentAdvice": "此為優先研究候選，不是買進建議。"
+      },
+      {
+        "rank": 7,
+        "ticker": "3533",
+        "companyName": "嘉澤",
+        "market": "TW",
+        "theme": "CPU Socket 與 CPU 題材外溢",
+        "conviction": "medium",
+        "opportunityScore": 72,
+        "whySelected": "嘉澤來自 Q&A 中聽眾持股組合，主持人認為 CPU Socket 是 CPU 主題外溢邏輯。這不是主持人單股推薦，但可作為 CPU 週期與 AI server CPU 需求的觀察標的。",
+        "podcastLink": "對應主持人回應聽眾持有 CPU Socket 嘉澤，並稱其為 CPU 題材 spillover。",
+        "externalEvidence": [],
+        "catalysts": [
+          "CPU 平台升級",
+          "伺服器 CPU socket 規格更新",
+          "月營收反映新品週期"
+        ],
+        "risks": [
+          "Q&A 只是組合評論，不是推薦",
+          "若 CPU 週期不如預期，題材降溫",
+          "估值已反映"
+        ],
+        "invalidationConditions": [
+          "月營收轉弱",
+          "新平台訂單不如預期",
+          "毛利率下滑"
+        ],
+        "whatToCheckNext": [
+          "查公司產品與平台時程",
+          "追蹤月營收",
+          "比較 CPU 供應鏈相對強弱"
+        ],
+        "sourceLinks": [],
+        "notInvestmentAdvice": "此為優先研究候選，不是買進建議。"
+      },
+      {
+        "rank": 8,
+        "ticker": "4919",
+        "companyName": "新唐",
+        "market": "TW",
+        "theme": "MCU 改善與舊題材回收",
+        "conviction": "low",
+        "opportunityScore": 66,
+        "whySelected": "新唐在 Q&A 中被提及，主持人提醒 Google/Microsoft 故事是兩年前的舊故事，真正關鍵是 MCU 是否改善，因此只列為低 conviction 觀察。",
+        "podcastLink": "對應主持人說新唐舊故事被重新拿出來講，重點要回到 MCU 改善。",
+        "externalEvidence": [],
+        "catalysts": [
+          "MCU 需求回溫",
+          "庫存下降",
+          "毛利率改善"
+        ],
+        "risks": [
+          "舊故事重炒但財務不跟",
+          "consumer/industrial MCU 需求弱",
+          "庫存去化不順"
+        ],
+        "invalidationConditions": [
+          "月營收無改善",
+          "庫存仍高",
+          "毛利率下滑"
+        ],
+        "whatToCheckNext": [
+          "查 MCU 庫存與稼動率",
+          "追蹤月營收",
+          "確認舊題材是否有新訂單佐證"
+        ],
+        "sourceLinks": [],
+        "notInvestmentAdvice": "此為優先研究候選，不是買進建議。"
+      }
+    ],
+    "researchPlan": [
+      {
+        "step": 1,
+        "task": "建立被動元件規格表",
+        "purpose": "確認哪些公司真正接觸 47uF、22uF、高壓 MLCC、鋁電容、固態電容或 OS-CON 供應重組。",
+        "neededData": [
+          "公司產品規格",
+          "法說會",
+          "年報",
+          "客戶應用",
+          "交期與報價"
+        ],
+        "howToUseResult": "把真正缺料規格與單純族群跟漲分開。"
+      },
+      {
+        "step": 2,
+        "task": "追蹤漲價與交期",
+        "purpose": "驗證被動元件主線是否從股價敘事變成財務結果。",
+        "neededData": [
+          "月營收",
+          "毛利率",
+          "通路報價",
+          "交期",
+          "客戶保產能消息"
+        ],
+        "howToUseResult": "若報價、交期、營收與毛利同步改善，主線可信度上升；若只有股價漲，降低追蹤權重。"
+      },
+      {
+        "step": 3,
+        "task": "拆解成熟製程需求來源",
+        "purpose": "避免把補庫存誤判成消費電子全面復甦。",
+        "neededData": [
+          "稼動率",
+          "庫存天數",
+          "ASP",
+          "終端需求",
+          "特殊製程訂單"
+        ],
+        "howToUseResult": "優先研究需求推升與特殊製程，保守看待 consumer legacy。"
+      },
+      {
+        "step": 4,
+        "task": "建立 Q&A 題材驗證表",
+        "purpose": "把散熱、光通、CPU socket、新唐、高通等消息型題材變成可追蹤任務。",
+        "neededData": [
+          "消息來源",
+          "量產時程",
+          "客戶驗證",
+          "月營收",
+          "海外同業走勢"
+        ],
+        "howToUseResult": "每個題材只在有財務或訂單驗證時提高權重。"
+      }
+    ],
+    "validationSignals": [
+      {
+        "theme": "被動元件",
+        "positiveSignals": [
+          "公司法說提漲價或交期拉長",
+          "月營收連續改善",
+          "毛利率上修",
+          "海外同業續強",
+          "回檔後台股被動元件率先轉強"
+        ],
+        "negativeSignals": [
+          "公司否認漲價",
+          "交期沒有延長",
+          "月營收跟不上股價",
+          "消費級庫存回落",
+          "回檔後族群無法站回"
+        ],
+        "waitFor": "等漲價、交期與財務同步驗證，或回檔後第一批轉強標的出現。"
+      },
+      {
+        "theme": "成熟製程",
+        "positiveSignals": [
+          "稼動率提升",
+          "特殊製程訂單能見度提高",
+          "ASP 上修可轉成毛利",
+          "客戶需求不只補庫存"
+        ],
+        "negativeSignals": [
+          "補庫存後訂單轉弱",
+          "消費電子仍弱",
+          "庫存天數上升",
+          "漲價無法轉嫁"
+        ],
+        "waitFor": "等法說確認漲價來源與終端需求，不整籃買 legacy 題材。"
+      },
+      {
+        "theme": "廠務與權值防守",
+        "positiveSignals": [
+          "漢唐/聖暉毛利率穩定",
+          "新接單延續",
+          "台積電與聯發科在題材回檔時抗跌",
+          "資金回流低估值權值"
+        ],
+        "negativeSignals": [
+          "工程毛利率惡化",
+          "客戶擴廠延後",
+          "權值股利多不漲",
+          "市場風險偏好快速下降"
+        ],
+        "waitFor": "觀察強勢題材回檔時，防守標的是否吸收資金。"
+      }
+    ],
+    "riskTriggers": [
+      {
+        "theme": "被動元件追高",
+        "trigger": "族群股價大漲後，報價、交期、月營收或毛利率沒有跟上。",
+        "whyItMatters": "主持人雖偏多主線，但特別提醒不懂的人不要追高。",
+        "response": "降低候選排序，等待回檔後相對強弱與基本面驗證。"
+      },
+      {
+        "theme": "成熟製程誤判",
+        "trigger": "終端需求未改善，只有漲價前補庫存。",
+        "whyItMatters": "補庫存行情可能短且脆弱，不能用全面復甦估值。",
+        "response": "只保留特殊製程、產能預訂或需求推升明確標的。"
+      },
+      {
+        "theme": "消息型題材",
+        "trigger": "散熱、光通、CPU socket 或新唐等題材只有社群消息，缺乏訂單與財報驗證。",
+        "whyItMatters": "Q&A 中主持人多次提醒要交叉驗證消息，不要把敘事當事實。",
+        "response": "維持觀察，不提升到主力候選。"
+      }
+    ],
+    "watchlistInstructions": [
+      "被動元件先看 2327、2492、2472、8042、6449、2375、6173 的月營收、毛利率與法說。",
+      "成熟製程先把 5347 與一般 consumer legacy 拆開研究。",
+      "廠務工程觀察 2404、5536 是否在市場輪動時補漲。",
+      "Q&A 題材中的 3533、4919、光通與散熱族群只做驗證表，不因單一消息追價。",
+      "所有候選都先用回檔後相對強弱、漲價證據與財務驗證排序。"
+    ],
+    "decisionFramework": [
+      "先問題材是否是 EP661 主線：被動元件缺料/漲價、AI 伺服器保產能、成熟製程需求辨識。",
+      "再問公司是否直接受惠：產品規格、客戶、交期、報價與毛利率是否能對應。",
+      "第三問價格位置：若已大漲，先等回檔後資金表態；若利多不漲，視為警訊。",
+      "最後用財務驗證：月營收、毛利率、庫存、法說和同業走勢至少要有兩到三項同向。"
+    ],
+    "notInvestmentAdvice": "本檔案是根據 Podcast 逐字稿整理的研究框架與觀察清單，不是買進、賣出或持有建議；實際決策仍需使用最新公開資訊、財報、法說會與自身風險控管。"
+  },
+  "coverageCheck": [
+    {
+      "sourceRef": "非時間戳段落 001-005",
+      "contentType": "other",
+      "coveredIn": "news[0]",
+      "note": "Haru 贊助、台中旅行、林口與台中生活觀察，非投資主線。"
+    },
+    {
+      "sourceRef": "非時間戳段落 006-008",
+      "contentType": "other",
+      "coveredIn": "news[1]",
+      "note": "紅酒、稀缺性、Wine-Searcher、價格訊號與股票類比。"
+    },
+    {
+      "sourceRef": "非時間戳段落 009",
+      "contentType": "market",
+      "coveredIn": "news[2], hostDisclosure[0]",
+      "note": "台股回檔幅度與主持人持股調整狀態。"
+    },
+    {
+      "sourceRef": "非時間戳段落 010-011",
+      "contentType": "stockAnalysis",
+      "coveredIn": "news[3], news[4], stockAnalysis[0], stockAnalysis[1], nextSteps.priorityThemes[0]",
+      "note": "被動元件海外先動、台灣追上、MLCC 47uF 與 22uF。"
+    },
+    {
+      "sourceRef": "非時間戳段落 012-014",
+      "contentType": "stockAnalysis",
+      "coveredIn": "news[5], news[6], news[7], stockAnalysis[2], stockAnalysis[3]",
+      "note": "鋁電容、固態電容、OS-CON、AI 伺服器與 EMS 保產能。"
+    },
+    {
+      "sourceRef": "非時間戳段落 015",
+      "contentType": "risk",
+      "coveredIn": "news[8], hostDisclosure[2], nextSteps.riskTriggers[0]",
+      "note": "被動元件已大漲，非專家不宜追高。"
+    },
+    {
+      "sourceRef": "非時間戳段落 016-018",
+      "contentType": "stockAnalysis",
+      "coveredIn": "news[9], news[10], news[11], stockAnalysis[4], stockAnalysis[5], stockAnalysis[6]",
+      "note": "成熟製程補庫存、世界先進、傳統 IC 設計/DDIC、漢唐與聖暉。"
+    },
+    {
+      "sourceRef": "非時間戳段落 019-020",
+      "contentType": "market",
+      "coveredIn": "news[12], stockAnalysis[7], nextSteps.priorityThemes[3]",
+      "note": "台積電、低 forward P/E 防守與市場不悲觀的大框架。"
+    },
+    {
+      "sourceRef": "非時間戳段落 021-024",
+      "contentType": "qa",
+      "coveredIn": "news[13], qa[0], qa[1], qa[2], stockAnalysis[8]",
+      "note": "生活問答、小作文、散熱消息與 NVIDIA 產品路線。"
+    },
+    {
+      "sourceRef": "非時間戳段落 026",
+      "contentType": "qa",
+      "coveredIn": "qa[3], hostDisclosure[3], stockAnalysis[7], stockAnalysis[10]",
+      "note": "聽眾持股組合、光通、設備、CPU Socket、新唐、台積電與聯發科。"
+    },
+    {
+      "sourceRef": "非時間戳段落 027-029",
+      "contentType": "qa",
+      "coveredIn": "qa[4], qa[5], stockAnalysis[6], stockAnalysis[9]",
+      "note": "德律單股迴避、廠務、玻纖與光通美股台股落差。"
+    },
+    {
+      "sourceRef": "非時間戳段落 030-032",
+      "contentType": "qa",
+      "coveredIn": "qa[6], hostDisclosure[4]",
+      "note": "生日、家庭、感情與職涯價值觀，投資關聯低。"
+    },
+    {
+      "sourceRef": "非時間戳段落 033",
+      "contentType": "qa",
+      "coveredIn": "news[14], qa[7], stockAnalysis[11]",
+      "note": "錯失行情心態與高通 AI infrastructure/ASIC 敘事。"
+    }
+  ]
+}

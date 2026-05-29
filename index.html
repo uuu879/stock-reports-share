@@ -1,0 +1,5231 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>&#25237;&#36039;&#35264;&#28204;&#21488;&#20998;&#20139;&#29256;</title>
+  <style>
+    :root {
+      --bg: #f6f5f1;
+      --panel: #ffffff;
+      --panel-2: #fbfaf7;
+      --line: #ded9ce;
+      --line-strong: #c9c2b5;
+      --ink: #1d252c;
+      --muted: #65717b;
+      --soft: #eef1f0;
+      --teal: #0f766e;
+      --teal-soft: #d9f0ec;
+      --blue: #245f9f;
+      --blue-soft: #ddeafa;
+      --amber: #b45309;
+      --amber-soft: #faead1;
+      --red: #b42318;
+      --red-soft: #f9dedb;
+      --green: #217346;
+      --green-soft: #def2e5;
+      --shadow: 0 1px 2px rgba(29, 37, 44, 0.08);
+      --radius: 8px;
+      font-family: Arial, "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      background:
+        linear-gradient(90deg, rgba(36, 95, 159, 0.06) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(15, 118, 110, 0.05) 1px, transparent 1px),
+        var(--bg);
+      background-size: 28px 28px;
+      letter-spacing: 0;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+      letter-spacing: 0;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .app {
+      height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      overflow: hidden;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .brand {
+      display: grid;
+      gap: 2px;
+      min-width: 280px;
+    }
+
+    .brand-title {
+      font-weight: 800;
+      font-size: 18px;
+      line-height: 1.15;
+      white-space: nowrap;
+    }
+
+    .brand-subtitle {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      min-height: 34px;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      background: var(--panel);
+      color: var(--ink);
+      padding: 7px 11px;
+      box-shadow: var(--shadow);
+      white-space: nowrap;
+    }
+
+    .btn.primary {
+      border-color: #0b5f59;
+      background: var(--teal);
+      color: #ffffff;
+    }
+
+    .btn:disabled {
+      cursor: default;
+      opacity: 0.55;
+      box-shadow: none;
+    }
+
+    .stock-copy-btn {
+      font-size: 11px;
+      padding: 2px 8px;
+      min-height: unset;
+      line-height: 1.5;
+      opacity: 0.65;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+    .stock-copy-btn:hover {
+      opacity: 1;
+    }
+    .stock-copy-btn.copied {
+      color: var(--green);
+      border-color: var(--green);
+    }
+
+    .copy-status {
+      min-height: 18px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.25;
+      white-space: nowrap;
+    }
+
+    .copy-status.success {
+      color: var(--green);
+    }
+
+    .copy-status.error {
+      color: var(--red);
+    }
+
+    .search-wrap {
+      margin-left: auto;
+      min-width: 260px;
+      width: min(520px, 36vw);
+    }
+
+    .search {
+      width: 100%;
+      min-height: 36px;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      padding: 7px 10px;
+      background: var(--panel);
+      color: var(--ink);
+      outline: none;
+    }
+
+    .search:focus,
+    select:focus,
+    .btn:focus-visible {
+      outline: 2px solid rgba(15, 118, 110, 0.32);
+      outline-offset: 2px;
+    }
+
+    .layout {
+      min-height: 0;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      overflow: hidden;
+    }
+
+    .sidebar {
+      min-height: 0;
+      border-right: 1px solid var(--line);
+      background: rgba(251, 250, 247, 0.96);
+      overflow-y: auto;
+    }
+
+    .sidebar-head {
+      padding: 14px 14px 10px;
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      gap: 8px;
+    }
+
+    .statline {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.3;
+    }
+
+    .stat {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 999px;
+      padding: 3px 8px;
+    }
+
+    .episode-list {
+      overflow: auto;
+      padding: 8px;
+      display: grid;
+      align-content: start;
+      gap: 6px;
+    }
+
+    .episode-item {
+      width: 100%;
+      text-align: left;
+      border: 1px solid transparent;
+      background: transparent;
+      border-radius: var(--radius);
+      padding: 10px;
+      display: grid;
+      gap: 6px;
+      color: var(--ink);
+    }
+
+    .episode-item:hover {
+      background: var(--soft);
+      border-color: var(--line);
+    }
+
+    .episode-item.active {
+      background: var(--teal-soft);
+      border-color: rgba(15, 118, 110, 0.35);
+    }
+
+    .episode-item.pending {
+      border-color: var(--line);
+      border-style: dashed;
+    }
+
+    .episode-item.pending.active {
+      background: var(--amber-soft);
+      border-color: rgba(180, 83, 9, 0.34);
+    }
+
+    .episode-name {
+      font-weight: 750;
+      line-height: 1.25;
+      overflow-wrap: anywhere;
+    }
+
+    .episode-meta {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.3;
+      overflow-wrap: anywhere;
+    }
+
+    .main {
+      min-width: 0;
+      min-height: 0;
+      overflow: auto;
+      padding: 18px;
+    }
+
+    .episode-header {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .episode-title {
+      font-size: 24px;
+      line-height: 1.18;
+      margin: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .file-name {
+      color: var(--muted);
+      font-size: 13px;
+      overflow-wrap: anywhere;
+    }
+
+    .metric-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .metric {
+      min-width: 86px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: var(--radius);
+      padding: 8px 10px;
+      box-shadow: var(--shadow);
+    }
+
+    .metric-value {
+      font-weight: 800;
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .metric-label {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.2;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .tab {
+      min-height: 34px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: var(--radius);
+      padding: 7px 10px;
+      white-space: nowrap;
+      color: var(--ink);
+    }
+
+    .tab.active {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: #ffffff;
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .select {
+      min-height: 34px;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      background: var(--panel);
+      color: var(--ink);
+      padding: 6px 9px;
+    }
+
+    .content-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .section-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .card-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1.3;
+      overflow-wrap: anywhere;
+    }
+
+    .card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: flex-end;
+      flex-shrink: 0;
+    }
+
+    .badge {
+      border-radius: 999px;
+      padding: 3px 8px;
+      font-size: 12px;
+      line-height: 1.25;
+      border: 1px solid var(--line);
+      background: var(--soft);
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    .badge.bullish,
+    .badge.true {
+      background: var(--green-soft);
+      border-color: rgba(33, 115, 70, 0.25);
+      color: var(--green);
+    }
+
+    .badge.watchful,
+    .badge.company,
+    .badge.sector,
+    .badge.theme {
+      background: var(--amber-soft);
+      border-color: rgba(180, 83, 9, 0.26);
+      color: var(--amber);
+    }
+
+    .badge.bearish,
+    .badge.false {
+      background: var(--red-soft);
+      border-color: rgba(180, 35, 24, 0.22);
+      color: var(--red);
+    }
+
+    .badge.neutral,
+    .badge.market,
+    .badge.macro,
+    .badge.policy {
+      background: var(--blue-soft);
+      border-color: rgba(36, 95, 159, 0.22);
+      color: var(--blue);
+    }
+
+    .body-text {
+      color: var(--ink);
+      line-height: 1.7;
+      overflow-wrap: anywhere;
+      white-space: pre-wrap;
+    }
+
+    .summary-stack {
+      display: grid;
+      gap: 12px;
+    }
+
+    .summary-block {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: var(--radius);
+      padding: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .summary-block-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 16px;
+      font-weight: 850;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+
+    .summary-block-title::before {
+      content: "";
+      width: 8px;
+      height: 22px;
+      border-radius: 999px;
+      background: var(--teal);
+      flex: 0 0 auto;
+    }
+
+    .summary-list {
+      margin: 0;
+      padding-left: 22px;
+      line-height: 1.72;
+    }
+
+    .summary-list li {
+      margin: 7px 0;
+      overflow-wrap: anywhere;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .quote {
+      border-left: 4px solid var(--teal);
+      background: var(--panel-2);
+      padding: 10px 12px;
+      line-height: 1.7;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      margin: 8px 0;
+    }
+
+    .points {
+      margin: 8px 0 0;
+      padding-left: 20px;
+      line-height: 1.65;
+    }
+
+    .points li {
+      margin: 5px 0;
+    }
+
+    .table-wrap {
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 780px;
+    }
+
+    th,
+    td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      line-height: 1.5;
+    }
+
+    th {
+      background: var(--panel-2);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .ai-workspace {
+      gap: 12px;
+    }
+
+    .ai-overview {
+      display: grid;
+      gap: 12px;
+    }
+
+    .ai-tab-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .ai-intel-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .ai-intel-col {
+      display: grid;
+      gap: 12px;
+    }
+
+    .ai-tools-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .btn.primary.ai-hero-btn {
+      padding: 10px 24px;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .ai-action-row,
+    .ai-link-row,
+    .ai-chip-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .ai-meta-strip {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--panel-2);
+    }
+
+    .ai-meta-item {
+      min-width: 0;
+      padding: 10px 12px;
+      border-right: 1px solid var(--line);
+    }
+
+    .ai-meta-item:last-child {
+      border-right: 0;
+    }
+
+    .ai-meta-value {
+      font-weight: 850;
+      font-size: 20px;
+      line-height: 1.1;
+      overflow-wrap: anywhere;
+    }
+
+    .ai-meta-label {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.2;
+    }
+
+    .ai-file-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 6px 9px;
+      background: var(--panel-2);
+      color: var(--ink);
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    .ai-section-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--panel-2);
+    }
+
+    .ai-column {
+      min-width: 0;
+      padding: 12px;
+      border-right: 1px solid var(--line);
+    }
+
+    .ai-column:last-child {
+      border-right: 0;
+    }
+
+    .ai-column-title {
+      font-size: 13px;
+      font-weight: 850;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .ai-list {
+      margin: 0;
+      padding-left: 19px;
+      line-height: 1.6;
+    }
+
+    .ai-list li {
+      margin: 5px 0;
+      overflow-wrap: anywhere;
+    }
+
+    .ai-theme-groups,
+    .ai-task-list,
+    .ai-reference-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .ai-theme-group,
+    .ai-details {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel-2);
+      overflow: hidden;
+    }
+
+    .ai-theme-group summary,
+    .ai-details summary {
+      cursor: pointer;
+      padding: 10px 12px;
+      font-weight: 850;
+      line-height: 1.3;
+      overflow-wrap: anywhere;
+    }
+
+    .ai-theme-count {
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 12px;
+      margin-left: 6px;
+    }
+
+    .ai-entity-row {
+      display: grid;
+      grid-template-columns: 86px minmax(110px, 0.8fr) minmax(150px, 1fr) minmax(220px, 2fr);
+      gap: 10px;
+      padding: 10px 12px;
+      border-top: 1px solid var(--line);
+      background: var(--panel);
+    }
+
+    .ai-entity-code {
+      font-weight: 850;
+      line-height: 1.4;
+      overflow-wrap: anywhere;
+    }
+
+    .ai-entity-name {
+      font-weight: 800;
+      line-height: 1.4;
+      overflow-wrap: anywhere;
+    }
+
+    .ai-entity-role,
+    .ai-entity-relation,
+    .ai-reference-meta,
+    .ai-reference-use,
+    .ai-task-readout {
+      color: var(--muted);
+      line-height: 1.55;
+      overflow-wrap: anywhere;
+    }
+
+    .ai-task-row {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 12px;
+      padding: 12px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .ai-task-row:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .ai-step {
+      font-size: 13px;
+      font-weight: 850;
+      color: var(--teal);
+      line-height: 1.3;
+    }
+
+    .ai-task-body {
+      min-width: 0;
+      display: grid;
+      gap: 8px;
+    }
+
+    .ai-task-title {
+      font-weight: 850;
+      line-height: 1.45;
+      overflow-wrap: anywhere;
+    }
+
+    .ai-chip {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--soft);
+      padding: 3px 8px;
+      font-size: 12px;
+      line-height: 1.25;
+      overflow-wrap: anywhere;
+    }
+
+    .ai-chip-label {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .ai-reference-row {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 12px;
+      padding: 10px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .ai-reference-row:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .ai-reference-title {
+      font-weight: 800;
+      line-height: 1.45;
+      overflow-wrap: anywhere;
+    }
+
+    .ai-preview-body {
+      padding: 12px;
+      border-top: 1px solid var(--line);
+    }
+
+    .ai-code-box {
+      max-height: 260px;
+    }
+
+    pre.raw {
+      margin: 0;
+      padding: 14px;
+      background: #20262d;
+      color: #f7f0df;
+      border-radius: var(--radius);
+      overflow: auto;
+      line-height: 1.5;
+      font-size: 13px;
+      max-height: 70vh;
+    }
+
+    .prompt-output {
+      max-height: none;
+      white-space: pre-wrap;
+    }
+
+    .empty {
+      min-height: 260px;
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      border: 1px dashed var(--line-strong);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.72);
+      text-align: center;
+      padding: 22px;
+      line-height: 1.6;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      .topbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .actions {
+        width: 100%;
+      }
+
+      .copy-status {
+        width: 100%;
+      }
+
+      .search-wrap {
+        width: 100%;
+        min-width: 0;
+        margin-left: 0;
+      }
+
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+        max-height: 280px;
+      }
+
+      .main {
+        padding: 14px;
+      }
+
+      .episode-title {
+        font-size: 21px;
+      }
+
+      .card-head {
+        display: grid;
+      }
+
+      .card-meta {
+        justify-content: flex-start;
+      }
+
+      .ai-meta-strip,
+      .ai-section-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ai-meta-item,
+      .ai-column {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .ai-meta-item:last-child,
+      .ai-column:last-child {
+        border-bottom: 0;
+      }
+
+      .ai-entity-row,
+      .ai-task-row,
+      .ai-reference-row {
+        grid-template-columns: 1fr;
+      }
+
+      .ai-intel-grid,
+      .ai-tools-row {
+        grid-template-columns: 1fr;
+      }
+
+      .analysis-search-row,
+      .analysis-toolbar,
+      .analysis-flow,
+      .analysis-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .watchlist-pinned-btn {
+      display: block;
+      width: 100%;
+      padding: 10px 12px;
+      background: var(--teal);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-align: left;
+      cursor: pointer;
+      margin-bottom: 8px;
+      transition: background 0.15s;
+    }
+    .watchlist-pinned-btn:hover { background: #0a605a; }
+    .watchlist-pinned-btn.active { background: #064e48; box-shadow: 0 0 0 2px var(--teal-soft); }
+
+    .analysis-page { padding: 16px; display: grid; gap: 12px; }
+    .analysis-header { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 2px; }
+    .analysis-header h2 { font-size: 1.1rem; font-weight: 800; margin: 0; }
+    .analysis-meta { color: var(--muted); font-size: 0.78rem; line-height: 1.35; }
+    .analysis-search-row { display: grid; grid-template-columns: minmax(220px, 1fr) auto; gap: 8px; align-items: center; }
+    .analysis-search { width: 100%; }
+    .analysis-saved-list { display: grid; gap: 10px; }
+    .analysis-section-block { margin-top: 12px; }
+    .analysis-source-list { display: grid; gap: 5px; margin-top: 6px; }
+    .analysis-source-list a { color: var(--blue); text-decoration: none; overflow-wrap: anywhere; line-height: 1.45; }
+    .analysis-source-list a:hover { text-decoration: underline; }
+    .analysis-toolbar { display: grid; grid-template-columns: 110px 150px minmax(180px, 1fr) auto; gap: 8px; align-items: center; }
+    .analysis-input { min-height: 34px; border: 1px solid var(--line-strong); border-radius: var(--radius); background: var(--panel); color: var(--ink); padding: 6px 9px; min-width: 0; }
+    .analysis-flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+    .analysis-step { border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel-2); padding: 10px; min-height: 120px; }
+    .analysis-step strong { display: block; margin-bottom: 6px; line-height: 1.35; }
+    .analysis-step p { margin: 0; color: var(--muted); line-height: 1.5; font-size: 0.82rem; }
+    .analysis-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .analysis-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; min-width: 720px; }
+    .analysis-table th { background: var(--panel-2); padding: 7px 10px; text-align: left; font-weight: 700; color: var(--muted); border-bottom: 1px solid var(--line); white-space: nowrap; }
+    .analysis-table td { padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; line-height: 1.5; }
+    .analysis-table tr:last-child td { border-bottom: 0; }
+    .analysis-template { width: 100%; min-height: 330px; resize: vertical; border: 1px solid var(--line-strong); border-radius: var(--radius); background: var(--panel); color: var(--ink); padding: 10px; line-height: 1.6; font-family: Consolas, "Microsoft JhengHei", monospace; font-size: 0.82rem; }
+    .analysis-report-list { display: grid; gap: 8px; max-height: 360px; overflow-y: auto; padding-right: 2px; }
+    .analysis-report { border: 1px solid var(--line); border-radius: var(--radius); padding: 10px; background: var(--panel); }
+    .analysis-report-title { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 5px; font-weight: 800; font-size: 0.82rem; }
+    .analysis-report-title a { color: var(--blue); text-decoration: none; }
+    .analysis-snippet { margin: 0; color: var(--muted); font-size: 0.78rem; line-height: 1.55; overflow-wrap: anywhere; }
+    .analysis-checklist { margin: 0; padding-left: 18px; display: grid; gap: 6px; color: var(--ink); line-height: 1.55; font-size: 0.86rem; }
+
+    .tw-page { padding: 16px; }
+    .tw-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; }
+    .tw-header h2 { font-size: 1.1rem; font-weight: 700; margin: 0; }
+    .tw-meta { font-size: 0.78rem; color: var(--muted); }
+    .tw-copy-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 10px; }
+    .tw-toolbar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+
+    .tw-table-wrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--line); }
+    .tw-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+    .tw-table th { background: var(--panel-2); padding: 6px 10px; text-align: left; font-weight: 600; color: var(--muted); border-bottom: 1px solid var(--line); white-space: nowrap; }
+    .tw-table td { padding: 6px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    .tw-table tr:last-child td { border-bottom: 0; }
+    .tw-table tr:hover td { background: var(--soft); }
+    .tw-table td:nth-child(1) { color: var(--muted); font-size: 0.75rem; white-space: nowrap; }
+    .tw-table td:nth-child(6) { max-width: 160px; font-size: 0.78rem; color: var(--muted); }
+    .tw-table td:nth-child(7) { max-width: 200px; font-size: 0.78rem; color: var(--muted); }
+
+    .tw-tier { border-radius: 4px; padding: 1px 6px; font-size: 0.72rem; font-weight: 700; margin-right: 4px; }
+    .tw-tier-A { background: var(--teal-soft); color: var(--teal); }
+    .tw-tier-B { background: var(--blue-soft); color: var(--blue); }
+    .tw-tier-C { background: var(--soft); color: var(--muted); }
+
+    .tw-score-bar { display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+    .tw-score-bar-fill { height: 6px; background: var(--teal); border-radius: 3px; flex-shrink: 0; }
+
+    .pf-summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin-bottom: 16px; }
+    .pf-summary-card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow); }
+    .pf-summary-label { color: var(--muted); font-size: 12px; margin-bottom: 6px; }
+    .pf-summary-value { font-size: 1.4rem; font-weight: 800; line-height: 1.2; }
+    .pf-summary-subvalue { margin-top: 7px; font-size: 12px; font-weight: 700; line-height: 1.3; }
+    .pf-cash-panel { margin-bottom: 16px; }
+    .pf-cash-title { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px; margin-bottom: 10px; }
+    .pf-cash-title strong { font-size: 15px; }
+    .pf-cash-note { color: var(--muted); font-size: 12px; line-height: 1.4; }
+    .pf-positive { color: var(--red); }
+    .pf-negative { color: var(--green); }
+    .pf-chart-wrap { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow); margin-bottom: 16px; }
+    .pf-chart-title { font-size: 13px; font-weight: 700; color: var(--muted); margin-bottom: 10px; }
+    .pf-bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; font-size: 12px; }
+    .pf-bar-label { width: 64px; text-align: right; color: var(--muted); flex-shrink: 0; }
+    .pf-bar-fill { height: 16px; border-radius: 3px; flex-shrink: 0; }
+    .pf-bar-num { font-weight: 600; white-space: nowrap; }
+    .pf-snap-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+    .pf-snap-form { background: var(--panel-2); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px; margin-bottom: 12px; }
+    .pf-form-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 10px; }
+    .pf-form-group label { display: block; font-size: 11px; color: var(--muted); margin-bottom: 3px; }
+    .pf-form-group input { width: 100%; border: 1px solid var(--line-strong); border-radius: 5px; padding: 6px 8px; font-size: 13px; background: var(--panel); color: var(--ink); }
+    .pf-btn-del { min-height: 26px; border: 1px solid var(--red); color: var(--red); background: var(--red-soft); border-radius: var(--radius); padding: 3px 8px; font-size: 11px; cursor: pointer; }
+    .pf-table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); margin-bottom: 16px; }
+    .pf-table { width: 100%; border-collapse: collapse; min-width: 680px; }
+    .pf-table th { background: var(--panel-2); padding: 8px 10px; text-align: left; font-weight: 700; color: var(--muted); border-bottom: 1px solid var(--line); white-space: nowrap; font-size: 0.8rem; }
+    .pf-table td { padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: middle; font-size: 0.88rem; color: var(--ink); }
+    .pf-table td.pf-positive,
+    .tw-table td.pf-positive { color: var(--red); }
+    .pf-table td.pf-negative,
+    .tw-table td.pf-negative { color: var(--green); }
+    .pf-table tr:last-child td { border-bottom: 0; }
+    .pf-table tr:hover td { background: var(--soft); }
+    .pf-tag { border-radius: 4px; padding: 1px 7px; font-size: 0.72rem; font-weight: 700; white-space: nowrap; }
+    .pf-tag-long { background: var(--teal-soft); color: var(--teal); }
+    .pf-tag-short { background: var(--amber-soft); color: var(--amber); }
+    .pf-form-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 10px; }
+    @media (max-width: 900px) { .pf-summary-grid { grid-template-columns: repeat(2, 1fr); } }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-title">投資觀測台</div>
+        <div class="brand-subtitle">&#21488;&#32929;&#28165;&#21934;&#12289;Podcast &#30740;&#31350;&#31558;&#35352;&#33287;&#20491;&#32929;&#20998;&#26512;</div>
+      </div>
+      <div class="actions hidden">
+        <button id="folderBtn" class="btn primary" type="button">選資料夾</button>
+        <button id="filesBtn" class="btn" type="button">選 JSON 檔</button>
+        <button id="clearBtn" class="btn" type="button" disabled>清除</button>
+      </div>
+      <button id="copyAllBtn" class="btn" type="button" disabled>複製本集全部</button>
+      <span id="copyStatus" class="copy-status" aria-live="polite"></span>
+      <div class="search-wrap">
+        <input id="searchInput" class="search" type="search" placeholder="搜尋集數、標題、內容">
+      </div>
+      <input id="folderInput" class="hidden" type="file" accept=".json,application/json" webkitdirectory multiple>
+      <input id="fileInput" class="hidden" type="file" accept=".json,application/json" multiple>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <button id="watchlistBtn" class="watchlist-pinned-btn" type="button">台股清單</button>
+        <button id="analysisBtn" class="watchlist-pinned-btn" type="button">個股分析</button>
+        <div id="episodeList" class="episode-list"></div>
+      </aside>
+
+      <main id="main" class="main">
+        <div class="empty">尚未載入資料</div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    const state = {
+      episodes: [],
+      pendingEpisodes: [],
+      activeId: null,
+      activePendingId: null,
+      activeView: "episode",
+      tab: getInitialTab(),
+      query: "",
+      stockUniverse: [],
+      aiResearchByEpisode: {},
+      aiReports: [],
+      stockAnalysisNotes: [],
+      stockAnalysisQuery: "",
+      twWatchlist: null,
+      analysis: {
+        ticker: "2337",
+        company: "旺宏",
+        keyword: "2337 旺宏"
+      },
+      filters: defaultFilters()
+    };
+
+    const dom = {
+      folderBtn: document.getElementById("folderBtn"),
+      filesBtn: document.getElementById("filesBtn"),
+      clearBtn: document.getElementById("clearBtn"),
+      copyAllBtn: document.getElementById("copyAllBtn"),
+      copyStatus: document.getElementById("copyStatus"),
+      folderInput: document.getElementById("folderInput"),
+      fileInput: document.getElementById("fileInput"),
+      searchInput: document.getElementById("searchInput"),
+      episodeList: document.getElementById("episodeList"),
+      watchlistBtn: document.getElementById("watchlistBtn"),
+      portfolioBtn: document.getElementById("portfolioBtn"),
+      analysisBtn: document.getElementById("analysisBtn"),
+      main: document.getElementById("main")
+    };
+
+    const tabOrder = [
+      ["summary", "摘要"],
+      ["news", "新聞"],
+      ["hostDisclosure", "持倉"],
+      ["stockAnalysis", "標的"],
+      ["qa", "Q&A"],
+      ["nextSteps", "下一步"],
+      ["aiPrompt", "AI助理"]
+    ];
+
+    dom.folderBtn.addEventListener("click", chooseFolder);
+    dom.filesBtn.addEventListener("click", () => dom.fileInput.click());
+    dom.clearBtn.addEventListener("click", clearAll);
+    dom.watchlistBtn.addEventListener("click", () => {
+      state.activeView = state.activeView === "watchlist" ? "episode" : "watchlist";
+      render();
+    });
+    if (dom.portfolioBtn) {
+      dom.portfolioBtn.addEventListener("click", () => {
+        state.activeView = state.activeView === "portfolio" ? "episode" : "portfolio";
+        render();
+      });
+    }
+    dom.analysisBtn.addEventListener("click", () => {
+      state.activeView = state.activeView === "analysis" ? "episode" : "analysis";
+      render();
+    });
+    dom.copyAllBtn.addEventListener("click", copyAllContent);
+    dom.folderInput.addEventListener("change", event => loadFiles(Array.from(event.target.files)));
+    dom.fileInput.addEventListener("change", event => loadFiles(Array.from(event.target.files)));
+    dom.searchInput.addEventListener("input", event => {
+      state.query = event.target.value.trim().toLowerCase();
+      render();
+    });
+
+    document.addEventListener("dragover", event => {
+      event.preventDefault();
+    });
+
+    document.addEventListener("drop", event => {
+      event.preventDefault();
+      const files = Array.from(event.dataTransfer.files || []);
+      if (files.length) loadFiles(files);
+    });
+
+    async function chooseFolder() {
+      if (window.showDirectoryPicker) {
+        try {
+          const handle = await window.showDirectoryPicker();
+          const files = await collectJsonFiles(handle);
+          await loadFiles(files);
+          return;
+        } catch (error) {
+          if (error && error.name === "AbortError") return;
+        }
+      }
+      dom.folderInput.click();
+    }
+
+    async function collectJsonFiles(handle) {
+      const files = [];
+      async function walk(dirHandle) {
+        for await (const entry of dirHandle.values()) {
+          if (entry.kind === "file" && entry.name.toLowerCase().endsWith(".json")) {
+            files.push(await entry.getFile());
+          }
+          if (entry.kind === "directory") {
+            await walk(entry);
+          }
+        }
+      }
+      await walk(handle);
+      return files;
+    }
+
+    async function tryLoadManifest() {
+      try {
+        const response = await fetch("manifests/podcast_json_manifest.json", { cache: "no-store" });
+        if (!response.ok) return;
+        const manifest = await response.json();
+        const files = Array.isArray(manifest.files) ? manifest.files : [];
+        const loaded = [];
+        for (const fileName of files) {
+          const fileResponse = await fetch(fileName, { cache: "no-store" });
+          if (!fileResponse.ok) continue;
+          const text = await fileResponse.text();
+          loaded.push({
+            name: fileName.split("/").pop(),
+            text,
+            lastModified: Date.now()
+          });
+        }
+        if (loaded.length) {
+          applyLoadedEntries(loaded, manifest.defaultFile || null);
+        }
+      } catch (error) {
+        // Direct file opening commonly blocks fetch; manual loading remains available.
+      }
+    }
+
+    async function tryLoadPendingManifest() {
+      try {
+        const response = await fetch("manifests/podcast_pending_manifest.json", { cache: "no-store" });
+        if (!response.ok) return;
+        const manifest = await response.json();
+        const rows = Array.isArray(manifest.episodes) ? manifest.episodes : [];
+        state.pendingEpisodes = rows.map((item, index) => buildPendingEpisode(item, index));
+        render();
+      } catch (error) {
+        state.pendingEpisodes = [];
+      }
+    }
+
+    async function tryLoadStockUniverse() {
+      try {
+        const response = await fetch("taiwan_stock_universe.json", { cache: "no-store" });
+        if (!response.ok) return;
+        const payload = await response.json();
+        state.stockUniverse = Array.isArray(payload.stocks) ? payload.stocks : [];
+        render();
+      } catch (error) {
+        state.stockUniverse = [];
+      }
+    }
+
+    async function tryLoadTwWatchlistManifest() {
+      try {
+        const response = await fetch("manifests/tw_watchlists_manifest.json", { cache: "no-store" });
+        if (!response.ok) return;
+        const manifest = await response.json();
+        const fileName = manifest.jsonFile || "tw_watchlists/tw_watchlist_latest.json";
+        const fileResponse = await fetch(fileName, { cache: "no-store" });
+        if (!fileResponse.ok) return;
+        const payload = await fileResponse.json();
+        state.twWatchlist = normalizeTwWatchlistPayload(payload, manifest);
+        render();
+      } catch (error) {
+        state.twWatchlist = null;
+      }
+    }
+
+    async function tryLoadAiResearchManifest() {
+      try {
+        const response = await fetch("manifests/ai_research_manifest.json", { cache: "no-store" });
+        if (!response.ok) return;
+        const manifest = await response.json();
+        const rows = Array.isArray(manifest.files) ? manifest.files : [];
+        const byEpisode = {};
+        for (const row of rows) {
+          const fileName = row.file || row.path || row.watchlistFile;
+          if (!fileName) continue;
+          const fileResponse = await fetch(fileName, { cache: "no-store" });
+          if (!fileResponse.ok) continue;
+          const payload = await fileResponse.json();
+          const episodeNumber = Number(payload.episode || row.episode || getEpisodeNumber(fileName, payload)) || 0;
+          if (episodeNumber > 0) {
+            byEpisode[String(episodeNumber)] = payload;
+          }
+        }
+        state.aiResearchByEpisode = byEpisode;
+        render();
+      } catch (error) {
+        state.aiResearchByEpisode = {};
+      }
+    }
+
+    async function tryLoadAiReportsManifest() {
+      try {
+        const response = await fetch("manifests/ai_reports_manifest.json", { cache: "no-store" });
+        if (!response.ok) return;
+        const manifest = await response.json();
+        const rows = Array.isArray(manifest.files) ? manifest.files : [];
+        const reports = [];
+        for (const row of rows) {
+          const fileName = row.reportFile || row.file || row.path;
+          if (!fileName) continue;
+          try {
+            const fileResponse = await fetch(fileName, { cache: "no-store" });
+            if (!fileResponse.ok) continue;
+            reports.push({
+              episode: Number(row.episode) || getEpisodeNumber(fileName, {}),
+              file: fileName,
+              sourceFile: row.sourceFile || "",
+              generatedAt: row.generatedAt || "",
+              text: await fileResponse.text()
+            });
+          } catch (error) {
+          }
+        }
+        state.aiReports = reports.sort((a, b) => b.episode - a.episode);
+        render();
+      } catch (error) {
+        state.aiReports = [];
+      }
+    }
+
+    async function tryLoadStockAnalysisNotes() {
+      try {
+        const response = await fetch("stock_analysis_notes.json", { cache: "no-store" });
+        if (!response.ok) return;
+        const payload = await response.json();
+        state.stockAnalysisNotes = Array.isArray(payload.analyses) ? payload.analyses : [];
+        render();
+      } catch (error) {
+        state.stockAnalysisNotes = [];
+      }
+    }
+
+    async function loadFiles(files) {
+      const jsonFiles = files.filter(file => isLoadableAnalysisJson(file.name));
+      const loaded = [];
+      for (const file of jsonFiles) {
+        try {
+          loaded.push({
+            name: file.webkitRelativePath || file.name,
+            text: await file.text(),
+            lastModified: file.lastModified || Date.now()
+          });
+        } catch (error) {
+          console.warn("Failed to read file", file.name, error);
+        }
+      }
+      applyLoadedEntries(loaded, null);
+      dom.folderInput.value = "";
+      dom.fileInput.value = "";
+    }
+
+    function isLoadableAnalysisJson(fileName) {
+      const base = String(fileName || "").split(/[\\/]/).pop().toLowerCase();
+      return /^ep\d+_analysis\.json$/.test(base);
+    }
+
+    function applyLoadedEntries(entries, preferredFileName) {
+      const next = [];
+      for (const entry of entries) {
+        try {
+          const data = JSON.parse(entry.text);
+          next.push(buildEpisode(entry.name, data, entry.lastModified));
+        } catch (error) {
+          console.warn("Invalid JSON", entry.name, error);
+        }
+      }
+
+      next.sort((a, b) => {
+        if (b.number !== a.number) return b.number - a.number;
+        return a.fileName.localeCompare(b.fileName, "zh-Hant");
+      });
+
+      state.episodes = next;
+      state.activeId = getPreferredEpisodeId(next, preferredFileName);
+      state.activePendingId = null;
+      state.tab = getInitialTab();
+      state.filters = defaultFilters();
+      render();
+    }
+
+    function getPreferredEpisodeId(episodes, preferredFileName) {
+      if (!episodes.length) return null;
+      if (preferredFileName) {
+        const wanted = preferredFileName.split(/[\\/]/).pop();
+        const found = episodes.find(ep => ep.base === wanted || ep.fileName === preferredFileName);
+        if (found) return found.id;
+      }
+      return episodes[0].id;
+    }
+
+    function buildEpisode(fileName, data, lastModified) {
+      const base = fileName.split(/[\\/]/).pop() || fileName;
+      const number = getEpisodeNumber(base, data);
+      const title = getEpisodeTitle(base, data, number);
+      return {
+        id: `${base}:${lastModified}:${Math.random().toString(36).slice(2)}`,
+        fileName,
+        base,
+        number,
+        title,
+        data,
+        haystack: JSON.stringify(data).toLowerCase()
+      };
+    }
+
+    function buildPendingEpisode(item, index) {
+      const number = Number(item.number) || getEpisodeNumber(item.transcriptFile || item.title || "", {});
+      const title = item.title || (number ? `EP${number}` : "待分析集數");
+      const haystack = JSON.stringify(item).toLowerCase();
+      return {
+        id: `pending:${number || index}:${item.updatedAt || item.sourceUrl || index}`,
+        number,
+        title,
+        data: item,
+        haystack
+      };
+    }
+
+    function getEpisodeNumber(fileName, data) {
+      const candidates = [
+        data.episode,
+        data.episodeNumber,
+        data.number,
+        data.meta && data.meta.episode
+      ];
+      for (const value of candidates) {
+        const n = Number(value);
+        if (Number.isFinite(n) && n > 0) return n;
+      }
+      const match = fileName.match(/EP\s*0*(\d+)/i) || fileName.match(/(\d{2,5})/);
+      return match ? Number(match[1]) : 0;
+    }
+
+    function getEpisodeTitle(fileName, data, number) {
+      const direct = data.title || data.episodeTitle || data.name || (data.meta && data.meta.title);
+      if (direct) return String(direct);
+      const cleaned = fileName
+        .replace(/\.json$/i, "")
+        .replace(/_analysis$/i, "")
+        .replace(/^EP\s*0*\d+[_\-\s]*/i, "")
+        .replace(/_/g, " ")
+        .trim();
+      if (cleaned && cleaned.toLowerCase() !== "analysis") return `EP${number || ""} ${cleaned}`.trim();
+      return number ? `EP${number}` : fileName.replace(/\.json$/i, "");
+    }
+
+    function clearAll() {
+      state.episodes = [];
+      state.pendingEpisodes = [];
+      state.activeId = null;
+      state.activePendingId = null;
+      state.query = "";
+      state.aiResearchByEpisode = {};
+      state.filters = defaultFilters();
+      dom.searchInput.value = "";
+      setCopyStatus("");
+      render();
+    }
+
+    function getActiveCopyEpisode(episodes = state.episodes, pendingEpisodes = state.pendingEpisodes) {
+      if (state.activePendingId) {
+        return pendingEpisodes.find(ep => ep.id === state.activePendingId) || null;
+      }
+      if (state.activeId) {
+        return episodes.find(ep => ep.id === state.activeId) || null;
+      }
+      return null;
+    }
+
+    async function copyAllContent() {
+      const ep = getActiveCopyEpisode();
+      if (!ep) return;
+
+      const text = state.activePendingId ? buildPendingCopyText(ep) : buildEpisodeCopyText(ep);
+      try {
+        await writeClipboard(text);
+        setCopyStatus("已複製本集全部內容", "success");
+      } catch (error) {
+        console.warn("Copy failed", error);
+        setCopyStatus("複製失敗，請改用瀏覽器允許剪貼簿權限", "error");
+      }
+    }
+
+    async function writeClipboard(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        return;
+      }
+
+      const textarea = document.createElement("textarea");
+      textarea.value = text;
+      textarea.setAttribute("readonly", "");
+      textarea.style.position = "fixed";
+      textarea.style.top = "-9999px";
+      textarea.style.left = "-9999px";
+      document.body.appendChild(textarea);
+      textarea.select();
+      const ok = document.execCommand("copy");
+      textarea.remove();
+      if (!ok) throw new Error("document.execCommand copy failed");
+    }
+
+    function setCopyStatus(text, type = "") {
+      dom.copyStatus.textContent = text;
+      dom.copyStatus.className = `copy-status${type ? ` ${type}` : ""}`;
+      if (setCopyStatus.timer) clearTimeout(setCopyStatus.timer);
+      if (text) {
+        setCopyStatus.timer = setTimeout(() => {
+          dom.copyStatus.textContent = "";
+          dom.copyStatus.className = "copy-status";
+        }, 2200);
+      }
+    }
+
+    function buildPendingCopyText(ep) {
+      const data = ep.data || {};
+      const lines = [
+        `${ep.number ? `EP${ep.number}` : ep.title} · 待分析`,
+        repeatChar("=", 28)
+      ];
+      copyField(lines, "標題", ep.title);
+      copyField(lines, "日期", data.date);
+      copyField(lines, "來源", data.source || "vocus.cc");
+      copyField(lines, "來源連結", data.sourceUrl);
+      copyField(lines, "逐字稿", data.transcriptFile);
+      copyField(lines, "逐字稿大小", formatBytes(data.transcriptSize || 0));
+      copyField(lines, "metadata", data.metadataFile);
+      copyField(lines, "prompt", data.promptFile);
+      copyField(lines, "publishedAt", data.publishedAt);
+      copyField(lines, "updatedAt", data.updatedAt);
+      return cleanCopyText(lines);
+    }
+
+    function buildEpisodeCopyText(ep) {
+      const data = ep.data || {};
+      const next = data.nextSteps && typeof data.nextSteps === "object" ? data.nextSteps : {};
+      const lines = [
+        episodeDisplayTitle(ep),
+        repeatChar("=", 28)
+      ];
+
+      copyField(lines, "檔案", ep.fileName || ep.base);
+      copyField(lines, "集數", data.episode || data.number || ep.number);
+      copyField(lines, "標題", data.title || ep.title);
+      copyField(lines, "日期", getEpisodeDate(data));
+      copyField(lines, "來源", data.source);
+      copyField(lines, "來源連結", data.sourceUrl);
+
+      copySection(lines, "摘要");
+      lines.push(stringify(data.summary || "節目未明確提及"));
+
+      copySection(lines, "新聞");
+      copyObjects(lines, arr(data.news), item => item.title || "未命名新聞", [
+        ["類別", "category"],
+        ["來源", "sourceRef"],
+        ["事件", "event"],
+        ["觀點", "opinion"]
+      ]);
+
+      copySection(lines, "主持人持倉揭露");
+      copyObjects(lines, arr(data.hostDisclosure), item => item.target || "未命名揭露", [
+        ["來源", "sourceRef"],
+        ["說話者", "speaker"],
+        ["動作", "action"],
+        ["原話", "quote"],
+        ["脈絡", "context"]
+      ]);
+
+      copySection(lines, "主題/標的觀點");
+      copyObjects(lines, arr(data.stockAnalysis), item => item.name || "未命名標的", [
+        ["類型", "type"],
+        ["ticker", "tickers"],
+        ["情緒", "sentiment"],
+        ["風險", "risk"],
+        ["主持人持有", "hostOwned"],
+        ["來源", "sourceRefs"],
+        ["分析", "analysis"]
+      ]);
+
+      copySection(lines, "Q&A");
+      copyObjects(lines, arr(data.qa), (_item, index) => `Q${index + 1}`, [
+        ["來源", "sourceRef"],
+        ["問題", "question"],
+        ["回答重點", "answerPoints"],
+        ["金句", "keyTakeaway"]
+      ]);
+
+      copySection(lines, "下一步研究計畫");
+      copyField(lines, "本集 thesis", next.episodeThesis);
+      copyObjects(lines, arr(next.priorityThemes), item => `${item.rank || "-"} · ${item.theme || "未命名主題"}`, [
+        ["priority", "priority"],
+        ["重要性", "whyItMatters"],
+        ["節目證據", "podcastEvidence"],
+        ["相關標的", "relatedStockAnalysis"],
+        ["下一步", "suggestedNextMove"]
+      ]);
+      copyObjects(lines, arr(next.candidateDiscovery), item => `候選搜尋 · ${item.theme || "未命名主題"}`, [
+        ["priority", "priority"],
+        ["台股分類", "twIndustryCategories"],
+        ["搜尋關鍵字", "searchKeywords"],
+        ["曝險驗證", "businessExposureToVerify"],
+        ["候選池規則", "candidatePoolRule"],
+        ["排除條件", "excludeIf"],
+        ["排序檢查", "rankingChecks"],
+        ["可查資料", "dataSourcesToCheck"],
+        ["Podcast 邊界", "podcastBoundaries"]
+      ]);
+      copyObjects(lines, buildTopTwStockAnalyses(ep, 9), item => `前九名台股 · ${item.code}.TW ${item.name || ""}`.trim(), [
+        ["產業", "industry"],
+        ["相關分數", "score"],
+        ["來源", "sources"],
+        ["相關主題", "themes"],
+        ["關聯理由", "reason"],
+        ["Podcast/AI 觀點", "analysis"],
+        ["下一步查證", "checks"],
+        ["風險提醒", "risk"]
+      ]);
+      copyObjects(lines, arr(next.researchPlan), item => `研究任務 ${item.step || "-"}`, [
+        ["任務", "task"],
+        ["目的", "purpose"],
+        ["需要資料", "neededData"],
+        ["使用方式", "howToUseResult"]
+      ]);
+      copyObjects(lines, arr(next.validationSignals), item => `驗證訊號 · ${item.theme || "未命名主題"}`, [
+        ["正向訊號", "positiveSignals"],
+        ["負向訊號", "negativeSignals"],
+        ["等待", "waitFor"]
+      ]);
+      copyObjects(lines, arr(next.riskTriggers), item => `風險觸發 · ${item.theme || "未命名主題"}`, [
+        ["觸發", "trigger"],
+        ["重要性", "whyItMatters"],
+        ["反應", "response"]
+      ]);
+      copyObjects(lines, arr(next.watchlistInstructions), item => item.watchlistName || "觀察清單", [
+        ["納入", "include"],
+        ["排除", "exclude"],
+        ["備註", "notes"]
+      ]);
+      copyList(lines, "決策框架", next.decisionFramework);
+      copyField(lines, "免責", next.notInvestmentAdvice);
+
+      copyObjects(lines, arr(next.webDiscussion), item => `網路討論 · ${item.theme || "未命名主題"}`, null);
+      copyObjects(lines, arr(next.opportunityCandidates), item => `研究候選 · ${item.ticker || item.companyName || item.rank || "未命名"}`, null);
+
+      copySection(lines, "完整性檢查");
+      copyObjects(lines, arr(data.coverageCheck), item => item.sourceRef || "未標來源", [
+        ["類型", "contentType"],
+        ["收錄位置", "coveredIn"],
+        ["備註", "note"]
+      ]);
+
+      return cleanCopyText(lines);
+    }
+
+    function copySection(lines, title) {
+      lines.push("", title, repeatChar("-", title.length + 4));
+    }
+
+    function copyObjects(lines, items, titleGetter, fields) {
+      if (!items.length) {
+        lines.push("節目未明確提及");
+        return;
+      }
+
+      items.forEach((item, index) => {
+        lines.push("", `${index + 1}. ${titleGetter(item, index)}`);
+        if (fields) {
+          fields.forEach(([label, key]) => copyField(lines, label, item[key], "   "));
+        } else {
+          copyField(lines, "內容", item, "   ");
+        }
+      });
+    }
+
+    function copyField(lines, label, value, prefix = "") {
+      lines.push(`${prefix}${label}: ${formatCopyValue(value, prefix)}`);
+    }
+
+    function copyList(lines, label, values) {
+      const list = arr(values);
+      if (!list.length) {
+        copyField(lines, label, "節目未明確提及");
+        return;
+      }
+      lines.push(`${label}:`);
+      list.forEach(item => lines.push(`- ${formatCopyValue(item)}`));
+    }
+
+    function formatCopyValue(value, prefix = "") {
+      if (value === null || value === undefined || value === "") return "節目未明確提及";
+      if (Array.isArray(value)) {
+        if (!value.length) return "[]";
+        if (value.every(item => item === null || typeof item !== "object")) {
+          return value.map(item => stringify(item)).join(", ");
+        }
+        return `\n${value.map(item => `${prefix}  - ${formatCopyValue(item, `${prefix}  `)}`).join("\n")}`;
+      }
+      if (typeof value === "object") {
+        return JSON.stringify(value, null, 2);
+      }
+      return String(value).replace(/\r\n/g, "\n").trim();
+    }
+
+    function cleanCopyText(lines) {
+      return lines.join("\n").replace(/\n{3,}/g, "\n\n").trim();
+    }
+
+    function repeatChar(char, length) {
+      return new Array(Math.max(0, length) + 1).join(char);
+    }
+
+    function buildAiAssistantReport(ep) {
+      const data = ep.data || {};
+      const next = data.nextSteps && typeof data.nextSteps === "object" ? data.nextSteps : {};
+      const haystack = JSON.stringify({
+        summary: data.summary,
+        news: data.news,
+        stockAnalysis: data.stockAnalysis,
+        nextSteps: data.nextSteps,
+        qa: data.qa
+      }).toLowerCase();
+
+      const entities = dedupeEntities(getRepresentativeEntityRules()
+        .filter(rule => rule.keywords.some(keyword => haystack.includes(keyword.toLowerCase())))
+        .flatMap(rule => rule.entities));
+
+      const tasks = buildAssistantTasks(next);
+      const dashboard = buildAssistantDashboard(next, tasks);
+
+      return {
+        title: data.title || ep.title || episodeDisplayTitle(ep),
+        episodeNumber: Number(data.episode || data.number || ep.number) || 0,
+        entities,
+        tasks,
+        dashboard,
+        blindSpots: buildBlindSpots(haystack),
+        crowdingRisks: buildCrowdingRisks(next, data),
+        reverseQuestions: buildReverseQuestions(haystack),
+        xqCodes: entities
+          .filter(item => item.market === "TW" && item.code)
+          .map(item => `${item.code}.TW`)
+      };
+    }
+
+    function getAiResearchForEpisode(ep) {
+      if (!ep || !ep.number) return null;
+      return state.aiResearchByEpisode[String(ep.number)] || null;
+    }
+
+    function applyExternalAiResearch(payload, fallback) {
+      if (!payload || typeof payload !== "object") return fallback;
+      const source = payload.report && typeof payload.report === "object" ? payload.report : payload;
+      const entities = normalizeAiEntities(arr(source.entities).length ? source.entities : source.entityMapping);
+      const tasks = normalizeAiTasks(arr(source.tasks).length ? source.tasks : source.researchTasks);
+      const dashboard = normalizeAiDashboard(source.dashboard || source.signalDashboard || {});
+      const newsReferences = normalizeNewsReferences([
+        ...arr(payload.newsReferences),
+        ...arr(source.newsReferences)
+      ]);
+      const xqCodes = normalizeXqCodes([
+        ...arr(payload.xqCodes),
+        ...arr(source.xqCodes),
+        ...entities.filter(item => item.market === "TW").map(item => item.code)
+      ]);
+
+      return {
+        ...fallback,
+        isExternalAi: true,
+        generatedAt: payload.generatedAt || source.generatedAt || "",
+        mode: payload.mode || "manual_chatgpt_with_web",
+        usesLiveWebNews: payload.usesLiveWebNews !== false,
+        newsReferences,
+        entities: entities.length ? entities : fallback.entities,
+        tasks: tasks.length ? tasks : fallback.tasks,
+        dashboard: {
+          leading: dashboard.leading.length ? dashboard.leading : fallback.dashboard.leading,
+          confirming: dashboard.confirming.length ? dashboard.confirming : fallback.dashboard.confirming,
+          negative: dashboard.negative.length ? dashboard.negative : fallback.dashboard.negative
+        },
+        blindSpots: arr(source.blindSpots).length ? arr(source.blindSpots) : fallback.blindSpots,
+        crowdingRisks: arr(source.crowdingRisks).length ? arr(source.crowdingRisks) : fallback.crowdingRisks,
+        reverseQuestions: arr(source.reverseQuestions).length ? arr(source.reverseQuestions) : fallback.reverseQuestions,
+        xqCodes: xqCodes.length ? xqCodes : fallback.xqCodes
+      };
+    }
+
+    function normalizeAiEntities(values) {
+      return arr(values).map(item => ({
+        market: item.market || (String(item.code || "").match(/^\d{4}/) ? "TW" : ""),
+        code: normalizeStockCode(item.code || item.ticker || ""),
+        ticker: item.ticker || "",
+        name: item.name || item.company || "",
+        theme: item.theme || item.sector || item.topic || "",
+        role: item.role || item.supplyChainRole || item.position || "",
+        relation: item.relation || item.reason || item.evidence || item.thesis || ""
+      })).filter(item => item.name || item.code || item.ticker);
+    }
+
+    function normalizeAiTasks(values) {
+      return arr(values).map((item, index) => ({
+        step: item.step || index + 1,
+        task: item.task || item.title || item.researchTask || "未命名任務",
+        sources: arr(item.sources).length ? arr(item.sources) : arr(item.dataSources),
+        keywords: arr(item.keywords).length ? arr(item.keywords) : arr(item.searchKeywords),
+        readout: item.readout || item.howToUseResult || item.judgement || item.validation || ""
+      }));
+    }
+
+    function normalizeAiDashboard(value) {
+      return {
+        leading: arr(value.leading).length ? arr(value.leading) : arr(value.leadingIndicators),
+        confirming: arr(value.confirming).length ? arr(value.confirming) : arr(value.confirmingIndicators || value.laggingConfirmation),
+        negative: arr(value.negative).length ? arr(value.negative) : arr(value.riskTriggers || value.breakPoints)
+      };
+    }
+
+    function normalizeNewsReferences(values) {
+      const seen = new Set();
+      return arr(values).map(item => {
+        const url = item.url || item.link || "";
+        const title = item.title || item.headline || url || "未命名新聞";
+        const key = `${title}|${url}`;
+        if (seen.has(key)) return null;
+        seen.add(key);
+        return {
+          title,
+          source: item.source || item.publisher || item.site || "",
+          publishedAt: item.publishedAt || item.date || item.time || "",
+          url,
+          usedFor: item.usedFor || item.relevance || item.summary || ""
+        };
+      }).filter(Boolean);
+    }
+
+    function normalizeXqCodes(values) {
+      const seen = new Set();
+      return arr(values).map(normalizeXqCode).filter(Boolean).filter(code => {
+        if (seen.has(code)) return false;
+        seen.add(code);
+        return true;
+      });
+    }
+
+    function normalizeXqCode(value) {
+      const text = String(value || "").trim();
+      const match = text.match(/^(\d{4})(?:\.TW)?$/i);
+      return match ? `${match[1]}.TW` : "";
+    }
+
+    function normalizeStockCode(value) {
+      const text = String(value || "").trim();
+      const match = text.match(/^(\d{4})(?:\.TW)?$/i);
+      return match ? match[1] : text;
+    }
+
+    function getRepresentativeEntityRules() {
+      return [
+        {
+          keywords: ["被動元件", "mlcc", "高壓 mlcc", "47uf", "22uf", "電容", "電感", "電阻", "passive"],
+          entities: [
+            tw("2327", "國巨", "被動元件/MLCC/電阻", "上游元件製造", "若高階料號缺貨與漲價落地，龍頭報價與產品組合最先被市場驗證"),
+            tw("2492", "華新科", "MLCC/被動元件", "上游元件製造", "跟隨高階 MLCC 與被動元件循環，需看報價與稼動率"),
+            tw("3026", "禾伸堂", "MLCC/被動元件", "元件製造與通路", "可觀察高壓 MLCC 與 AI 需求是否帶動營收"),
+            tw("2375", "凱美", "鋁電容/被動元件", "鋁電容與被動元件製造", "鋁電容若從消費轉向 AI power rack，毛利率彈性需優先驗證"),
+            tw("8042", "金山電", "鋁電容", "鋁電容製造", "snap-in/牛角電容缺口若擴大，交期與報價可能先反映"),
+            tw("2472", "立隆電", "鋁電容", "鋁電容製造", "鋁電容供需緊張時可作同業營收與毛利對照"),
+            tw("6449", "鈺邦", "聚合物電容", "高階電容製造", "聚合物電容若切入高功耗平台，需看產品組合與客戶驗證"),
+            tw("3090", "日電貿", "被動元件通路", "通路與庫存", "現貨與交期變化常先在通路端出現，適合當供需溫度計"),
+            tw("3624", "光頡", "電阻", "晶片電阻製造", "若電阻從成本推升走到供需漲價，報價與毛利需同步改善"),
+            tw("6173", "信昌電", "MLCC/被動元件", "被動元件製造", "若 MLCC 與高階料號供需緊張延續，需看產品組合與月營收")
+          ]
+        },
+        {
+          keywords: ["power rack", "功率元件", "功率半導體", "電源架", "電源櫃", "power components", "mosfet", "sic"],
+          entities: [
+            tw("2308", "台達電", "AI 電源/power rack", "電源與電能管理", "AI 機櫃功耗提升時，電源架與電源模組是直接受惠鏈"),
+            tw("2301", "光寶科", "伺服器電源", "電源供應器", "需驗證 AI 伺服器電源出貨與產品組合改善"),
+            tw("2481", "強茂", "功率元件", "二極體/整流元件", "若 power components 漲價擴散，離散元件廠可作觀察"),
+            tw("5425", "台半", "功率半導體", "分離式元件/功率元件", "需分辨 AI 電源需求與一般消費補庫存"),
+            tw("3675", "德微", "功率元件", "二極體與整流元件", "若高功耗平台拉動規格升級，毛利率是確認點"),
+            tw("8261", "富鼎", "MOSFET", "功率半導體", "AI 電源架若增加 MOSFET 用量，需看車用/伺服器產品占比"),
+            tw("6412", "群電", "伺服器電源", "電源供應器", "AI 電源規格升級時可作 PSU 同業對照"),
+            tw("3015", "全漢", "電源供應器", "電源供應器", "需驗證伺服器與高階電源占比，而非只看一般電源循環"),
+            tw("2457", "飛宏", "電源供應器", "電源與充電設備", "若資料中心電源需求擴散，需看產品是否能對應 AI 電源架")
+          ]
+        },
+        {
+          keywords: ["tpu", "google", "blackstone", "asic", "ai asic", "ai 晶片", "自有晶片"],
+          entities: [
+            us("GOOGL", "Alphabet", "Google TPU/Cloud", "雲端平台與自研 TPU", "TPU Cloud 擴大外銷時，平台方先取得雲端與晶片生態位"),
+            us("BX", "Blackstone", "TPU Cloud", "資本與第三方雲合作方", "第三方架構若降低客戶資料疑慮，有助 TPU cluster 採用"),
+            us("AVGO", "Broadcom", "AI ASIC", "客製化 ASIC 設計", "CSP 自研晶片競爭下，是 ASIC 供應鏈核心代表"),
+            tw("2330", "台積電", "先進製程/AI 晶片", "晶圓代工", "所有 AI ASIC/GPU/TPU 競爭最終回到先進製程產能"),
+            tw("2454", "聯發科", "ASIC/IC 設計", "IC 設計", "若被放入 ASIC 或特定平台討論，需看實際產品線與客戶證據"),
+            tw("3661", "世芯-KY", "ASIC 設計服務", "AI ASIC 設計服務", "若 CSP 客製化晶片需求擴大，設計服務與 NRE 需求需追蹤"),
+            tw("3443", "創意", "ASIC 設計服務", "ASIC/IP 設計服務", "可作台股 AI ASIC 服務供應鏈代表"),
+            tw("3035", "智原", "ASIC/IP", "ASIC 與 IP 服務", "需驗證先進製程、客戶與量產時程"),
+            tw("2360", "致茂", "TPU/AI 測試", "測試設備", "若 TPU 供應鏈擴張，測試設備與量測需求需追蹤"),
+            tw("6515", "穎崴", "測試介面", "半導體測試介面", "AI ASIC 測試需求擴大時，探針卡/測試介面可作確認點"),
+            tw("6223", "旺矽", "測試介面", "探針卡與測試介面", "需看 AI/HPC 測試需求是否轉成營收與毛利"),
+            tw("6531", "愛普", "IPD/整合被動元件", "記憶體與 IPD", "若 IPD/S-SiCap 切入先進封裝或 TPU，放量時程是核心驗證")
+          ]
+        },
+        {
+          keywords: ["晶圓代工", "osat", "封測", "先進封裝", "產能", "包產線", "搶產能"],
+          entities: [
+            tw("2330", "台積電", "晶圓代工", "先進製程產能", "產能是 AI 投資的限制器，也是上游最早被搶的資源"),
+            tw("3711", "日月光投控", "OSAT/封測", "封測與先進封裝", "若產能爭奪蔓延至 OSAT，封測稼動率與資本支出需先看"),
+            tw("2449", "京元電子", "測試", "晶圓測試", "AI 晶片出貨增加時，測試需求可作中游確認"),
+            tw("6239", "力成", "封測", "記憶體與邏輯封測", "需分辨記憶體循環與 AI 封測需求"),
+            tw("6257", "矽格", "測試", "IC 測試", "可作台股測試端景氣對照"),
+            tw("6147", "頎邦", "封測", "面板驅動與封測", "若非 AI 直接曝險，需降權看待"),
+            tw("2360", "致茂", "測試設備", "半導體測試設備", "產能爭奪若擴散到測試環節，設備需求可作外部驗證"),
+            tw("6515", "穎崴", "測試介面", "半導體測試介面", "高階 AI 晶片測試需求若提升，需看產品組合與毛利"),
+            tw("6223", "旺矽", "測試介面", "探針卡與測試介面", "可作 AI/HPC 測試需求的同業對照")
+          ]
+        },
+        {
+          keywords: ["光通", "雷射", "光模組", "cpo", "矽光子", "optical"],
+          entities: [
+            tw("3081", "聯亞", "雷射/光通", "光通訊上游磊晶與雷射", "若雷射產能被包下，上游雷射與磊晶通常較早反映"),
+            tw("3163", "波若威", "光通訊", "光纖通訊元件", "AI data center 拉貨時需看光通產品規格升級"),
+            tw("6442", "光聖", "光通訊", "光通訊元件", "高速光通需求若延續，營收動能是確認點"),
+            tw("3363", "上詮", "光通訊", "光纖被動元件", "可觀察 CPO/資料中心相關訂單是否放大"),
+            tw("4979", "華星光", "光模組", "光通訊模組", "光模組族群需看 800G/1.6T 與客戶驗證"),
+            tw("4977", "眾達-KY", "光模組", "光通訊模組", "需追蹤高速產品與美系資料中心需求"),
+            tw("3450", "聯鈞", "光通/雷射", "光通訊元件", "若雷射與光通產能成為 AI 戰略資源，需看高速產品與客戶驗證")
+          ]
+        },
+        {
+          keywords: ["ai 伺服器", "gb200", "blackwell", "機櫃", "散熱", "滑軌", "ub", "伺服器"],
+          entities: [
+            us("NVDA", "NVIDIA", "GPU/Blackwell", "AI 加速器平台", "平台規格決定下游元件用量與時點"),
+            tw("3017", "奇鋐", "散熱", "AI 伺服器散熱", "高功耗平台最直接拉動散熱規格升級"),
+            tw("3324", "雙鴻", "散熱", "伺服器散熱", "需看 AI 產品占比與毛利率"),
+            tw("3653", "健策", "散熱/均熱/機構", "高階散熱與機構件", "若無塵室與 AI 設備被市場忽略，強營收可能等待資金回流"),
+            tw("2059", "川湖", "滑軌", "伺服器滑軌", "AI 機櫃升級帶動高階滑軌需求"),
+            tw("3665", "貿聯-KY", "線束/連接", "高速線束與連接", "機櫃功耗與高速傳輸提升時需看規格升級"),
+            tw("2382", "廣達", "AI 伺服器 ODM", "伺服器整機", "AI 硬體投資延續時，ODM 出貨與毛利率是觀察點"),
+            tw("3231", "緯創", "AI 伺服器 ODM", "伺服器整機", "需看 AI server 出貨占比、客戶結構與營收轉化"),
+            tw("6669", "緯穎", "AI 伺服器 ODM", "雲端伺服器", "CSP 算力投資若延續，雲端伺服器出貨是確認點"),
+            tw("2356", "英業達", "AI 伺服器 ODM", "伺服器整機", "需分辨 AI 伺服器與一般伺服器需求")
+          ]
+        },
+        {
+          keywords: ["記憶體", "hbm", "ddr4", "ddr3", "dram", "nand", "戰略物資"],
+          entities: [
+            tw("2344", "華邦電", "記憶體", "Specialty DRAM/NOR", "legacy 或特殊記憶體供需緊張時可作觀察"),
+            tw("2337", "旺宏", "記憶體", "NOR Flash", "需看 legacy 報價與庫存週期"),
+            tw("2408", "南亞科", "DRAM", "DRAM 製造", "DRAM 報價循環與稼動率是核心"),
+            tw("3260", "威剛", "記憶體模組", "通路與模組", "現貨報價與庫存評價常先反映"),
+            tw("8299", "群聯", "NAND 控制晶片", "NAND 控制晶片與模組", "需看 NAND 報價與控制晶片需求")
+          ]
+        },
+        {
+          keywords: ["載板", "abf", "substrate", "先進封裝", "ccl", "玻璃基板"],
+          entities: [
+            tw("3037", "欣興", "ABF/載板", "IC 載板", "AI ASIC/GPU 封裝需求提高時，載板規格與產能是關鍵"),
+            tw("3189", "景碩", "載板", "IC 載板", "需看高階載板稼動率與報價"),
+            tw("8046", "南電", "ABF/載板", "IC 載板", "ABF 循環回升需以營收與毛利確認"),
+            tw("2383", "台光電", "CCL/材料", "高階 CCL", "AI 伺服器與高速板材需求若擴張，材料端需看報價與稼動率"),
+            tw("6274", "台燿", "CCL/材料", "高階 CCL", "可作高速材料需求的同業對照")
+          ]
+        },
+        {
+          keywords: ["漢唐", "無塵室", "建廠", "廠務", "工程", "營收這麼好", "設備跟原料"],
+          entities: [
+            tw("2404", "漢唐", "無塵室/廠務工程", "半導體建廠工程", "若 AI 與先進製程資本支出延續，工程營收與毛利是落後確認"),
+            tw("5536", "聖暉", "廠務工程", "無塵室與廠務系統", "建廠週期延續時，在手訂單與毛利率需追蹤"),
+            tw("6139", "亞翔", "廠務工程", "無塵室與機電工程", "可作半導體建廠景氣對照"),
+            tw("6691", "洋基工程", "廠務工程", "高科技廠務", "需看在手訂單與認列節奏"),
+            tw("6196", "帆宣", "設備/廠務工程", "半導體設備與系統整合", "半導體建廠與先進製程擴產若延續，訂單與營收可作確認"),
+            tw("6613", "朋億", "廠務工程", "廠務系統工程", "若資金回流工程股，營收品質是排序關鍵")
+          ]
+        },
+        {
+          keywords: ["csp", "blank check", "銅", "pvc", "原物料", "通膨", "水電工程"],
+          entities: [
+            tw("1605", "華新", "銅/線纜/原物料", "電線電纜與金屬材料", "銅價上行時需看成本轉嫁與庫存利益"),
+            tw("1609", "大亞", "電線電纜", "電纜與重電材料", "AI 資本支出與電網需求若延續，線纜需求可受惠"),
+            tw("1618", "合機", "電線電纜", "電線電纜", "若資料中心與電力基建帶動線纜需求，需看訂單與銅價轉嫁"),
+            tw("1301", "台塑", "PVC/塑化", "PVC 與塑化上游", "PVC 報價與利差是確認點"),
+            tw("1303", "南亞", "PVC/塑化", "PVC 與電子材料", "PVC 與材料需求若同步升溫，需分拆塑化與電子材料貢獻"),
+            tw("1305", "華夏", "PVC", "PVC 製造", "PVC 漲價能否轉嫁至下游是核心"),
+            tw("1313", "聯成", "PVC/化工", "PVC 與可塑劑", "需看利差與需求是否同步")
+          ]
+        },
+        {
+          keywords: ["電子通路", "通路商", "庫存", "現貨"],
+          entities: [
+            tw("3702", "大聯大", "電子通路", "IC 與電子零組件通路", "現貨與庫存週期可先反映供需變化"),
+            tw("3036", "文曄", "電子通路", "半導體通路", "需看庫存評價、應收帳款與產品線"),
+            tw("8112", "至上", "電子通路", "記憶體/電子通路", "記憶體與零組件現貨循環可帶動營收")
+          ]
+        }
+      ];
+    }
+
+    function tw(code, fallbackName, theme, role, relation) {
+      const found = state.stockUniverse.find(item => item.code === code);
+      return {
+        market: "TW",
+        code,
+        ticker: "",
+        name: found ? found.name : fallbackName,
+        theme,
+        role,
+        relation
+      };
+    }
+
+    function us(ticker, name, theme, role, relation) {
+      return { market: "US", code: ticker, ticker, name, theme, role, relation };
+    }
+
+    function dedupeEntities(entities) {
+      const seen = new Map();
+      entities.forEach(item => {
+        const key = `${item.market}:${item.code || item.name}`;
+        if (!seen.has(key)) {
+          seen.set(key, { ...item });
+          return;
+        }
+        const current = seen.get(key);
+        current.theme = unique([current.theme, item.theme].filter(Boolean).join(" / ").split(" / ")).join(" / ");
+        current.relation = current.relation || item.relation;
+      });
+      return Array.from(seen.values());
+    }
+
+    function buildAssistantTasks(next) {
+      return arr(next.researchPlan).map((item, index) => {
+        const text = [
+          item.task,
+          item.purpose,
+          item.howToUseResult,
+          ...arr(item.neededData)
+        ].join(" ").toLowerCase();
+        return {
+          step: item.step || index + 1,
+          task: item.task || "未命名任務",
+          sources: recommendSources(text),
+          keywords: recommendKeywords(text, item),
+          readout: item.howToUseResult || "查完後用來判斷題材是否能從敘事進入財務驗證。"
+        };
+      });
+    }
+
+    function recommendSources(text) {
+      const sources = ["公開資訊觀測站", "月營收公告", "財報三率", "法說會簡報/逐字稿"];
+      if (/報價|交期|缺|漲價|現貨|庫存/.test(text)) sources.push("通路商法說", "產業報價新聞", "同業公告");
+      if (/毛利|財報|營收|獲利/.test(text)) sources.push("Goodinfo/財報狗/XQ 財務資料", "券商產業報告");
+      if (/產能|擴產|資本支出|capex|包產/.test(text)) sources.push("重大訊息", "公司年報", "資本支出新聞");
+      if (/技術|線型|五日|十日|成交量|回檔/.test(text)) sources.push("XQ 技術線圖", "籌碼與成交量資料");
+      if (/tpu|asic|google|nvidia|blackwell|gb200/.test(text)) sources.push("供應鏈新聞", "客戶平台發表會", "法說 Q&A");
+      return unique(sources);
+    }
+
+    function recommendKeywords(text, item) {
+      const keywords = arr(item.neededData).map(value => stringify(value)).filter(Boolean);
+      if (/被動|mlcc|電容|電感|電阻/.test(text)) keywords.push("高壓 MLCC", "47uF", "22uF", "snap-in", "牛角電容", "交期", "漲價");
+      if (/power|功率|電源/.test(text)) keywords.push("power rack", "AI 機櫃", "功率元件", "MOSFET", "電源模組");
+      if (/tpu|asic/.test(text)) keywords.push("TPU", "AI ASIC", "Google", "客製化晶片", "先進封裝");
+      if (/osat|封測|產能/.test(text)) keywords.push("OSAT", "先進封裝", "產能利用率", "包產線", "資本支出");
+      if (/光通|雷射/.test(text)) keywords.push("雷射", "光模組", "800G", "1.6T", "CPO");
+      return unique(keywords).slice(0, 14);
+    }
+
+    function buildAssistantDashboard(next, tasks) {
+      const validation = arr(next.validationSignals);
+      const risks = arr(next.riskTriggers);
+      const leading = unique([
+        ...validation.flatMap(item => arr(item.positiveSignals)),
+        "報價新聞與漲價函",
+        "現貨市場與交期變化",
+        "同業擴產/停止接單/包產宣告"
+      ]).slice(0, 14);
+      const confirming = unique([
+        ...tasks.flatMap(item => item.keywords).filter(value => /營收|毛利|財報|法說|稼動率|利用率/.test(value)),
+        "下月營收 YoY/MoM",
+        "季報毛利率與營益率",
+        "法說會對產品線與交期的口徑",
+        "AI 客戶或平台量產時程"
+      ]).slice(0, 12);
+      const negative = unique([
+        ...validation.flatMap(item => arr(item.negativeSignals)),
+        ...risks.map(item => item.trigger).filter(Boolean),
+        "利多公布後股價無法轉強",
+        "報價鬆動或交期縮短"
+      ]).slice(0, 14);
+      return { leading, confirming, negative };
+    }
+
+    function buildBlindSpots(haystack) {
+      const items = [
+        "缺料與漲價需排除 overbooking、重複下單與恐慌備貨；若終端需求沒有同步，庫存回補後可能反轉。",
+        "股價可能領先基本面太多，利多落地時反而變成獲利了結點。",
+        "若龍頭或二線廠集體擴產，市場會提前下修未來毛利率假設。"
+      ];
+      if (haystack.includes("tpu") || haystack.includes("asic")) {
+        items.push("TPU/ASIC 題材要確認客戶實際採用與軟體生態，不是只有晶片供應鏈敘事。");
+      }
+      if (haystack.includes("csp") || haystack.includes("blank check")) {
+        items.push("CSP 資本支出若從不計代價轉向 ROI 審查，整條 AI 零組件鏈都會被重新估值。");
+      }
+      if (haystack.includes("消費")) {
+        items.push("消費級料號若只是跟漲，終端需求疲弱會使報價最先鬆動。");
+      }
+      return items;
+    }
+
+    function buildCrowdingRisks(next, data) {
+      const secondary = arr(next.priorityThemes)
+        .filter(item => item.priority === "secondary" || item.priority === "background")
+        .map(item => `${item.theme}: 若主線吸金，可能被降權為等待營收或資金回流的觀察線。`);
+      const watchful = arr(data.stockAnalysis)
+        .filter(item => item.sentiment === "watchful")
+        .slice(0, 6)
+        .map(item => `${item.name}: 題材未進入主線或缺乏新證據時，容易被提款。`);
+      return unique([...secondary, ...watchful]).slice(0, 10);
+    }
+
+    function buildReverseQuestions(haystack) {
+      const questions = [
+        "如果下個月營收與毛利率沒有跟上漲價敘事，我要把這條主線降權到什麼程度？",
+        "目前最強的標的是因為真瓶頸，還是因為流動性、處置與市場情緒共同放大？",
+        "若 AI 投資沒有停，但供給端比預期更快開出，哪一段供應鏈的議價權會最先消失？"
+      ];
+      if (haystack.includes("tpu")) {
+        questions.push("Google TPU 外銷擴大是新增需求，還是從 NVIDIA ecosystem 轉移估值與訂單？");
+      }
+      return questions.slice(0, 4);
+    }
+
+    function buildAiAssistantReportText(report) {
+      const lines = [
+        report.title,
+        repeatChar("=", 28),
+        report.isExternalAi ? "來源: 人工更新 AI+即時新聞研究檔" : "來源: 本機規則預覽",
+        report.generatedAt ? `更新時間: ${report.generatedAt}` : "",
+        "",
+        "即時新聞參考"
+      ];
+      arr(report.newsReferences).forEach(item => {
+        lines.push(`- ${item.source || "來源未標示"}｜${item.publishedAt || "日期未標示"}｜${item.title || ""}${item.url ? `｜${item.url}` : ""}`);
+        if (item.usedFor) lines.push(`  用於判斷: ${item.usedFor}`);
+      });
+      if (!arr(report.newsReferences).length) {
+        lines.push("- 尚未建立人工新聞更新檔");
+      }
+      lines.push(
+        "",
+        "1. 主線概念落地化"
+      );
+      report.entities.forEach(item => {
+        lines.push(`- ${item.name} (${item.code || item.ticker})｜${item.market}｜${item.theme}｜${item.role}｜${item.relation}`);
+      });
+      lines.push("", "2. 研究任務執行方案");
+      report.tasks.forEach(item => {
+        lines.push(`- Step ${item.step}: ${item.task}`);
+        lines.push(`  資料管道: ${item.sources.join(", ")}`);
+        lines.push(`  關鍵字: ${item.keywords.join(", ")}`);
+        lines.push(`  判讀: ${item.readout}`);
+      });
+      lines.push("", "3. 訊號監控儀表板");
+      copyList(lines, "領先指標（短）", report.dashboard.leading);
+      copyList(lines, "落後確認（中）", report.dashboard.confirming);
+      copyList(lines, "破局/降權訊號", report.dashboard.negative);
+      lines.push("", "4. 盲點與延伸思考");
+      copyList(lines, "邏輯漏洞", report.blindSpots);
+      copyList(lines, "資金排擠", report.crowdingRisks);
+      copyList(lines, "反向問題", report.reverseQuestions);
+      return cleanCopyText(lines);
+    }
+
+    function buildAiAssistantPromptText(ep) {
+      const notes = buildEpisodeCopyText(ep);
+      return `📥 NotebookLM / AI 投資研究助理專用 Prompt
+【角色設定】
+你是一位專業的投資研究助理，熟悉台股與美股市場、科技產業供應鏈（半導體、AI、電子零組件等），且具備深度的基本面與資金面判讀能力。你的工作不是幫我總結已經整理好的筆記，而是「接續我的思考，進行往下推演與具體化」。
+
+【觸發條件】
+當我提供包含「Podcast AI 投資筆記」、「研究主線」、「研究任務」或「驗證訊號」等結構化內容時，請自動執行以下分析流程。
+
+【處理邏輯與輸出格式】
+請根據我提供的筆記內容，輸出以下四個區塊的分析報告：
+若你的執行環境支援連網，請先針對「本集研究主線、代表性公司、關鍵供應鏈詞」查核近 30 天即時新聞、公司公告、法說會或產業報價資訊；引用時請保留來源名稱、日期與 URL。若無法連網，請明確標示「未查核即時新聞」。
+
+1. 主線概念落地化 (Concrete Entity Mapping)
+- 找出實體標的與代碼：根據筆記中的「本集研究主線」與「觀察清單」，列出具體對應的代表性公司。若是台股，請務必精準附上四碼股票代碼（例如：被動元件的國巨 (2327)、華新科 (2492)）；若是美股，請附上 Ticker（例如：Broadcom (AVGO)）。
+- 供應鏈關聯：簡述這些次族群或公司在供應鏈中的上下游關係，幫助我釐清「誰可能會先受惠」。
+
+2. 研究任務執行方案 (Execution Plan for Tasks)
+- 針對筆記中的「研究任務 (step/task)」，提供具體的資料取得管道或關鍵字。
+- 例如：如果任務是「追蹤毛利率是否反映漲價」，請明確建議我應該去看該公司的「法說會逐字稿」、「財報三率」或是哪些券商的產業報告。
+
+3. 訊號監控儀表板 (Signal Monitoring Dashboard)
+- 整合筆記中的「正負向訊號」與「破局點」，設計一個短、中期的觀察指標清單。
+- 例如：
+  - 領先指標（短）：報價新聞、現貨市場狀況、同業資本支出宣告。
+  - 落後確認（中）：下個月的營收 YoY、季報毛利率表現。
+
+4. 盲點與延伸思考 (Blind Spots & Deep Dive)
+- 邏輯漏洞檢查：根據你對產業的了解，這份筆記的推論（如：因缺料導致漲價）是否存在潛在風險或未考慮到的變數？（例如：有沒有可能是重複下單 Overbooking？）
+- 資金排擠效應：如果「主線」吸納了大量資金，哪些「觀察線」可能會首當其衝被提款？
+- 提出 2~3 個高含金量的「反向思考問題」，讓我能進一步檢驗自己的投資假設。
+
+【語氣與排版要求】
+- 語氣客觀、冷靜、直指核心，不說廢話。
+- 大量使用列點與粗體標示關鍵字，確保排版極度適合快速掃描。
+- 若筆記內容較少（只貼上部分段落），請針對提供的段落深度展開即可，不需硬湊四個區塊。
+
+【本集結構化內容】
+以下是「Podcast AI 投資筆記」與本集研究主線、研究任務、驗證訊號。請根據這份內容往下推演，不要只做摘要。
+
+${notes}`;
+    }
+
+    function defaultFilters() {
+      return {
+        newsCategory: "all",
+        stockSentiment: "all",
+        stockType: "all",
+        hostOwned: "all",
+        stockSort: "relevance",
+        twSort: "latest",
+        twSource: "all"
+      };
+    }
+
+    function render() {
+      const episodes = getFilteredEpisodes();
+      const pendingEpisodes = getFilteredPendingEpisodes();
+
+      if (state.activeView === "episode") {
+        if (state.activePendingId && !pendingEpisodes.some(ep => ep.id === state.activePendingId)) {
+          state.activePendingId = null;
+        }
+        if (state.activePendingId) {
+          state.activeId = null;
+        } else if (!state.activeId || !episodes.some(ep => ep.id === state.activeId)) {
+          state.activeId = episodes[0] ? episodes[0].id : null;
+          if (!state.activeId && pendingEpisodes.length) {
+            state.activePendingId = pendingEpisodes[0].id;
+          }
+        }
+      }
+
+      dom.watchlistBtn.classList.toggle("active", state.activeView === "watchlist");
+      if (dom.portfolioBtn) dom.portfolioBtn.classList.toggle("active", state.activeView === "portfolio");
+      dom.analysisBtn.classList.toggle("active", state.activeView === "analysis");
+      renderEpisodeList(episodes, pendingEpisodes);
+
+      if (state.activeView === "watchlist") {
+        renderTwWatchlistMain();
+      } else if (state.activeView === "portfolio") {
+        renderPortfolioMain();
+      } else if (state.activeView === "analysis") {
+        renderStockAnalysisFrameworkMain();
+      } else if (state.activePendingId) {
+        renderPendingMain(pendingEpisodes.find(ep => ep.id === state.activePendingId));
+      } else {
+        renderMain(episodes.find(ep => ep.id === state.activeId));
+      }
+      dom.clearBtn.disabled = state.episodes.length === 0 && state.pendingEpisodes.length === 0;
+      dom.copyAllBtn.disabled = !getActiveCopyEpisode(episodes, pendingEpisodes);
+    }
+
+    function getFilteredEpisodes() {
+      if (!state.query) return state.episodes;
+      return state.episodes.filter(ep => {
+        return ep.title.toLowerCase().includes(state.query) ||
+          ep.base.toLowerCase().includes(state.query) ||
+          ep.haystack.includes(state.query);
+      });
+    }
+
+    function getFilteredPendingEpisodes() {
+      if (!state.query) return state.pendingEpisodes;
+      return state.pendingEpisodes.filter(ep => {
+        return ep.title.toLowerCase().includes(state.query) ||
+          ep.haystack.includes(state.query);
+      });
+    }
+
+    function renderEpisodeList(episodes, pendingEpisodes) {
+      dom.episodeList.replaceChildren();
+      if (!episodes.length && !pendingEpisodes.length) {
+        const empty = document.createElement("div");
+        empty.className = "empty";
+        empty.textContent = (state.episodes.length || state.pendingEpisodes.length) ? "沒有符合搜尋的集數" : "尚未載入 JSON";
+        dom.episodeList.appendChild(empty);
+        return;
+      }
+
+      for (const ep of episodes) {
+        const button = document.createElement("button");
+        button.className = `episode-item${ep.id === state.activeId && state.activeView === "episode" ? " active" : ""}`;
+        button.type = "button";
+        button.addEventListener("click", () => {
+          state.activeId = ep.id;
+          state.activePendingId = null;
+          state.activeView = "episode";
+          render();
+        });
+
+        const name = document.createElement("div");
+        name.className = "episode-name";
+        name.textContent = `${ep.number ? `EP${ep.number} ` : ""}${ep.title}`;
+
+        const meta = document.createElement("div");
+        meta.className = "episode-meta";
+        const date = getEpisodeDate(ep.data);
+        meta.textContent = `${date ? `${date} · ` : ""}${arr(ep.data.news).length} news · ${arr(ep.data.qa).length} Q&A`;
+
+        button.append(name, meta);
+        dom.episodeList.appendChild(button);
+      }
+
+      for (const ep of pendingEpisodes) {
+        const button = document.createElement("button");
+        button.className = `episode-item pending${ep.id === state.activePendingId && state.activeView === "episode" ? " active" : ""}`;
+        button.type = "button";
+        button.addEventListener("click", () => {
+          state.activeId = null;
+          state.activePendingId = ep.id;
+          state.activeView = "episode";
+          render();
+        });
+
+        const name = document.createElement("div");
+        name.className = "episode-name";
+        name.textContent = `${ep.number ? `EP${ep.number} ` : ""}${ep.title}`;
+
+        const meta = document.createElement("div");
+        meta.className = "episode-meta";
+        const date = ep.data.date || "";
+        meta.textContent = `${date ? `${date} · ` : ""}待分析 · ${formatBytes(ep.data.transcriptSize || 0)}`;
+
+        button.append(name, meta);
+        dom.episodeList.appendChild(button);
+      }
+    }
+
+    function renderMain(ep) {
+      dom.main.replaceChildren();
+      if (!ep) {
+        const empty = document.createElement("div");
+        empty.className = "empty";
+        empty.textContent = state.episodes.length ? "沒有符合搜尋的內容" : "尚未載入資料";
+        dom.main.appendChild(empty);
+        return;
+      }
+
+      dom.main.appendChild(renderHeader(ep));
+      dom.main.appendChild(renderTabs(ep));
+
+      const body = document.createElement("div");
+      body.className = "content-grid";
+      if (state.tab === "summary") renderSummary(ep, body);
+      if (state.tab === "news") renderNews(ep, body);
+      if (state.tab === "hostDisclosure") renderHostDisclosure(ep, body);
+      if (state.tab === "stockAnalysis") renderStockAnalysis(ep, body);
+      if (state.tab === "qa") renderQa(ep, body);
+      if (state.tab === "nextSteps") renderNextSteps(ep, body);
+      if (state.tab === "aiPrompt") renderAiAssistantPrompt(ep, body);
+      dom.main.appendChild(body);
+    }
+
+    function renderPendingMain(ep) {
+      dom.main.replaceChildren();
+      if (!ep) {
+        const empty = document.createElement("div");
+        empty.className = "empty";
+        empty.textContent = "沒有符合搜尋的待分析集數";
+        dom.main.appendChild(empty);
+        return;
+      }
+
+      const header = document.createElement("section");
+      header.className = "episode-header";
+      const title = document.createElement("h1");
+      title.className = "episode-title";
+      title.textContent = `${ep.number ? `EP${ep.number}` : ep.title} · 待分析`;
+      header.appendChild(title);
+      dom.main.appendChild(header);
+
+      const body = document.createElement("div");
+      body.className = "content-grid";
+      const card = sectionCard();
+      card.appendChild(cardHead("逐字稿已下載，尚未產生分析 JSON", [badge("pending", "watchful")]));
+      appendField(card, "標題", ep.title);
+      appendField(card, "日期", ep.data.date || "節目未明確提及");
+      appendField(card, "來源", ep.data.source || "vocus.cc");
+      appendField(card, "逐字稿", `${ep.data.transcriptFile || "節目未明確提及"} (${formatBytes(ep.data.transcriptSize || 0)})`);
+      appendField(card, "分析 prompt", ep.data.promptFile || "尚未產生");
+
+      const sourceUrl = String(ep.data.sourceUrl || "").trim();
+      if (/^https?:\/\//i.test(sourceUrl)) {
+        const label = fieldLabel("來源連結");
+        const link = document.createElement("a");
+        link.href = sourceUrl;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = sourceUrl;
+        card.append(label, link);
+      }
+
+      const note = document.createElement("div");
+      note.className = "body-text muted";
+      note.textContent = "執行同步腳本且允許 OpenAI 分析後，這集會產生 EP 分析 JSON 並出現在一般集數清單。";
+      card.appendChild(note);
+      body.appendChild(card);
+      dom.main.appendChild(body);
+    }
+
+    function renderHeader(ep) {
+      const header = document.createElement("section");
+      header.className = "episode-header";
+
+      const title = document.createElement("h1");
+      title.className = "episode-title";
+      title.textContent = episodeDisplayTitle(ep);
+
+      header.append(title);
+      return header;
+    }
+
+    function metric(value, label) {
+      const box = document.createElement("div");
+      box.className = "metric";
+      const v = document.createElement("div");
+      v.className = "metric-value";
+      v.textContent = value;
+      const l = document.createElement("div");
+      l.className = "metric-label";
+      l.textContent = label;
+      box.append(v, l);
+      return box;
+    }
+
+    function episodeDisplayTitle(ep) {
+      const base = ep.number ? `EP${ep.number}` : ep.title;
+      const date = getEpisodeDate(ep.data);
+      return date ? `${base} · ${date}` : base;
+    }
+
+    function getEpisodeDate(data) {
+      const candidates = [
+        data.date,
+        data.episodeDate,
+        data.pubDate,
+        data.meta && data.meta.date,
+        data.metadata && data.metadata.date
+      ];
+
+      for (const value of candidates) {
+        if (!value) continue;
+        const text = String(value);
+        const match = text.match(/\d{4}-\d{2}-\d{2}/);
+        if (match) return match[0];
+        const parsed = new Date(text);
+        if (!Number.isNaN(parsed.getTime())) {
+          return parsed.toISOString().slice(0, 10);
+        }
+      }
+      return "";
+    }
+
+    function renderTabs(ep) {
+      const tabs = document.createElement("nav");
+      tabs.className = "tabs";
+      for (const [key, label] of tabOrder) {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = `tab${state.tab === key ? " active" : ""}`;
+        const count = tabCount(ep, key);
+        button.textContent = `${label}${count}`;
+        button.addEventListener("click", () => {
+          state.tab = key;
+          if (window.history && window.history.replaceState) {
+            window.history.replaceState(null, "", `#${key}`);
+          }
+          render();
+        });
+        tabs.appendChild(button);
+      }
+      return tabs;
+    }
+
+    function tabCount(ep, key) {
+      if (key === "summary" || key === "raw" || key === "aiPrompt") return "";
+      if (key === "nextSteps") {
+        const count = nextStepCount(ep.data.nextSteps);
+        return count ? ` ${count}` : "";
+      }
+      return ` ${arr(ep.data[key]).length}`;
+    }
+
+    function getInitialTab() {
+      const allowed = ["summary", "news", "hostDisclosure", "stockAnalysis", "qa", "nextSteps", "aiPrompt"];
+      const queryTab = new URLSearchParams(window.location.search).get("tab");
+      const hashTab = window.location.hash ? window.location.hash.slice(1) : "";
+      const wanted = queryTab || hashTab || "summary";
+      return allowed.includes(wanted) ? wanted : "summary";
+    }
+
+    function renderStockAnalysisFrameworkMain() {
+      dom.main.replaceChildren();
+
+      const page = document.createElement("div");
+      page.className = "analysis-page";
+      const notes = getFilteredStockAnalysisNotes();
+
+      const header = document.createElement("div");
+      header.className = "analysis-header";
+      const titleWrap = document.createElement("div");
+      const title = document.createElement("h2");
+      title.textContent = "已寫入 viewer 的個股分析";
+      const meta = document.createElement("div");
+      meta.className = "analysis-meta";
+      meta.textContent = "僅顯示已寫入 viewer 的個股分析";
+      titleWrap.append(title, meta);
+      const reportMeta = document.createElement("div");
+      reportMeta.className = "analysis-meta";
+      const query = getStockAnalysisQuery();
+      header.append(titleWrap, reportMeta);
+      page.appendChild(header);
+
+      const searchRow = document.createElement("div");
+      searchRow.className = "analysis-search-row";
+      const searchInput = document.createElement("input");
+      searchInput.id = "stockAnalysisSearchInput";
+      searchInput.className = "analysis-input analysis-search";
+      searchInput.type = "search";
+      searchInput.placeholder = "搜尋股票代號、公司、結論、關鍵字";
+      searchInput.value = state.stockAnalysisQuery || "";
+      searchInput.setAttribute("aria-label", "搜尋已寫入 viewer 的個股分析");
+      const clearBtn = document.createElement("button");
+      clearBtn.type = "button";
+      clearBtn.className = "btn";
+      clearBtn.textContent = "清除";
+      searchRow.append(searchInput, clearBtn);
+      page.appendChild(searchRow);
+
+      const body = document.createElement("div");
+      body.className = "content-grid";
+      body.appendChild(renderSavedStockAnalysesCard(notes));
+
+      page.appendChild(body);
+      dom.main.appendChild(page);
+
+      const updateSearchResults = () => {
+        const filteredNotes = getFilteredStockAnalysisNotes();
+        const nextQuery = getStockAnalysisQuery();
+        reportMeta.textContent = nextQuery
+          ? `符合 ${filteredNotes.length} / 共 ${state.stockAnalysisNotes.length} 篇`
+          : `共 ${state.stockAnalysisNotes.length} 篇`;
+        clearBtn.disabled = !nextQuery;
+        body.replaceChildren(renderSavedStockAnalysesCard(filteredNotes));
+      };
+
+      searchInput.addEventListener("input", event => {
+        state.stockAnalysisQuery = event.target.value;
+        updateSearchResults();
+      });
+      clearBtn.addEventListener("click", () => {
+        state.stockAnalysisQuery = "";
+        searchInput.value = "";
+        updateSearchResults();
+        searchInput.focus();
+      });
+      updateSearchResults();
+    }
+
+    function analysisInput(label, value) {
+      const input = document.createElement("input");
+      input.className = "analysis-input";
+      input.type = "text";
+      input.value = value || "";
+      input.placeholder = label;
+      input.setAttribute("aria-label", label);
+      return input;
+    }
+
+    function renderAnalysisFlowCard() {
+      const card = sectionCard();
+      card.appendChild(cardHead("分析步驟與邏輯", [
+        badge("先事實", "neutral"),
+        badge("再假設", "watchful"),
+        badge("最後操作", "bullish")
+      ]));
+      const flow = document.createElement("div");
+      flow.className = "analysis-flow";
+      [
+        ["1. 定義基準日", "股價、營收、財報、新聞都標明資料截至日期，避免把舊快照當成最新。"],
+        ["2. 建立事實主幹", "行情、月營收、季財報、產品結構、產業供需先各自確認。"],
+        ["3. 參照 ai_reports", "把報告中的 EPS、目標價、催化與風險拆成可驗證假設。"],
+        ["4. 形成操作框架", "用估值、技術位階與風險條件整理成追、等、抱或減。"]
+      ].forEach(([step, text]) => {
+        const box = document.createElement("div");
+        box.className = "analysis-step";
+        const strong = document.createElement("strong");
+        strong.textContent = step;
+        const p = document.createElement("p");
+        p.textContent = text;
+        box.append(strong, p);
+        flow.appendChild(box);
+      });
+      card.appendChild(flow);
+      return card;
+    }
+
+    function renderAnalysisApiCard() {
+      const card = sectionCard();
+      card.appendChild(cardHead("是不是要使用 API", [badge("看自動化程度", "neutral")]));
+      const wrap = document.createElement("div");
+      wrap.className = "tw-table-wrap";
+      const table = document.createElement("table");
+      table.className = "analysis-table";
+      const thead = document.createElement("thead");
+      const hrow = document.createElement("tr");
+      ["需求", "是否需要 API", "建議做法", "原因"].forEach(text => {
+        const th = document.createElement("th");
+        th.textContent = text;
+        hrow.appendChild(th);
+      });
+      thead.appendChild(hrow);
+      table.appendChild(thead);
+      const tbody = document.createElement("tbody");
+      [
+        ["展示分析方法與模板", "不需要", "純 HTML + JavaScript", "邏輯固定，可以完全放在 viewer 內。"],
+        ["讀取 ai_reports", "不需要外部 API", "沿用本機 viewer server 讀 manifest 與 .md", "瀏覽器用 file:// 會擋本機 fetch，所以需要本機 server。"],
+        ["最新行情與均線", "需要資料端點", "TWSE 公開端點或券商行情 API", "價格與成交量每天變，不能靠靜態檔。"],
+        ["最新財報與月營收", "半自動需要資料來源", "MOPS、TWSE、公司 IR、新聞來源", "官方公告是事實主幹，適合由腳本定期更新。"],
+        ["自動寫完整分析", "通常需要後端與 LLM API", "本機腳本整理資料，再交給模型產出", "瀏覽器端不適合放 API key，也不適合大量清洗資料。"]
+      ].forEach(row => {
+        const tr = document.createElement("tr");
+        row.forEach(text => {
+          const td = document.createElement("td");
+          td.textContent = text;
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+      table.appendChild(tbody);
+      wrap.appendChild(table);
+      card.appendChild(wrap);
+      return card;
+    }
+
+    function renderSavedStockAnalysesCard(notes) {
+      const list = document.createElement("div");
+      list.className = "analysis-saved-list";
+
+      if (!state.stockAnalysisNotes.length) {
+        const note = document.createElement("div");
+        note.className = "empty";
+        note.textContent = "尚無已保存分析。之後你說「分析 XXXX 股票名稱」，我會完成分析並把內容寫入 stock_analysis_notes.json，這裡會自動顯示。";
+        list.appendChild(note);
+        return list;
+      }
+
+      if (!notes.length) {
+        const note = document.createElement("div");
+        note.className = "empty";
+        note.textContent = `沒有找到「${state.stockAnalysisQuery.trim()}」相關的個股分析。`;
+        list.appendChild(note);
+        return list;
+      }
+
+      notes.forEach(item => {
+        list.appendChild(renderSavedStockAnalysisItem(item));
+      });
+      return list;
+    }
+
+    function renderSavedStockAnalysisItem(item) {
+      const row = sectionCard();
+      const title = `${item.ticker || ""} ${item.company || ""}`.trim() || "個股分析";
+      const head = cardHead(title, [
+        item.analysisDate ? badge(item.analysisDate, "neutral") : null,
+        item.stance ? badge(item.stance, "watchful") : null
+      ]);
+      const copyBtn = document.createElement("button");
+      copyBtn.type = "button";
+      copyBtn.className = "btn stock-copy-btn";
+      copyBtn.title = "複製全部內容";
+      copyBtn.textContent = "複製";
+      copyBtn.addEventListener("click", () => {
+        const text = buildStockAnalysisCopyText(item);
+        navigator.clipboard.writeText(text).then(() => {
+          copyBtn.textContent = "已複製 ✓";
+          copyBtn.classList.add("copied");
+          setTimeout(() => { copyBtn.textContent = "複製"; copyBtn.classList.remove("copied"); }, 2000);
+        }).catch(() => {
+          copyBtn.textContent = "失敗";
+          setTimeout(() => { copyBtn.textContent = "複製"; }, 2000);
+        });
+      });
+      const meta = head.querySelector(".card-meta");
+      if (meta) meta.appendChild(copyBtn);
+      row.appendChild(head);
+
+      const summary = document.createElement("div");
+      summary.className = "body-text";
+      summary.textContent = item.summary || item.conclusion || "尚未填寫摘要。";
+      row.appendChild(summary);
+
+      if (item.conclusion && item.conclusion !== item.summary) {
+        appendField(row, "結論", item.conclusion);
+      }
+
+      appendDataAsOf(row, item.dataAsOf);
+      appendStockAnalysisSections(row, item.sections);
+      appendTechnicalLevels(row, item.technicalLevels);
+      appendValuationScenarios(row, item.valuationScenarios);
+      appendAiReportRefs(row, item.aiReportRefs);
+      appendSourceLinks(row, item.sources);
+      return row;
+    }
+
+    function appendDataAsOf(parent, dataAsOf) {
+      if (!dataAsOf || typeof dataAsOf !== "object") return;
+      const parts = Object.entries(dataAsOf)
+        .filter(([, value]) => value)
+        .map(([key, value]) => `${key}: ${value}`);
+      if (parts.length) appendField(parent, "資料基準", parts.join(" / "));
+    }
+
+    function appendStockAnalysisSections(parent, sections) {
+      arr(sections).forEach(section => {
+        const block = document.createElement("div");
+        block.className = "analysis-section-block";
+        block.appendChild(fieldLabel(section.title || "重點"));
+        const points = Array.isArray(section.points) ? section.points : [];
+        if (points.length) {
+          const list = document.createElement("ol");
+          list.className = "points";
+          points.forEach(point => {
+            const li = document.createElement("li");
+            li.textContent = stringify(point);
+            list.appendChild(li);
+          });
+          block.appendChild(list);
+        } else {
+          const text = document.createElement("div");
+          text.className = "body-text";
+          text.textContent = stringify(section.body || section.text || "");
+          block.appendChild(text);
+        }
+        parent.appendChild(block);
+      });
+    }
+
+    function appendTechnicalLevels(parent, levels) {
+      if (!levels || typeof levels !== "object") return;
+      const block = document.createElement("div");
+      block.className = "analysis-section-block";
+      block.appendChild(fieldLabel("技術位階"));
+      const list = document.createElement("ol");
+      list.className = "points";
+      [
+        ["支撐", arr(levels.support).join("；")],
+        ["壓力", arr(levels.resistance).join("；")],
+        ["風控線", levels.riskLine]
+      ].filter(([, value]) => value).forEach(([label, value]) => {
+        const li = document.createElement("li");
+        li.textContent = `${label}：${value}`;
+        list.appendChild(li);
+      });
+      if (list.childNodes.length) {
+        block.appendChild(list);
+        parent.appendChild(block);
+      }
+    }
+
+    function appendValuationScenarios(parent, scenarios) {
+      if (!arr(scenarios).length) return;
+      const block = document.createElement("div");
+      block.className = "analysis-section-block";
+      block.appendChild(fieldLabel("估值情境"));
+      const list = document.createElement("ol");
+      list.className = "points";
+      arr(scenarios).forEach(scenario => {
+        const li = document.createElement("li");
+        li.textContent = `${scenario.case || "情境"}：${[scenario.assumption, scenario.view].filter(Boolean).join(" / ")}`;
+        list.appendChild(li);
+      });
+      block.appendChild(list);
+      parent.appendChild(block);
+    }
+
+    function appendAiReportRefs(parent, refs) {
+      if (!arr(refs).length) return;
+      const block = document.createElement("div");
+      block.className = "analysis-section-block";
+      block.appendChild(fieldLabel("ai_reports 對照"));
+      const list = document.createElement("ol");
+      list.className = "points";
+      arr(refs).forEach(ref => {
+        const li = document.createElement("li");
+        li.textContent = `${ref.file || "ai_report"}：${ref.match || ""}`;
+        list.appendChild(li);
+      });
+      block.appendChild(list);
+      parent.appendChild(block);
+    }
+
+    function appendSourceLinks(parent, sources) {
+      if (!arr(sources).length) return;
+      const block = document.createElement("div");
+      block.className = "analysis-section-block";
+      block.appendChild(fieldLabel("資料來源"));
+      const list = document.createElement("div");
+      list.className = "analysis-source-list";
+      arr(sources).forEach(source => {
+        const url = source.url || "";
+        const label = source.name || url || "來源";
+        if (url) {
+          const link = document.createElement("a");
+          link.href = url;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.textContent = label;
+          list.appendChild(link);
+        } else {
+          const text = document.createElement("div");
+          text.className = "body-text muted";
+          text.textContent = label;
+          list.appendChild(text);
+        }
+      });
+      block.appendChild(list);
+      parent.appendChild(block);
+    }
+
+    function getFilteredStockAnalysisNotes() {
+      const query = getStockAnalysisQuery();
+      if (!query) return state.stockAnalysisNotes;
+      return state.stockAnalysisNotes.filter(item => {
+        return buildStockAnalysisSearchText(item).includes(query);
+      });
+    }
+
+    function getStockAnalysisQuery() {
+      return String(state.stockAnalysisQuery || "").trim().toLowerCase();
+    }
+
+    function buildStockAnalysisSearchText(item) {
+      return [
+        item.ticker,
+        item.company,
+        item.stance,
+        item.summary,
+        item.conclusion,
+        JSON.stringify(item.dataAsOf || {}),
+        JSON.stringify(item.sections || []),
+        JSON.stringify(item.technicalLevels || {}),
+        JSON.stringify(item.valuationScenarios || []),
+        JSON.stringify(item.aiReportRefs || []),
+        JSON.stringify(item.sources || [])
+      ].filter(Boolean).join(" ").toLowerCase();
+    }
+
+    function buildStockAnalysisCopyText(item) {
+      const lines = [];
+      const titleLine = `${item.ticker || ""} ${item.company || ""}`.trim();
+      if (titleLine) lines.push(titleLine);
+      if (item.analysisDate) lines.push(item.analysisDate);
+      if (item.stance) lines.push(item.stance);
+      if (item.summary) { lines.push(""); lines.push(item.summary); }
+      if (item.conclusion && item.conclusion !== item.summary) {
+        lines.push(""); lines.push("結論"); lines.push(item.conclusion);
+      }
+      if (item.dataAsOf && typeof item.dataAsOf === "object") {
+        const parts = Object.entries(item.dataAsOf).filter(([, v]) => v).map(([k, v]) => `${k}: ${v}`);
+        if (parts.length) { lines.push(""); lines.push("資料基準"); lines.push(parts.join(" / ")); }
+      }
+      arr(item.sections || []).forEach(section => {
+        lines.push(""); lines.push(section.title || "重點");
+        const points = Array.isArray(section.points) ? section.points : [];
+        if (points.length) {
+          points.forEach((pt, i) => lines.push(`${i + 1}. ${stringify(pt)}`));
+        } else if (section.body || section.text) {
+          lines.push(stringify(section.body || section.text));
+        }
+      });
+      if (item.technicalLevels && typeof item.technicalLevels === "object") {
+        const lvl = item.technicalLevels;
+        const supports = arr(lvl.support);
+        const resistances = arr(lvl.resistance);
+        if (supports.length || resistances.length || lvl.riskLine) {
+          lines.push(""); lines.push("技術位階");
+          if (supports.length) lines.push(`支撐：${supports.join("；")}`);
+          if (resistances.length) lines.push(`壓力：${resistances.join("；")}`);
+          if (lvl.riskLine) lines.push(`風控線：${lvl.riskLine}`);
+        }
+      }
+      if (arr(item.valuationScenarios).length) {
+        lines.push(""); lines.push("估值情境");
+        arr(item.valuationScenarios).forEach((s, i) => {
+          lines.push(`${i + 1}. ${s.case || "情境"}：${[s.assumption, s.view].filter(Boolean).join(" / ")}`);
+        });
+      }
+      if (arr(item.aiReportRefs).length) {
+        lines.push(""); lines.push("ai_reports 對照");
+        arr(item.aiReportRefs).forEach((ref, i) => {
+          lines.push(`${i + 1}. ${ref.file || "ai_report"}：${ref.match || ""}`);
+        });
+      }
+      return lines.join("\n");
+    }
+
+    function renderAnalysisReportsCard(keyword) {
+      const card = sectionCard();
+      card.appendChild(cardHead("ai_reports 參照", [
+        badge(`${state.aiReports.length} 份`, "neutral"),
+        badge("觀點庫", "watchful")
+      ]));
+      const grid = document.createElement("div");
+      grid.className = "analysis-grid";
+
+      const left = document.createElement("div");
+      const list = document.createElement("div");
+      list.className = "analysis-report-list";
+      const matches = findAnalysisReportMatches(keyword);
+      if (!state.aiReports.length) {
+        list.appendChild(analysisReportMessage("尚未載入 manifests/ai_reports_manifest.json。請用 open_latest_viewer.ps1 開啟 viewer。"));
+      } else if (!matches.length) {
+        list.appendChild(analysisReportMessage(`沒有找到「${keyword || "關鍵字"}」。這只代表目前報告未直接提到，不代表個股無關。`));
+      } else {
+        matches.forEach(row => list.appendChild(renderAnalysisReportRow(row)));
+      }
+      left.appendChild(list);
+
+      const right = sectionCard();
+      right.style.boxShadow = "none";
+      right.appendChild(cardHead("使用原則", [badge("不盲信", "bearish")]));
+      const ul = document.createElement("ol");
+      ul.className = "analysis-checklist";
+      [
+        "ai_reports 當作觀點庫、假設庫，不當成最終事實。",
+        "報告提到的 EPS、目標價、催化要拆成可驗證條件。",
+        "若報告和最新官方資料衝突，以最新公告、月營收、財報優先。",
+        "搜尋不到關鍵字時，改用產業詞，例如 NAND、NOR、記憶體、AI 伺服器。"
+      ].forEach(text => {
+        const li = document.createElement("li");
+        li.textContent = text;
+        ul.appendChild(li);
+      });
+      right.appendChild(ul);
+
+      grid.append(left, right);
+      card.appendChild(grid);
+      return card;
+    }
+
+    function renderAnalysisTemplateCard() {
+      const card = sectionCard();
+      card.appendChild(cardHead("可複製分析模板", [badge(state.analysis.ticker || "個股", "neutral")]));
+      const textarea = document.createElement("textarea");
+      textarea.id = "analysisTemplateOutput";
+      textarea.className = "analysis-template";
+      textarea.value = buildStockAnalysisTemplate();
+      textarea.setAttribute("spellcheck", "false");
+      card.appendChild(textarea);
+      return card;
+    }
+
+    function renderAnalysisDecisionCard() {
+      const card = sectionCard();
+      card.appendChild(cardHead("之後怎麼把討論存進 viewer", [badge("做在一起", "bullish")]));
+      const grid = document.createElement("div");
+      grid.className = "analysis-grid";
+      [
+        ["討論在這裡完成", "你可以直接跟我討論個股，我會邊確認資料來源、邊整理判斷。"],
+        ["寫進同一個 viewer", "確定內容後，我會把結論整理成這個個股分析區可看的筆記，不再新增獨立網頁。"],
+        ["資料更新方式", "靜態筆記可直接寫入 viewer；若要每天更新行情，才需要接本機資料腳本或行情 API。"],
+        ["輸出格式", "固定包含結論、行情、基本面、ai_reports 對照、估值、風險與操作條件。"]
+      ].forEach(([heading, text]) => {
+        const box = document.createElement("div");
+        box.className = "analysis-step";
+        const strong = document.createElement("strong");
+        strong.textContent = heading;
+        const p = document.createElement("p");
+        p.textContent = text;
+        box.append(strong, p);
+        grid.appendChild(box);
+      });
+      card.appendChild(grid);
+      return card;
+    }
+
+    function buildStockAnalysisTemplate() {
+      const ticker = state.analysis.ticker || "股票代號";
+      const company = state.analysis.company || "公司名稱";
+      const today = new Date().toISOString().slice(0, 10);
+      return cleanCopyText([
+        `# ${ticker} ${company} 個股分析`,
+        "",
+        `資料基準日：${today}`,
+        "資料來源：最新行情、TWSE/MOPS/公司 IR、新聞、Codes/ai_reports",
+        "",
+        "## 1. 一句話結論",
+        "- 基本面：偏多 / 中性 / 偏弱，原因是...",
+        "- 股價位置：便宜 / 合理 / 已反映偏多，原因是...",
+        "- 操作想法：追價 / 等拉回 / 續抱 / 減碼觀察，條件是...",
+        "",
+        "## 2. 最新行情與技術面",
+        "- 收盤價、漲跌、成交量、5/20/60 日均線",
+        "- 近期高低點、支撐區、壓力區、強弱分界",
+        "- 量價是否支持目前走勢",
+        "",
+        "## 3. 基本面",
+        "- 月營收：月增、年增、是否連續改善",
+        "- 季財報：營收、毛利率、營益率、EPS、現金流",
+        "- 產品結構：主要產品比重與成長來源",
+        "- 產業供需：價格、庫存、稼動率、競爭狀況",
+        "",
+        "## 4. ai_reports 參照",
+        `- 搜尋關鍵字：${state.analysis.keyword || `${ticker} ${company}`}`,
+        "- 報告中的看多理由：...",
+        "- 報告中的風險：...",
+        "- 報告假設與最新數據是否一致：一致 / 不一致，原因是...",
+        "",
+        "## 5. 估值情境",
+        "- 保守：營收改善但毛利率回落，合理區間...",
+        "- 中性：目前趨勢延續，合理區間...",
+        "- 樂觀：產業缺貨或需求超預期，合理區間...",
+        "",
+        "## 6. 風險與追蹤",
+        "- 失效條件：營收、報價、毛利率、法人籌碼、技術破位",
+        "- 下一個觀察日期：月營收、法說會、財報公告",
+        "- 結論更新條件：哪些數據出來後要改判斷"
+      ]);
+    }
+
+    function findAnalysisReportMatches(keyword) {
+      const terms = String(keyword || "").trim().split(/\s+/).filter(Boolean);
+      if (!terms.length) {
+        return state.aiReports.slice(0, 6).map(report => ({
+          report,
+          matches: 0,
+          snippet: "輸入股票代號、公司名或產業詞後，可搜尋 ai_reports 內容。"
+        }));
+      }
+      return state.aiReports.map(report => {
+        const text = report.text || "";
+        const lower = text.toLowerCase();
+        const hitIndexes = terms.map(term => lower.indexOf(term.toLowerCase())).filter(index => index >= 0);
+        return {
+          report,
+          matches: hitIndexes.length,
+          snippet: hitIndexes.length ? makeAnalysisSnippet(text, hitIndexes[0]) : ""
+        };
+      }).filter(row => row.matches > 0)
+        .sort((a, b) => b.matches - a.matches || b.report.episode - a.report.episode);
+    }
+
+    function renderAnalysisReportRow(row) {
+      const item = document.createElement("div");
+      item.className = "analysis-report";
+      const title = document.createElement("div");
+      title.className = "analysis-report-title";
+      const link = document.createElement("a");
+      link.href = row.report.file;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = row.report.episode ? `EP${row.report.episode}` : row.report.file;
+      const meta = document.createElement("span");
+      meta.textContent = row.matches ? `${row.matches} 命中` : "可參照";
+      title.append(link, meta);
+      const snippet = document.createElement("p");
+      snippet.className = "analysis-snippet";
+      snippet.textContent = row.snippet || "尚無摘要。";
+      item.append(title, snippet);
+      return item;
+    }
+
+    function analysisReportMessage(text) {
+      const item = document.createElement("div");
+      item.className = "analysis-report";
+      const title = document.createElement("div");
+      title.className = "analysis-report-title";
+      title.textContent = "報告搜尋";
+      const snippet = document.createElement("p");
+      snippet.className = "analysis-snippet";
+      snippet.textContent = text;
+      item.append(title, snippet);
+      return item;
+    }
+
+    function makeAnalysisSnippet(text, index) {
+      const start = Math.max(0, index - 90);
+      const end = Math.min(text.length, index + 170);
+      let snippet = text.slice(start, end).replace(/\s+/g, " ").trim();
+      if (start > 0) snippet = `...${snippet}`;
+      if (end < text.length) snippet = `${snippet}...`;
+      return snippet;
+    }
+
+    function renderAiAssistantPrompt(ep, container) {
+      container.classList.add("ai-workspace");
+      const promptText = buildAiAssistantPromptText(ep);
+      const fallbackReport = buildAiAssistantReport(ep);
+      const report = applyExternalAiResearch(getAiResearchForEpisode(ep), fallbackReport);
+
+      // 1. 操作區
+      renderAiAssistantOverview(report, promptText, container);
+
+      // 2. 研究情報雙欄（左：落地標的 + 任務；右：訊號 + 盲點）
+      const intelGrid = document.createElement("div");
+      intelGrid.className = "ai-intel-grid";
+      const leftCol = document.createElement("div");
+      leftCol.className = "ai-intel-col";
+      const rightCol = document.createElement("div");
+      rightCol.className = "ai-intel-col";
+      renderEntityMapping(report, leftCol);
+      renderExecutionPlan(report, leftCol);
+      renderSignalDashboard(report, rightCol);
+      renderBlindSpots(report, rightCol);
+      intelGrid.append(leftCol, rightCol);
+      container.appendChild(intelGrid);
+
+      // 3. 即時新聞（若有外部資料才出現）
+      renderNewsReferences(report, container);
+
+      // 4. 工具區雙欄（左：XQ；右：完整輸入包）
+      const toolsRow = document.createElement("div");
+      toolsRow.className = "ai-tools-row";
+      renderXqImport(report, toolsRow);
+      renderFullPromptPreview(promptText, toolsRow);
+      container.appendChild(toolsRow);
+    }
+
+    function renderAiAssistantOverview(report, promptText, container) {
+      const card = sectionCard();
+      card.classList.add("ai-overview");
+      card.appendChild(cardHead("下一步研究發射台", [
+        badge(report.isExternalAi ? "人工更新" : "本機摘要", "neutral"),
+        report.usesLiveWebNews ? badge("含即時新聞", "bullish") : null,
+        badge("非買賣建議", "watchful")
+      ]));
+
+      const desc = document.createElement("div");
+      desc.className = "ai-tab-desc";
+      desc.textContent = "看完分析後，複製輸入包貼給 Claude 進行深度研究；或直接用下方的訊號儀表板與任務清單追蹤本集題材。";
+      card.appendChild(desc);
+
+      // 主要操作按鈕
+      const actions = document.createElement("div");
+      actions.className = "ai-action-row";
+      const primaryBtn = aiCopyButton(
+        "複製完整版輸入包 → 貼給 Claude",
+        true,
+        () => promptText,
+        "已複製，可直接貼給 Claude",
+        "Copy AI prompt failed"
+      );
+      primaryBtn.classList.add("ai-hero-btn");
+      actions.append(
+        primaryBtn,
+        aiCopyButton(
+          report.isExternalAi ? "複製研究報告" : "複製快速摘要",
+          false,
+          () => buildAiAssistantReportText(report),
+          report.isExternalAi ? "已複製 AI 研究報告" : "已複製快速摘要",
+          "Copy AI report failed"
+        )
+      );
+      card.appendChild(actions);
+
+      // 數字統計列
+      const stats = document.createElement("div");
+      stats.className = "ai-meta-strip";
+      [
+        ["標的", report.entities.length],
+        ["研究任務", report.tasks.length],
+        ["XQ 代碼", report.xqCodes.length],
+        ["即時新聞", arr(report.newsReferences).length],
+        ["來源", report.isExternalAi ? "外部" : "JSON"]
+      ].forEach(([label, value]) => stats.appendChild(aiMetaItem(label, value)));
+      card.appendChild(stats);
+
+      // 檔案連結
+      const links = document.createElement("div");
+      links.className = "ai-link-row";
+      if (report.episodeNumber) {
+        const fileName = `EP${report.episodeNumber}_ai_full_report.md`;
+        links.appendChild(aiFileLink(`ai_reports/${fileName}`, "完整 AI 報告 (.md)"));
+      }
+      links.appendChild(aiFileLink("notebooklm_prompts/investment_deep_dive_prompt.md", "NotebookLM Prompt"));
+      if (report.generatedAt) {
+        const updated = document.createElement("span");
+        updated.className = "muted";
+        updated.textContent = `更新 ${report.generatedAt}`;
+        links.appendChild(updated);
+      }
+      card.appendChild(links);
+      container.appendChild(card);
+    }
+
+    function aiCopyButton(label, primary, getText, successText, logLabel) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = primary ? "btn primary" : "btn";
+      button.textContent = label;
+      button.addEventListener("click", async () => {
+        try {
+          await writeClipboard(getText());
+          setCopyStatus(successText, "success");
+        } catch (error) {
+          console.warn(logLabel, error);
+          setCopyStatus("複製失敗，請改用瀏覽器允許剪貼簿權限", "error");
+        }
+      });
+      return button;
+    }
+
+    function aiMetaItem(label, value) {
+      const item = document.createElement("div");
+      item.className = "ai-meta-item";
+      const v = document.createElement("div");
+      v.className = "ai-meta-value";
+      v.textContent = String(value);
+      const l = document.createElement("div");
+      l.className = "ai-meta-label";
+      l.textContent = label;
+      item.append(v, l);
+      return item;
+    }
+
+    function aiFileLink(href, text) {
+      const link = document.createElement("a");
+      link.className = "ai-file-link";
+      link.href = href;
+      link.textContent = text;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      return link;
+    }
+
+    function appendAiColumn(parent, title, values) {
+      const column = document.createElement("div");
+      column.className = "ai-column";
+      const heading = document.createElement("div");
+      heading.className = "ai-column-title";
+      heading.textContent = title;
+      const list = document.createElement("ol");
+      list.className = "ai-list";
+      arr(values).forEach(value => {
+        const li = document.createElement("li");
+        li.textContent = stringify(value);
+        list.appendChild(li);
+      });
+      if (!list.childElementCount) {
+        const li = document.createElement("li");
+        li.textContent = "節目未明確提及";
+        list.appendChild(li);
+      }
+      column.append(heading, list);
+      parent.appendChild(column);
+    }
+
+    function appendAiChipGroup(parent, labelText, values) {
+      const items = arr(values).filter(Boolean);
+      if (!items.length) return;
+      const row = document.createElement("div");
+      row.className = "ai-chip-row";
+      const label = document.createElement("span");
+      label.className = "ai-chip-label";
+      label.textContent = labelText;
+      row.appendChild(label);
+      items.slice(0, 18).forEach(value => {
+        const chip = document.createElement("span");
+        chip.className = "ai-chip";
+        chip.textContent = stringify(value);
+        row.appendChild(chip);
+      });
+      parent.appendChild(row);
+    }
+
+    function renderNewsReferences(report, container) {
+      if (!arr(report.newsReferences).length) return;
+      const card = sectionCard();
+      card.appendChild(cardHead("即時新聞參考", [
+        badge(`${report.newsReferences.length} 則`, "neutral")
+      ]));
+      const list = document.createElement("div");
+      list.className = "ai-reference-list";
+      report.newsReferences.forEach(item => {
+        const row = document.createElement("div");
+        row.className = "ai-reference-row";
+        const meta = document.createElement("div");
+        meta.className = "ai-reference-meta";
+        meta.textContent = [item.source, item.publishedAt].filter(Boolean).join(" · ") || "來源未標示";
+        const body = document.createElement("div");
+        const title = document.createElement("div");
+        title.className = "ai-reference-title";
+        if (item.url) {
+          const link = document.createElement("a");
+          link.href = item.url;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.textContent = item.title || item.url;
+          title.appendChild(link);
+        } else {
+          title.textContent = item.title || "";
+        }
+        body.appendChild(title);
+        if (item.usedFor) {
+          const use = document.createElement("div");
+          use.className = "ai-reference-use";
+          use.textContent = item.usedFor;
+          body.appendChild(use);
+        }
+        row.append(meta, body);
+        list.appendChild(row);
+      });
+      card.appendChild(list);
+      container.appendChild(card);
+    }
+
+    function renderEntityMapping(report, container) {
+      const card = sectionCard();
+      card.appendChild(cardHead("主線概念落地化", [
+        badge(`${report.entities.length} 個標的`, "neutral")
+      ]));
+      if (!report.entities.length) {
+        appendEmpty(card, "本集沒有足夠線索自動對應代表標的");
+        container.appendChild(card);
+        return;
+      }
+
+      const groups = new Map();
+      report.entities.forEach(item => {
+        const key = item.theme || "未分類";
+        if (!groups.has(key)) groups.set(key, []);
+        groups.get(key).push(item);
+      });
+
+      const groupWrap = document.createElement("div");
+      groupWrap.className = "ai-theme-groups";
+      Array.from(groups.entries()).forEach(([theme, items], index) => {
+        const details = document.createElement("details");
+        details.className = "ai-theme-group";
+        details.open = index < 3;
+        const summary = document.createElement("summary");
+        summary.textContent = theme;
+        const count = document.createElement("span");
+        count.className = "ai-theme-count";
+        count.textContent = `${items.length} 個`;
+        summary.appendChild(count);
+        details.appendChild(summary);
+
+        items.forEach(item => {
+          const row = document.createElement("div");
+          row.className = "ai-entity-row";
+          const code = document.createElement("div");
+          code.className = "ai-entity-code";
+          code.textContent = [item.market, item.code || item.ticker || ""].filter(Boolean).join(" ");
+          const name = document.createElement("div");
+          name.className = "ai-entity-name";
+          name.textContent = item.name || "-";
+          const role = document.createElement("div");
+          role.className = "ai-entity-role";
+          role.textContent = item.role || "";
+          const relation = document.createElement("div");
+          relation.className = "ai-entity-relation";
+          relation.textContent = item.relation || "";
+          row.append(code, name, role, relation);
+          details.appendChild(row);
+        });
+
+        groupWrap.appendChild(details);
+      });
+      card.appendChild(groupWrap);
+      container.appendChild(card);
+    }
+
+    function renderExecutionPlan(report, container) {
+      const card = sectionCard();
+      card.appendChild(cardHead("研究任務執行方案", [
+        badge(`${report.tasks.length} 項`, "neutral")
+      ]));
+      if (!report.tasks.length) {
+        appendEmpty(card, "本集沒有明確 researchPlan，可先從主線標的的法說會與月營收查起");
+        container.appendChild(card);
+        return;
+      }
+
+      const list = document.createElement("div");
+      list.className = "ai-task-list";
+      report.tasks.forEach(item => {
+        const row = document.createElement("div");
+        row.className = "ai-task-row";
+        const step = document.createElement("div");
+        step.className = "ai-step";
+        step.textContent = `Step ${item.step}`;
+        const body = document.createElement("div");
+        body.className = "ai-task-body";
+        const title = document.createElement("div");
+        title.className = "ai-task-title";
+        title.textContent = item.task || "未命名任務";
+        body.appendChild(title);
+        appendAiChipGroup(body, "資料", item.sources);
+        appendAiChipGroup(body, "關鍵字", item.keywords);
+        if (item.readout) {
+          const readout = document.createElement("div");
+          readout.className = "ai-task-readout";
+          readout.textContent = item.readout;
+          body.appendChild(readout);
+        }
+        row.append(step, body);
+        list.appendChild(row);
+      });
+      card.appendChild(list);
+      container.appendChild(card);
+    }
+
+    function renderSignalDashboard(report, container) {
+      const card = sectionCard();
+      card.appendChild(cardHead("訊號監控儀表板", []));
+      const grid = document.createElement("div");
+      grid.className = "ai-section-grid";
+      appendAiColumn(grid, "領先指標", report.dashboard.leading);
+      appendAiColumn(grid, "落後確認", report.dashboard.confirming);
+      appendAiColumn(grid, "破局 / 降權", report.dashboard.negative);
+      card.appendChild(grid);
+      container.appendChild(card);
+    }
+
+    function renderBlindSpots(report, container) {
+      const card = sectionCard();
+      card.appendChild(cardHead("盲點與延伸思考", []));
+      const grid = document.createElement("div");
+      grid.className = "ai-section-grid";
+      appendAiColumn(grid, "邏輯漏洞", report.blindSpots);
+      appendAiColumn(grid, "資金排擠", report.crowdingRisks);
+      appendAiColumn(grid, "反向問題", report.reverseQuestions);
+      card.appendChild(grid);
+      container.appendChild(card);
+    }
+
+    function renderXqImport(report, container) {
+      const card = sectionCard();
+      card.appendChild(cardHead("XQ 自選股匯入包", [
+        badge(`${report.xqCodes.length} 檔`, "neutral")
+      ]));
+
+      const actions = document.createElement("div");
+      actions.className = "ai-action-row";
+      actions.appendChild(aiCopyButton(
+        "複製 XQ 代碼",
+        false,
+        () => report.xqCodes.join("\n"),
+        "已複製 XQ 代碼",
+        "Copy XQ codes failed"
+      ));
+
+      if (report.episodeNumber) {
+        const fileName = `EP${report.episodeNumber}_xq_watchlist.txt`;
+        const filePath = `xq_watchlists/${fileName}`;
+        actions.appendChild(aiFileLink(filePath, filePath));
+      }
+      card.appendChild(actions);
+
+      const pre = document.createElement("pre");
+      pre.className = "raw ai-code-box";
+      pre.textContent = report.xqCodes.length ? report.xqCodes.join("\n") : "本集沒有可自動對應的台股代碼";
+      card.appendChild(pre);
+      container.appendChild(card);
+    }
+
+    function renderFullPromptPreview(promptText, container) {
+      const card = sectionCard();
+      card.appendChild(cardHead("完整輸入包", [
+        badge("可展開", "neutral")
+      ]));
+      const details = document.createElement("details");
+      details.className = "ai-details";
+      const summary = document.createElement("summary");
+      summary.textContent = "預覽 NotebookLM / AI 完整輸入文字";
+      const body = document.createElement("div");
+      body.className = "ai-preview-body";
+      const pre = document.createElement("pre");
+      pre.className = "raw prompt-output";
+      pre.textContent = promptText;
+      body.appendChild(pre);
+      details.append(summary, body);
+      card.appendChild(details);
+      container.appendChild(card);
+    }
+
+    function nextStepCount(nextSteps) {
+      if (!nextSteps || typeof nextSteps !== "object") return 0;
+      return arr(nextSteps.priorityThemes).length +
+        arr(nextSteps.researchPlan).length +
+        arr(nextSteps.validationSignals).length +
+        arr(nextSteps.riskTriggers).length;
+    }
+
+    function renderSummary(ep, container) {
+      const summary = ep.data.summary || "節目未明確提及";
+      const stack = document.createElement("div");
+      stack.className = "summary-stack";
+
+      splitSummary(summary).forEach(block => {
+        const card = document.createElement("section");
+        card.className = "summary-block";
+
+        const title = document.createElement("div");
+        title.className = "summary-block-title";
+        title.textContent = block.title;
+
+        const list = document.createElement("ol");
+        list.className = "summary-list";
+        block.points.forEach(point => {
+          const li = document.createElement("li");
+          li.textContent = point;
+          list.appendChild(li);
+        });
+
+        card.append(title, list);
+        stack.appendChild(card);
+      });
+
+      container.appendChild(stack);
+    }
+
+    function splitSummary(summary) {
+      const text = String(summary || "").replace(/\s+/g, " ").trim();
+      if (!text) {
+        return [{ title: "摘要", points: ["節目未明確提及"] }];
+      }
+
+      const sentences = text
+        .split(/(?<=[。！？])/)
+        .map(item => item.trim())
+        .filter(Boolean);
+
+      const blocks = [];
+      let current = null;
+
+      sentences.forEach(sentence => {
+        const title = detectSummaryTitle(sentence);
+        if (!current || title !== current.title || current.points.length >= 5) {
+          current = { title, points: [] };
+          blocks.push(current);
+        }
+        current.points.push(sentence);
+      });
+
+      return blocks.map(block => ({
+        title: block.title,
+        points: mergeTinyPoints(block.points)
+      }));
+    }
+
+    function detectSummaryTitle(sentence) {
+      const rules = [
+        ["開場與贊助", ["開場", "贊助", "東璧堂", "520"]],
+        ["生活與健康", ["瘦瘦針", "減重", "公斤", "健康", "下背痛", "物理治療", "健身", "網球"]],
+        ["市場主線", ["市場", "大盤", "修正", "多頭", "強勢", "輪動"]],
+        ["被動元件", ["被動元件", "MLCC", "鋁電容", "Panasonic", "漲價", "斷供", "交期", "採購", "擴產"]],
+        ["AI 與供應鏈", ["Broadcom", "Swordfish", "NVIDIA", "Google", "TPU", "愛普", "EPMEM", "載板", "老 AI", "IPD"]],
+        ["Q&A 心法", ["Q&A", "問題", "聽眾", "主持人回應", "心法", "比較", "花錢", "光通", "Prompt"]]
+      ];
+
+      for (const [title, keywords] of rules) {
+        if (keywords.some(keyword => sentence.includes(keyword))) {
+          return title;
+        }
+      }
+      return "其他重點";
+    }
+
+    function mergeTinyPoints(points) {
+      const merged = [];
+      points.forEach(point => {
+        const last = merged[merged.length - 1];
+        if (last && last.length < 36 && point.length < 72) {
+          merged[merged.length - 1] = `${last}${point}`;
+        } else {
+          merged.push(point);
+        }
+      });
+      return merged;
+    }
+
+    function renderNews(ep, container) {
+      const entries = filterEntries(arr(ep.data.news), item => {
+        return state.filters.newsCategory === "all" || item.category === state.filters.newsCategory;
+      });
+      container.appendChild(renderNewsToolbar(ep));
+      if (!entries.length) return appendEmpty(container, "沒有符合條件的新聞");
+
+      entries.forEach((item, index) => {
+        const card = sectionCard();
+        card.appendChild(cardHead(item.title || `News ${index + 1}`, [
+          badge(item.category || "other", item.category || "other"),
+          sourceBadge(item.sourceRef)
+        ]));
+        appendField(card, "事件", item.event);
+        appendField(card, "觀點", item.opinion);
+        container.appendChild(card);
+      });
+    }
+
+    function renderNewsToolbar(ep) {
+      const toolbar = document.createElement("div");
+      toolbar.className = "toolbar";
+      const categories = unique(arr(ep.data.news).map(item => item.category).filter(Boolean));
+      const select = selectBox("newsCategory", "全部類別", categories, state.filters.newsCategory);
+      toolbar.appendChild(select);
+      return toolbar;
+    }
+
+    function renderHostDisclosure(ep, container) {
+      const entries = filterEntries(arr(ep.data.hostDisclosure), () => true);
+      if (!entries.length) return appendEmpty(container, "沒有符合條件的持倉揭露");
+
+      entries.forEach((item, index) => {
+        const card = sectionCard();
+        card.appendChild(cardHead(item.target || `Disclosure ${index + 1}`, [
+          badge(item.action || "未標動作", ""),
+          badge(item.speaker || "speaker", ""),
+          sourceBadge(item.sourceRef)
+        ]));
+        const quote = document.createElement("div");
+        quote.className = "quote";
+        quote.textContent = item.quote || "節目未明確提及";
+        card.appendChild(quote);
+        appendField(card, "脈絡", item.context);
+        container.appendChild(card);
+      });
+    }
+
+    function stockRelevanceScore(item, ep) {
+      const sentimentScore = { bullish: 40, watchful: 30, neutral: 20, bearish: 10 };
+      const typeScore = { stock: 5, ETF: 3, sector: 2, theme: 1 };
+      let score = sentimentScore[item.sentiment] || 20;
+      if (item.hostOwned === true) score += 100;
+      score += typeScore[item.type] || 0;
+      const candidates = arr(((ep.data || {}).nextSteps || {}).opportunityCandidates);
+      const itemTickers = arr(item.tickers).map(t => String(t).toUpperCase().trim()).filter(Boolean);
+      const match = candidates.find(c => {
+        const ct = String(c.ticker || "").toUpperCase().trim();
+        if (ct && itemTickers.includes(ct)) return true;
+        const cn = String(c.companyName || "").trim();
+        const iN = String(item.name || "").trim();
+        return cn && iN && (cn === iN || iN.includes(cn) || cn.includes(iN));
+      });
+      if (match) score += Number(match.opportunityScore) || 50;
+      return score;
+    }
+
+    function renderStockAnalysis(ep, container) {
+      let entries = filterEntries(arr(ep.data.stockAnalysis), item => {
+        const okSentiment = state.filters.stockSentiment === "all" || item.sentiment === state.filters.stockSentiment;
+        const okType = state.filters.stockType === "all" || item.type === state.filters.stockType;
+        const okOwned = state.filters.hostOwned === "all" || String(item.hostOwned) === state.filters.hostOwned;
+        return okSentiment && okType && okOwned;
+      });
+      container.appendChild(renderStockToolbar(ep));
+      if (!entries.length) return appendEmpty(container, "沒有符合條件的標的觀點");
+
+      if (state.filters.stockSort === "relevance") {
+        entries = [...entries].sort((a, b) => stockRelevanceScore(b, ep) - stockRelevanceScore(a, ep));
+      }
+
+      entries.forEach((item, index) => {
+        const card = sectionCard();
+        const tickers = arr(item.tickers).length ? arr(item.tickers).join(", ") : "無 ticker";
+        card.appendChild(cardHead(item.name || `Stock ${index + 1}`, [
+          badge(item.sentiment || "neutral", item.sentiment || "neutral"),
+          badge(item.type || "other", item.type || "other"),
+          badge(hostOwnedLabel(item.hostOwned), String(item.hostOwned)),
+          badge(tickers, "")
+        ]));
+        appendField(card, "風險", item.risk);
+        appendField(card, "分析", item.analysis);
+        if (arr(item.sourceRefs).length) appendField(card, "來源", arr(item.sourceRefs).join(", "));
+        container.appendChild(card);
+      });
+    }
+
+    function renderStockToolbar(ep) {
+      const toolbar = document.createElement("div");
+      toolbar.className = "toolbar";
+      const stocks = arr(ep.data.stockAnalysis);
+      toolbar.append(
+        selectBox("stockSort", "排序方式", [
+          ["relevance", "依相關程度"],
+          ["podcast", "依節目順序"]
+        ], state.filters.stockSort),
+        selectBox("stockSentiment", "全部情緒", unique(stocks.map(item => item.sentiment).filter(Boolean)), state.filters.stockSentiment),
+        selectBox("stockType", "全部類型", unique(stocks.map(item => item.type).filter(Boolean)), state.filters.stockType),
+        selectBox("hostOwned", "全部持倉狀態", [
+          ["true", "主持人持有"],
+          ["false", "主持人未持有"],
+          ["null", "未揭露"]
+        ], state.filters.hostOwned)
+      );
+      return toolbar;
+    }
+
+    // ── 台股清單 ──────────────────────────────────────────────
+
+    function normalizeTwCode(val) {
+      const s = String(val || "").trim();
+      const m = s.match(/^(\d{4})(?:\.TW)?$/i);
+      return m ? m[1] : "";
+    }
+
+    function twSourcePriority(sources) {
+      const src = arr(sources);
+      if (src.includes("AI 優先研究候選")) return 0;
+      if (src.includes("Podcast 直接列名")) return 1;
+      if (src.includes("網路新聞補充")) return 2;
+      if (src.includes("Podcast 主題關聯")) return 3;
+      return 9;
+    }
+
+    function primaryTwSource(sources) {
+      const src = arr(sources);
+      for (const name of ["AI 優先研究候選", "Podcast 直接列名", "網路新聞補充", "Podcast 主題關聯"]) {
+        if (src.includes(name)) return name;
+      }
+      return src[0] || "";
+    }
+
+    function normalizeTwWatchlistPayload(payload, manifest) {
+      const rows = Array.isArray(payload.records) ? payload.records : [];
+      return {
+        generatedAt: payload.generatedAt || manifest.generatedAt || "",
+        source: payload.source || manifest.source || "",
+        count: Number(payload.count || manifest.count || rows.length) || rows.length,
+        episodes: Array.isArray(payload.episodes) ? payload.episodes : (Array.isArray(manifest.episodes) ? manifest.episodes : []),
+        records: rows.map(item => {
+          const sources = arr(item.sources).map(value => String(value || "").trim()).filter(Boolean);
+          const themes = arr(item.themes).map(value => String(value || "").trim()).filter(Boolean);
+          const episodes = arr(item.episodes).map(value => String(value || "").trim()).filter(Boolean);
+          const score = Number(item.score) || 0;
+          const compositeScore = Number(item.compositeScore) || score;
+          const latestSortRank = Number(item.latestSortRank) || 9999;
+          const heatSortRank = Number(item.heatSortRank) || 9999;
+          const latestRank = Number(item.latestRank) || 9999;
+          const latestScore = Number(item.latestScore) || 0;
+          const latestSourcePriority = Number(item.latestSourcePriority) || 9;
+          return {
+            code: normalizeTwCode(item.code),
+            themes,
+            sources,
+            reasons: arr(item.reasons).map(value => String(value || "").trim()).filter(Boolean),
+            episodes,
+            latestEpisode: Number(item.latestEpisode) || 0,
+            latestRank,
+            latestScore,
+            latestSourcePriority,
+            rank: Number(item.rank) || 9999,
+            score,
+            compositeScore,
+            latestSortRank,
+            heatSortRank,
+            sourcePriority: twSourcePriority(sources),
+            hostOwned: item.hostOwned === true
+          };
+        }).filter(item => item.code)
+      };
+    }
+
+    function getTwThemeRules() {
+      return [
+        { theme: "被動元件 / MLCC / 鋁電容 / 電感 / 電阻", keywords: ["被動元件","mlcc","高壓 mlcc","電容","電感","電阻","passive"], codes: ["2327","2492","3026","2375","8042","2472","6449","3090","3624","6173"] },
+        { theme: "Power rack / 電源 / 功率半導體", keywords: ["power rack","功率元件","功率半導體","電源架","電源供應","mosfet","sic"], codes: ["2308","2301","2481","5425","3675","8261","6412","3015","2457"] },
+        { theme: "Server CPU / Agentic AI CPU supply chain", keywords: ["server cpu","cpu 類股","cpu supply chain","agentic ai","graviton","arm server","2g1c","4g1c"], codes: ["2308","2301","2382","3231","6669","2356","2376","3702","3036"] },
+        { theme: "Google TPU / AI ASIC / 半導體測試", keywords: ["tpu","google","asic","ai asic","ai 晶片","自有晶片"], codes: ["2330","2454","3661","3443","3035","2360","6515","6223","2449","3711","6531"] },
+        { theme: "晶圓代工 / OSAT / 先進封裝產能", keywords: ["晶圓代工","osat","封測","先進封裝","搶產能"], codes: ["2330","3711","2449","6239","6257","6147","2360","6515","6223"] },
+        { theme: "光通 / 雷射 / 光模組", keywords: ["光通","雷射","光模組","cpo","矽光子","optical"], codes: ["3081","3163","6442","3363","4979","4977","3450","4958","6451"] },
+        { theme: "AI 伺服器 / 機櫃零組件", keywords: ["ai 伺服器","gb200","blackwell","機櫃","散熱","伺服器"], codes: ["3017","3324","3653","2059","3665","2382","3231","6669","2356"] },
+        { theme: "記憶體 / HBM / DDR / NAND", keywords: ["記憶體","hbm","ddr4","ddr3","dram","nand","戰略物資"], codes: ["2344","2337","2408","3260","8299"] },
+        { theme: "載板 / CCL / 高速材料", keywords: ["載板","abf","substrate","ccl","玻璃基板"], codes: ["3037","3189","8046","2383","6274"] },
+        { theme: "建廠工程 / 無塵室 / 廠務", keywords: ["漢唐","無塵室","建廠","廠務","工程"], codes: ["2404","5536","6139","6691","6196","6613"] },
+        { theme: "CSP 採購 / 原物料通膨", keywords: ["csp","blank check","銅","pvc","原物料","通膨"], codes: ["1605","1609","1618","1301","1303","1305","1313"] },
+        { theme: "電子通路 / 庫存訊號", keywords: ["電子通路","通路商","庫存","現貨"], codes: ["3702","3036","8112"] }
+      ];
+    }
+
+    function computeTwWatchlist() {
+      const twRules = getTwThemeRules();
+
+      const records = {};
+
+      function addOrMerge(code, { theme, source, score, rank, episode, episodeTitle, hostOwned }) {
+        const c = normalizeTwCode(code);
+        if (!c) return;
+        if (!records[c]) {
+          records[c] = { code: c, themes: [], sources: [], episodes: [], latestEpisode: 0, latestRank: 9999, latestScore: 0, latestSourcePriority: 9, rank: 9999, score: 0, hostOwned: false };
+        }
+        const r = records[c];
+        if (!r.themes.includes(theme)) r.themes.push(theme);
+        if (!r.sources.includes(source)) r.sources.push(source);
+        if (episode > 0) {
+          const epText = episodeTitle ? `EP${episode} ${episodeTitle}` : `EP${episode}`;
+          if (!r.episodes.includes(epText)) r.episodes.push(epText);
+          const sourcePriority = twSourcePriority([source]);
+          if (episode > r.latestEpisode) {
+            r.latestEpisode = episode;
+            r.latestRank = 9999;
+            r.latestScore = 0;
+            r.latestSourcePriority = 9;
+          }
+          if (episode === r.latestEpisode) {
+            if (rank > 0 && rank < r.latestRank) r.latestRank = rank;
+            if (score > r.latestScore) r.latestScore = score;
+            if (sourcePriority < r.latestSourcePriority) r.latestSourcePriority = sourcePriority;
+          }
+        }
+        if (rank > 0 && rank < r.rank) r.rank = rank;
+        if (score > r.score) r.score = score;
+        if (hostOwned) r.hostOwned = true;
+      }
+
+      for (const ep of state.episodes) {
+        const data = ep.data || {};
+        const epNum = Number(data.episode || data.number || ep.number) || 0;
+        const epTitle = data.title || ep.title || "";
+        const haystack = JSON.stringify(data).toLowerCase();
+
+        // Tier 1: AI 優先研究候選
+        for (const c of arr((data.nextSteps || {}).opportunityCandidates || [])) {
+          if (c.market && c.market !== "TW") continue;
+          const code = normalizeTwCode(c.ticker);
+          if (!code) continue;
+          const owned = arr(data.stockAnalysis || []).some(s =>
+            s.hostOwned === true && arr(s.tickers || []).some(t => normalizeTwCode(String(t)) === code)
+          );
+          addOrMerge(code, { theme: String(c.theme || ""), source: "AI 優先研究候選", score: Number(c.opportunityScore) || 0, rank: Number(c.rank) || 9999, episode: epNum, episodeTitle: epTitle, hostOwned: owned });
+        }
+
+        // Tier 2: 網路新聞補充 (with heatLevel weighting)
+        for (const d of arr((data.nextSteps || {}).webDiscussion || [])) {
+          const heatScore = { high: 15, medium: 10, low: 5 }[d.heatLevel] || 3;
+          for (const n of arr(d.recentNews || [])) {
+            for (const ticker of arr(n.relatedTickers || [])) {
+              const code = normalizeTwCode(ticker);
+              if (!code) continue;
+              addOrMerge(code, { theme: String(d.theme || ""), source: "網路新聞補充", score: heatScore, rank: 9999, episode: epNum, episodeTitle: epTitle, hostOwned: false });
+            }
+          }
+        }
+
+        // Tier 3: Podcast 主題關聯
+        for (const rule of twRules) {
+          if (!rule.keywords.some(kw => haystack.includes(kw))) continue;
+          for (const code of rule.codes) {
+            addOrMerge(code, { theme: rule.theme, source: "Podcast 主題關聯", score: 5, rank: 9999, episode: epNum, episodeTitle: epTitle, hostOwned: false });
+          }
+        }
+      }
+
+      const maxEp = Math.max(0, ...state.episodes.map(ep => Number((ep.data || {}).episode || ep.number) || 0));
+
+      return Object.values(records).map(r => {
+        const recencyBonus  = maxEp > 0 ? Math.round((r.latestEpisode / maxEp) * 20) : 0;
+        const breadthBonus  = Math.min(r.episodes.length * 5, 30);
+        const hostBonus     = r.hostOwned ? 50 : 0;
+        const sourcePriority = twSourcePriority(r.sources);
+        const compositeScore = r.score + recencyBonus + breadthBonus + hostBonus;
+        return { ...r, compositeScore, sourcePriority };
+      });
+    }
+
+    function renderTwWatchlistMain() {
+      dom.main.replaceChildren();
+
+      if (!state.twWatchlist && !state.episodes.length) {
+        const empty = document.createElement("div");
+        empty.className = "empty";
+        empty.textContent = "尚未載入台股清單或集數資料，請先用本機 server 開啟 viewer，或拖入 JSON 檔";
+        dom.main.appendChild(empty);
+        return;
+      }
+
+      const loadedWatchlist = state.twWatchlist && Array.isArray(state.twWatchlist.records) && state.twWatchlist.records.length ? state.twWatchlist : null;
+      const allRecords = loadedWatchlist ? loadedWatchlist.records : computeTwWatchlist();
+
+      // filter
+      let records = allRecords;
+      const srcFilter = state.filters.twSource;
+      if (srcFilter !== "all") records = records.filter(r => r.sources.includes(srcFilter));
+
+      const epNums = loadedWatchlist
+        ? [...new Set(arr(loadedWatchlist.episodes).map(ep => Number(ep.episode || ep.number) || 0).filter(Boolean))].sort((a, b) => a - b)
+        : [...new Set(state.episodes.map(ep => Number((ep.data || {}).episode || ep.number) || 0).filter(Boolean))].sort((a, b) => a - b);
+      const newestEp = epNums.length ? epNums[epNums.length - 1] : Math.max(0, ...records.map(r => Number(r.latestEpisode) || 0));
+
+      function latestFallbackCompare(a, b) {
+        const aSort = Number(a.latestSortRank) || 9999;
+        const bSort = Number(b.latestSortRank) || 9999;
+        if (aSort !== 9999 || bSort !== 9999) return aSort - bSort;
+        const aLatest = Number(a.latestEpisode) === newestEp ? 0 : 1;
+        const bLatest = Number(b.latestEpisode) === newestEp ? 0 : 1;
+        if (aLatest !== bLatest) return aLatest - bLatest;
+        const aSource = Number(a.latestSourcePriority) || (Number(a.sourcePriority) + 1) || 9;
+        const bSource = Number(b.latestSourcePriority) || (Number(b.sourcePriority) + 1) || 9;
+        if (aSource !== bSource) return aSource - bSource;
+        const aRank = aSource === 1 ? Number(a.latestRank || a.rank || 9999) : 9999;
+        const bRank = bSource === 1 ? Number(b.latestRank || b.rank || 9999) : 9999;
+        if (aRank !== bRank) return aRank - bRank;
+        return (Number(b.latestScore) || 0) - (Number(a.latestScore) || 0) || (Number(b.compositeScore) || 0) - (Number(a.compositeScore) || 0) || String(a.code).localeCompare(String(b.code));
+      }
+
+      function heatFallbackCompare(a, b) {
+        const aSort = Number(a.heatSortRank) || 9999;
+        const bSort = Number(b.heatSortRank) || 9999;
+        if (aSort !== 9999 || bSort !== 9999) return aSort - bSort;
+        return (Number(b.compositeScore) || 0) - (Number(a.compositeScore) || 0) || (Number(a.sourcePriority) || 9) - (Number(b.sourcePriority) || 9) || (Number(b.latestEpisode) || 0) - (Number(a.latestEpisode) || 0);
+      }
+
+      // sort
+      const sortKey = state.filters.twSort;
+      if (sortKey === "latest") {
+        records = [...records].sort(latestFallbackCompare);
+      } else if (sortKey === "relevance") {
+        records = [...records].sort(heatFallbackCompare);
+      } else if (sortKey === "episode") {
+        records = [...records].sort((a, b) => b.latestEpisode - a.latestEpisode || b.compositeScore - a.compositeScore);
+      } else {
+        records = [...records].sort((a, b) => a.sourcePriority - b.sourcePriority || b.compositeScore - a.compositeScore);
+      }
+
+      const scoreValue = r => sortKey === "latest" && Number(r.latestEpisode) === newestEp && Number(r.latestScore) > 0 ? Number(r.latestScore) : Number(r.compositeScore) || 0;
+      const maxScore = Math.max(1, ...records.map(scoreValue));
+      const epRange = epNums.length ? `EP${epNums[0]}–${epNums[epNums.length - 1]}` : "來源集數未提供";
+
+      const page = document.createElement("div");
+      page.className = "tw-page";
+
+      // Header
+      const hdr = document.createElement("div");
+      hdr.className = "tw-header";
+      const h2 = document.createElement("h2");
+      h2.textContent = "台股關注清單";
+      const meta = document.createElement("span");
+      meta.className = "tw-meta";
+      meta.textContent = loadedWatchlist
+        ? `共 ${allRecords.length} 檔 · ${epRange} · 最新集優先 / 近十集熱度可切換 · ${loadedWatchlist.generatedAt || ""}`
+        : `共 ${allRecords.length} 檔 · ${epRange} · 最新集優先 / 近十集熱度可切換`;
+      hdr.append(h2, meta);
+      page.appendChild(hdr);
+
+      // Copy row
+      const copyRow = document.createElement("div");
+      copyRow.className = "tw-copy-row";
+      const copyBtn = document.createElement("button");
+      copyBtn.type = "button";
+      copyBtn.className = "btn primary";
+      copyBtn.textContent = `複製 ${records.length} 檔 XQ 代碼`;
+      copyBtn.addEventListener("click", () => {
+        const codes = records.map(r => `${r.code}.TW`).join("\n");
+        navigator.clipboard.writeText(codes).then(() => {
+          copyBtn.textContent = "已複製！";
+          setTimeout(() => { copyBtn.textContent = `複製 ${records.length} 檔 XQ 代碼`; }, 1500);
+        });
+      });
+      const note = document.createElement("span");
+      note.className = "tw-meta";
+      note.textContent = loadedWatchlist
+        ? "最新集優先保留完整股票池；近十集熱度保留 compositeScore"
+        : "最新集優先保留完整股票池；近十集熱度保留 compositeScore";
+      copyRow.append(copyBtn, note);
+      page.appendChild(copyRow);
+
+      // Toolbar
+      const toolbar = document.createElement("div");
+      toolbar.className = "tw-toolbar";
+      toolbar.append(
+        selectBox("twSort", "排序方式", [
+          ["latest", "最新集優先"],
+          ["relevance", "近十集熱度"],
+          ["tier", "依來源層級"],
+          ["episode", "依集數"]
+        ], state.filters.twSort),
+        selectBox("twSource", "全部來源", [
+          ["AI 優先研究候選", "只看 AI 優先候選"],
+          ["Podcast 直接列名", "只看 Full Report 直接列名"],
+          ["網路新聞補充", "只看網路新聞補充"],
+          ["Podcast 主題關聯", "只看 Podcast 主題"]
+        ], state.filters.twSource)
+      );
+      page.appendChild(toolbar);
+
+      if (!records.length) {
+        const empty = document.createElement("div");
+        empty.className = "empty";
+        empty.textContent = "沒有符合條件的台股";
+        page.appendChild(empty);
+        dom.main.appendChild(page);
+        return;
+      }
+
+      const wrap = document.createElement("div");
+      wrap.className = "tw-table-wrap";
+      const table = document.createElement("table");
+      table.className = "tw-table";
+
+      const thead = document.createElement("thead");
+      const hrow = document.createElement("tr");
+      for (const col of ["#", "代碼", "名稱", "產業", "來源", "相關主題", "出現集數", "相關分數"]) {
+        const th = document.createElement("th");
+        th.textContent = col;
+        hrow.appendChild(th);
+      }
+      thead.appendChild(hrow);
+      table.appendChild(thead);
+
+      const tbody = document.createElement("tbody");
+      records.forEach((r, i) => {
+        const stockInfo = state.stockUniverse.find(s => String(s.code || "").replace(/\.TW$/i, "") === r.code);
+        const name = stockInfo ? String(stockInfo.name || "") : "";
+        const industry = stockInfo ? String(stockInfo.industry || "") : "";
+
+        const tierLabel = r.sources.includes("AI 優先研究候選") ? "A" : (r.sources.includes("Podcast 直接列名") || r.sources.includes("網路新聞補充")) ? "B" : "C";
+        const rowScore = scoreValue(r);
+        const barPx = Math.round((rowScore / maxScore) * 60);
+
+        const tr = document.createElement("tr");
+
+        const tdNum = document.createElement("td"); tdNum.textContent = String(i + 1);
+        const tdCode = document.createElement("td"); tdCode.textContent = r.code;
+        tdCode.style.fontWeight = "600";
+        const tdName = document.createElement("td"); tdName.textContent = name || "-";
+        const tdInd = document.createElement("td"); tdInd.textContent = industry || "-";
+
+        const tdTier = document.createElement("td");
+        const tierBadge = document.createElement("span");
+        tierBadge.className = `tw-tier tw-tier-${tierLabel}`;
+        tierBadge.textContent = tierLabel;
+        const tierText = document.createTextNode(" " + primaryTwSource(r.sources));
+        tdTier.append(tierBadge, tierText);
+
+        const tdTheme = document.createElement("td");
+        tdTheme.textContent = r.themes.slice(0, 2).join("、") || "-";
+
+        const tdEps = document.createElement("td");
+        tdEps.textContent = r.episodes.slice(0, 3).join("、") || "-";
+
+        const tdScore = document.createElement("td");
+        const scoreBar = document.createElement("div");
+        scoreBar.className = "tw-score-bar";
+        const fill = document.createElement("div");
+        fill.className = "tw-score-bar-fill";
+        fill.style.width = `${barPx}px`;
+        const scoreNum = document.createElement("span");
+        scoreNum.textContent = String(rowScore);
+        if (r.hostOwned) {
+          const owned = document.createElement("span");
+          owned.style.cssText = "margin-left:4px;font-size:0.72rem;color:var(--teal);font-weight:700;";
+          owned.textContent = "持有";
+          scoreBar.append(fill, scoreNum, owned);
+        } else {
+          scoreBar.append(fill, scoreNum);
+        }
+        tdScore.appendChild(scoreBar);
+
+        tr.append(tdNum, tdCode, tdName, tdInd, tdTier, tdTheme, tdEps, tdScore);
+        tbody.appendChild(tr);
+      });
+
+      table.appendChild(tbody);
+      wrap.appendChild(table);
+      page.appendChild(wrap);
+      dom.main.appendChild(page);
+    }
+
+    // ─────────────────────────────────────────────────────────
+
+    function renderQa(ep, container) {
+      const entries = filterEntries(arr(ep.data.qa), () => true);
+      if (!entries.length) return appendEmpty(container, "沒有符合條件的 Q&A");
+
+      entries.forEach((item, index) => {
+        const card = sectionCard();
+        card.appendChild(cardHead(`Q${index + 1}`, [sourceBadge(item.sourceRef)]));
+        appendField(card, "問題", item.question);
+
+        const points = arr(item.answerPoints);
+        if (points.length) {
+          const label = fieldLabel("回答重點");
+          const list = document.createElement("ol");
+          list.className = "points";
+          points.forEach(point => {
+            const li = document.createElement("li");
+            li.textContent = stringify(point);
+            list.appendChild(li);
+          });
+          card.append(label, list);
+        }
+        appendField(card, "金句", item.keyTakeaway);
+        container.appendChild(card);
+      });
+    }
+
+    function renderNextSteps(ep, container) {
+      const next = ep.data.nextSteps;
+      if (!next || typeof next !== "object" || !Object.keys(next).length) {
+        appendEmpty(container, "這集 JSON 尚未包含 nextSteps");
+        return;
+      }
+
+      if (next.episodeThesis) {
+        const thesis = sectionCard();
+        thesis.appendChild(cardHead("本集研究主線", []));
+        appendField(thesis, "判讀", next.episodeThesis);
+        container.appendChild(thesis);
+      }
+
+      const themes = filterEntries(arr(next.priorityThemes), () => true);
+      if (themes.length) {
+        themes.forEach(item => {
+          const card = sectionCard();
+          card.appendChild(cardHead(`${item.rank || "-"} · ${item.theme || "未命名主題"}`, [
+            badge(item.priority || "background", item.priority || "background")
+          ]));
+          appendField(card, "重要性", item.whyItMatters);
+          appendField(card, "節目證據", item.podcastEvidence);
+          appendTargetsWithCategories(card, "相關標的", item.relatedStockAnalysis);
+          appendField(card, "下一步", item.suggestedNextMove);
+          container.appendChild(card);
+        });
+      }
+
+      renderCandidateSearch(next, container);
+      renderTopTwStockAnalyses(ep, next, container);
+      renderWebDiscussion(ep, next, container);
+      renderOpportunityCandidates(ep, next, container);
+
+      const plan = filterEntries(arr(next.researchPlan), () => true);
+      if (plan.length) {
+        const card = sectionCard();
+        card.appendChild(cardHead("研究任務", []));
+        const wrap = document.createElement("div");
+        wrap.className = "table-wrap";
+        const table = document.createElement("table");
+        table.appendChild(tableHead(["step", "task", "purpose", "neededData", "howToUseResult"]));
+        const tbody = document.createElement("tbody");
+        plan.forEach(item => {
+          const tr = document.createElement("tr");
+          ["step", "task", "purpose", "neededData", "howToUseResult"].forEach(key => {
+            const td = document.createElement("td");
+            td.textContent = Array.isArray(item[key]) ? item[key].join(", ") : stringify(item[key]);
+            tr.appendChild(td);
+          });
+          tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+        wrap.appendChild(table);
+        card.appendChild(wrap);
+        container.appendChild(card);
+      }
+
+      arr(next.validationSignals).forEach(item => {
+        const card = sectionCard();
+        card.appendChild(cardHead(`驗證訊號：${item.theme || "未命名主題"}`, []));
+        appendList(card, "正向訊號", item.positiveSignals);
+        appendList(card, "負向訊號", item.negativeSignals);
+        appendField(card, "等待什麼", item.waitFor);
+        container.appendChild(card);
+      });
+
+      arr(next.riskTriggers).forEach(item => {
+        const card = sectionCard();
+        card.appendChild(cardHead(`破局點：${item.theme || "未命名主題"}`, [
+          badge(item.response || "重新檢查假設", "")
+        ]));
+        appendField(card, "觸發條件", item.trigger);
+        appendField(card, "原因", item.whyItMatters);
+        container.appendChild(card);
+      });
+
+      arr(next.watchlistInstructions).forEach(item => {
+        const card = sectionCard();
+        card.appendChild(cardHead(`觀察清單：${item.watchlistName || "未命名清單"}`, []));
+        appendTargetsWithCategories(card, "納入", item.include);
+        appendTargetsWithCategories(card, "排除", item.exclude);
+        appendField(card, "備註", item.notes);
+        container.appendChild(card);
+      });
+
+      if (arr(next.decisionFramework).length) {
+        const card = sectionCard();
+        card.appendChild(cardHead("判斷框架", []));
+        appendList(card, "使用方式", next.decisionFramework);
+        container.appendChild(card);
+      }
+
+      if (next.notInvestmentAdvice) {
+        const card = sectionCard();
+        const text = document.createElement("div");
+        text.className = "body-text muted";
+        text.textContent = next.notInvestmentAdvice;
+        card.appendChild(text);
+        container.appendChild(card);
+      }
+    }
+
+    function renderTopTwStockAnalyses(ep, next, container) {
+      const rows = filterEntries(buildTopTwStockAnalyses(ep, 9), () => true);
+      if (!rows.length) return;
+
+      const intro = sectionCard();
+      intro.appendChild(cardHead("AI 優先研究候選：前九名相關台股分析", [
+        badge(`${rows.length} 檔`, "neutral")
+      ]));
+      appendField(intro, "使用方式", "這裡由 viewer 依當集 Podcast 明確標的、主持人持倉、AI 優先候選、網路補充與台股主題規則即時計算。它是研究優先順序，不是買進建議；越前面代表和本集主線越近，仍需回頭查月營收、毛利率、法說會、產品線與籌碼。");
+      container.appendChild(intro);
+
+      rows.forEach((item, index) => {
+        const title = `${index + 1} · ${item.name || "未命名"} (${item.code}.TW)`;
+        const card = sectionCard();
+        card.appendChild(cardHead(title, [
+          badge(`Score ${item.score}`, ""),
+          item.industry ? badge(item.industry, "") : null,
+          item.hostOwned ? badge("主持人持有", "true") : null
+        ]));
+        appendField(card, "來源", item.sources.join("、"));
+        appendField(card, "相關主題", item.themes.join("、"));
+        appendField(card, "關聯理由", item.reason);
+        appendField(card, "Podcast/AI 觀點", item.analysis);
+        appendList(card, "下一步查證", item.checks);
+        appendField(card, "風險提醒", item.risk);
+        container.appendChild(card);
+      });
+    }
+
+    function buildTopTwStockAnalyses(ep, limit = 9) {
+      const data = ep.data || {};
+      const next = data.nextSteps && typeof data.nextSteps === "object" ? data.nextSteps : {};
+      const records = {};
+      const defaultChecks = ["月營收", "毛利率", "法說會", "產品線/客戶曝險", "籌碼與股價位置"];
+
+      function stockInfoForCode(code) {
+        return state.stockUniverse.find(item => String(item.code || "").replace(/\.TW$/i, "") === code) || {};
+      }
+
+      function addOrMerge(code, payload) {
+        const c = normalizeTwCode(code);
+        if (!c) return;
+        if (!records[c]) {
+          const info = stockInfoForCode(c);
+          records[c] = {
+            code: c,
+            name: info.name || payload.name || "",
+            industry: info.industry || "",
+            score: 0,
+            sources: [],
+            themes: [],
+            reasons: [],
+            analyses: [],
+            checks: [],
+            risks: [],
+            hostOwned: false
+          };
+        }
+
+        const row = records[c];
+        row.name = row.name || payload.name || "";
+        row.industry = row.industry || payload.industry || "";
+        row.score += Number(payload.score) || 0;
+        row.hostOwned = row.hostOwned || payload.hostOwned === true;
+
+        [payload.source].flat().filter(Boolean).forEach(value => {
+          if (!row.sources.includes(value)) row.sources.push(value);
+        });
+        [payload.themes || payload.theme].flat().filter(Boolean).forEach(value => {
+          if (!row.themes.includes(value)) row.themes.push(value);
+        });
+        [payload.reasons || payload.reason].flat().filter(Boolean).forEach(value => {
+          if (!row.reasons.includes(value)) row.reasons.push(value);
+        });
+        [payload.analyses || payload.analysis].flat().filter(Boolean).forEach(value => {
+          if (!row.analyses.includes(value)) row.analyses.push(value);
+        });
+        arr(payload.checks).filter(Boolean).forEach(value => {
+          if (!row.checks.includes(value)) row.checks.push(value);
+        });
+        [payload.risks || payload.risk].flat().filter(Boolean).forEach(value => {
+          if (!row.risks.includes(value)) row.risks.push(value);
+        });
+      }
+
+      const sentimentScore = { bullish: 70, watchful: 55, neutral: 35, bearish: 20 };
+      arr(data.stockAnalysis).forEach(item => {
+        if (item.type === "ETF") return;
+        const tickerCodes = arr(item.tickers).map(normalizeTwCode).filter(Boolean);
+        tickerCodes.forEach(code => {
+          const base = sentimentScore[item.sentiment] || 35;
+          const ownedBonus = item.hostOwned === true ? 90 : 0;
+          const typeBonus = item.type === "stock" ? 25 : 0;
+          addOrMerge(code, {
+            name: item.name || "",
+            source: "Podcast 標的觀點",
+            theme: item.name || "節目明確標的",
+            score: base + ownedBonus + typeBonus,
+            hostOwned: item.hostOwned,
+            reason: `${item.name || code} 是本集 stockAnalysis 明確收錄標的，情緒為 ${item.sentiment || "neutral"}。`,
+            analysis: item.analysis || "",
+            checks: arr(item.sourceRefs).length ? [`回查來源 ${arr(item.sourceRefs).join("、")}`, ...defaultChecks] : defaultChecks,
+            risk: item.risk || "節目未明確提及"
+          });
+        });
+      });
+
+      arr(next.opportunityCandidates).forEach(item => {
+        if (item.market && item.market !== "TW") return;
+        const code = normalizeTwCode(item.ticker);
+        if (!code) return;
+        addOrMerge(code, {
+          name: item.companyName || item.name || "",
+          source: "AI 優先研究候選",
+          theme: item.theme || "AI 優先研究候選",
+          score: 100 + (Number(item.opportunityScore) || 0),
+          reason: item.whySelected || "JSON 已列為 AI 優先研究候選。",
+          analysis: item.podcastLink || item.whySelected || "",
+          checks: arr(item.whatToCheckNext).length ? item.whatToCheckNext : defaultChecks,
+          risk: arr(item.risks).join("；") || "此為優先研究候選，不是買進建議。"
+        });
+      });
+
+      arr(next.webDiscussion).forEach(item => {
+        const heatScore = { high: 30, medium: 20, low: 10 }[item.heatLevel] || 6;
+        arr(item.recentNews).forEach(news => {
+          arr(news.relatedTickers).forEach(ticker => {
+            const code = normalizeTwCode(ticker);
+            if (!code) return;
+            addOrMerge(code, {
+              source: "網路新聞補充",
+              theme: item.theme || "網路討論",
+              score: heatScore,
+              reason: news.whyItMatters || item.podcastComparison || "網路補充資料提到此 ticker。",
+              analysis: news.summary || "",
+              checks: arr(item.watchSignals).length ? item.watchSignals : defaultChecks,
+              risk: arr(item.redFlags).join("；") || "需確認外部資料是否仍有效。"
+            });
+          });
+        });
+      });
+
+      const haystack = JSON.stringify({
+        summary: data.summary,
+        news: data.news,
+        stockAnalysis: data.stockAnalysis,
+        hostDisclosure: data.hostDisclosure,
+        nextSteps: data.nextSteps
+      }).toLowerCase();
+
+      getTwThemeRules().forEach(rule => {
+        const matched = rule.keywords.filter(keyword => haystack.includes(String(keyword).toLowerCase()));
+        if (!matched.length) return;
+        const score = 16 + Math.min(matched.length * 4, 24);
+        rule.codes.forEach(code => {
+          addOrMerge(code, {
+            source: "Podcast 主題關聯",
+            theme: rule.theme,
+            score,
+            reason: `當集內容命中「${matched.slice(0, 4).join("、")}」，對應台股主題「${rule.theme}」。`,
+            analysis: `此檔由主題規則對應而來，代表它可能位於「${rule.theme}」候選池；仍需自行驗證產品、營收占比、客戶、交期與法說內容。`,
+            checks: defaultChecks,
+            risk: "這是主題關聯候選，節目不一定逐名點到；若公司產品或營收無法對應主題，應降權或移出。"
+          });
+        });
+      });
+
+      return Object.values(records)
+        .map(row => {
+          const info = stockInfoForCode(row.code);
+          const checks = Array.from(new Set([...row.checks, ...defaultChecks])).slice(0, 8);
+          return {
+            ...row,
+            name: row.name || info.name || "-",
+            industry: row.industry || info.industry || "-",
+            score: Math.round(row.score),
+            reason: row.reasons[0] || "與本集主題相關。",
+            analysis: row.analyses[0] || "本檔為 viewer 依 Podcast 主題自動產生的台股研究候選，請用公開資料驗證後再判斷。",
+            checks,
+            risk: row.risks.find(value => value && value !== "節目未明確提及") || "此為研究候選，不是買進建議。"
+          };
+        })
+        .sort((a, b) => b.score - a.score || Number(a.code) - Number(b.code))
+        .slice(0, limit);
+    }
+
+    function renderCoverage(ep, container) {
+      const rows = filterEntries(arr(ep.data.coverageCheck), () => true);
+      if (!rows.length) return appendEmpty(container, "沒有 coverageCheck");
+
+      const wrap = document.createElement("div");
+      wrap.className = "table-wrap";
+      const table = document.createElement("table");
+      table.appendChild(tableHead(["來源", "contentType", "coveredIn", "note"]));
+      const tbody = document.createElement("tbody");
+      rows.forEach(row => {
+        const tr = document.createElement("tr");
+        ["sourceRef", "contentType", "coveredIn", "note"].forEach(key => {
+          const td = document.createElement("td");
+          td.textContent = stringify(row[key]);
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+      table.appendChild(tbody);
+      wrap.appendChild(table);
+      container.appendChild(wrap);
+    }
+
+    function renderRaw(ep, container) {
+      const pre = document.createElement("pre");
+      pre.className = "raw";
+      pre.textContent = JSON.stringify(ep.data, null, 2);
+      container.appendChild(pre);
+    }
+
+    function renderCandidateSearch(next, container) {
+      const explicitThemes = arr(next.candidateDiscovery)
+        .map(item => normalizeCandidateDiscovery(item))
+        .filter(item => item.categories.length || item.keywords.length || item.seedCandidates.length);
+
+      const generatedThemes = arr(next.priorityThemes)
+        .map(theme => buildCandidateSearch(theme))
+        .filter(item => item.categories.length || item.keywords.length || item.seedCandidates.length);
+
+      const themes = explicitThemes.length ? explicitThemes : generatedThemes;
+      if (!themes.length) return;
+
+      const intro = sectionCard();
+      intro.appendChild(cardHead("台股候選股搜尋池", []));
+      appendField(intro, "使用方式", "這裡不是買進名單，而是把 Podcast 主題轉成台股搜尋入口。先看台股分類與關鍵字，再用公司產品、月營收、毛利率、法說會和擴產資訊驗證。");
+      container.appendChild(intro);
+
+      themes.forEach(item => {
+        const card = sectionCard();
+        card.appendChild(cardHead(item.theme, [badge(item.priority || "theme", item.priority || "")]));
+        appendChipList(card, "台股分類", item.categories);
+        appendChipList(card, "搜尋關鍵字", item.keywords);
+
+        if (item.seedCandidates.length) {
+          appendField(card, "候選來源說明", item.seedNote || "這些公司只是依主題關鍵字對應出的參考起點，尚未用最新新聞、財報或公司說法驗證。");
+          appendStockList(card, item.seedLabel || "參考公司（仍需驗證）", item.seedCandidates);
+        }
+
+        const categoryStocks = findStocksByCategories(item.categories);
+        appendCandidatePoolSummary(card, item, categoryStocks);
+
+        appendField(card, "下一步", item.nextMove || "先建立候選清單，再逐一查產品、營收、毛利率、法說會與擴產。");
+        if (item.businessExposureToVerify.length) appendList(card, "曝險驗證", item.businessExposureToVerify);
+        if (item.excludeIf.length) appendList(card, "排除/降權", item.excludeIf);
+        if (item.rankingChecks.length) appendList(card, "排序檢查", item.rankingChecks);
+        if (item.dataSourcesToCheck.length) appendChipList(card, "可查資料", item.dataSourcesToCheck);
+        if (item.podcastBoundaries) appendField(card, "Podcast 邊界", item.podcastBoundaries);
+        container.appendChild(card);
+      });
+    }
+
+    function renderOpportunityCandidates(ep, next, container) {
+      const sourceRows = Array.isArray(next.opportunityCandidates)
+        ? next.opportunityCandidates
+        : arr(ep.data.opportunityCandidates);
+      const rows = filterEntries(sourceRows, () => true);
+      if (!rows.length) return;
+
+      const intro = sectionCard();
+      intro.appendChild(cardHead("AI 優先研究候選", []));
+      appendField(intro, "使用方式", "這裡是根據 Podcast 主線、網路新聞與公司資料挑出的優先研究名單，不是買進建議。請優先看入選理由、來源、風險與打臉條件。");
+      container.appendChild(intro);
+
+      rows.forEach(item => {
+        const title = `${item.rank || "-"} · ${item.companyName || item.name || "未命名公司"}${item.ticker ? ` (${item.ticker})` : ""}`;
+        const card = sectionCard();
+        card.appendChild(cardHead(title, [
+          badge(item.market || "", ""),
+          badge(item.theme || "theme", ""),
+          badge(item.conviction || "unclear", item.conviction || ""),
+          item.opportunityScore !== undefined ? badge(`Score ${item.opportunityScore}`, "") : null
+        ]));
+        appendField(card, "入選理由", item.whySelected);
+        if (item.podcastLink) appendField(card, "Podcast 關聯", item.podcastLink);
+        if (arr(item.externalEvidence).length) appendList(card, "外部證據", item.externalEvidence);
+        if (arr(item.catalysts).length) appendList(card, "可能催化", item.catalysts);
+        if (arr(item.risks).length) appendList(card, "主要風險", item.risks);
+        if (arr(item.invalidationConditions).length) appendList(card, "打臉條件", item.invalidationConditions);
+        if (arr(item.whatToCheckNext).length) appendList(card, "下一步查證", item.whatToCheckNext);
+        if (arr(item.sourceLinks).length) appendSourceLinks(card, "來源連結", item.sourceLinks);
+        appendField(card, "提醒", item.notInvestmentAdvice || "此為優先研究候選，不是買進建議。");
+        container.appendChild(card);
+      });
+    }
+
+    function appendSourceLinks(parent, labelText, rows) {
+      const label = fieldLabel(labelText);
+      const list = document.createElement("ol");
+      list.className = "points";
+
+      arr(rows).forEach(row => {
+        const li = document.createElement("li");
+        const url = String(row.url || "").trim();
+        if (/^https?:\/\//i.test(url)) {
+          const link = document.createElement("a");
+          link.href = url;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.textContent = stringify(row.title || row.source || url);
+          li.appendChild(link);
+        } else {
+          li.textContent = stringify(row.title || row.source || row);
+        }
+
+        const meta = [row.source, row.publishedAt].filter(Boolean).join(" · ");
+        if (meta) {
+          li.appendChild(document.createTextNode(` (${meta})`));
+        }
+        list.appendChild(li);
+      });
+
+      parent.append(label, list);
+    }
+
+    function renderWebDiscussion(ep, next, container) {
+      const sourceRows = Array.isArray(next.webDiscussion)
+        ? next.webDiscussion
+        : arr(ep.data.webDiscussion);
+      const rows = filterEntries(sourceRows, () => true);
+      if (!rows.length) return;
+
+      const intro = sectionCard();
+      intro.appendChild(cardHead("目前網路熱度討論", []));
+      appendField(intro, "使用方式", "這一區是外部網路資料，不是 Podcast 原文。它用來檢查本集主線現在是否被新聞、公告或市場討論支持、混雜或打臉。");
+      container.appendChild(intro);
+
+      rows.forEach(item => {
+        const card = sectionCard();
+        card.appendChild(cardHead(item.theme || "未命名主題", [
+          badge(item.heatLevel || "unclear", item.heatLevel || ""),
+          badge(item.directionVsPodcast || "unclear", item.directionVsPodcast || ""),
+          item.asOf ? badge(item.asOf, "") : null
+        ]));
+        if (arr(item.whatMarketIsDiscussing).length) appendList(card, "市場在討論", item.whatMarketIsDiscussing);
+        if (arr(item.recentNews).length) appendWebNewsTable(card, "近期新聞/來源", item.recentNews);
+        if (arr(item.watchSignals).length) appendList(card, "後續追蹤訊號", item.watchSignals);
+        if (arr(item.redFlags).length) appendList(card, "風險提醒", item.redFlags);
+        if (item.podcastComparison) appendField(card, "和 Podcast 的關係", item.podcastComparison);
+        container.appendChild(card);
+      });
+    }
+
+    function appendWebNewsTable(parent, labelText, rows) {
+      const label = fieldLabel(labelText);
+      const wrap = document.createElement("div");
+      wrap.className = "table-wrap";
+      const table = document.createElement("table");
+      table.appendChild(tableHead(["標題", "來源", "日期", "關聯標的", "重點"]));
+      const tbody = document.createElement("tbody");
+
+      arr(rows).forEach(row => {
+        const tr = document.createElement("tr");
+        const titleCell = document.createElement("td");
+        const url = String(row.url || "").trim();
+        if (/^https?:\/\//i.test(url)) {
+          const link = document.createElement("a");
+          link.href = url;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.textContent = stringify(row.title);
+          titleCell.appendChild(link);
+        } else {
+          titleCell.textContent = stringify(row.title);
+        }
+        tr.appendChild(titleCell);
+
+        ["source", "publishedAt", "relatedTickers", "summary"].forEach(key => {
+          const td = document.createElement("td");
+          td.textContent = Array.isArray(row[key]) ? row[key].join(", ") : stringify(row[key]);
+          tr.appendChild(td);
+        });
+
+        if (row.whyItMatters) {
+          const reason = document.createElement("div");
+          reason.className = "muted";
+          reason.style.marginTop = "6px";
+          reason.textContent = `為什麼重要：${row.whyItMatters}`;
+          tr.lastChild.appendChild(reason);
+        }
+
+        tbody.appendChild(tr);
+      });
+
+      table.appendChild(tbody);
+      wrap.appendChild(table);
+      parent.append(label, wrap);
+    }
+
+    function appendCandidatePoolSummary(parent, item, categoryStocks) {
+      if (!categoryStocks.length) return;
+
+      const categoryCounts = groupStockCountsByIndustry(categoryStocks)
+        .map(row => `${row.industry} ${row.count} 檔`);
+      appendChipList(parent, "官方分類範圍", categoryCounts);
+
+      if (categoryStocks.length <= 40) {
+        appendStockList(parent, `官方產業候選池（${categoryStocks.length} 檔）`, categoryStocks);
+        return;
+      }
+
+      appendField(parent, "官方池說明", `這個官方分類共有 ${categoryStocks.length} 檔，範圍太大；直接列前 30 檔會很隨機，所以這裡只把它當作第一層入口。真正有用的候選名單，必須再用產品關鍵字與業務曝險縮小。`);
+      appendList(parent, "縮小候選池", buildNarrowingSteps(item));
+    }
+
+    function groupStockCountsByIndustry(stocks) {
+      const counts = new Map();
+      stocks.forEach(item => {
+        const industry = item.industry || "未分類";
+        counts.set(industry, (counts.get(industry) || 0) + 1);
+      });
+      return Array.from(counts, ([industry, count]) => ({ industry, count }))
+        .sort((a, b) => a.industry.localeCompare(b.industry, "zh-Hant"));
+    }
+
+    function buildNarrowingSteps(item) {
+      const keywordText = arr(item.keywords).slice(0, 6).join("、") || "本集主題關鍵字";
+      const exposureText = arr(item.businessExposureToVerify).slice(0, 3).join("、") || "產品線、營收占比、客戶結構";
+      return [
+        `先在官方分類裡搜尋「${keywordText}」，找出業務描述真的對得上的公司。`,
+        `逐一查 ${exposureText}，排除只是沾概念、沒有量產或營收占比太低的公司。`,
+        "留下來的公司再看月營收、毛利率、法說會、報價/交期/訂單與產能變化。",
+        "最後才比較股價位置、成交量與市場情緒，避免只是題材熱但基本面還沒跟上。"
+      ];
+    }
+
+    function normalizeCandidateDiscovery(item) {
+      const categories = normalizeIndustryCategories(item.twIndustryCategories || item.categories || item.twCategories);
+      const seedCandidates = dedupeStocks(arr(item.seedCandidates || item.candidates || item.mentionedCompanies)
+        .map(value => normalizeStockCandidate(value))
+        .filter(Boolean));
+
+      return {
+        theme: item.theme || item.watchlistName || "未命名主題",
+        priority: item.priority || "",
+        categories,
+        keywords: unique(arr(item.searchKeywords || item.keywords).map(value => stringify(value)).filter(Boolean)),
+        seedCandidates,
+        seedLabel: "節目/JSON 提及公司（仍需驗證）",
+        seedNote: "這些公司來自 JSON 內的候選欄位、節目明確提及，或你另外提供的名單；仍需要回頭查產品、營收、毛利率與法說會驗證。",
+        nextMove: item.candidatePoolRule || item.suggestedNextMove || item.nextMove || "",
+        businessExposureToVerify: arr(item.businessExposureToVerify || item.exposureToVerify),
+        excludeIf: arr(item.excludeIf),
+        rankingChecks: arr(item.rankingChecks),
+        dataSourcesToCheck: arr(item.dataSourcesToCheck || item.dataSources),
+        podcastBoundaries: item.podcastBoundaries || ""
+      };
+    }
+
+    function normalizeIndustryCategories(values) {
+      return unique(arr(values)
+        .map(value => stringify(value).trim())
+        .filter(value => value && value !== "[]" && value !== "不適用" && value !== "節目未明確提及"));
+    }
+
+    function normalizeStockCandidate(value) {
+      if (!value) return null;
+      if (typeof value === "object") {
+        const code = stringify(value.code || value.ticker || "").replace("節目未明確提及", "").trim();
+        const name = stringify(value.name || value.company || value.target || "").replace("節目未明確提及", "").trim();
+        if (!code && !name) return null;
+        return stock(code, name);
+      }
+      const text = stringify(value).trim();
+      if (!text || text === "節目未明確提及") return null;
+      return { code: "", name: text, market: "", industry: "" };
+    }
+
+    function buildCandidateSearch(theme) {
+      const haystack = [
+        theme.theme,
+        theme.whyItMatters,
+        theme.podcastEvidence,
+        theme.suggestedNextMove,
+        ...arr(theme.relatedStockAnalysis)
+      ].join(" ");
+
+      const rules = getCandidateRules();
+      const matched = rules.filter(rule => rule.keywords.some(keyword => haystack.toLowerCase().includes(keyword.toLowerCase())));
+      const categories = unique(matched.flatMap(rule => rule.categories));
+      const searchKeywords = unique(matched.flatMap(rule => rule.searchKeywords));
+      const seedCandidates = [];
+
+      return {
+        theme: theme.theme || "未命名主題",
+        priority: theme.priority || "",
+        categories,
+        keywords: searchKeywords,
+        seedCandidates,
+        nextMove: theme.suggestedNextMove || "",
+        businessExposureToVerify: [],
+        excludeIf: [],
+        rankingChecks: [],
+        dataSourcesToCheck: [],
+        podcastBoundaries: ""
+      };
+    }
+
+    function getCandidateRules() {
+      return [
+        {
+          keywords: ["被動元件", "mlcc", "電容", "電感", "電阻", "鋁電解", "edlc", "scap", "os-con", "passive"],
+          categories: ["20. 電子零組件"],
+          searchKeywords: ["MLCC", "晶片電阻", "電感", "鋁電解電容", "高壓", "AI伺服器", "Cloud", "交期", "漲價", "擴產"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["載板", "abf", "ccl", "substrate", "玻璃基板", "ipd", "integrated passive"],
+          categories: ["20. 電子零組件", "18. 光電", "10. 玻璃陶瓷"],
+          searchKeywords: ["ABF", "載板", "BT載板", "CCL", "玻璃基板", "先進封裝", "AI伺服器"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["光通", "光設備", "光通訊", "cpo", "光模組", "矽光子", "optical"],
+          categories: ["19. 通信網路", "20. 電子零組件", "18. 光電"],
+          searchKeywords: ["光通訊", "光收發模組", "CPO", "矽光子", "800G", "1.6T", "AI資料中心"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["power components", "power", "離散元件", "電源架", "電源機箱", "mosfet", "二極體", "整流", "sic", "羅姆"],
+          categories: ["16. 半導體", "20. 電子零組件", "23. 其他電子"],
+          searchKeywords: ["MOSFET", "二極體", "整流器", "功率元件", "SiC", "電源管理", "電源架", "AI伺服器"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["記憶體", "memory", "dram", "nand", "hbm", "模組"],
+          categories: ["16. 半導體", "20. 電子零組件"],
+          searchKeywords: ["DRAM", "NAND", "NOR Flash", "HBM", "記憶體模組", "報價", "庫存"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["台積電", "先進製程", "半導體", "asic", "晶片", "nvidia", "broadcom", "mediatek", "聯發科", "愛普"],
+          categories: ["16. 半導體"],
+          searchKeywords: ["先進製程", "ASIC", "IC設計", "晶圓代工", "封測", "AI晶片", "毛利率"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["老 ai", "new ai", "ai server", "ai伺服器", "伺服器", "odm", "oem", "代工", "硬體"],
+          categories: ["17. 電腦及週邊設備", "23. 其他電子"],
+          searchKeywords: ["AI伺服器", "ODM", "OEM", "GB200", "NVL", "散熱", "電源", "出貨"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["軟體", "software", "資安", "資訊服務", "數位雲端", "雲端"],
+          categories: ["22. 資訊服務", "34. 數位雲端"],
+          searchKeywords: ["資訊服務", "資安", "雲端", "SaaS", "系統整合", "AI軟體"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["低軌", "衛星", "satellite", "太空"],
+          categories: ["19. 通信網路", "20. 電子零組件"],
+          searchKeywords: ["低軌衛星", "衛星通訊", "地面設備", "射頻", "天線", "Starlink"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["綠能", "能源", "電池", "儲能", "充電", "再生能源"],
+          categories: ["33. 綠能環保", "29. 油電燃氣", "5. 電機機械"],
+          searchKeywords: ["儲能", "電池", "充電樁", "再生能源", "電網", "逆變器"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["航運", "運價", "貨櫃", "散裝", "航空"],
+          categories: ["25. 航運業"],
+          searchKeywords: ["貨櫃", "散裝", "運價", "SCFI", "航空貨運"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["金融", "金控", "銀行", "保險", "升息", "降息"],
+          categories: ["27. 金融保險"],
+          searchKeywords: ["金控", "銀行", "保險", "淨利息收益", "股利"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["水泥", "混凝土", "預拌"],
+          categories: ["1. 水泥"],
+          searchKeywords: ["水泥", "預拌混凝土", "售價", "出貨量", "能源成本", "工程需求"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["食品", "飲料", "乳品", "肉品", "保健食品", "原物料成本"],
+          categories: ["2. 食品"],
+          searchKeywords: ["食品", "飲料", "乳品", "通路", "原物料成本", "售價"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["塑膠", "塑化", "pvc", "pe", "pp", "abs", "pta", "乙烯", "丙烯"],
+          categories: ["3. 塑膠"],
+          searchKeywords: ["PVC", "PE", "PP", "ABS", "PTA", "乙烯", "利差", "開工率"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["紡織", "成衣", "布料", "尼龍", "聚酯", "纖維", "鞋材"],
+          categories: ["4. 紡織纖維"],
+          searchKeywords: ["紡織", "成衣", "機能布", "鞋材", "品牌客戶", "庫存去化"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["工具機", "機械", "自動化", "馬達", "空壓", "軸承", "機器人"],
+          categories: ["5. 電機機械"],
+          searchKeywords: ["工具機", "自動化", "馬達", "機器人", "訂單", "交期"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["電線", "電纜", "線纜", "銅價", "重電", "電網"],
+          categories: ["6. 電器電纜", "5. 電機機械"],
+          searchKeywords: ["電線電纜", "銅價", "重電", "電網", "台電強韌電網", "訂單"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["化工", "特化", "肥料", "樹脂", "塗料", "溶劑", "材料"],
+          categories: ["8. 化工"],
+          searchKeywords: ["特用化學", "樹脂", "肥料", "塗料", "利差", "原料成本"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["生技", "醫療", "醫材", "新藥", "藥品", "疫苗", "cdmo", "醫院"],
+          categories: ["9. 生技醫療"],
+          searchKeywords: ["新藥", "醫材", "藥證", "臨床", "CDMO", "出貨", "保險給付"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["玻璃", "陶瓷", "玻陶", "玻璃纖維"],
+          categories: ["10. 玻璃陶瓷"],
+          searchKeywords: ["玻璃", "陶瓷", "玻璃纖維", "產能", "報價", "需求"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["造紙", "紙漿", "紙器", "工紙", "紙箱"],
+          categories: ["11. 造紙"],
+          searchKeywords: ["紙漿", "工紙", "紙器", "紙箱", "報價", "原料成本"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["鋼鐵", "鋼價", "鋼胚", "盤元", "不鏽鋼", "鋼筋", "熱軋"],
+          categories: ["12. 鋼鐵"],
+          searchKeywords: ["鋼價", "鋼胚", "盤元", "鋼筋", "熱軋", "庫存", "利差"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["橡膠", "輪胎", "乳膠"],
+          categories: ["13. 橡膠"],
+          searchKeywords: ["輪胎", "橡膠", "原料成本", "售價", "海外市場"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["汽車", "電動車", "車用", "車廠", "汽車零組件", "adas"],
+          categories: ["14. 汽車", "20. 電子零組件"],
+          searchKeywords: ["車用", "電動車", "ADAS", "汽車零組件", "客戶認證", "出貨"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["電子股", "電子類股", "電子業"],
+          categories: ["15. 電子全部"],
+          searchKeywords: ["電子股", "營收動能", "庫存", "毛利率", "資金輪動"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["面板", "led", "micro led", "mini led", "背光", "顯示器"],
+          categories: ["18. 光電"],
+          searchKeywords: ["面板", "LED", "Mini LED", "Micro LED", "背光", "報價", "稼動率"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["電子通路", "ic通路", "代理商", "通路商", "庫存評價"],
+          categories: ["21. 電子通路"],
+          searchKeywords: ["IC通路", "代理線", "庫存", "應收帳款", "毛利率"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["營建", "營造", "建商", "房地產", "預售屋", "建材", "都更"],
+          categories: ["24. 建材營造"],
+          searchKeywords: ["營建", "建案", "交屋", "預售", "土地庫存", "利率", "政策"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["觀光", "飯店", "餐飲", "旅遊", "旅宿", "航空客運"],
+          categories: ["26. 觀光餐旅"],
+          searchKeywords: ["觀光", "飯店", "餐飲", "住房率", "展店", "來台旅客"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["百貨", "零售", "超商", "貿易", "消費通路", "電商"],
+          categories: ["28. 貿易百貨", "34. 數位雲端"],
+          searchKeywords: ["百貨", "零售", "超商", "電商", "同店銷售", "展店"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["文創", "遊戲", "媒體", "出版", "影視", "ip授權"],
+          categories: ["30. 文化創意"],
+          searchKeywords: ["遊戲", "影視", "IP授權", "訂閱", "廣告", "海外授權"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["農業", "農科", "植物工廠", "種苗", "畜牧"],
+          categories: ["31. 農業科技業"],
+          searchKeywords: ["農業科技", "種苗", "植物工廠", "畜牧", "原料成本"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["tdr", "存託憑證"],
+          categories: ["32. 存託憑證"],
+          searchKeywords: ["TDR", "存託憑證", "折溢價", "流動性"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["運動", "健身", "自行車", "高爾夫", "球具", "運動休閒"],
+          categories: ["35. 運動休閒"],
+          searchKeywords: ["運動休閒", "自行車", "高爾夫", "健身", "品牌客戶", "庫存"],
+          seedCandidates: []
+        },
+        {
+          keywords: ["居家", "家具", "寢具", "清潔用品", "生活用品"],
+          categories: ["36. 居家生活"],
+          searchKeywords: ["居家生活", "家具", "寢具", "生活用品", "通路", "原料成本"],
+          seedCandidates: []
+        }
+      ];
+    }
+
+    function stock(code, name) {
+      const fromUniverse = state.stockUniverse.find(item => item.code === code);
+      if (fromUniverse) return fromUniverse;
+      return { code, name, market: "", industry: "" };
+    }
+
+    function findStocksByCategories(categories) {
+      if (!categories.length || !state.stockUniverse.length) return [];
+      return state.stockUniverse
+        .filter(stockItem => categories.includes(stockItem.industry))
+        .sort((a, b) => a.code.localeCompare(b.code, "zh-Hant"));
+    }
+
+    function appendChipList(parent, labelText, values) {
+      const label = fieldLabel(labelText);
+      const row = document.createElement("div");
+      row.className = "card-meta";
+      row.style.justifyContent = "flex-start";
+      arr(values).forEach(value => row.appendChild(badge(value, value)));
+      if (!row.childElementCount) row.appendChild(badge("無明確分類", ""));
+      parent.append(label, row);
+    }
+
+    function appendStockList(parent, labelText, stocks) {
+      const label = fieldLabel(labelText);
+      const wrap = document.createElement("div");
+      wrap.className = "table-wrap";
+      const table = document.createElement("table");
+      table.appendChild(tableHead(["代號", "名稱", "市場", "產業"]));
+      const tbody = document.createElement("tbody");
+      stocks.forEach(item => {
+        const tr = document.createElement("tr");
+        ["code", "name", "market", "industry"].forEach(key => {
+          const td = document.createElement("td");
+          td.textContent = item[key] || "";
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+      table.appendChild(tbody);
+      wrap.appendChild(table);
+      parent.append(label, wrap);
+    }
+
+    function dedupeStocks(stocks) {
+      const seen = new Set();
+      return stocks.filter(item => {
+        const key = item.code || item.name;
+        if (!key || seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      });
+    }
+
+    function filterEntries(entries, predicate) {
+      return entries.filter(item => {
+        if (!predicate(item)) return false;
+        if (!state.query) return true;
+        return JSON.stringify(item).toLowerCase().includes(state.query);
+      });
+    }
+
+    function selectBox(filterKey, allLabel, values, current) {
+      const select = document.createElement("select");
+      select.className = "select";
+      const all = document.createElement("option");
+      all.value = "all";
+      all.textContent = allLabel;
+      select.appendChild(all);
+
+      values.forEach(value => {
+        const option = document.createElement("option");
+        if (Array.isArray(value)) {
+          option.value = value[0];
+          option.textContent = value[1];
+        } else {
+          option.value = value;
+          option.textContent = value;
+        }
+        select.appendChild(option);
+      });
+
+      select.value = current;
+      select.addEventListener("change", event => {
+        state.filters[filterKey] = event.target.value;
+        render();
+      });
+      return select;
+    }
+
+    function sectionCard() {
+      const card = document.createElement("article");
+      card.className = "section-card";
+      return card;
+    }
+
+    function cardHead(titleText, badges) {
+      const head = document.createElement("div");
+      head.className = "card-head";
+      const title = document.createElement("div");
+      title.className = "card-title";
+      title.textContent = titleText;
+      const meta = document.createElement("div");
+      meta.className = "card-meta";
+      badges.filter(Boolean).forEach(item => meta.appendChild(item));
+      head.append(title, meta);
+      return head;
+    }
+
+    function appendField(parent, labelText, value) {
+      const label = fieldLabel(labelText);
+      const text = document.createElement("div");
+      text.className = "body-text";
+      text.textContent = stringify(value);
+      parent.append(label, text);
+    }
+
+    function appendList(parent, labelText, values) {
+      const label = fieldLabel(labelText);
+      const list = document.createElement("ol");
+      list.className = "points";
+      arr(values).forEach(value => {
+        const li = document.createElement("li");
+        li.textContent = stringify(value);
+        list.appendChild(li);
+      });
+      if (!list.childElementCount) {
+        const li = document.createElement("li");
+        li.textContent = "節目未明確提及";
+        list.appendChild(li);
+      }
+      parent.append(label, list);
+    }
+
+    function appendTargetsWithCategories(parent, labelText, values) {
+      const label = fieldLabel(labelText);
+      const list = document.createElement("ol");
+      list.className = "points";
+
+      arr(values).forEach(value => {
+        const target = stringify(value);
+        const li = document.createElement("li");
+        const targetText = document.createElement("span");
+        targetText.textContent = target;
+        li.appendChild(targetText);
+
+        classifyTarget(target).forEach(category => {
+          li.appendChild(document.createTextNode(" "));
+          li.appendChild(badge(category, category));
+        });
+
+        list.appendChild(li);
+      });
+
+      if (!list.childElementCount) {
+        const li = document.createElement("li");
+        li.textContent = "節目未明確提及";
+        list.appendChild(li);
+      }
+
+      parent.append(label, list);
+    }
+
+    function classifyTarget(target) {
+      const text = String(target || "").toLowerCase();
+      const raw = String(target || "");
+      const nonTaiwanKeywords = [
+        "panasonic", "broadcom", "nvidia", "google", "crowdstrike", "figma", "atlassian",
+        "rohm", "羅姆", "美股", "葡萄酒", "紅酒", "nordvpn", "東璧堂", "施景中", "醫師",
+        "遊戲", "蕭南資本", "紅顏綠筆", "暗花夜戰", "noa bloom", "perplexity", "opus", "gpt",
+        "0050", "etf", "fcn", "定息票據", "指數投資", "大盤指數"
+      ];
+      if (nonTaiwanKeywords.some(keyword => text.includes(keyword.toLowerCase()) || raw.includes(keyword))) {
+        return [];
+      }
+
+      const rules = [
+        ["16. 半導體", ["半導體", "台積電", "tsmc", "聯發科", "mediatek", "晶片", "先進製程", "愛普", "epmem", "記憶體", "dram", "hbm"]],
+        ["17. 電腦及週邊設備", ["伺服器", "server", "odm", "oem", "電腦及週邊", "近年代工", "老 ai", "new ai", "ai 硬體"]],
+        ["18. 光電", ["光電", "玻璃基板", "面板", "光學"]],
+        ["19. 通信網路", ["光通", "光設備", "通信", "網路", "network", "低軌", "衛星"]],
+        ["20. 電子零組件", ["被動元件", "mlcc", "鋁電容", "鋁電解", "電容", "電感", "電阻", "載板", "substrate", "ccl", "power components", "離散元件", "ipd", "integrated passive"]],
+        ["22. 資訊服務", ["台股軟體", "資訊服務"]],
+        ["23. 其他電子", ["電子全部", "硬體", "power", "電源架", "電源機箱"]],
+        ["29. 油電燃氣", ["油價", "石油", "燃氣"]],
+        ["34. 數位雲端", ["雲端", "cloud", "數位雲端"]]
+      ];
+
+      const matched = [];
+      rules.forEach(([category, keywords]) => {
+        if (keywords.some(keyword => text.includes(keyword.toLowerCase()) || raw.includes(keyword))) {
+          matched.push(category);
+        }
+      });
+
+      if (matched.length) {
+        return Array.from(new Set(matched));
+      }
+
+      return [];
+    }
+
+    function fieldLabel(labelText) {
+      const label = document.createElement("div");
+      label.className = "muted";
+      label.style.marginTop = "8px";
+      label.style.fontSize = "12px";
+      label.style.fontWeight = "800";
+      label.textContent = labelText;
+      return label;
+    }
+
+    function appendEmpty(container, text) {
+      const empty = document.createElement("div");
+      empty.className = "empty";
+      empty.textContent = text;
+      container.appendChild(empty);
+    }
+
+    function badge(text, variant) {
+      const node = document.createElement("span");
+      node.className = `badge ${safeClass(variant)}`;
+      node.textContent = text || "-";
+      return node;
+    }
+
+    function tableHead(labels) {
+      const thead = document.createElement("thead");
+      const tr = document.createElement("tr");
+      labels.forEach(label => {
+        const th = document.createElement("th");
+        th.textContent = label;
+        tr.appendChild(th);
+      });
+      thead.appendChild(tr);
+      return thead;
+    }
+
+    function safeClass(value) {
+      return String(value || "").replace(/[^a-zA-Z0-9_-]/g, "");
+    }
+
+    function sourceBadge(value) {
+      if (Array.isArray(value)) {
+        return value.length ? badge(value.join(", "), "") : null;
+      }
+      return value ? badge(value, "") : null;
+    }
+
+    function hostOwnedLabel(value) {
+      if (value === true) return "主持人持有";
+      if (value === false) return "主持人未持有";
+      return "未揭露";
+    }
+
+    function formatBytes(value) {
+      const bytes = Number(value) || 0;
+      if (bytes <= 0) return "0 B";
+      if (bytes < 1024) return `${bytes} B`;
+      if (bytes < 1024 * 1024) return `${Math.round(bytes / 1024)} KB`;
+      return `${(bytes / 1024 / 1024).toFixed(1)} MB`;
+    }
+
+    function arr(value) {
+      return Array.isArray(value) ? value : [];
+    }
+
+    function unique(values) {
+      return Array.from(new Set(values)).sort((a, b) => String(a).localeCompare(String(b), "zh-Hant"));
+    }
+
+    function stringify(value) {
+      if (value === null || value === undefined || value === "") return "節目未明確提及";
+      if (Array.isArray(value)) return value.length ? value.map(stringify).join(", ") : "[]";
+      if (typeof value === "object") return JSON.stringify(value);
+      return String(value);
+    }
+// Share build: private portfolio, bank balance, realized trades, and local snapshots are intentionally omitted.
+    function renderPortfolioMain() {
+      state.activeView = "watchlist";
+      renderTwWatchlistMain();
+    }
+    tryLoadStockUniverse();
+    tryLoadTwWatchlistManifest();
+    tryLoadManifest();
+    tryLoadPendingManifest();
+    tryLoadAiResearchManifest();
+    tryLoadAiReportsManifest();
+    tryLoadStockAnalysisNotes();
+    render();
+  </script>
+</body>
+</html>
