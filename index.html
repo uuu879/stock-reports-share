@@ -2778,7 +2778,7 @@ ${notes}`;
       const allowed = ["summary", "news", "hostDisclosure", "stockAnalysis", "qa", "nextSteps", "aiPrompt"];
       const queryTab = new URLSearchParams(window.location.search).get("tab");
       const hashTab = window.location.hash ? window.location.hash.slice(1) : "";
-      const wanted = queryTab || hashTab || "summary";
+      const wanted = queryTab || hashTab || "nextSteps";
       return allowed.includes(wanted) ? wanted : "summary";
     }
 
