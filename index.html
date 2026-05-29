@@ -3077,11 +3077,18 @@ ${notes}`;
       list.className = "points";
       arr(refs).forEach(ref => {
         const li = document.createElement("li");
-        li.textContent = `${ref.file || "ai_report"}：${ref.match || ""}`;
+        li.textContent = `${formatAiReportRefLabel(ref.file)}：${ref.match || ""}`;
         list.appendChild(li);
       });
       block.appendChild(list);
       parent.appendChild(block);
+    }
+
+    function formatAiReportRefLabel(fileName) {
+      const text = String(fileName || "").trim();
+      const match = text.match(/EP\s*0*(\d+)/i);
+      if (match) return `EP${Number(match[1])}`;
+      return text || "AI report";
     }
 
     function appendStockAnalysisSourceLinks(parent, sources) {
@@ -3183,7 +3190,7 @@ ${notes}`;
       if (arr(item.aiReportRefs).length) {
         lines.push(""); lines.push("ai_reports 對照");
         arr(item.aiReportRefs).forEach((ref, i) => {
-          lines.push(`${i + 1}. ${ref.file || "ai_report"}：${ref.match || ""}`);
+          lines.push(`${i + 1}. ${formatAiReportRefLabel(ref.file)}：${ref.match || ""}`);
         });
       }
       return lines.join("\n");
