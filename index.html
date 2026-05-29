@@ -1356,7 +1356,7 @@
       </aside>
 
       <main id="main" class="main">
-        <div class="empty">尚未載入資料</div>
+        <div class="empty">資料載入中，請稍候 5-10 秒</div>
       </main>
     </div>
   </div>
@@ -1409,6 +1409,8 @@
       ["nextSteps", "下一步"],
       ["aiPrompt", "AI助理"]
     ];
+    const loadingWaitText = "資料載入中，請稍候 5-10 秒";
+    const loadingJsonWaitText = "資料載入中，請稍候 5-10 秒；若仍未出現，可重新整理頁面";
 
     dom.folderBtn.addEventListener("click", chooseFolder);
     dom.filesBtn.addEventListener("click", () => dom.fileInput.click());
@@ -2566,7 +2568,7 @@ ${notes}`;
       if (!episodes.length && !pendingEpisodes.length) {
         const empty = document.createElement("div");
         empty.className = "empty";
-        empty.textContent = (state.episodes.length || state.pendingEpisodes.length) ? "沒有符合搜尋的集數" : "尚未載入 JSON";
+        empty.textContent = (state.episodes.length || state.pendingEpisodes.length) ? "沒有符合搜尋的集數" : loadingJsonWaitText;
         dom.episodeList.appendChild(empty);
         return;
       }
@@ -2625,7 +2627,7 @@ ${notes}`;
       if (!ep) {
         const empty = document.createElement("div");
         empty.className = "empty";
-        empty.textContent = state.episodes.length ? "沒有符合搜尋的內容" : "尚未載入資料";
+        empty.textContent = state.episodes.length ? "沒有符合搜尋的內容" : loadingWaitText;
         dom.main.appendChild(empty);
         return;
       }
@@ -4164,7 +4166,7 @@ ${notes}`;
       if (!state.twWatchlist && !state.episodes.length) {
         const empty = document.createElement("div");
         empty.className = "empty";
-        empty.textContent = "尚未載入台股清單或集數資料，請先用本機 server 開啟 viewer，或拖入 JSON 檔";
+        empty.textContent = "台股清單資料載入中，請稍候 5-10 秒；若仍未出現，可重新整理頁面";
         dom.main.appendChild(empty);
         return;
       }
