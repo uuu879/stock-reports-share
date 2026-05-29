@@ -1147,7 +1147,21 @@
         flex: 0 0 min(76vw, 260px);
         width: auto;
         padding: 9px 10px;
+        background: var(--teal);
+        border-color: var(--teal);
+        color: #ffffff;
         scroll-snap-align: start;
+      }
+
+      .episode-item:hover {
+        background: #0a605a;
+        border-color: #0a605a;
+      }
+
+      .episode-item.active {
+        background: #064e48;
+        border-color: #064e48;
+        box-shadow: 0 0 0 2px var(--teal-soft);
       }
 
       .episode-name {
@@ -1159,6 +1173,7 @@
       }
 
       .episode-meta {
+        color: rgba(255, 255, 255, 0.76);
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
