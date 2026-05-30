@@ -1,84 +1,84 @@
 ﻿{
-    "generatedAt":  "2026-05-30T00:12:51",
+    "generatedAt":  "2026-05-30T11:50:56",
     "count":  13,
     "files":  [
                   {
                       "episode":  102,
                       "sourceFile":  "episodes/EP102_analysis.json",
                       "reportFile":  "ai_reports/EP102_ai_full_report.md",
-                      "generatedAt":  "2026-05-30T00:12:51"
+                      "generatedAt":  "2026-05-30T11:50:55"
                   },
                   {
                       "episode":  169,
                       "sourceFile":  "episodes/EP169_analysis.json",
                       "reportFile":  "ai_reports/EP169_ai_full_report.md",
-                      "generatedAt":  "2026-05-30T00:12:51"
+                      "generatedAt":  "2026-05-30T11:50:55"
                   },
                   {
                       "episode":  655,
                       "sourceFile":  "episodes/EP655_analysis.json",
                       "reportFile":  "ai_reports/EP655_ai_full_report.md",
-                      "generatedAt":  "2026-05-30T00:12:51"
+                      "generatedAt":  "2026-05-30T11:50:55"
                   },
                   {
                       "episode":  656,
                       "sourceFile":  "episodes/EP656_analysis.json",
                       "reportFile":  "ai_reports/EP656_ai_full_report.md",
-                      "generatedAt":  "2026-05-30T00:12:51"
+                      "generatedAt":  "2026-05-30T11:50:55"
                   },
                   {
                       "episode":  657,
                       "sourceFile":  "episodes/EP657_analysis.json",
                       "reportFile":  "ai_reports/EP657_ai_full_report.md",
-                      "generatedAt":  "2026-05-30T00:12:51"
+                      "generatedAt":  "2026-05-30T11:50:55"
                   },
                   {
                       "episode":  658,
                       "sourceFile":  "episodes/EP658_analysis.json",
                       "reportFile":  "ai_reports/EP658_ai_full_report.md",
-                      "generatedAt":  "2026-05-30T00:12:51"
+                      "generatedAt":  "2026-05-30T11:50:55"
                   },
                   {
                       "episode":  659,
                       "sourceFile":  "episodes/EP659_analysis.json",
                       "reportFile":  "ai_reports/EP659_ai_full_report.md",
-                      "generatedAt":  "2026-05-30T00:12:51"
+                      "generatedAt":  "2026-05-30T11:50:55"
                   },
                   {
                       "episode":  660,
                       "sourceFile":  "episodes/EP660_analysis.json",
                       "reportFile":  "ai_reports/EP660_ai_full_report.md",
-                      "generatedAt":  "2026-05-30T00:12:51"
+                      "generatedAt":  "2026-05-30T11:50:55"
                   },
                   {
                       "episode":  661,
                       "sourceFile":  "episodes/EP661_analysis.json",
                       "reportFile":  "ai_reports/EP661_ai_full_report.md",
-                      "generatedAt":  "2026-05-30T00:12:51"
+                      "generatedAt":  "2026-05-30T11:50:55"
                   },
                   {
                       "episode":  662,
                       "sourceFile":  "episodes/EP662_analysis.json",
                       "reportFile":  "ai_reports/EP662_ai_full_report.md",
-                      "generatedAt":  "2026-05-30T00:12:51"
+                      "generatedAt":  "2026-05-30T11:50:55"
                   },
                   {
                       "episode":  663,
                       "sourceFile":  "episodes/EP663_analysis.json",
                       "reportFile":  "ai_reports/EP663_ai_full_report.md",
-                      "generatedAt":  "2026-05-30T00:12:51"
+                      "generatedAt":  "2026-05-30T11:50:55"
                   },
                   {
                       "episode":  664,
                       "sourceFile":  "episodes/EP664_analysis.json",
                       "reportFile":  "ai_reports/EP664_ai_full_report.md",
-                      "generatedAt":  "2026-05-30T00:12:51"
+                      "generatedAt":  "2026-05-30T11:50:56"
                   },
                   {
                       "episode":  665,
                       "sourceFile":  "episodes/EP665_analysis.json",
                       "reportFile":  "ai_reports/EP665_ai_full_report.md",
-                      "generatedAt":  "2026-05-30T00:12:51"
+                      "generatedAt":  "2026-05-30T11:50:56"
                   }
               ]
 }

@@ -972,6 +972,20 @@
     .analysis-search-row { display: grid; grid-template-columns: minmax(220px, 1fr) auto; gap: 8px; align-items: center; }
     .analysis-search { width: 100%; }
     .analysis-saved-list { display: grid; gap: 10px; }
+    .analysis-stock-card { padding: 0; overflow: hidden; }
+    .analysis-stock-top { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; align-items: start; padding: 12px; }
+    .analysis-stock-toggle { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; align-items: center; width: 100%; min-width: 0; padding: 0; border: 0; background: transparent; color: inherit; text-align: left; cursor: pointer; }
+    .analysis-stock-toggle:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 6px; }
+    .analysis-stock-main { display: grid; gap: 6px; min-width: 0; }
+    .analysis-stock-title-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; min-width: 0; }
+    .analysis-stock-title { font-size: 0.98rem; font-weight: 800; line-height: 1.35; overflow-wrap: anywhere; }
+    .analysis-stock-stance { border: 1px solid rgba(180, 83, 9, 0.22); border-left-width: 3px; border-radius: 6px; background: var(--amber-soft); color: #6f3a04; padding: 6px 8px; font-size: 0.78rem; line-height: 1.55; overflow-wrap: anywhere; }
+    .analysis-stock-preview { color: var(--muted); font-size: 0.82rem; line-height: 1.5; overflow-wrap: anywhere; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .analysis-stock-state { border: 1px solid var(--line-strong); border-radius: 6px; background: var(--panel); color: var(--muted); padding: 5px 8px; font-size: 0.76rem; font-weight: 800; white-space: nowrap; }
+    .analysis-stock-card.expanded .analysis-stock-state { border-color: rgba(13, 121, 111, 0.3); background: var(--teal-soft); color: var(--teal); }
+    .analysis-stock-actions { display: flex; align-items: flex-start; gap: 6px; }
+    .analysis-stock-detail { border-top: 1px solid var(--line); padding: 12px; }
+    .analysis-stock-detail[hidden] { display: none; }
     .analysis-section-block { margin-top: 12px; min-width: 0; }
     .analysis-source-list { display: grid; gap: 5px; margin-top: 6px; }
     .analysis-source-list a { color: var(--blue); text-decoration: none; overflow-wrap: anywhere; line-height: 1.45; }
@@ -1254,6 +1268,11 @@
         min-width: 0;
         max-width: 100%;
         overflow-x: hidden;
+      }
+
+      .analysis-stock-top,
+      .analysis-stock-toggle {
+        grid-template-columns: 1fr;
       }
 
       .card-head {
@@ -3084,11 +3103,51 @@ ${notes}`;
 
     function renderSavedStockAnalysisItem(item) {
       const row = sectionCard();
+      row.classList.add("analysis-stock-card");
       const title = `${item.ticker || ""} ${item.company || ""}`.trim() || "個股分析";
-      const head = cardHead(title, [
-        item.analysisDate ? badge(item.analysisDate, "neutral") : null,
-        item.stance ? badge(item.stance, "watchful") : null
-      ]);
+
+      const top = document.createElement("div");
+      top.className = "analysis-stock-top";
+
+      const toggle = document.createElement("button");
+      toggle.type = "button";
+      toggle.className = "analysis-stock-toggle";
+      toggle.setAttribute("aria-expanded", "false");
+
+      const main = document.createElement("div");
+      main.className = "analysis-stock-main";
+
+      const titleRow = document.createElement("div");
+      titleRow.className = "analysis-stock-title-row";
+
+      const titleNode = document.createElement("span");
+      titleNode.className = "analysis-stock-title";
+      titleNode.textContent = title;
+      titleRow.appendChild(titleNode);
+      if (item.analysisDate) titleRow.appendChild(badge(item.analysisDate, "neutral"));
+
+      if (item.stance) {
+        const stance = document.createElement("div");
+        stance.className = "analysis-stock-stance";
+        stance.textContent = item.stance;
+        main.appendChild(titleRow);
+        main.appendChild(stance);
+      } else {
+        main.appendChild(titleRow);
+      }
+
+      const preview = document.createElement("div");
+      preview.className = "analysis-stock-preview";
+      preview.textContent = item.summary || item.conclusion || "尚未填寫摘要。";
+
+      main.appendChild(preview);
+
+      const stateLabel = document.createElement("span");
+      stateLabel.className = "analysis-stock-state";
+      stateLabel.textContent = "展開";
+
+      toggle.append(main, stateLabel);
+
       const copyBtn = document.createElement("button");
       copyBtn.type = "button";
       copyBtn.className = "btn stock-copy-btn";
@@ -3105,25 +3164,42 @@ ${notes}`;
           setTimeout(() => { copyBtn.textContent = "複製"; }, 2000);
         });
       });
-      const meta = head.querySelector(".card-meta");
-      if (meta) meta.appendChild(copyBtn);
-      row.appendChild(head);
+
+      const actions = document.createElement("div");
+      actions.className = "analysis-stock-actions";
+      actions.appendChild(copyBtn);
+
+      top.append(toggle, actions);
+      row.appendChild(top);
+
+      const detail = document.createElement("div");
+      detail.className = "analysis-stock-detail";
+      detail.hidden = true;
+
+      toggle.addEventListener("click", () => {
+        const expanded = detail.hidden;
+        detail.hidden = !expanded;
+        row.classList.toggle("expanded", expanded);
+        toggle.setAttribute("aria-expanded", String(expanded));
+        stateLabel.textContent = expanded ? "收合" : "展開";
+      });
 
       const summary = document.createElement("div");
       summary.className = "body-text";
       summary.textContent = item.summary || item.conclusion || "尚未填寫摘要。";
-      row.appendChild(summary);
+      detail.appendChild(summary);
 
       if (item.conclusion && item.conclusion !== item.summary) {
-        appendField(row, "結論", item.conclusion);
+        appendField(detail, "結論", item.conclusion);
       }
 
-      appendDataAsOf(row, item.dataAsOf);
-      appendStockAnalysisSections(row, item.sections);
-      appendTechnicalLevels(row, item.technicalLevels);
-      appendValuationScenarios(row, item.valuationScenarios);
-      appendAiReportRefs(row, item.aiReportRefs);
-      appendStockAnalysisSourceLinks(row, item.sources);
+      appendDataAsOf(detail, item.dataAsOf);
+      appendStockAnalysisSections(detail, item.sections);
+      appendTechnicalLevels(detail, item.technicalLevels);
+      appendValuationScenarios(detail, item.valuationScenarios);
+      appendAiReportRefs(detail, item.aiReportRefs);
+      appendStockAnalysisSourceLinks(detail, item.sources);
+      row.appendChild(detail);
       return row;
     }
 
@@ -5775,6 +5851,14 @@ ${notes}`;
       return node;
     }
 
+    function compactBadge(text, variant, maxLength = 28) {
+      const value = String(text || "").replace(/\s+/g, " ").trim();
+      if (!value) return null;
+      const node = badge(shortenText(value, maxLength), variant);
+      if (value.length > maxLength) node.title = value;
+      return node;
+    }
+
     function tableHead(labels) {
       const thead = document.createElement("thead");
       const tr = document.createElement("tr");
@@ -5825,6 +5909,12 @@ ${notes}`;
       if (Array.isArray(value)) return value.length ? value.map(stringify).join(", ") : "[]";
       if (typeof value === "object") return JSON.stringify(value);
       return String(value);
+    }
+
+    function shortenText(value, maxLength) {
+      const text = String(value || "").replace(/\s+/g, " ").trim();
+      if (!maxLength || text.length <= maxLength) return text;
+      return `${text.slice(0, Math.max(0, maxLength - 1))}…`;
     }
 // Share build: private portfolio, bank balance, realized trades, and local snapshots are intentionally omitted.
     function renderPortfolioMain() {
