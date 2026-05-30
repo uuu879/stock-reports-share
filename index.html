@@ -1035,7 +1035,10 @@
     .tw-table th { background: var(--panel-2); padding: 6px 10px; text-align: left; font-weight: 600; color: var(--muted); border-bottom: 1px solid var(--line); white-space: nowrap; }
     .tw-table td { padding: 6px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
     .tw-table tr:last-child td { border-bottom: 0; }
-    .tw-summary-row:hover td { background: var(--soft); }
+    .tw-summary-row { cursor: pointer; }
+    .tw-summary-row:hover td,
+    .tw-summary-row:focus-visible td { background: var(--soft); }
+    .tw-summary-row:focus-visible { outline: 2px solid rgba(15, 118, 110, 0.32); outline-offset: -2px; }
     .tw-table td:nth-child(1) { color: var(--muted); font-size: 0.75rem; white-space: nowrap; width: 42px; }
     .tw-target-cell { min-width: 150px; }
     .tw-stock-title { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; min-width: 0; }
@@ -4625,6 +4628,7 @@ ${notes}`;
 
         const tr = document.createElement("tr");
         tr.className = "tw-summary-row";
+        tr.tabIndex = 0;
 
         const tdNum = document.createElement("td");
         tdNum.dataset.label = "#";
@@ -4690,13 +4694,36 @@ ${notes}`;
         detailCell.appendChild(buildTwDetailPanel(r, { name, industry, tierLabel }));
         detailRow.appendChild(detailCell);
 
-        detailBtn.addEventListener("click", () => {
-          const willOpen = detailRow.hidden;
+        function setTwDetailOpen(willOpen) {
           detailRow.hidden = !willOpen;
           tr.classList.toggle("expanded", willOpen);
           detailBtn.textContent = willOpen ? "收合" : "展開";
           detailBtn.setAttribute("aria-expanded", String(willOpen));
+          tr.setAttribute("aria-expanded", String(willOpen));
+        }
+
+        function isTwRowInteractiveClick(target) {
+          if (!(target instanceof Element)) return false;
+          return Boolean(target.closest("button, a, input, select, textarea, label, summary, details"));
+        }
+
+        detailBtn.addEventListener("click", event => {
+          event.stopPropagation();
+          setTwDetailOpen(detailRow.hidden);
         });
+
+        tr.addEventListener("click", event => {
+          if (isTwRowInteractiveClick(event.target)) return;
+          setTwDetailOpen(detailRow.hidden);
+        });
+
+        tr.addEventListener("keydown", event => {
+          if (event.key !== "Enter" && event.key !== " ") return;
+          if (isTwRowInteractiveClick(event.target)) return;
+          event.preventDefault();
+          setTwDetailOpen(detailRow.hidden);
+        });
+        tr.setAttribute("aria-expanded", "false");
 
         tr.append(tdNum, tdTarget, tdTier, tdTheme, tdEps, tdScore, tdAction);
         tbody.appendChild(tr);
