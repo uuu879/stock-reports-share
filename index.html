@@ -4905,9 +4905,9 @@ ${notes}`;
       const reasons = arr(record.reasons).map(value => String(value || "").trim()).filter(Boolean);
       const stockLabel = [record.code, stock.name].filter(Boolean).join(" ");
       const primaryTheme = themes[0] || stock.industry || primaryTwSource(sources) || "本題材";
-      const reasonHint = reasons[0] ? `，並回頭確認入選理由「${shortenTwText(reasons[0], 44)}」是否仍成立` : "";
+      const reasonHint = reasons[0] ? `，並回頭確認入選理由「${reasons[0]}」是否仍成立` : "";
 
-      checks.push(`先拆 ${stockLabel || "此標的"} 的主營產品、營收占比、主要客戶與區域曝險，確認它真的對應「${shortenTwText(primaryTheme, 36)}」${reasonHint}。`);
+      checks.push(`先拆 ${stockLabel || "此標的"} 的主營產品、營收占比、主要客戶與區域曝險，確認它真的對應「${primaryTheme}」${reasonHint}。`);
 
       if (sources.includes("AI 優先研究候選")) {
         const rankText = Number(record.latestRank) < 9999 ? `第 ${record.latestRank} 名` : "優先候選";
