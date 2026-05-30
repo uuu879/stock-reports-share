@@ -1044,8 +1044,14 @@
     .tw-stock-meta { margin-top: 3px; color: var(--muted); font-size: 0.74rem; line-height: 1.35; overflow-wrap: anywhere; }
     .tw-source-cell { min-width: 145px; }
     .tw-source-name { min-width: 0; color: var(--muted); font-size: 0.76rem; line-height: 1.35; overflow-wrap: anywhere; }
-    .tw-tags { display: flex; flex-wrap: wrap; gap: 4px; max-width: 280px; }
+    .tw-tags { display: flex; flex-wrap: wrap; gap: 4px; max-width: 280px; align-items: flex-start; }
+    .tw-tags.expanded { max-width: 100%; }
     .tw-tag { min-width: 0; max-width: 100%; border: 1px solid var(--line); border-radius: 4px; background: var(--panel-2); color: var(--muted); padding: 1px 5px; font-size: 0.72rem; line-height: 1.45; white-space: normal; overflow-wrap: anywhere; }
+    .tw-tag-button { font: inherit; color: var(--muted); text-align: left; cursor: pointer; box-shadow: none; }
+    .tw-tag-button:hover,
+    .tw-tag-button:focus-visible { border-color: var(--teal); color: var(--teal); background: var(--teal-soft); outline: none; }
+    .tw-tag-more { color: var(--teal); border-color: rgba(15, 118, 110, 0.28); background: var(--panel); font-weight: 800; }
+    .tw-tag-full { flex-basis: 100%; }
     .tw-episode-cell { color: var(--muted); font-size: 0.76rem; line-height: 1.4; min-width: 110px; }
     .tw-detail-toggle { border: 1px solid var(--line-strong); border-radius: 5px; background: var(--panel); color: var(--teal); padding: 4px 8px; font-size: 0.76rem; font-weight: 800; cursor: pointer; white-space: nowrap; }
     .tw-detail-toggle:hover { background: var(--teal-soft); border-color: var(--teal); }
@@ -4762,26 +4768,58 @@ ${notes}`;
     function buildTwTagList(values, limit = 2) {
       const wrap = document.createElement("div");
       wrap.className = "tw-tags";
-      const items = arr(values).filter(Boolean);
-      items.slice(0, limit).forEach(value => {
-        const tag = document.createElement("span");
-        tag.className = "tw-tag";
-        tag.title = String(value);
-        tag.textContent = shortenTwText(value, 26);
-        wrap.appendChild(tag);
-      });
-      if (items.length > limit) {
-        const more = document.createElement("span");
-        more.className = "tw-tag";
-        more.textContent = `+${items.length - limit}`;
-        wrap.appendChild(more);
+      const items = arr(values).map(value => String(value || "").trim()).filter(Boolean);
+      const shortLimit = 26;
+      const expandable = items.length > limit || items.some(value => value.length > shortLimit);
+      let expanded = false;
+
+      function renderTags() {
+        wrap.replaceChildren();
+        wrap.classList.toggle("expanded", expanded);
+
+        if (!items.length) {
+          const empty = document.createElement("span");
+          empty.className = "tw-tag";
+          empty.textContent = "待查";
+          wrap.appendChild(empty);
+          return;
+        }
+
+        const visibleItems = expanded ? items : items.slice(0, limit);
+        visibleItems.forEach(value => {
+          const tag = document.createElement(expandable ? "button" : "span");
+          tag.className = `tw-tag${expandable ? " tw-tag-button" : ""}${expanded ? " tw-tag-full" : ""}`;
+          tag.title = String(value);
+          tag.textContent = expanded ? value : shortenTwText(value, shortLimit);
+          if (expandable) {
+            tag.type = "button";
+            tag.setAttribute("aria-expanded", String(expanded));
+            tag.addEventListener("click", event => {
+              event.stopPropagation();
+              expanded = true;
+              renderTags();
+            });
+          }
+          wrap.appendChild(tag);
+        });
+
+        if (expandable) {
+          const toggle = document.createElement("button");
+          toggle.type = "button";
+          toggle.className = "tw-tag tw-tag-button tw-tag-more";
+          toggle.textContent = expanded ? "收合" : (items.length > limit ? `+${items.length - limit}` : "全文");
+          toggle.title = expanded ? "收合主題摘要" : "展開完整主題摘要";
+          toggle.setAttribute("aria-expanded", String(expanded));
+          toggle.addEventListener("click", event => {
+            event.stopPropagation();
+            expanded = !expanded;
+            renderTags();
+          });
+          wrap.appendChild(toggle);
+        }
       }
-      if (!wrap.childElementCount) {
-        const empty = document.createElement("span");
-        empty.className = "tw-tag";
-        empty.textContent = "待查";
-        wrap.appendChild(empty);
-      }
+
+      renderTags();
       return wrap;
     }
 
