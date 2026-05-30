@@ -4836,24 +4836,92 @@ ${notes}`;
     function buildTwCheckpoints(record, stock) {
       const checks = [];
       const sources = arr(record.sources);
+      const themes = arr(record.themes).map(value => String(value || "").trim()).filter(Boolean);
+      const reasons = arr(record.reasons).map(value => String(value || "").trim()).filter(Boolean);
+      const stockLabel = [record.code, stock.name].filter(Boolean).join(" ");
+      const primaryTheme = themes[0] || stock.industry || primaryTwSource(sources) || "本題材";
+      const reasonHint = reasons[0] ? `，並回頭確認入選理由「${shortenTwText(reasons[0], 44)}」是否仍成立` : "";
+
+      checks.push(`先拆 ${stockLabel || "此標的"} 的主營產品、營收占比、主要客戶與區域曝險，確認它真的對應「${shortenTwText(primaryTheme, 36)}」${reasonHint}。`);
+
       if (sources.includes("AI 優先研究候選")) {
-        checks.push("回頭查產品線、客戶驗證、月營收與毛利率，確認題材有沒有轉成實際數字。");
+        const rankText = Number(record.latestRank) < 9999 ? `第 ${record.latestRank} 名` : "優先候選";
+        checks.push(`這檔是 AI ${rankText}，先把清單排名當研究順序，不要直接當買點；重點看月營收、毛利率與法說會是否支持題材。`);
       }
       if (sources.includes("Podcast 直接列名")) {
-        checks.push("對照節目觀點與最新公告/法說會，確認主持人提到的假設是否仍成立。");
+        const epText = record.latestEpisode ? `EP${record.latestEpisode}` : "節目";
+        checks.push(`回看 ${epText} 直接提到 ${stockLabel || "此標的"} 的上下文，再對照最新公告、法說會與新聞，確認原假設有沒有變。`);
       }
       if (sources.includes("網路新聞補充")) {
-        checks.push("確認新聞是一次性事件還是訂單/價格/產能的連續變化。");
+        checks.push(`若 ${stockLabel || "此標的"} 來自新聞補充，先分辨是一次性事件，還是訂單、價格、產能或客戶驗證的連續變化。`);
       }
       if (sources.includes("Podcast 主題關聯")) {
-        checks.push("主題關聯只是第一層掃描，需先查營收占比、產品關聯度與同業比較。");
+        checks.push(`主題關聯只是第一層掃描，需先確認 ${stockLabel || "此標的"} 的產品關聯度、營收占比與同業比較，不要只因題材名稱相近就放大權重。`);
       }
+
+      buildTwThemeSpecificChecks(themes, stockLabel || "此標的", stock.industry).forEach(item => checks.push(item));
+
       if (stock.industry) {
-        checks.push(`產業歸類為「${stock.industry}」，先和同產業強勢股比價、比營收動能。`);
+        checks.push(`產業歸類為「${stock.industry}」，先和同產業強勢股比價、比月營收動能、比毛利率方向。`);
       }
-      checks.push("技術面觀察 5/20/60 日均線是否由糾結轉為多頭排列，量能是否配合放大。");
-      checks.push("先訂支撐、壓力與停損，清單排名不能取代自己的進出場條件。");
-      return Array.from(new Set(checks));
+      if (record.hostOwned) {
+        checks.push("主持人持有只能視為風格線索，仍要獨立檢查基本面、籌碼與停損條件。");
+      }
+      checks.push(`技術面只看 ${stockLabel || "此標的"} 自己的 5/20/60 日均線、量能、前高與回檔支撐，避免用整個題材熱度替代個股位置。`);
+      checks.push(`先訂 ${stockLabel || "此標的"} 的支撐、壓力與停損，清單排名不能取代自己的進出場條件。`);
+      return Array.from(new Set(checks)).slice(0, 8);
+    }
+
+    function buildTwThemeSpecificChecks(themes, stockLabel, industry) {
+      const text = `${themes.join(" / ")} / ${industry || ""}`.toLowerCase();
+      const checks = [];
+      const has = keywords => keywords.some(keyword => text.includes(String(keyword).toLowerCase()));
+
+      if (has(["低軌", "衛星", "starlink", "direct to cell", "軌道", "space"])) {
+        checks.push(`衛星/低軌線先查 ${stockLabel} 是否有明確客戶、認證、出貨產品與營收占比，避免只停留在概念供應鏈。`);
+        checks.push(`若是 PCB、通訊、RF 或散熱相關，優先驗證規格門檻、可靠度認證與量產時程。`);
+      }
+      if (has(["被動", "mlcc", "電容", "電感", "電阻"])) {
+        checks.push(`被動元件線先追交期、報價、稼動率與庫存天數，確認漲價或缺料是否真的反映到 ${stockLabel}。`);
+      }
+      if (has(["power rack", "電源", "功率", "mosfet", "sic"])) {
+        checks.push(`電源/功率線要拆 AI 機櫃、伺服器、車用或工控占比，並確認毛利率是否跟著產品組合改善。`);
+      }
+      if (has(["server cpu", "cpu", "agentic", "graviton", "arm server"])) {
+        checks.push(`CPU/server 線要查 ${stockLabel} 對 ODM、板卡、電源或散熱哪一段曝險最高，並追主要客戶拉貨節奏。`);
+      }
+      if (has(["tpu", "asic", "自有晶片", "半導體測試"])) {
+        checks.push(`ASIC/TPU 線先確認 ${stockLabel} 是設計、IP、封測、探針卡或測試服務哪一段，並追 NRE/量產收入是否延續。`);
+      }
+      if (has(["封測", "osat", "先進封裝", "晶圓代工", "cowos"])) {
+        checks.push(`封測/先進封裝線要看產能利用率、資本支出、客戶集中度與報價，確認不是只跟著龍頭敘事上漲。`);
+      }
+      if (has(["光通", "雷射", "光模組", "cpo", "矽光子", "optical"])) {
+        checks.push(`光通線先查 ${stockLabel} 的速率規格、資料中心客戶、良率與出貨節奏，避免只看 CPO/矽光子關鍵字。`);
+      }
+      if (has(["ai 伺服器", "gb200", "blackwell", "機櫃", "散熱", "伺服器"])) {
+        checks.push(`AI 伺服器線要拆 ${stockLabel} 是機殼、散熱、電源、板卡或組裝，並追 GB/Blackwell 平台轉換是否造成空窗或拉貨。`);
+      }
+      if (has(["記憶體", "hbm", "ddr", "dram", "nand"])) {
+        checks.push(`記憶體線優先追報價、庫存、位元出貨與產品組合，確認循環復甦能否轉成 EPS。`);
+      }
+      if (has(["載板", "abf", "substrate", "ccl", "玻璃基板", "材料"])) {
+        checks.push(`載板/材料線要查 ${stockLabel} 的高階產品占比、客戶認證與稼動率，並和同業報價/交期交叉驗證。`);
+      }
+      if (has(["建廠", "無塵室", "廠務", "工程"])) {
+        checks.push(`建廠工程線要看在手訂單、認列進度、毛利率與客戶資本支出週期，避免營收高峰後估值回落。`);
+      }
+      if (has(["csp", "銅", "pvc", "原物料", "通膨"])) {
+        checks.push(`原物料/CSP 線要拆成本轉嫁能力與庫存利益，確認價格波動對 ${stockLabel} 是利多還是毛利壓力。`);
+      }
+      if (has(["電子通路", "通路", "庫存", "現貨"])) {
+        checks.push(`通路/庫存線先看存貨週轉、應收帳款與現貨價格，確認景氣訊號不是單月拉貨。`);
+      }
+
+      if (!checks.length && themes.length) {
+        checks.push(`針對「${shortenTwText(themes[0], 34)}」補查 ${stockLabel} 的產品對應、營收占比與同業強弱，先驗證題材連結再看股價。`);
+      }
+      return checks.slice(0, 3);
     }
 
     function shortenTwText(value, maxLength) {
