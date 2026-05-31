@@ -14,11 +14,11 @@
         "institutions": "2026-05-29",
         "margin": "2026-05-29",
         "majorHolders": "2026-05-29",
-        "database": "EP661/EP665/EP666 local AI server cooling hypothesis",
+        "database": "EP661/EP665/EP666 本地AI伺服器散熱假說",
         "news": "2026-05-31"
       },
       "stance": "23/39，觀察偏多但不追價；基本面與AI液冷題材強，股價已反映部分2026成長。",
-      "summary": "雙鴻（3324，Auras）是AI伺服器散熱與液冷升級的核心受惠股之一。2026年4月營收28.42億元，YoY +40.9%、MoM -14.62%，1-4月累計營收113.92億元、YoY +77.13%；2026Q1 EPS約12.61元，毛利率29.66%、營益率17.77%，已經不是純題材。5/29收1065元、上漲5.97%，TPEx本益比30.74倍、P/B 7.39倍，若用FactSet 2026 EPS中位數57.26元看，forward P/E約18.6倍；股價回到均線上方但仍低於前高1305元，適合深挖，不適合只因散熱題材追價。",
+      "summary": "雙鴻（3324，Auras）是AI伺服器散熱與液冷升級的核心受惠股之一。2026年4月營收28.42億元，YoY +40.9%、MoM -14.62%，1-4月累計營收113.92億元、YoY +77.13%；2026Q1 EPS約12.61元，毛利率29.66%、營益率17.77%，已經不是純題材。5/29收1065元、上漲5.97%，TPEx本益比30.74倍、P/B 7.39倍，若用FactSet 2026 EPS中位數57.26元看，預估本益比約18.6倍；股價回到均線上方但仍低於前高1305元，適合深挖，不適合只因散熱題材追價。",
       "conclusion": "三個判斷：基本面偏多，因液冷、水冷板、分歧管、CDU與ASIC伺服器訂單已反映在營收與Q1毛利率，且管理層上修2026營收成長目標；股價位置合理偏高，1065元站上5/20/60日均線但仍在近60日大區間中段，估值已反映相當多成長；操作想法為等待確認，不追高，若5月營收重新站回30億元以上、毛利率維持三成附近且股價守住1000-1030元，再進入深度分析或拉回評估。",
       "sections": [
         {
@@ -184,90 +184,90 @@
         "maxScore": 39,
         "grade": "觀察偏多",
         "view": "等拉回或突破確認",
-        "summary": "AI cooling fundamentals are strong, but price is still below key resistance and April revenue had a MoM pullback. Wait for support or breakout confirmation.",
+        "summary": "AI散熱基本面偏強，但股價仍位在關鍵壓力之下，且4月營收有月減，操作上以等支撐或突破確認為主。",
         "items": [
           {
             "factor": "題材熱度",
             "level": "主流題材 / 市場焦點",
             "score": 3,
-            "evidence": "AI server liquid cooling, ASIC thermal modules, Blackwell/Rubin racks, and local EP661/EP665/EP666 all keep 3324 in the cooling watch pool."
+            "evidence": "AI伺服器液冷、ASIC散熱模組、Blackwell/Rubin機櫃都是市場主流題材；本地EP661、EP665、EP666也持續把雙鴻放在散熱觀察池。"
           },
           {
             "factor": "均線型態",
             "level": "站上季線",
             "score": 2,
-            "evidence": "TPEx 2026-05-29 close 1065 is above calculated MA5 1031, MA20 1042.85, and MA60 1029.17, but the averages are not yet a clean bull stack."
+            "evidence": "TPEx 2026-05-29收盤1065元，高於計算的MA5約1031、MA20約1042.85、MA60約1029.17；但均線還不是完整多頭排列。"
           },
           {
             "factor": "壓力位置",
             "level": "壓力區震盪",
             "score": 1,
-            "evidence": "Near resistance remains 1080, then 1210 and 1305; the stock has bounced but has not cleared the upper supply zone."
+            "evidence": "近端壓力仍在1080元，其後是1210元與1305元；股價已經反彈，但還沒有消化上方套牢與供給區。"
           },
           {
             "factor": "支撐位置",
             "level": "回測支撐有守",
             "score": 3,
-            "evidence": "Price held the 1000-1010 area after the 936 low and reclaimed the main moving averages on 2026-05-29."
+            "evidence": "股價自936元低點反彈後，多次守住1000-1010元區間，並在2026-05-29重新站回主要均線。"
           },
           {
             "factor": "大戶比例",
             "level": "週減",
             "score": 0,
-            "evidence": "Public holder tables show >400 lots ratio around 46.27 on 2026-05-29, lower than earlier April levels near 48-51%."
+            "evidence": "公開股權分散資料顯示，2026-05-29四百張以上大戶比例約46.27%，低於4月上旬約48-51%的水準。"
           },
           {
             "factor": "營收 YoY",
             "level": "成長",
             "score": 2,
-            "evidence": "April 2026 revenue was NT$2.842bn, YoY +40.9%; Jan-April revenue was NT$11.392bn, YoY +77.13%."
+            "evidence": "2026年4月營收約新台幣28.42億元，YoY +40.9%；1-4月累計營收約新台幣113.92億元，YoY +77.13%。"
           },
           {
             "factor": "營收 MoM",
             "level": "衰退",
             "score": 0,
-            "evidence": "April 2026 revenue was MoM -14.62% from March, so May revenue needs confirmation."
+            "evidence": "2026年4月營收較3月月減14.62%，因此5月營收能否回升是後續確認重點。"
           },
           {
             "factor": "量價結構",
             "level": "上漲有量",
             "score": 2,
-            "evidence": "2026-05-29 close was +60 with roughly 2,917 lots traded, a volume-backed rebound but not a breakout."
+            "evidence": "2026-05-29收盤上漲60元，成交約2,917張，屬於有量反彈，但還不是突破放量。"
           },
           {
             "factor": "法人籌碼",
             "level": "外資 / 投信買超",
             "score": 2,
-            "evidence": "TPEx 2026-05-29 showed foreign net buy about 471.6k shares, investment trust +2k, dealers +193.1k, total +666.7k."
+            "evidence": "TPEx 2026-05-29資料顯示，外資買超約47.1萬股，投信買超2千股，自營商買超約19.3萬股，合計買超約66.7萬股。"
           },
           {
             "factor": "融資籌碼",
             "level": "變化不大",
             "score": 1,
-            "evidence": "Margin balance was around 5,645 lots with only small daily change, not a clear clean-up signal yet."
+            "evidence": "融資餘額約5,645張，單日變化不大，沒有明顯爆增，但也還不能算是籌碼完整沉澱。"
           },
           {
             "factor": "毛利率 / EPS",
             "level": "營收、毛利、EPS 同步改善",
             "score": 3,
-            "evidence": "2026Q1 revenue NT$8.552bn, gross margin 29.66%, operating margin 17.77%, EPS 12.61, much stronger YoY."
+            "evidence": "2026Q1營收新台幣85.52億元，毛利率29.66%，營益率17.77%，EPS 12.61元，年增明顯改善。"
           },
           {
             "factor": "估值位置",
             "level": "合理",
             "score": 1,
-            "evidence": "TPEx PE 30.74 and PB 7.39 mean valuation already prices in a meaningful part of 2026 growth."
+            "evidence": "TPEx本益比30.74倍、股價淨值比7.39倍，代表市場已先反映一部分2026年成長預期。"
           },
           {
             "factor": "事件催化",
             "level": "題材、財報、買盤同步",
             "score": 3,
-            "evidence": "Q1 results, April high YoY revenue, shareholder-meeting guidance for strong 2026 growth, and 2026-05-29 institutional buying align."
+            "evidence": "2026Q1財報、4月營收高年增、股東會對2026年成長展望，加上2026-05-29法人買超，財報、題材與買盤互相呼應。"
           }
         ],
         "notes": [
-          "Score is 23/39: observe-bullish, not a chase setup.",
-          "Upgrade if May revenue rebounds above NT$3bn and price clears 1210 with institutional follow-through; downgrade if 1000 breaks with weak revenue."
+          "總分23/39：屬於觀察偏多，但還不是可以無條件追價的型態。",
+          "若5月營收回到新台幣30億元以上，且股價突破1210元後有法人續買，可上修；若跌破1000元且營收轉弱，應降級。"
         ]
       }
     },
