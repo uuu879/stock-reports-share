@@ -2,6 +2,257 @@
   "updatedAt": "2026-05-31",
   "analyses": [
     {
+      "id": "3645-2026-05-31",
+      "ticker": "3645",
+      "company": "達邁",
+      "analysisType": "深度分析",
+      "analysisDate": "2026-05-31",
+      "dataAsOf": {
+        "price": "2026-05-29",
+        "revenue": "2026-04",
+        "financials": "2026-Q1",
+        "news": "2026-05-31"
+      },
+      "stance": "程度檢核 19/39，觀察名單；基本面轉好但股價高檔回落，不追高，等支撐與5月營收確認",
+      "summary": "達邁（3645）是 PI 薄膜廠，題材落在透明 PI / AI 眼鏡、半導體先進封裝 PI 材料、T6 新產線與高導熱材料。2026Q1 毛利率升至 35.12%、EPS 0.67 元，4 月營收 2.37 億元、MoM +3.56%、YoY +16.43%，基本面比去年同期改善；但 5/29 收 106.5 元，P/E 56.05、P/B 4.29，且近五日法人合計賣超、400 張以上大戶比例週減，短線更適合列觀察名單，等 103-106 或 94-96 支撐確認與 5 月營收續航。",
+      "conclusion": "三個判斷：基本面中性偏多，因 2026Q1 營收僅年增 1.64%，但產品組合改善讓毛利率由 22.26% 升至 35.12%、EPS 由 0.31 升至 0.67，4 月營收也升到 2.37 億元、年增 16.43%；股價位置偏貴且短線轉震盪，5/29 收 106.5 元、仍高於 20/60 日均線但低於 5 日線與 117.5 元前高，P/E 56.05、P/B 4.29 已預先反映不少轉型想像；操作 view 為等待，不追高，持有者看 103-106 元與 94-96 元支撐，空手者等拉回守住或重新站回 110-117.5 元壓力後再評估。",
+      "decisionChecklist": {
+        "score": 19,
+        "maxScore": 39,
+        "grade": "觀察名單",
+        "view": "只觀察，不急著買；等支撐、籌碼與營收續航確認",
+        "summary": "基本面與事件催化有分，但短線量價、法人、大戶與估值扣分，總分落在觀察名單。",
+        "items": [
+          {
+            "factor": "題材熱度",
+            "level": "熱門",
+            "score": 2,
+            "evidence": "透明 PI / AI 眼鏡、半導體 PI 材料與 T6 新產線都屬市場願意給估值的題材，但在本地 ai_reports 中不是 Podcast 直接點名主線。"
+          },
+          {
+            "factor": "均線型態",
+            "level": "站上季線",
+            "score": 2,
+            "evidence": "5/29 收 106.5 元，高於 MA20 約 105.78 與 MA60 約 92.0，但低於 MA5 約 111.1，短線未恢復多頭排列。"
+          },
+          {
+            "factor": "壓力位置",
+            "level": "壓力區震盪",
+            "score": 1,
+            "evidence": "5/25-5/26 高點 117.5 元、5/27 開高後回落，110-117.5 元仍是上檔壓力帶。"
+          },
+          {
+            "factor": "支撐位置",
+            "level": "站上支撐",
+            "score": 2,
+            "evidence": "5/29 低點 103.5 元後收 106.5 元，勉強站回 20 日線附近；但只是一日反彈，還不到回測支撐有守的很強訊號。"
+          },
+          {
+            "factor": "大戶比例",
+            "level": "週減",
+            "score": 0,
+            "evidence": "WantGoo 400 張以上大戶比例由 2026/05/15 的 48.38% 降至 2026/05/22 的 47.56%，週減 0.82 個百分點。"
+          },
+          {
+            "factor": "營收 YoY",
+            "level": "成長",
+            "score": 2,
+            "evidence": "MOPS 2026 年 4 月營收 2.37109 億元，YoY +16.43%；1-4 月累計 YoY +5.61%，已轉正但不是爆發式加速。"
+          },
+          {
+            "factor": "營收 MoM",
+            "level": "連續成長",
+            "score": 3,
+            "evidence": "3 月營收 2.28955 億元、MoM +41.55%；4 月營收 2.37109 億元、MoM +3.56%，近兩月連續改善。"
+          },
+          {
+            "factor": "量價結構",
+            "level": "下跌放量",
+            "score": 0,
+            "evidence": "5/25-5/26 放量攻到 117.5 元後，5/27 與 5/28 連兩日重挫且成交量 13,160 / 8,231 張；5/29 反彈量縮到 3,805 張，尚未扭轉分配型態。"
+          },
+          {
+            "factor": "法人籌碼",
+            "level": "三大法人賣超",
+            "score": 0,
+            "evidence": "TWSE T86 顯示 5/29 三大法人賣超約 640 張；5/25-5/29 五個交易日合計賣超約 1,104 張，且投信未明顯承接。"
+          },
+          {
+            "factor": "融資籌碼",
+            "level": "融資減且股價穩",
+            "score": 2,
+            "evidence": "TWSE 融資餘額由 5/22 的 11,396 張降至 5/29 的 9,769 張，週減約 14.3%；股價雖回落但仍守在 20 日線與百元上方。"
+          },
+          {
+            "factor": "毛利率 / EPS",
+            "level": "營收、毛利、EPS 同步改善",
+            "score": 3,
+            "evidence": "2026Q1 毛利率 35.12%，高於去年同期 22.26%；營業利益 1.06 億元、EPS 0.67 元，分別較去年同期明顯改善。"
+          },
+          {
+            "factor": "估值位置",
+            "level": "已過度反映",
+            "score": 0,
+            "evidence": "TWSE 5/29 P/E 56.05、P/B 4.29，且 60 日區間由 62.5 元漲到 117.5 元，高毛利轉型已被股價提前定價。"
+          },
+          {
+            "factor": "事件催化",
+            "level": "近期有產品 / 法說 / 財報",
+            "score": 2,
+            "evidence": "5/13 法說、Q1 毛利率跳升、T6 新產線、半導體 PI 與透明 PI 供應鏈都是催化；但要等 5 月營收與半導體材料放量證明。"
+          }
+        ],
+        "notes": [
+          "本次分數低於旺宏，主因不是基本面差，而是短線量價與籌碼尚未修復、估值已偏高。",
+          "若 5 月營收續創高、三大法人轉連續買超、400 張以上大戶比例止跌回升，且股價重新站回 110-117.5 元，分數可上修到中性偏多。",
+          "若跌破 94-96 元或 60 日線約 92 元，同時月營收不如預期，應從觀察名單下修為暫時排除。"
+        ]
+      },
+      "sections": [
+        {
+          "title": "基本面",
+          "points": [
+            "達邁是聚醯亞胺薄膜（PI film）廠，傳統基礎是 FPC / 軟板材料，新增成長敘事來自透明 PI、半導體先進封裝 PI、高導熱 PI 與 T6 新產線。",
+            "MOPS 2026Q1 合併營收 5.64138 億元，YoY +1.64%；營業毛利 1.98151 億元，毛利率 35.12%，高於去年同期 22.26%，顯示產品組合與稼動率改善。",
+            "2026Q1 營業利益 1.06228 億元、營益率 18.83%；歸母淨利 9,126.9 萬元、EPS 0.67 元，明顯高於 2025Q1 EPS 0.31 元。",
+            "2026 年 4 月營收 2.37109 億元，MoM +3.56%、YoY +16.43%；1-4 月累計營收 8.01247 億元、YoY +5.61%，營收連續改善但累計成長幅度仍不算爆發。",
+            "現金流較健康：2026Q1 營業活動淨現金流入 2.44705 億元；存貨 3.35298 億元，低於去年同期 4.03875 億元。"
+          ]
+        },
+        {
+          "title": "股價位置與籌碼",
+          "points": [
+            "TWSE 5/29 收 106.5 元、漲 2.5 元，成交 3,805 張；MA5 約 111.1、MA20 約 105.78、MA60 約 92.0，股價守住中期均線但短線仍在 5 日線下方。",
+            "近 20 日區間 94.1-117.5 元、近 60 日區間 62.5-117.5 元；從 60 日低點算已大漲，現在不是早期低基期買點。",
+            "TWSE 5/29 P/E 56.05、P/B 4.29，評價已反映 T6、透明 PI、半導體 PI 的中長期想像；若 EPS 沒有持續上修，估值壓力會很快出現。",
+            "法人籌碼短線偏弱：5/29 三大法人賣超約 640 張，5/25-5/29 合計賣超約 1,104 張；400 張以上大戶比例 5/22 週減到 47.56%。",
+            "融資餘額週減有利降槓桿：5/22 的 11,396 張降至 5/29 的 9,769 張，但股價仍需證明賣壓已結束。"
+          ]
+        },
+        {
+          "title": "ai_reports 對照",
+          "points": [
+            "本地 ai_reports 沒有直接把達邁列為 Podcast 優先候選，代表這不是主持人直接點名股；只能用先進封裝、AI 硬體材料、AR/VR 供應鏈等題材做間接對照。",
+            "EP655、EP658、EP664 多次把先進封裝、CoWoS / EMIB、AI ASIC 供應鏈與材料瓶頸列為重要主題，這支持達邁半導體 PI 的中長線方向，但不能等同於達邁已經大量出貨。",
+            "達邁的核心假設是『非軟板高毛利材料占比提升』，目前 Q1 毛利率已支持第一段；第二段要看 T6、半導體 PI、透明 PI 在下半年是否能轉成連續營收與 EPS。",
+            "若後續只是市場用 AI 眼鏡 / 先進封裝題材重估，而營收沒有延續，則估值容易從題材股回到材料股倍數。"
+          ]
+        },
+        {
+          "title": "估值情境",
+          "points": [
+            "保守情境：T6 試產或客戶放量延後，毛利率回到 25-28%，2026 EPS 約 2.0-2.5 元；以 25-35 倍本益比看，106.5 元偏貴。",
+            "基準情境：半導體 PI 與透明 PI 小量放大，毛利率維持 30% 以上，2026 EPS 約 3.0-3.8 元；現價約 28-36 倍前瞻本益比，合理但不便宜。",
+            "多頭情境：T6 順利、半導體先進封裝 PI 放量、AI 眼鏡透明 PI 出貨提升，2026 EPS 上看 4.5 元以上；現價才有進一步消化空間，但需要月營收與毛利率連續驗證。"
+          ]
+        },
+        {
+          "title": "操作框架",
+          "points": [
+            "持有者：先看 103-106 元是否守住；若跌破，下一層看 94-96 元與 60 日線約 92 元。只要營收續強且不跌破中期支撐，可列為續抱觀察。",
+            "空手者：不建議在 106-117 元壓力帶追價；較好的風險報酬是回測 103-106 後轉強，或回到 94-96 元出現量縮止跌與法人回補。",
+            "加分條件：5 月營收續創高或維持 2.3 億元以上、法人由賣轉買、大戶比例止跌、公司法說確認半導體 PI / 透明 PI 放量進度。",
+            "破局條件：月營收回落、毛利率跌回 30% 以下、T6 延遲或新應用無法放量、股價跌破 94-96 元後無法收回。"
+          ]
+        }
+      ],
+      "technicalLevels": {
+        "support": [
+          "103.5-106.5 元：5/29 低點、收盤與 20 日線附近，短線第一支撐觀察區。",
+          "94-96 元：近 20 日低點區，若跌破代表短線轉弱加深。",
+          "約 92 元：60 日均線附近，中期強弱分界。"
+        ],
+        "resistance": [
+          "110-111 元：5 日線與 5/27 收盤附近，短線先看能否收回。",
+          "117.5 元：5/25-5/26 近 20 日高點，突破才代表修正結束。",
+          "120 元附近：前次開高後反轉壓力區。"
+        ],
+        "riskLine": "收盤跌破 94-96 元且 5 月營收或法人籌碼未改善，代表題材轉強假設需降權；跌破 60 日線約 92 元則技術面轉弱。"
+      },
+      "valuationScenarios": [
+        {
+          "case": "保守",
+          "assumption": "T6 或新應用放量延後，毛利率回到 25-28%，2026 EPS 約 2.0-2.5 元。",
+          "view": "106.5 元偏貴，需等待更深拉回或財報再確認。"
+        },
+        {
+          "case": "基準",
+          "assumption": "半導體 PI 與透明 PI 小量放大，毛利率維持 30% 以上，2026 EPS 約 3.0-3.8 元。",
+          "view": "現價屬合理偏高，適合等支撐確認而非追價。"
+        },
+        {
+          "case": "多頭",
+          "assumption": "T6 順利試產，半導體先進封裝 PI 與 AI 眼鏡透明 PI 放量，2026 EPS 上看 4.5 元以上。",
+          "view": "估值可被成長消化，但必須由月營收、毛利率與客戶進度連續驗證。"
+        }
+      ],
+      "aiReportRefs": [
+        {
+          "file": "ai_reports/EP655_ai_full_report.md",
+          "match": "先進封裝與 EMIB / CoWoS 供應鏈是本地報告中的重要方向；達邁只屬材料候選，非 Podcast 直接點名。"
+        },
+        {
+          "file": "ai_reports/EP658_ai_full_report.md",
+          "match": "聯發科 ASIC、Google TPU 與先進封裝路線驗證是主題之一，可作為半導體材料需求的上游背景。"
+        },
+        {
+          "file": "ai_reports/EP664_ai_full_report.md",
+          "match": "AI 產能爭奪延伸到先進封裝與關鍵材料；支持材料瓶頸敘事，但仍需個股營收驗證。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "TWSE 個股日成交資訊 3645",
+          "url": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date=20260529&stockNo=3645&response=json"
+        },
+        {
+          "name": "TWSE 個股日本益比、殖利率及股價淨值比",
+          "url": "https://www.twse.com.tw/rwd/zh/afterTrading/BWIBBU_d?date=20260529&stockNo=3645&response=json"
+        },
+        {
+          "name": "TWSE 三大法人買賣超日報",
+          "url": "https://www.twse.com.tw/rwd/zh/fund/T86?date=20260529&selectType=ALLBUT0999&response=json"
+        },
+        {
+          "name": "TWSE 融資融券餘額",
+          "url": "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?response=json&date=20260529&selectType=ALL"
+        },
+        {
+          "name": "MOPS 115年4月上市公司每月營業收入彙總表",
+          "url": "https://mopsov.twse.com.tw/nas/t21/sii/t21sc03_115_4_0.html"
+        },
+        {
+          "name": "MOPS 3645 115年第1季損益表",
+          "url": "https://mopsov.twse.com.tw/mops/web/ajax_t164sb04?encodeURIComponent=1&step=1&firstin=1&off=1&co_id=3645&year=115&season=1"
+        },
+        {
+          "name": "MOPS 3645 115年第1季資產負債表",
+          "url": "https://mopsov.twse.com.tw/mops/web/ajax_t164sb03?encodeURIComponent=1&step=1&firstin=1&off=1&co_id=3645&year=115&season=1"
+        },
+        {
+          "name": "MOPS 3645 115年第1季現金流量表",
+          "url": "https://mopsov.twse.com.tw/mops/web/ajax_t164sb05?encodeURIComponent=1&step=1&firstin=1&off=1&co_id=3645&year=115&season=1"
+        },
+        {
+          "name": "WantGoo 達邁大戶籌碼",
+          "url": "https://www.wantgoo.com/stock/3645/major-investors/concentration"
+        },
+        {
+          "name": "台視財經 / MoneyDJ：達邁佈局先進封裝 PI 材料",
+          "url": "https://www.ttv.com.tw/finance/view/?from=587&i=052026191257B95CF863F8B64B33B6A5E5EE64AB51DB8AB9"
+        },
+        {
+          "name": "理財周刊：達邁備戰三大領域與 T6 產線",
+          "url": "https://www.moneyweekly.com.tw/ArticleData/Info/Article/212184/"
+        },
+        {
+          "name": "MOPS 達邁 2026/05/13 法說簡報",
+          "url": "https://mopsov.twse.com.tw/nas/STR/364520260513M001.pdf"
+        }
+      ],
+      "notInvestmentAdvice": "僅供研究與紀錄，不構成投資建議。"
+    },
+    {
       "id": "5536-2026-05-31-initial",
       "ticker": "5536",
       "company": "聖暉",
@@ -62,8 +313,14 @@
         }
       ],
       "technicalLevels": {
-        "support": ["930-950元（前波區）", "由低點起算的中期均線區"],
-        "resistance": ["1,130元（52週高）", "千元整數關卡"],
+        "support": [
+          "930-950元（前波區）",
+          "由低點起算的中期均線區"
+        ],
+        "resistance": [
+          "1,130元（52週高）",
+          "千元整數關卡"
+        ],
         "riskLine": "跌破前波整理區、或在手訂單／毛利率動能轉弱時，高檔評價易修正"
       },
       "valuationScenarios": [
@@ -94,9 +351,18 @@
         }
       ],
       "sources": [
-        {"name": "鉅亨網 5536 總覽", "url": "https://www.cnyes.com/twstock/5536"},
-        {"name": "Yahoo股市：聖暉在手訂單逾500億 估今年營收獲利雙位數成長", "url": "https://tw.stock.yahoo.com/news/%E8%81%96%E6%9A%89%E5%9C%A8%E6%89%8B%E8%A8%82%E5%96%AE%E9%80%BE500%E5%84%84%E5%85%83-%E4%BC%B0%E4%BB%8A%E5%B9%B4%E7%87%9F%E6%94%B6%E7%8D%B2%E5%88%A92%E4%BD%8D%E6%95%B8%E6%88%90%E9%95%B7-052755350.html"},
-        {"name": "經濟日報：半導體工程廠 漢唐、聖暉、洋基訂單滿手", "url": "https://money.udn.com/money/amp/story/5612/9380569"}
+        {
+          "name": "鉅亨網 5536 總覽",
+          "url": "https://www.cnyes.com/twstock/5536"
+        },
+        {
+          "name": "Yahoo股市：聖暉在手訂單逾500億 估今年營收獲利雙位數成長",
+          "url": "https://tw.stock.yahoo.com/news/%E8%81%96%E6%9A%89%E5%9C%A8%E6%89%8B%E8%A8%82%E5%96%AE%E9%80%BE500%E5%84%84%E5%85%83-%E4%BC%B0%E4%BB%8A%E5%B9%B4%E7%87%9F%E6%94%B6%E7%8D%B2%E5%88%A92%E4%BD%8D%E6%95%B8%E6%88%90%E9%95%B7-052755350.html"
+        },
+        {
+          "name": "經濟日報：半導體工程廠 漢唐、聖暉、洋基訂單滿手",
+          "url": "https://money.udn.com/money/amp/story/5612/9380569"
+        }
       ],
       "notInvestmentAdvice": "僅供研究與紀錄，不構成投資建議。"
     },
@@ -160,8 +426,14 @@
         }
       ],
       "technicalLevels": {
-        "support": ["122-123元（前一交易日收盤／當日低點）", "110-114元（前波區）"],
-        "resistance": ["128.5元（當日高）", "142元（52週高）"],
+        "support": [
+          "122-123元（前一交易日收盤／當日低點）",
+          "110-114元（前波區）"
+        ],
+        "resistance": [
+          "128.5元（當日高）",
+          "142元（52週高）"
+        ],
         "riskLine": "跌破前波整理區，或台積先進封裝拉貨／均華動能轉弱時，高評價易修正"
       },
       "valuationScenarios": [
@@ -188,10 +460,22 @@
         }
       ],
       "sources": [
-        {"name": "Yahoo股市 5443.TW", "url": "https://tw.stock.yahoo.com/quote/5443.TW"},
-        {"name": "鉅亨網 5443 總覽", "url": "https://www.cnyes.com/twstock/5443"},
-        {"name": "鉅亨：延伸CoWoS設備鏈 均豪、志聖卡位先進封裝", "url": "https://news.cnyes.com/news/id/5989427"},
-        {"name": "vocus：均豪法說會 半導體轉型/AI設備需求", "url": "https://vocus.cc/article/69f1e636fd8978000138340a"}
+        {
+          "name": "Yahoo股市 5443.TW",
+          "url": "https://tw.stock.yahoo.com/quote/5443.TW"
+        },
+        {
+          "name": "鉅亨網 5443 總覽",
+          "url": "https://www.cnyes.com/twstock/5443"
+        },
+        {
+          "name": "鉅亨：延伸CoWoS設備鏈 均豪、志聖卡位先進封裝",
+          "url": "https://news.cnyes.com/news/id/5989427"
+        },
+        {
+          "name": "vocus：均豪法說會 半導體轉型/AI設備需求",
+          "url": "https://vocus.cc/article/69f1e636fd8978000138340a"
+        }
       ],
       "notInvestmentAdvice": "僅供研究與紀錄，不構成投資建議。"
     },
@@ -255,8 +539,14 @@
         }
       ],
       "technicalLevels": {
-        "support": ["36元附近（前一交易日收盤／當日低點區）", "26-27元（52週低基期）"],
-        "resistance": ["38.2元（當日高）", "41.8元（52週高）"],
+        "support": [
+          "36元附近（前一交易日收盤／當日低點區）",
+          "26-27元（52週低基期）"
+        ],
+        "resistance": [
+          "38.2元（當日高）",
+          "41.8元（52週高）"
+        ],
         "riskLine": "跌破前波整理區且月營收續弱時，題材失溫、評價下修風險升高"
       },
       "valuationScenarios": [
@@ -278,10 +568,22 @@
       ],
       "aiReportRefs": [],
       "sources": [
-        {"name": "鉅亨網 6698 總覽", "url": "https://www.cnyes.com/twstock/6698"},
-        {"name": "Yahoo股市 6698.TW", "url": "https://tw.stock.yahoo.com/quote/6698.TW"},
-        {"name": "財報狗 6698", "url": "https://statementdog.com/analysis/6698"},
-        {"name": "nStock 旭暉應材做什麼", "url": "https://www.nstock.tw/%E6%97%AD%E6%9A%89%E6%87%89%E6%9D%90%E5%81%9A%E4%BB%80%E9%BA%BC.html"}
+        {
+          "name": "鉅亨網 6698 總覽",
+          "url": "https://www.cnyes.com/twstock/6698"
+        },
+        {
+          "name": "Yahoo股市 6698.TW",
+          "url": "https://tw.stock.yahoo.com/quote/6698.TW"
+        },
+        {
+          "name": "財報狗 6698",
+          "url": "https://statementdog.com/analysis/6698"
+        },
+        {
+          "name": "nStock 旭暉應材做什麼",
+          "url": "https://www.nstock.tw/%E6%97%AD%E6%9A%89%E6%87%89%E6%9D%90%E5%81%9A%E4%BB%80%E9%BA%BC.html"
+        }
       ],
       "notInvestmentAdvice": "僅供研究與紀錄，不構成投資建議。"
     },
@@ -345,8 +647,13 @@
         }
       ],
       "technicalLevels": {
-        "support": ["29元附近", "22-24元（52週低基期）"],
-        "resistance": ["34.1元（52週高）"],
+        "support": [
+          "29元附近",
+          "22-24元（52週低基期）"
+        ],
+        "resistance": [
+          "34.1元（52週高）"
+        ],
         "riskLine": "跌破前波量縮整理區、且季度仍虧時，題材失溫風險升高"
       },
       "valuationScenarios": [
@@ -368,10 +675,22 @@
       ],
       "aiReportRefs": [],
       "sources": [
-        {"name": "鉅亨網 3062 總覽", "url": "https://www.cnyes.com/twstock/3062"},
-        {"name": "經濟日報：鴻海揮軍太空AI 攜手以色列大廠", "url": "https://money.udn.com/money/story/5612/9403358"},
-        {"name": "七仔財經筆記 建漢解析", "url": "https://7evenguy.com/what-is-3062-doing/"},
-        {"name": "理財周刊（促銷性、僅供參考）", "url": "https://www.moneyweekly.com.tw/ArticleData/Info/Article/217608"}
+        {
+          "name": "鉅亨網 3062 總覽",
+          "url": "https://www.cnyes.com/twstock/3062"
+        },
+        {
+          "name": "經濟日報：鴻海揮軍太空AI 攜手以色列大廠",
+          "url": "https://money.udn.com/money/story/5612/9403358"
+        },
+        {
+          "name": "七仔財經筆記 建漢解析",
+          "url": "https://7evenguy.com/what-is-3062-doing/"
+        },
+        {
+          "name": "理財周刊（促銷性、僅供參考）",
+          "url": "https://www.moneyweekly.com.tw/ArticleData/Info/Article/217608"
+        }
       ],
       "notInvestmentAdvice": "僅供研究與紀錄，不構成投資建議。"
     },
@@ -435,8 +754,14 @@
         }
       ],
       "technicalLevels": {
-        "support": ["206元（當日低）", "200元整數關卡"],
-        "resistance": ["215.5元（當日高）", "前波高點區"],
+        "support": [
+          "206元（當日低）",
+          "200元整數關卡"
+        ],
+        "resistance": [
+          "215.5元（當日高）",
+          "前波高點區"
+        ],
         "riskLine": "季度營收／毛利率回升不如預期、或跌破200元時，高評價易修正"
       },
       "valuationScenarios": [
@@ -458,10 +783,22 @@
       ],
       "aiReportRefs": [],
       "sources": [
-        {"name": "Yahoo股市 3035.TW", "url": "https://tw.stock.yahoo.com/quote/3035.TW"},
-        {"name": "鉅亨網：智原Q1 EPS 0.4元 拿下14奈米AI ASIC新案", "url": "https://m.cnyes.com/news/id/6435258"},
-        {"name": "工商時報：外資 智原下半年靠先進封裝翻身", "url": "https://www.ctee.com.tw/news/20260429700760-430201"},
-        {"name": "財訊快報：智原先進製程與封裝進入量產初升段", "url": "https://www.investor.com.tw/onlineNews/NewsContent.asp?articleNo=14202604290097"}
+        {
+          "name": "Yahoo股市 3035.TW",
+          "url": "https://tw.stock.yahoo.com/quote/3035.TW"
+        },
+        {
+          "name": "鉅亨網：智原Q1 EPS 0.4元 拿下14奈米AI ASIC新案",
+          "url": "https://m.cnyes.com/news/id/6435258"
+        },
+        {
+          "name": "工商時報：外資 智原下半年靠先進封裝翻身",
+          "url": "https://www.ctee.com.tw/news/20260429700760-430201"
+        },
+        {
+          "name": "財訊快報：智原先進製程與封裝進入量產初升段",
+          "url": "https://www.investor.com.tw/onlineNews/NewsContent.asp?articleNo=14202604290097"
+        }
       ],
       "notInvestmentAdvice": "僅供研究與紀錄，不構成投資建議。"
     },
@@ -1131,8 +1468,7 @@
       },
       "stance": "題材與轉機偏多，但本業尚未全面轉強；爆量後不追高，等5-6月營收與Q2本業毛利確認",
       "summary": "華新（1605）是電線電纜、不鏽鋼與資源事業的循環轉機股，近期受惠台電強韌電網、AI資料中心建設推升線纜需求、不鏽鋼漲價、歐盟CBAM/safeguard與印尼資源政策等題材。5/29收38.75元、日漲7.64%，成交逾10.28萬張，股價已突破近期高點；但4月營收155.31億元，MoM -1.22%、YoY -12.05%，1-4月累計仍年減9.51%，Q1 EPS 0.81元主要靠業外與轉投資拉升，本業營益率只有1.33%。初步看法是值得追蹤與深度分析，但不適合在爆量長紅後直接追高。",
-      "conclusion": "三個判斷：基本面中性偏多，因不鏽鋼、線纜、資源三大事業管理層都看逐季改善，但4月營收與本業營益率尚未證明全面轉強；股價位置偏熱但P/B仍合理，38.75元已站上5/20/60日均線並創近60日高點，P/E 28.28倍偏高、P/B 1.05倍不貴；操作想法為不追高、等回測與數據確認，若5-6月營收轉年增、Q2本業毛利率與營益率改善，再做深度分析。"
-      ,
+      "conclusion": "三個判斷：基本面中性偏多，因不鏽鋼、線纜、資源三大事業管理層都看逐季改善，但4月營收與本業營益率尚未證明全面轉強；股價位置偏熱但P/B仍合理，38.75元已站上5/20/60日均線並創近60日高點，P/E 28.28倍偏高、P/B 1.05倍不貴；操作想法為不追高、等回測與數據確認，若5-6月營收轉年增、Q2本業毛利率與營益率改善，再做深度分析。",
       "sections": [
         {
           "title": "快速結論",
