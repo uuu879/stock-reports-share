@@ -1044,6 +1044,17 @@
     .analysis-score-summary .badge { white-space: normal; }
     .analysis-decision-table { min-width: 680px; }
     .analysis-decision-table td:nth-child(3) { white-space: nowrap; font-weight: 850; color: var(--teal); }
+    .analysis-ranking-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(145px, 1fr)); gap: 8px; }
+    .analysis-ranking-table { min-width: 980px; }
+    .analysis-ranking-table td:nth-child(1),
+    .analysis-ranking-table td:nth-child(2) { white-space: nowrap; font-weight: 850; }
+    .analysis-ranking-table td:nth-child(1) { color: var(--muted); }
+    .analysis-ranking-score { color: var(--teal); }
+    .analysis-ranking-target { min-width: 150px; }
+    .analysis-ranking-title { font-weight: 850; line-height: 1.35; }
+    .analysis-ranking-sub { margin-top: 3px; color: var(--muted); font-size: 0.74rem; line-height: 1.35; overflow-wrap: anywhere; }
+    .analysis-ranking-text { min-width: 220px; max-width: 420px; color: var(--ink); line-height: 1.55; overflow-wrap: anywhere; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .analysis-ranking-action { white-space: nowrap; }
 
     .tw-page { padding: 16px; min-width: 0; max-width: 100%; }
     .tw-header { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px 12px; margin-bottom: 8px; min-width: 0; }
@@ -1630,6 +1641,7 @@
       <aside class="sidebar">
         <button id="watchlistBtn" class="watchlist-pinned-btn" type="button">台股清單</button>
         <button id="analysisBtn" class="watchlist-pinned-btn" type="button">個股分析</button>
+        <button id="rankingBtn" class="watchlist-pinned-btn" type="button">分析排行</button>
         <div id="episodeList" class="episode-list"></div>
       </aside>
 
@@ -1675,6 +1687,7 @@
       watchlistBtn: document.getElementById("watchlistBtn"),
       portfolioBtn: document.getElementById("portfolioBtn"),
       analysisBtn: document.getElementById("analysisBtn"),
+      rankingBtn: document.getElementById("rankingBtn"),
       main: document.getElementById("main")
     };
 
@@ -1724,6 +1737,10 @@
     });
     dom.analysisBtn.addEventListener("click", () => {
       state.activeView = state.activeView === "analysis" ? "episode" : "analysis";
+      render();
+    });
+    dom.rankingBtn.addEventListener("click", () => {
+      state.activeView = state.activeView === "ranking" ? "episode" : "ranking";
       render();
     });
     dom.copyAllBtn.addEventListener("click", copyAllContent);
@@ -2826,6 +2843,7 @@ ${notes}`;
       dom.watchlistBtn.classList.toggle("active", state.activeView === "watchlist");
       if (dom.portfolioBtn) dom.portfolioBtn.classList.toggle("active", state.activeView === "portfolio");
       dom.analysisBtn.classList.toggle("active", state.activeView === "analysis");
+      dom.rankingBtn.classList.toggle("active", state.activeView === "ranking");
       renderEpisodeList(episodes, pendingEpisodes);
 
       if (state.activeView === "watchlist") {
@@ -2834,6 +2852,8 @@ ${notes}`;
         renderPortfolioMain();
       } else if (state.activeView === "analysis") {
         renderStockAnalysisFrameworkMain();
+      } else if (state.activeView === "ranking") {
+        renderStockAnalysisRankingMain();
       } else if (state.activePendingId) {
         renderPendingMain(pendingEpisodes.find(ep => ep.id === state.activePendingId));
       } else {
@@ -3149,6 +3169,211 @@ ${notes}`;
         searchInput.focus();
       });
       updateSearchResults();
+    }
+
+    function renderStockAnalysisRankingMain() {
+      dom.main.replaceChildren();
+
+      const rows = getStockAnalysisRankRows();
+      const page = document.createElement("div");
+      page.className = "analysis-page";
+
+      const header = document.createElement("div");
+      header.className = "analysis-header";
+      const titleWrap = document.createElement("div");
+      const title = document.createElement("h2");
+      title.textContent = "分析排行";
+      const meta = document.createElement("div");
+      meta.className = "analysis-meta";
+      meta.textContent = "依個股分析筆記的程度檢核分數排序。";
+      titleWrap.append(title, meta);
+      const reportMeta = document.createElement("div");
+      reportMeta.className = "analysis-meta";
+      reportMeta.textContent = rows.length
+        ? `共 ${rows.length} 筆有分數 / ${state.stockAnalysisNotes.length} 篇筆記`
+        : `共 ${state.stockAnalysisNotes.length} 篇筆記`;
+      header.append(titleWrap, reportMeta);
+      page.appendChild(header);
+
+      page.appendChild(renderStockAnalysisRankingSummary(rows));
+      page.appendChild(renderStockAnalysisRankingCard(rows));
+      dom.main.appendChild(page);
+    }
+
+    function renderStockAnalysisRankingSummary(rows) {
+      const card = sectionCard();
+      const topScore = rows[0];
+      card.appendChild(cardHead("分數分布", [
+        badge(`${rows.length} 筆`, "neutral"),
+        topScore ? badge(`最高 ${formatRankScore(topScore)}`, decisionBadgeType(topScore.score)) : null
+      ]));
+
+      const strip = document.createElement("div");
+      strip.className = "analysis-ranking-strip";
+      [
+        ["31-39", "優先名單", row => row.score >= 31],
+        ["24-30", "中性偏多", row => row.score >= 24 && row.score <= 30],
+        ["16-23", "觀察名單", row => row.score >= 16 && row.score <= 23],
+        ["0-15", "暫時排除", row => row.score >= 0 && row.score <= 15]
+      ].forEach(([range, title, test]) => {
+        const box = document.createElement("div");
+        box.className = "analysis-score-band";
+        const strong = document.createElement("strong");
+        strong.textContent = `${range}｜${title}`;
+        const desc = document.createElement("span");
+        desc.textContent = `${rows.filter(test).length} 筆`;
+        box.append(strong, desc);
+        strip.appendChild(box);
+      });
+      card.appendChild(strip);
+      return card;
+    }
+
+    function renderStockAnalysisRankingCard(rows) {
+      const card = sectionCard();
+      card.appendChild(cardHead("個股分析排行", [
+        badge("分數由高到低", "watchful"),
+        badge("同股不同日期分列", "neutral")
+      ]));
+
+      if (!state.stockAnalysisNotes.length) {
+        const note = document.createElement("div");
+        note.className = "empty";
+        note.textContent = "尚無已保存分析。";
+        card.appendChild(note);
+        return card;
+      }
+
+      if (!rows.length) {
+        const note = document.createElement("div");
+        note.className = "empty";
+        note.textContent = "目前沒有含 decisionChecklist.score 的個股分析。";
+        card.appendChild(note);
+        return card;
+      }
+
+      const wrap = document.createElement("div");
+      wrap.className = "tw-table-wrap";
+      const table = document.createElement("table");
+      table.className = "analysis-table analysis-ranking-table";
+      const thead = document.createElement("thead");
+      const hrow = document.createElement("tr");
+      ["排名", "分數", "股票", "評級", "操作觀點", "立場摘要", "筆記"].forEach(text => {
+        const th = document.createElement("th");
+        th.textContent = text;
+        hrow.appendChild(th);
+      });
+      thead.appendChild(hrow);
+      table.appendChild(thead);
+
+      const tbody = document.createElement("tbody");
+      rows.forEach((row, index) => {
+        const tr = document.createElement("tr");
+
+        const rankCell = document.createElement("td");
+        rankCell.textContent = String(index + 1);
+        tr.appendChild(rankCell);
+
+        const scoreCell = document.createElement("td");
+        scoreCell.className = "analysis-ranking-score";
+        scoreCell.textContent = formatRankScore(row);
+        tr.appendChild(scoreCell);
+
+        const targetCell = document.createElement("td");
+        targetCell.className = "analysis-ranking-target";
+        const targetTitle = document.createElement("div");
+        targetTitle.className = "analysis-ranking-title";
+        targetTitle.textContent = `${row.ticker || ""} ${row.company || ""}`.trim() || "個股分析";
+        const targetSub = document.createElement("div");
+        targetSub.className = "analysis-ranking-sub";
+        targetSub.textContent = [row.analysisType || "未標類型", row.analysisDate].filter(Boolean).join(" · ");
+        targetCell.append(targetTitle, targetSub);
+        tr.appendChild(targetCell);
+
+        const gradeCell = document.createElement("td");
+        gradeCell.textContent = row.grade || decisionBandTitle(row.score);
+        tr.appendChild(gradeCell);
+
+        const viewCell = document.createElement("td");
+        viewCell.textContent = row.view || "待補操作觀點";
+        tr.appendChild(viewCell);
+
+        const stanceCell = document.createElement("td");
+        const stance = document.createElement("div");
+        stance.className = "analysis-ranking-text";
+        stance.textContent = row.stance || row.summary || row.conclusion || "待補摘要";
+        stance.title = stance.textContent;
+        stanceCell.appendChild(stance);
+        tr.appendChild(stanceCell);
+
+        const actionCell = document.createElement("td");
+        const openBtn = document.createElement("button");
+        openBtn.type = "button";
+        openBtn.className = "btn analysis-ranking-action";
+        openBtn.textContent = "看筆記";
+        openBtn.addEventListener("click", () => openStockAnalysisFromRanking(row));
+        actionCell.appendChild(openBtn);
+        tr.appendChild(actionCell);
+
+        tbody.appendChild(tr);
+      });
+      table.appendChild(tbody);
+      wrap.appendChild(table);
+      card.appendChild(wrap);
+      return card;
+    }
+
+    function getStockAnalysisRankRows() {
+      return state.stockAnalysisNotes
+        .map((item, originalIndex) => {
+          const checklist = normalizeDecisionChecklist(item.decisionChecklist || item.checklist || item.scoreChecklist);
+          const score = getDecisionChecklistScore(checklist);
+          if (!Number.isFinite(score)) return null;
+          return {
+            item,
+            originalIndex,
+            score,
+            maxScore: getDecisionChecklistMaxScore(checklist),
+            ticker: item.ticker || "",
+            company: item.company || "",
+            analysisType: item.analysisType || "",
+            analysisDate: item.analysisDate || "",
+            grade: checklist.grade || "",
+            view: checklist.view || "",
+            stance: item.stance || "",
+            summary: item.summary || "",
+            conclusion: item.conclusion || ""
+          };
+        })
+        .filter(Boolean)
+        .sort((a, b) => {
+          if (b.score !== a.score) return b.score - a.score;
+          const dateCompare = String(b.analysisDate || "").localeCompare(String(a.analysisDate || ""), "zh-Hant");
+          if (dateCompare) return dateCompare;
+          const tickerCompare = String(a.ticker || "").localeCompare(String(b.ticker || ""), "zh-Hant");
+          if (tickerCompare) return tickerCompare;
+          return a.originalIndex - b.originalIndex;
+        });
+    }
+
+    function openStockAnalysisFromRanking(row) {
+      state.stockAnalysisQuery = `${row.ticker || ""} ${row.company || ""}`.trim();
+      state.activeView = "analysis";
+      render();
+    }
+
+    function formatRankScore(row) {
+      const maxScore = Number.isFinite(row.maxScore) ? row.maxScore : 39;
+      return `${row.score}/${maxScore}`;
+    }
+
+    function decisionBandTitle(score) {
+      const value = Number(score);
+      if (!Number.isFinite(value)) return "待確認";
+      if (value >= 31) return "優先名單";
+      if (value >= 24) return "中性偏多";
+      if (value >= 16) return "觀察名單";
+      return "暫時排除";
     }
 
     function renderStockDecisionRulesCard() {
@@ -3520,17 +3745,27 @@ ${notes}`;
       };
     }
 
-    function formatDecisionScoreTotal(checklist) {
+    function getDecisionChecklistScore(checklist) {
       const numericScores = checklist.items
         .map(item => Number(item.score))
         .filter(score => Number.isFinite(score));
-      const score = Number.isFinite(checklist.score)
+      return Number.isFinite(checklist.score)
         ? checklist.score
         : numericScores.length
           ? numericScores.reduce((sum, score) => sum + score, 0)
           : null;
+    }
+
+    function getDecisionChecklistMaxScore(checklist) {
+      if (Number.isFinite(checklist.maxScore)) return checklist.maxScore;
+      const itemCount = Array.isArray(checklist.items) ? checklist.items.length : 0;
+      return itemCount ? itemCount * 3 : 39;
+    }
+
+    function formatDecisionScoreTotal(checklist) {
+      const score = getDecisionChecklistScore(checklist);
       if (!Number.isFinite(score)) return "";
-      const maxScore = Number.isFinite(checklist.maxScore) ? checklist.maxScore : numericScores.length * 3;
+      const maxScore = getDecisionChecklistMaxScore(checklist);
       return `${score}/${maxScore} 分`;
     }
 
