@@ -4571,6 +4571,8 @@ ${notes}`;
         generatedAt: payload.generatedAt || manifest.generatedAt || "",
         source: payload.source || manifest.source || "",
         count: Number(payload.count || manifest.count || rows.length) || rows.length,
+        recentHeatCount: Number(payload.recentHeatCount || manifest.recentHeatCount || 0) || 0,
+        recentHeatCodes: arr((payload.sortOrders || {}).recentHeat).map(normalizeTwCode).filter(Boolean),
         episodes: Array.isArray(payload.episodes) ? payload.episodes : (Array.isArray(manifest.episodes) ? manifest.episodes : []),
         records: rows.map(item => {
           const sources = arr(item.sources).map(value => String(value || "").trim()).filter(Boolean);
@@ -4583,6 +4585,9 @@ ${notes}`;
           const latestRank = Number(item.latestRank) || 9999;
           const latestScore = Number(item.latestScore) || 0;
           const latestSourcePriority = Number(item.latestSourcePriority) || 9;
+          const hostDiscussionEpisodes = arr(item.hostDiscussionEpisodes).map(value => String(value || "").trim()).filter(Boolean);
+          const hostDiscussionLatestEpisode = Number(item.hostDiscussionLatestEpisode) || 0;
+          const hostDiscussionCompositeScore = Number(item.hostDiscussionCompositeScore) || 0;
           return {
             code: normalizeTwCode(item.code),
             themes,
@@ -4593,6 +4598,9 @@ ${notes}`;
             latestRank,
             latestScore,
             latestSourcePriority,
+            hostDiscussionEpisodes,
+            hostDiscussionLatestEpisode,
+            hostDiscussionCompositeScore,
             rank: Number(item.rank) || 9999,
             score,
             compositeScore,
@@ -4720,11 +4728,16 @@ ${notes}`;
 
       const loadedWatchlist = state.twWatchlist && Array.isArray(state.twWatchlist.records) && state.twWatchlist.records.length ? state.twWatchlist : null;
       const allRecords = loadedWatchlist ? loadedWatchlist.records : computeTwWatchlist();
+      const sortKey = state.filters.twSort;
 
       // filter
       let records = allRecords;
       const srcFilter = state.filters.twSource;
       if (srcFilter !== "all") records = records.filter(r => r.sources.includes(srcFilter));
+      if (sortKey === "relevance" && loadedWatchlist) {
+        const recentHeatCodes = new Set(arr(loadedWatchlist.recentHeatCodes));
+        records = records.filter(r => recentHeatCodes.has(r.code));
+      }
 
       const epNums = loadedWatchlist
         ? [...new Set(arr(loadedWatchlist.episodes).map(ep => Number(ep.episode || ep.number) || 0).filter(Boolean))].sort((a, b) => a - b)
@@ -4751,11 +4764,10 @@ ${notes}`;
         const aSort = Number(a.heatSortRank) || 9999;
         const bSort = Number(b.heatSortRank) || 9999;
         if (aSort !== 9999 || bSort !== 9999) return aSort - bSort;
-        return (Number(b.compositeScore) || 0) - (Number(a.compositeScore) || 0) || (Number(a.sourcePriority) || 9) - (Number(b.sourcePriority) || 9) || (Number(b.latestEpisode) || 0) - (Number(a.latestEpisode) || 0);
+        return (Number(b.hostDiscussionCompositeScore) || 0) - (Number(a.hostDiscussionCompositeScore) || 0) || (Number(b.hostDiscussionLatestEpisode) || 0) - (Number(a.hostDiscussionLatestEpisode) || 0) || String(a.code).localeCompare(String(b.code));
       }
 
       // sort
-      const sortKey = state.filters.twSort;
       if (sortKey === "latest") {
         records = [...records].sort(latestFallbackCompare);
       } else if (sortKey === "relevance") {
@@ -4766,7 +4778,11 @@ ${notes}`;
         records = [...records].sort((a, b) => a.sourcePriority - b.sourcePriority || b.compositeScore - a.compositeScore);
       }
 
-      const scoreValue = r => sortKey === "latest" && Number(r.latestEpisode) === newestEp && Number(r.latestScore) > 0 ? Number(r.latestScore) : Number(r.compositeScore) || 0;
+      const scoreValue = r => sortKey === "latest" && Number(r.latestEpisode) === newestEp && Number(r.latestScore) > 0
+        ? Number(r.latestScore)
+        : sortKey === "relevance"
+          ? Number(r.hostDiscussionCompositeScore) || 0
+          : Number(r.compositeScore) || 0;
       const maxScore = Math.max(1, ...records.map(scoreValue));
       const epRange = epNums.length ? `EP${epNums[0]}–${epNums[epNums.length - 1]}` : "來源集數未提供";
 
@@ -4781,7 +4797,7 @@ ${notes}`;
       const meta = document.createElement("span");
       meta.className = "tw-meta";
       meta.textContent = loadedWatchlist
-        ? `共 ${allRecords.length} 檔 · ${epRange} · 最新集優先 / 近十集熱度可切換 · ${loadedWatchlist.generatedAt || ""}`
+        ? `完整池 ${allRecords.length} 檔 · 主持人討論熱度 ${loadedWatchlist.recentHeatCount || loadedWatchlist.recentHeatCodes.length} 檔 · ${epRange} · ${loadedWatchlist.generatedAt || ""}`
         : `共 ${allRecords.length} 檔 · ${epRange} · 最新集優先 / 近十集熱度可切換`;
       hdr.append(h2, meta);
       page.appendChild(hdr);
@@ -4803,8 +4819,8 @@ ${notes}`;
       const note = document.createElement("span");
       note.className = "tw-meta";
       note.textContent = loadedWatchlist
-        ? "最新集優先保留完整股票池；近十集熱度保留 compositeScore"
-        : "最新集優先保留完整股票池；近十集熱度保留 compositeScore";
+        ? "最新集優先保留完整股票池；主持人討論熱度只保留 Podcast 直接列名標的"
+        : "最新集優先保留完整股票池；近十集熱度依 compositeScore 排序";
       copyRow.append(copyBtn, note);
       page.appendChild(copyRow);
 
@@ -4828,7 +4844,7 @@ ${notes}`;
       toolbar.append(
         selectBox("twSort", "排序方式", [
           ["latest", "最新集優先"],
-          ["relevance", "近十集熱度"],
+          ["relevance", "主持人討論熱度"],
           ["tier", "依來源層級"],
           ["episode", "依集數"]
         ], state.filters.twSort)
@@ -4912,7 +4928,11 @@ ${notes}`;
         const tdEps = document.createElement("td");
         tdEps.className = "tw-episode-cell";
         tdEps.dataset.label = "集數";
-        tdEps.textContent = r.latestEpisode ? `最新 EP${r.latestEpisode} · 共 ${r.episodes.length} 集` : (r.episodes.slice(0, 2).join("、") || "-");
+        tdEps.textContent = sortKey === "relevance" && r.hostDiscussionLatestEpisode
+          ? `最新討論 EP${r.hostDiscussionLatestEpisode} · 共 ${r.hostDiscussionEpisodes.length} 集`
+          : r.latestEpisode
+            ? `最新 EP${r.latestEpisode} · 共 ${r.episodes.length} 集`
+            : (r.episodes.slice(0, 2).join("、") || "-");
 
         const tdScore = document.createElement("td");
         tdScore.dataset.label = "分數";
@@ -4999,7 +5019,7 @@ ${notes}`;
     function buildTwSummaryStrip(allRecords, records, newestEp, sortKey) {
       const sortLabels = {
         latest: "最新集優先",
-        relevance: "近十集熱度",
+        relevance: "主持人討論熱度",
         tier: "依來源層級",
         episode: "依集數"
       };

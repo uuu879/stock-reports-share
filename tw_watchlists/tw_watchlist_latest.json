@@ -1,77 +1,78 @@
 {
-    "generatedAt":  "2026-05-31T08:41:42",
+    "generatedAt":  "2026-05-31T13:13:07",
     "source":  "combined_recent_10_ai_full_reports",
     "count":  121,
+    "recentHeatCount":  50,
     "episodes":  [
                      {
                          "episode":  666,
                          "title":  "EP666 | 🍐",
                          "sourceFile":  "EP666_ai_full_report.md",
                          "date":  "",
-                         "updatedAt":  "2026-05-31T08:41:41"
+                         "updatedAt":  "2026-05-31T13:13:04"
                      },
                      {
                          "episode":  665,
                          "title":  "小天才初現與衛星算力遠眺",
                          "sourceFile":  "EP665_ai_full_report.md",
                          "date":  "",
-                         "updatedAt":  "2026-05-31T08:41:41"
+                         "updatedAt":  "2026-05-31T13:13:04"
                      },
                      {
                          "episode":  664,
                          "title":  "AI 算力強心針與被動元件全面噴射",
                          "sourceFile":  "EP664_ai_full_report.md",
                          "date":  "",
-                         "updatedAt":  "2026-05-31T08:41:41"
+                         "updatedAt":  "2026-05-31T13:13:04"
                      },
                      {
                          "episode":  663,
                          "title":  "健身減重誌與被動元件大潮",
                          "sourceFile":  "EP663_ai_full_report.md",
                          "date":  "",
-                         "updatedAt":  "2026-05-31T08:41:41"
+                         "updatedAt":  "2026-05-31T13:13:03"
                      },
                      {
                          "episode":  662,
                          "title":  "葡萄酒入坑誌與被動元件浪潮",
                          "sourceFile":  "EP662_ai_full_report.md",
                          "date":  "",
-                         "updatedAt":  "2026-05-31T08:41:41"
+                         "updatedAt":  "2026-05-31T13:13:03"
                      },
                      {
                          "episode":  661,
                          "title":  "被動元件主線與成熟製程補庫存辨識",
                          "sourceFile":  "EP661_ai_full_report.md",
                          "date":  "",
-                         "updatedAt":  "2026-05-31T08:41:41"
+                         "updatedAt":  "2026-05-31T13:13:03"
                      },
                      {
                          "episode":  660,
                          "title":  "育兒邊界感與成熟製程覺醒",
                          "sourceFile":  "EP660_ai_full_report.md",
                          "date":  "",
-                         "updatedAt":  "2026-05-31T08:41:41"
+                         "updatedAt":  "2026-05-31T13:13:03"
                      },
                      {
                          "episode":  659,
                          "title":  "瘦瘦針進化論與 AI Slop 警報",
                          "sourceFile":  "EP659_ai_full_report.md",
                          "date":  "",
-                         "updatedAt":  "2026-05-31T08:41:40"
+                         "updatedAt":  "2026-05-31T13:13:03"
                      },
                      {
                          "episode":  658,
                          "title":  "紅酒哲學與 AI 取代論反擊",
                          "sourceFile":  "EP658_ai_full_report.md",
                          "date":  "",
-                         "updatedAt":  "2026-05-31T08:41:40"
+                         "updatedAt":  "2026-05-31T13:13:03"
                      },
                      {
                          "episode":  657,
                          "title":  "雕像玄學插曲與Intel封裝突破",
                          "sourceFile":  "EP657_ai_full_report.md",
                          "date":  "",
-                         "updatedAt":  "2026-05-31T08:41:40"
+                         "updatedAt":  "2026-05-31T13:13:03"
                      }
                  ],
     "defaultSort":  "latestPriority",
@@ -151,27 +152,27 @@
                                               "5536",
                                               "2313",
                                               "3491",
-                                              "5347",
                                               "6285",
                                               "3138",
-                                              "3533",
                                               "5222",
+                                              "5347",
                                               "6821",
+                                              "3533",
                                               "6488",
                                               "2379",
-                                              "3034",
                                               "4916",
                                               "2634",
-                                              "4919",
+                                              "3034",
                                               "2367",
                                               "5009",
                                               "6672",
                                               "6829",
                                               "5439",
-                                              "2395",
+                                              "4919",
                                               "3576",
-                                              "2417",
                                               "6443",
+                                              "2395",
+                                              "2417",
                                               "3189",
                                               "6274",
                                               "2303",
@@ -200,127 +201,56 @@
                                               "3062"
                                           ],
                        "recentHeat":  [
-                                          "2308",
-                                          "3026",
-                                          "2327",
-                                          "2454",
                                           "2330",
+                                          "0050",
+                                          "2454",
+                                          "2327",
                                           "2472",
-                                          "3443",
-                                          "8046",
-                                          "2301",
-                                          "2337",
-                                          "3661",
                                           "2492",
-                                          "6173",
-                                          "6531",
-                                          "8042",
-                                          "2404",
-                                          "3017",
-                                          "3624",
-                                          "4979",
-                                          "2344",
-                                          "2382",
-                                          "3037",
-                                          "3163",
-                                          "5536",
-                                          "2408",
-                                          "6669",
-                                          "2313",
-                                          "3081",
-                                          "3260",
-                                          "3491",
-                                          "8299",
-                                          "2317",
                                           "5347",
-                                          "6285",
-                                          "3138",
-                                          "3533",
-                                          "5222",
-                                          "6821",
-                                          "6488",
-                                          "2379",
-                                          "3034",
-                                          "4916",
-                                          "2634",
-                                          "4919",
-                                          "2367",
-                                          "5009",
-                                          "6672",
-                                          "6829",
-                                          "5439",
-                                          "2395",
-                                          "3576",
-                                          "2417",
-                                          "6443",
+                                          "6173",
+                                          "6449",
+                                          "8042",
                                           "2375",
+                                          "3533",
+                                          "2337",
+                                          "3026",
+                                          "3443",
+                                          "3661",
+                                          "2382",
+                                          "3231",
+                                          "6669",
+                                          "2344",
+                                          "2408",
+                                          "3037",
                                           "3090",
                                           "3189",
-                                          "3231",
-                                          "6449",
-                                          "0050",
+                                          "3260",
+                                          "3624",
+                                          "8046",
+                                          "2303",
+                                          "3017",
                                           "3324",
+                                          "3653",
+                                          "6488",
+                                          "2404",
+                                          "2467",
+                                          "3081",
+                                          "3163",
                                           "3363",
                                           "3450",
-                                          "3653",
+                                          "4919",
                                           "4977",
-                                          "6274",
-                                          "6442",
-                                          "6451",
-                                          "2303",
-                                          "2467",
+                                          "4979",
                                           "5443",
+                                          "5536",
+                                          "6442",
                                           "6706",
+                                          "2379",
+                                          "3034",
+                                          "6274",
                                           "8291",
-                                          "1301",
-                                          "1303",
-                                          "1305",
-                                          "1313",
-                                          "1605",
-                                          "1609",
-                                          "1618",
-                                          "2059",
-                                          "2356",
-                                          "2360",
-                                          "2383",
-                                          "2449",
-                                          "2457",
-                                          "2481",
-                                          "3015",
-                                          "3035",
-                                          "3036",
-                                          "3665",
-                                          "3675",
-                                          "3702",
-                                          "3711",
-                                          "4958",
-                                          "5425",
-                                          "6139",
-                                          "6147",
-                                          "6196",
-                                          "6223",
-                                          "6239",
-                                          "6257",
-                                          "6412",
-                                          "6515",
-                                          "6613",
-                                          "6691",
-                                          "8112",
-                                          "8261",
-                                          "1590",
-                                          "2049",
-                                          "2359",
-                                          "2464",
-                                          "3379",
-                                          "4540",
-                                          "4566",
-                                          "4576",
-                                          "6166",
-                                          "6188",
-                                          "6698",
-                                          "8222",
-                                          "2314",
-                                          "3062"
+                                          "6451"
                                       ]
                    },
     "records":  [
@@ -372,6 +302,14 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP661 被動元件主線與成熟製程補庫存辨識",
+                                                       "EP660 育兒邊界感與成熟製程覺醒",
+                                                       "EP659 瘦瘦針進化論與 AI Slop 警報"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  661,
+                        "hostDiscussionScore":  35,
+                        "hostDiscussionCompositeScore":  60,
                         "latestEpisode":  666,
                         "latestRank":  1,
                         "latestScore":  84,
@@ -380,7 +318,7 @@
                         "score":  84,
                         "compositeScore":  134,
                         "latestSortRank":  1,
-                        "heatSortRank":  6,
+                        "heatSortRank":  5,
                         "hostOwned":  false
                     },
                     {
@@ -435,6 +373,14 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP661 被動元件主線與成熟製程補庫存辨識",
+                                                       "EP660 育兒邊界感與成熟製程覺醒",
+                                                       "EP659 瘦瘦針進化論與 AI Slop 警報"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  661,
+                        "hostDiscussionScore":  35,
+                        "hostDiscussionCompositeScore":  60,
                         "latestEpisode":  666,
                         "latestRank":  2,
                         "latestScore":  82,
@@ -443,7 +389,7 @@
                         "score":  86,
                         "compositeScore":  136,
                         "latestSortRank":  2,
-                        "heatSortRank":  3,
+                        "heatSortRank":  4,
                         "hostOwned":  false
                     },
                     {
@@ -488,6 +434,14 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP661 被動元件主線與成熟製程補庫存辨識",
+                                                       "EP660 育兒邊界感與成熟製程覺醒",
+                                                       "EP659 瘦瘦針進化論與 AI Slop 警報"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  661,
+                        "hostDiscussionScore":  35,
+                        "hostDiscussionCompositeScore":  60,
                         "latestEpisode":  666,
                         "latestRank":  3,
                         "latestScore":  80,
@@ -496,7 +450,7 @@
                         "score":  80,
                         "compositeScore":  130,
                         "latestSortRank":  3,
-                        "heatSortRank":  12,
+                        "heatSortRank":  6,
                         "hostOwned":  false
                     },
                     {
@@ -528,6 +482,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP660 育兒邊界感與成熟製程覺醒"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  660,
+                        "hostDiscussionScore":  35,
+                        "hostDiscussionCompositeScore":  48,
                         "latestEpisode":  666,
                         "latestRank":  4,
                         "latestScore":  76,
@@ -536,7 +496,7 @@
                         "score":  76,
                         "compositeScore":  126,
                         "latestSortRank":  4,
-                        "heatSortRank":  18,
+                        "heatSortRank":  26,
                         "hostOwned":  false
                     },
                     {
@@ -571,6 +531,12 @@
                                          "EP659 瘦瘦針進化論與 AI Slop 警報",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP661 被動元件主線與成熟製程補庫存辨識"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  661,
+                        "hostDiscussionScore":  35,
+                        "hostDiscussionCompositeScore":  50,
                         "latestEpisode":  666,
                         "latestRank":  5,
                         "latestScore":  74,
@@ -579,7 +545,7 @@
                         "score":  74,
                         "compositeScore":  124,
                         "latestSortRank":  5,
-                        "heatSortRank":  21,
+                        "heatSortRank":  17,
                         "hostOwned":  false
                     },
                     {
@@ -605,6 +571,12 @@
                                          "EP665 小天才初現與衛星算力遠眺",
                                          "EP662 葡萄酒入坑誌與被動元件浪潮"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  6,
                         "latestScore":  72,
@@ -613,7 +585,7 @@
                         "score":  82,
                         "compositeScore":  117,
                         "latestSortRank":  6,
-                        "heatSortRank":  32,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -642,6 +614,16 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP666 EP666 | 🍐",
+                                                       "EP664 AI 算力強心針與被動元件全面噴射",
+                                                       "EP660 育兒邊界感與成熟製程覺醒",
+                                                       "EP658 紅酒哲學與 AI 取代論反擊",
+                                                       "EP657 雕像玄學插曲與Intel封裝突破"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  666,
+                        "hostDiscussionScore":  35,
+                        "hostDiscussionCompositeScore":  80,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  35,
@@ -650,7 +632,7 @@
                         "score":  35,
                         "compositeScore":  80,
                         "latestSortRank":  7,
-                        "heatSortRank":  59,
+                        "heatSortRank":  2,
                         "hostOwned":  false
                     },
                     {
@@ -685,6 +667,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -693,7 +681,7 @@
                         "score":  88,
                         "compositeScore":  138,
                         "latestSortRank":  8,
-                        "heatSortRank":  1,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -733,6 +721,13 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP660 育兒邊界感與成熟製程覺醒",
+                                                       "EP659 瘦瘦針進化論與 AI Slop 警報"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  660,
+                        "hostDiscussionScore":  35,
+                        "hostDiscussionCompositeScore":  53,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -741,7 +736,7 @@
                         "score":  87,
                         "compositeScore":  137,
                         "latestSortRank":  9,
-                        "heatSortRank":  2,
+                        "heatSortRank":  14,
                         "hostOwned":  false
                     },
                     {
@@ -791,6 +786,16 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP661 被動元件主線與成熟製程補庫存辨識",
+                                                       "EP660 育兒邊界感與成熟製程覺醒",
+                                                       "EP659 瘦瘦針進化論與 AI Slop 警報",
+                                                       "EP658 紅酒哲學與 AI 取代論反擊",
+                                                       "EP657 雕像玄學插曲與Intel封裝突破"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  661,
+                        "hostDiscussionScore":  35,
+                        "hostDiscussionCompositeScore":  70,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -799,7 +804,7 @@
                         "score":  86,
                         "compositeScore":  136,
                         "latestSortRank":  10,
-                        "heatSortRank":  4,
+                        "heatSortRank":  3,
                         "hostOwned":  false
                     },
                     {
@@ -857,6 +862,17 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP664 AI 算力強心針與被動元件全面噴射",
+                                                       "EP661 被動元件主線與成熟製程補庫存辨識",
+                                                       "EP660 育兒邊界感與成熟製程覺醒",
+                                                       "EP659 瘦瘦針進化論與 AI Slop 警報",
+                                                       "EP658 紅酒哲學與 AI 取代論反擊",
+                                                       "EP657 雕像玄學插曲與Intel封裝突破"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  664,
+                        "hostDiscussionScore":  35,
+                        "hostDiscussionCompositeScore":  81,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -865,7 +881,7 @@
                         "score":  84,
                         "compositeScore":  134,
                         "latestSortRank":  11,
-                        "heatSortRank":  5,
+                        "heatSortRank":  1,
                         "hostOwned":  false
                     },
                     {
@@ -899,6 +915,13 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP659 瘦瘦針進化論與 AI Slop 警報",
+                                                       "EP658 紅酒哲學與 AI 取代論反擊"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  659,
+                        "hostDiscussionScore":  35,
+                        "hostDiscussionCompositeScore":  51,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -907,7 +930,7 @@
                         "score":  84,
                         "compositeScore":  134,
                         "latestSortRank":  12,
-                        "heatSortRank":  7,
+                        "heatSortRank":  15,
                         "hostOwned":  false
                     },
                     {
@@ -936,6 +959,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -944,7 +973,7 @@
                         "score":  82,
                         "compositeScore":  132,
                         "latestSortRank":  13,
-                        "heatSortRank":  9,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -979,6 +1008,13 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP660 育兒邊界感與成熟製程覺醒",
+                                                       "EP657 雕像玄學插曲與Intel封裝突破"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  660,
+                        "hostDiscussionScore":  35,
+                        "hostDiscussionCompositeScore":  53,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -987,7 +1023,7 @@
                         "score":  82,
                         "compositeScore":  132,
                         "latestSortRank":  14,
-                        "heatSortRank":  10,
+                        "heatSortRank":  13,
                         "hostOwned":  false
                     },
                     {
@@ -1021,6 +1057,13 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP659 瘦瘦針進化論與 AI Slop 警報",
+                                                       "EP658 紅酒哲學與 AI 取代論反擊"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  659,
+                        "hostDiscussionScore":  35,
+                        "hostDiscussionCompositeScore":  51,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -1029,7 +1072,7 @@
                         "score":  82,
                         "compositeScore":  132,
                         "latestSortRank":  15,
-                        "heatSortRank":  11,
+                        "heatSortRank":  16,
                         "hostOwned":  false
                     },
                     {
@@ -1068,6 +1111,14 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP661 被動元件主線與成熟製程補庫存辨識",
+                                                       "EP660 育兒邊界感與成熟製程覺醒",
+                                                       "EP659 瘦瘦針進化論與 AI Slop 警報"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  661,
+                        "hostDiscussionScore":  35,
+                        "hostDiscussionCompositeScore":  60,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -1076,7 +1127,7 @@
                         "score":  78,
                         "compositeScore":  128,
                         "latestSortRank":  16,
-                        "heatSortRank":  13,
+                        "heatSortRank":  8,
                         "hostOwned":  false
                     },
                     {
@@ -1105,6 +1156,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -1113,7 +1170,7 @@
                         "score":  78,
                         "compositeScore":  128,
                         "latestSortRank":  17,
-                        "heatSortRank":  14,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -1154,6 +1211,14 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP661 被動元件主線與成熟製程補庫存辨識",
+                                                       "EP660 育兒邊界感與成熟製程覺醒",
+                                                       "EP659 瘦瘦針進化論與 AI Slop 警報"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  661,
+                        "hostDiscussionScore":  35,
+                        "hostDiscussionCompositeScore":  60,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -1162,7 +1227,7 @@
                         "score":  77,
                         "compositeScore":  127,
                         "latestSortRank":  18,
-                        "heatSortRank":  15,
+                        "heatSortRank":  10,
                         "hostOwned":  false
                     },
                     {
@@ -1199,6 +1264,13 @@
                                          "EP659 瘦瘦針進化論與 AI Slop 警報",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP661 被動元件主線與成熟製程補庫存辨識",
+                                                       "EP660 育兒邊界感與成熟製程覺醒"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  661,
+                        "hostDiscussionScore":  20,
+                        "hostDiscussionCompositeScore":  40,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -1207,7 +1279,7 @@
                         "score":  76,
                         "compositeScore":  126,
                         "latestSortRank":  19,
-                        "heatSortRank":  17,
+                        "heatSortRank":  29,
                         "hostOwned":  false
                     },
                     {
@@ -1237,6 +1309,12 @@
                                          "EP659 瘦瘦針進化論與 AI Slop 警報",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP661 被動元件主線與成熟製程補庫存辨識"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  661,
+                        "hostDiscussionScore":  20,
+                        "hostDiscussionCompositeScore":  35,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -1245,7 +1323,7 @@
                         "score":  76,
                         "compositeScore":  126,
                         "latestSortRank":  20,
-                        "heatSortRank":  19,
+                        "heatSortRank":  41,
                         "hostOwned":  false
                     },
                     {
@@ -1278,6 +1356,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP660 育兒邊界感與成熟製程覺醒"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  660,
+                        "hostDiscussionScore":  35,
+                        "hostDiscussionCompositeScore":  48,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -1316,6 +1400,12 @@
                                          "EP659 瘦瘦針進化論與 AI Slop 警報",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP661 被動元件主線與成熟製程補庫存辨識"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  661,
+                        "hostDiscussionScore":  20,
+                        "hostDiscussionCompositeScore":  35,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -1324,7 +1414,7 @@
                         "score":  74,
                         "compositeScore":  124,
                         "latestSortRank":  22,
-                        "heatSortRank":  23,
+                        "heatSortRank":  36,
                         "hostOwned":  false
                     },
                     {
@@ -1357,6 +1447,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP660 育兒邊界感與成熟製程覺醒"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  660,
+                        "hostDiscussionScore":  35,
+                        "hostDiscussionCompositeScore":  48,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -1365,7 +1461,7 @@
                         "score":  72,
                         "compositeScore":  122,
                         "latestSortRank":  23,
-                        "heatSortRank":  25,
+                        "heatSortRank":  21,
                         "hostOwned":  false
                     },
                     {
@@ -1398,6 +1494,12 @@
                                          "EP659 瘦瘦針進化論與 AI Slop 警報",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP661 被動元件主線與成熟製程補庫存辨識"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  661,
+                        "hostDiscussionScore":  35,
+                        "hostDiscussionCompositeScore":  50,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -1406,7 +1508,7 @@
                         "score":  72,
                         "compositeScore":  122,
                         "latestSortRank":  24,
-                        "heatSortRank":  26,
+                        "heatSortRank":  19,
                         "hostOwned":  false
                     },
                     {
@@ -1436,6 +1538,12 @@
                                          "EP659 瘦瘦針進化論與 AI Slop 警報",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP661 被動元件主線與成熟製程補庫存辨識"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  661,
+                        "hostDiscussionScore":  20,
+                        "hostDiscussionCompositeScore":  35,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -1444,7 +1552,7 @@
                         "score":  70,
                         "compositeScore":  120,
                         "latestSortRank":  25,
-                        "heatSortRank":  28,
+                        "heatSortRank":  35,
                         "hostOwned":  false
                     },
                     {
@@ -1475,6 +1583,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP660 育兒邊界感與成熟製程覺醒"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  660,
+                        "hostDiscussionScore":  35,
+                        "hostDiscussionCompositeScore":  48,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -1483,7 +1597,7 @@
                         "score":  70,
                         "compositeScore":  120,
                         "latestSortRank":  26,
-                        "heatSortRank":  29,
+                        "heatSortRank":  25,
                         "hostOwned":  false
                     },
                     {
@@ -1511,6 +1625,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -1519,7 +1639,7 @@
                         "score":  68,
                         "compositeScore":  118,
                         "latestSortRank":  27,
-                        "heatSortRank":  31,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -1552,6 +1672,13 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP661 被動元件主線與成熟製程補庫存辨識",
+                                                       "EP660 育兒邊界感與成熟製程覺醒"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  661,
+                        "hostDiscussionScore":  35,
+                        "hostDiscussionCompositeScore":  55,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -1560,7 +1687,7 @@
                         "score":  35,
                         "compositeScore":  85,
                         "latestSortRank":  28,
-                        "heatSortRank":  54,
+                        "heatSortRank":  11,
                         "hostOwned":  false
                     },
                     {
@@ -1589,6 +1716,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP660 育兒邊界感與成熟製程覺醒"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  660,
+                        "hostDiscussionScore":  35,
+                        "hostDiscussionCompositeScore":  48,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -1597,7 +1730,7 @@
                         "score":  35,
                         "compositeScore":  85,
                         "latestSortRank":  29,
-                        "heatSortRank":  55,
+                        "heatSortRank":  23,
                         "hostOwned":  false
                     },
                     {
@@ -1625,6 +1758,12 @@
                                          "EP659 瘦瘦針進化論與 AI Slop 警報",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP661 被動元件主線與成熟製程補庫存辨識"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  661,
+                        "hostDiscussionScore":  35,
+                        "hostDiscussionCompositeScore":  50,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -1633,7 +1772,7 @@
                         "score":  35,
                         "compositeScore":  85,
                         "latestSortRank":  30,
-                        "heatSortRank":  57,
+                        "heatSortRank":  18,
                         "hostOwned":  false
                     },
                     {
@@ -1671,6 +1810,14 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP661 被動元件主線與成熟製程補庫存辨識",
+                                                       "EP660 育兒邊界感與成熟製程覺醒",
+                                                       "EP659 瘦瘦針進化論與 AI Slop 警報"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  661,
+                        "hostDiscussionScore":  35,
+                        "hostDiscussionCompositeScore":  60,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -1679,7 +1826,7 @@
                         "score":  35,
                         "compositeScore":  85,
                         "latestSortRank":  31,
-                        "heatSortRank":  58,
+                        "heatSortRank":  9,
                         "hostOwned":  false
                     },
                     {
@@ -1711,6 +1858,13 @@
                                          "EP659 瘦瘦針進化論與 AI Slop 警報",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP661 被動元件主線與成熟製程補庫存辨識",
+                                                       "EP660 育兒邊界感與成熟製程覺醒"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  661,
+                        "hostDiscussionScore":  20,
+                        "hostDiscussionCompositeScore":  40,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -1719,7 +1873,7 @@
                         "score":  20,
                         "compositeScore":  70,
                         "latestSortRank":  32,
-                        "heatSortRank":  60,
+                        "heatSortRank":  30,
                         "hostOwned":  false
                     },
                     {
@@ -1746,6 +1900,12 @@
                                          "EP659 瘦瘦針進化論與 AI Slop 警報",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP661 被動元件主線與成熟製程補庫存辨識"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  661,
+                        "hostDiscussionScore":  20,
+                        "hostDiscussionCompositeScore":  35,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -1754,7 +1914,7 @@
                         "score":  20,
                         "compositeScore":  70,
                         "latestSortRank":  33,
-                        "heatSortRank":  61,
+                        "heatSortRank":  37,
                         "hostOwned":  false
                     },
                     {
@@ -1781,6 +1941,12 @@
                                          "EP659 瘦瘦針進化論與 AI Slop 警報",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP661 被動元件主線與成熟製程補庫存辨識"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  661,
+                        "hostDiscussionScore":  20,
+                        "hostDiscussionCompositeScore":  35,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -1789,7 +1955,7 @@
                         "score":  20,
                         "compositeScore":  70,
                         "latestSortRank":  34,
-                        "heatSortRank":  62,
+                        "heatSortRank":  38,
                         "hostOwned":  false
                     },
                     {
@@ -1821,6 +1987,13 @@
                                          "EP659 瘦瘦針進化論與 AI Slop 警報",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP661 被動元件主線與成熟製程補庫存辨識",
+                                                       "EP660 育兒邊界感與成熟製程覺醒"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  661,
+                        "hostDiscussionScore":  20,
+                        "hostDiscussionCompositeScore":  40,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -1829,7 +2002,7 @@
                         "score":  20,
                         "compositeScore":  70,
                         "latestSortRank":  35,
-                        "heatSortRank":  63,
+                        "heatSortRank":  31,
                         "hostOwned":  false
                     },
                     {
@@ -1856,6 +2029,12 @@
                                          "EP659 瘦瘦針進化論與 AI Slop 警報",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP661 被動元件主線與成熟製程補庫存辨識"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  661,
+                        "hostDiscussionScore":  20,
+                        "hostDiscussionCompositeScore":  35,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -1864,7 +2043,7 @@
                         "score":  20,
                         "compositeScore":  70,
                         "latestSortRank":  36,
-                        "heatSortRank":  64,
+                        "heatSortRank":  40,
                         "hostOwned":  false
                     },
                     {
@@ -1891,6 +2070,12 @@
                                          "EP659 瘦瘦針進化論與 AI Slop 警報",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP661 被動元件主線與成熟製程補庫存辨識"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  661,
+                        "hostDiscussionScore":  20,
+                        "hostDiscussionCompositeScore":  35,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -1899,7 +2084,7 @@
                         "score":  20,
                         "compositeScore":  70,
                         "latestSortRank":  37,
-                        "heatSortRank":  66,
+                        "heatSortRank":  44,
                         "hostOwned":  false
                     },
                     {
@@ -1926,6 +2111,12 @@
                                          "EP659 瘦瘦針進化論與 AI Slop 警報",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP659 瘦瘦針進化論與 AI Slop 警報"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  659,
+                        "hostDiscussionScore":  20,
+                        "hostDiscussionCompositeScore":  31,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -1934,7 +2125,7 @@
                         "score":  20,
                         "compositeScore":  70,
                         "latestSortRank":  38,
-                        "heatSortRank":  67,
+                        "heatSortRank":  50,
                         "hostOwned":  false
                     },
                     {
@@ -1957,6 +2148,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -1965,7 +2162,7 @@
                         "score":  0,
                         "compositeScore":  50,
                         "latestSortRank":  39,
-                        "heatSortRank":  73,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -1988,6 +2185,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -1996,7 +2199,7 @@
                         "score":  0,
                         "compositeScore":  50,
                         "latestSortRank":  40,
-                        "heatSortRank":  74,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -2019,6 +2222,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -2027,7 +2236,7 @@
                         "score":  0,
                         "compositeScore":  50,
                         "latestSortRank":  41,
-                        "heatSortRank":  75,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -2050,6 +2259,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -2058,7 +2273,7 @@
                         "score":  0,
                         "compositeScore":  50,
                         "latestSortRank":  42,
-                        "heatSortRank":  76,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -2081,6 +2296,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -2089,7 +2310,7 @@
                         "score":  0,
                         "compositeScore":  50,
                         "latestSortRank":  43,
-                        "heatSortRank":  77,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -2112,6 +2333,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -2120,7 +2347,7 @@
                         "score":  0,
                         "compositeScore":  50,
                         "latestSortRank":  44,
-                        "heatSortRank":  78,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -2143,6 +2370,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -2151,7 +2384,7 @@
                         "score":  0,
                         "compositeScore":  50,
                         "latestSortRank":  45,
-                        "heatSortRank":  79,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -2176,6 +2409,12 @@
                                          "EP659 瘦瘦針進化論與 AI Slop 警報",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -2184,7 +2423,7 @@
                         "score":  0,
                         "compositeScore":  50,
                         "latestSortRank":  46,
-                        "heatSortRank":  80,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -2209,6 +2448,12 @@
                                          "EP659 瘦瘦針進化論與 AI Slop 警報",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -2217,7 +2462,7 @@
                         "score":  0,
                         "compositeScore":  50,
                         "latestSortRank":  47,
-                        "heatSortRank":  81,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -2245,6 +2490,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -2253,7 +2504,7 @@
                         "score":  0,
                         "compositeScore":  50,
                         "latestSortRank":  48,
-                        "heatSortRank":  82,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -2281,6 +2532,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -2289,7 +2546,7 @@
                         "score":  0,
                         "compositeScore":  50,
                         "latestSortRank":  49,
-                        "heatSortRank":  84,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -2315,6 +2572,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -2323,7 +2586,7 @@
                         "score":  0,
                         "compositeScore":  50,
                         "latestSortRank":  50,
-                        "heatSortRank":  85,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -2349,6 +2612,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -2357,7 +2626,7 @@
                         "score":  0,
                         "compositeScore":  50,
                         "latestSortRank":  51,
-                        "heatSortRank":  86,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -2383,6 +2652,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -2391,7 +2666,7 @@
                         "score":  0,
                         "compositeScore":  50,
                         "latestSortRank":  52,
-                        "heatSortRank":  87,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -2415,6 +2690,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -2423,7 +2704,7 @@
                         "score":  0,
                         "compositeScore":  50,
                         "latestSortRank":  53,
-                        "heatSortRank":  88,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -2449,6 +2730,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -2457,7 +2744,7 @@
                         "score":  0,
                         "compositeScore":  50,
                         "latestSortRank":  54,
-                        "heatSortRank":  89,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -2482,6 +2769,12 @@
                                          "EP659 瘦瘦針進化論與 AI Slop 警報",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -2490,7 +2783,7 @@
                         "score":  0,
                         "compositeScore":  50,
                         "latestSortRank":  55,
-                        "heatSortRank":  90,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -2516,6 +2809,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -2524,7 +2823,7 @@
                         "score":  0,
                         "compositeScore":  50,
                         "latestSortRank":  56,
-                        "heatSortRank":  91,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -2550,6 +2849,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -2558,7 +2863,7 @@
                         "score":  0,
                         "compositeScore":  50,
                         "latestSortRank":  57,
-                        "heatSortRank":  92,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -2586,6 +2891,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -2594,7 +2905,7 @@
                         "score":  0,
                         "compositeScore":  50,
                         "latestSortRank":  58,
-                        "heatSortRank":  93,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -2618,6 +2929,12 @@
                                          "EP659 瘦瘦針進化論與 AI Slop 警報",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -2626,7 +2943,7 @@
                         "score":  0,
                         "compositeScore":  50,
                         "latestSortRank":  59,
-                        "heatSortRank":  94,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -2652,6 +2969,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -2660,7 +2983,7 @@
                         "score":  0,
                         "compositeScore":  50,
                         "latestSortRank":  60,
-                        "heatSortRank":  95,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -2686,6 +3009,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -2694,7 +3023,7 @@
                         "score":  0,
                         "compositeScore":  50,
                         "latestSortRank":  61,
-                        "heatSortRank":  97,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -2722,6 +3051,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -2730,7 +3065,7 @@
                         "score":  0,
                         "compositeScore":  50,
                         "latestSortRank":  62,
-                        "heatSortRank":  99,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -2756,6 +3091,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -2764,7 +3105,7 @@
                         "score":  0,
                         "compositeScore":  50,
                         "latestSortRank":  63,
-                        "heatSortRank":  100,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -2790,6 +3131,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -2798,7 +3145,7 @@
                         "score":  0,
                         "compositeScore":  50,
                         "latestSortRank":  64,
-                        "heatSortRank":  101,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -2824,6 +3171,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -2832,7 +3185,7 @@
                         "score":  0,
                         "compositeScore":  50,
                         "latestSortRank":  65,
-                        "heatSortRank":  102,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -2860,6 +3213,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -2868,7 +3227,7 @@
                         "score":  0,
                         "compositeScore":  50,
                         "latestSortRank":  66,
-                        "heatSortRank":  103,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -2894,6 +3253,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -2902,7 +3267,7 @@
                         "score":  0,
                         "compositeScore":  50,
                         "latestSortRank":  67,
-                        "heatSortRank":  106,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -2928,6 +3293,12 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  666,
                         "latestRank":  9999,
                         "latestScore":  0,
@@ -2936,7 +3307,7 @@
                         "score":  0,
                         "compositeScore":  50,
                         "latestSortRank":  68,
-                        "heatSortRank":  107,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -2971,15 +3342,21 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP660 育兒邊界感與成熟製程覺醒"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  660,
+                        "hostDiscussionScore":  35,
+                        "hostDiscussionCompositeScore":  48,
                         "latestEpisode":  665,
                         "latestRank":  9999,
                         "latestScore":  0,
                         "latestSourcePriority":  4,
                         "rank":  3,
                         "score":  83,
-                        "compositeScore":  133,
+                        "compositeScore":  131,
                         "latestSortRank":  69,
-                        "heatSortRank":  8,
+                        "heatSortRank":  27,
                         "hostOwned":  false
                     },
                     {
@@ -3009,15 +3386,21 @@
                                          "EP660 育兒邊界感與成熟製程覺醒",
                                          "EP658 紅酒哲學與 AI 取代論反擊"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP661 被動元件主線與成熟製程補庫存辨識"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  661,
+                        "hostDiscussionScore":  20,
+                        "hostDiscussionCompositeScore":  35,
                         "latestEpisode":  665,
                         "latestRank":  9999,
                         "latestScore":  0,
                         "latestSourcePriority":  4,
                         "rank":  6,
                         "score":  76,
-                        "compositeScore":  126,
+                        "compositeScore":  124,
                         "latestSortRank":  70,
-                        "heatSortRank":  16,
+                        "heatSortRank":  33,
                         "hostOwned":  false
                     },
                     {
@@ -3050,13 +3433,19 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP660 育兒邊界感與成熟製程覺醒"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  660,
+                        "hostDiscussionScore":  35,
+                        "hostDiscussionCompositeScore":  48,
                         "latestEpisode":  665,
                         "latestRank":  9999,
                         "latestScore":  0,
                         "latestSourcePriority":  4,
                         "rank":  4,
                         "score":  74,
-                        "compositeScore":  124,
+                        "compositeScore":  122,
                         "latestSortRank":  71,
                         "heatSortRank":  22,
                         "hostOwned":  false
@@ -3086,15 +3475,21 @@
                                          "EP660 育兒邊界感與成熟製程覺醒",
                                          "EP658 紅酒哲學與 AI 取代論反擊"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP661 被動元件主線與成熟製程補庫存辨識"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  661,
+                        "hostDiscussionScore":  20,
+                        "hostDiscussionCompositeScore":  35,
                         "latestEpisode":  665,
                         "latestRank":  9999,
                         "latestScore":  0,
                         "latestSourcePriority":  4,
                         "rank":  9,
                         "score":  74,
-                        "compositeScore":  124,
+                        "compositeScore":  122,
                         "latestSortRank":  72,
-                        "heatSortRank":  24,
+                        "heatSortRank":  43,
                         "hostOwned":  false
                     },
                     {
@@ -3117,15 +3512,21 @@
                                          "EP665 小天才初現與衛星算力遠眺",
                                          "EP662 葡萄酒入坑誌與被動元件浪潮"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  665,
                         "latestRank":  1,
                         "latestScore":  90,
                         "latestSourcePriority":  1,
                         "rank":  1,
                         "score":  90,
-                        "compositeScore":  120,
+                        "compositeScore":  118,
                         "latestSortRank":  73,
-                        "heatSortRank":  27,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -3148,15 +3549,132 @@
                                          "EP665 小天才初現與衛星算力遠眺",
                                          "EP662 葡萄酒入坑誌與被動元件浪潮"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  665,
                         "latestRank":  2,
                         "latestScore":  88,
                         "latestSourcePriority":  1,
                         "rank":  2,
                         "score":  88,
-                        "compositeScore":  118,
+                        "compositeScore":  116,
                         "latestSortRank":  74,
-                        "heatSortRank":  30,
+                        "heatSortRank":  null,
+                        "hostOwned":  false
+                    },
+                    {
+                        "code":  "6285",
+                        "themes":  [
+                                       "對應 EP665「Starlink是印鈔機、Direct to Cell是既有市場焦點」以及通訊鏈路驗證。",
+                                       "低軌衛星 / Starlink / Direct to Cell",
+                                       "衛星 AI 算力 / 軌道資料中心"
+                                   ],
+                        "sources":  [
+                                        "AI 優先研究候選",
+                                        "Podcast 主題關聯"
+                                    ],
+                        "reasons":  [
+                                        "啟碁是網通與衛星通訊終端設備的重要候選。EP665提到市場已經知道Starlink、Direct to Cell與地面網路連接，但衛星AI算力若推進，仍需要穩定終端、地面設備、無線通訊與資料回傳設備。啟碁應列入第一批驗證，重點是衛星終端占比、客戶結構與是否有新一代低軌衛星產品。",
+                                        "Podcast 提到 SpaceX、Starlink、Direct to Cell 或低軌衛星時，先建立 PCB、通訊、RF、終端與系統整合候選池；後續仍需驗證產品、客戶與營收占比。",
+                                        "Podcast 把衛星 AI 算力拆成太空級材料、散熱、能源、通訊、伺服器與發射相關曝險，這裡自動建立第一層候選池。"
+                                    ],
+                        "episodes":  [
+                                         "EP665 小天才初現與衛星算力遠眺",
+                                         "EP662 葡萄酒入坑誌與被動元件浪潮"
+                                     ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
+                        "latestEpisode":  665,
+                        "latestRank":  3,
+                        "latestScore":  86,
+                        "latestSourcePriority":  1,
+                        "rank":  3,
+                        "score":  86,
+                        "compositeScore":  114,
+                        "latestSortRank":  75,
+                        "heatSortRank":  null,
+                        "hostOwned":  false
+                    },
+                    {
+                        "code":  "3138",
+                        "themes":  [
+                                       "對應 EP665「Direct to Cell與地球訊號連接是既有動能，但仍要往前看衛星AI算力」。",
+                                       "低軌衛星 / Starlink / Direct to Cell",
+                                       "衛星 AI 算力 / 軌道資料中心"
+                                   ],
+                        "sources":  [
+                                        "AI 優先研究候選",
+                                        "Podcast 主題關聯"
+                                    ],
+                        "reasons":  [
+                                        "耀登具備天線、測試與低軌衛星地面站相關辨識度，適合作為衛星通訊鏈路的高純度候選。EP665提醒未來不只看原本Dish或Router，而是看AI Data Center相關增量；但無論是否進入軌道AI算力，天線、地面站與測試仍是通訊鏈路關鍵。",
+                                        "Podcast 提到 SpaceX、Starlink、Direct to Cell 或低軌衛星時，先建立 PCB、通訊、RF、終端與系統整合候選池；後續仍需驗證產品、客戶與營收占比。",
+                                        "Podcast 把衛星 AI 算力拆成太空級材料、散熱、能源、通訊、伺服器與發射相關曝險，這裡自動建立第一層候選池。"
+                                    ],
+                        "episodes":  [
+                                         "EP665 小天才初現與衛星算力遠眺",
+                                         "EP662 葡萄酒入坑誌與被動元件浪潮"
+                                     ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
+                        "latestEpisode":  665,
+                        "latestRank":  4,
+                        "latestScore":  84,
+                        "latestSourcePriority":  1,
+                        "rank":  4,
+                        "score":  84,
+                        "compositeScore":  112,
+                        "latestSortRank":  76,
+                        "heatSortRank":  null,
+                        "hostOwned":  false
+                    },
+                    {
+                        "code":  "5222",
+                        "themes":  [
+                                       "對應 EP665「通信、太空級材料與可靠驗證」的候選池要求。",
+                                       "低軌衛星 / Starlink / Direct to Cell",
+                                       "衛星 AI 算力 / 軌道資料中心"
+                                   ],
+                        "sources":  [
+                                        "AI 優先研究候選",
+                                        "Podcast 主題關聯"
+                                    ],
+                        "reasons":  [
+                                        "全訊屬RF與微波功率放大器候選，若衛星AI算力需要更高資料回傳、星間或地面通訊能力，RF前端與功率元件是應該優先查證的模組。它不是軌道資料中心本體，但在通訊鏈路與航太可靠度驗證中具有研究價值。",
+                                        "Podcast 提到 SpaceX、Starlink、Direct to Cell 或低軌衛星時，先建立 PCB、通訊、RF、終端與系統整合候選池；後續仍需驗證產品、客戶與營收占比。",
+                                        "Podcast 把衛星 AI 算力拆成太空級材料、散熱、能源、通訊、伺服器與發射相關曝險，這裡自動建立第一層候選池。"
+                                    ],
+                        "episodes":  [
+                                         "EP665 小天才初現與衛星算力遠眺",
+                                         "EP662 葡萄酒入坑誌與被動元件浪潮"
+                                     ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
+                        "latestEpisode":  665,
+                        "latestRank":  6,
+                        "latestScore":  80,
+                        "latestSourcePriority":  1,
+                        "rank":  6,
+                        "score":  80,
+                        "compositeScore":  108,
+                        "latestSortRank":  77,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -3188,21 +3706,29 @@
                                          "EP660 育兒邊界感與成熟製程覺醒",
                                          "EP659 瘦瘦針進化論與 AI Slop 警報"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP661 被動元件主線與成熟製程補庫存辨識",
+                                                       "EP660 育兒邊界感與成熟製程覺醒",
+                                                       "EP659 瘦瘦針進化論與 AI Slop 警報"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  661,
+                        "hostDiscussionScore":  35,
+                        "hostDiscussionCompositeScore":  60,
                         "latestEpisode":  661,
                         "latestRank":  5,
                         "latestScore":  75,
                         "latestSourcePriority":  1,
                         "rank":  1,
                         "score":  82,
-                        "compositeScore":  117,
-                        "latestSortRank":  75,
-                        "heatSortRank":  33,
+                        "compositeScore":  107,
+                        "latestSortRank":  78,
+                        "heatSortRank":  7,
                         "hostOwned":  false
                     },
                     {
-                        "code":  "6285",
+                        "code":  "6821",
                         "themes":  [
-                                       "對應 EP665「Starlink是印鈔機、Direct to Cell是既有市場焦點」以及通訊鏈路驗證。",
+                                       "對應 EP665 從Starlink基本盤往衛星AI算力延伸的通訊與電源零組件檢查。",
                                        "低軌衛星 / Starlink / Direct to Cell",
                                        "衛星 AI 算力 / 軌道資料中心"
                                    ],
@@ -3211,7 +3737,7 @@
                                         "Podcast 主題關聯"
                                     ],
                         "reasons":  [
-                                        "啟碁是網通與衛星通訊終端設備的重要候選。EP665提到市場已經知道Starlink、Direct to Cell與地面網路連接，但衛星AI算力若推進，仍需要穩定終端、地面設備、無線通訊與資料回傳設備。啟碁應列入第一批驗證，重點是衛星終端占比、客戶結構與是否有新一代低軌衛星產品。",
+                                        "聯寶可放在低軌衛星終端與接收設備的電源/磁性元件候選。EP665提醒原本Starlink終端、Router、Dish不是這次最核心，但它們仍是既有衛星網路基本盤；若衛星AI算力提高資料傳輸量，終端與地面接收設備仍需跟著升級。",
                                         "Podcast 提到 SpaceX、Starlink、Direct to Cell 或低軌衛星時，先建立 PCB、通訊、RF、終端與系統整合候選池；後續仍需驗證產品、客戶與營收占比。",
                                         "Podcast 把衛星 AI 算力拆成太空級材料、散熱、能源、通訊、伺服器與發射相關曝險，這裡自動建立第一層候選池。"
                                     ],
@@ -3219,46 +3745,21 @@
                                          "EP665 小天才初現與衛星算力遠眺",
                                          "EP662 葡萄酒入坑誌與被動元件浪潮"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  665,
-                        "latestRank":  3,
-                        "latestScore":  86,
+                        "latestRank":  7,
+                        "latestScore":  78,
                         "latestSourcePriority":  1,
-                        "rank":  3,
-                        "score":  86,
-                        "compositeScore":  116,
-                        "latestSortRank":  76,
-                        "heatSortRank":  34,
-                        "hostOwned":  false
-                    },
-                    {
-                        "code":  "3138",
-                        "themes":  [
-                                       "對應 EP665「Direct to Cell與地球訊號連接是既有動能，但仍要往前看衛星AI算力」。",
-                                       "低軌衛星 / Starlink / Direct to Cell",
-                                       "衛星 AI 算力 / 軌道資料中心"
-                                   ],
-                        "sources":  [
-                                        "AI 優先研究候選",
-                                        "Podcast 主題關聯"
-                                    ],
-                        "reasons":  [
-                                        "耀登具備天線、測試與低軌衛星地面站相關辨識度，適合作為衛星通訊鏈路的高純度候選。EP665提醒未來不只看原本Dish或Router，而是看AI Data Center相關增量；但無論是否進入軌道AI算力，天線、地面站與測試仍是通訊鏈路關鍵。",
-                                        "Podcast 提到 SpaceX、Starlink、Direct to Cell 或低軌衛星時，先建立 PCB、通訊、RF、終端與系統整合候選池；後續仍需驗證產品、客戶與營收占比。",
-                                        "Podcast 把衛星 AI 算力拆成太空級材料、散熱、能源、通訊、伺服器與發射相關曝險，這裡自動建立第一層候選池。"
-                                    ],
-                        "episodes":  [
-                                         "EP665 小天才初現與衛星算力遠眺",
-                                         "EP662 葡萄酒入坑誌與被動元件浪潮"
-                                     ],
-                        "latestEpisode":  665,
-                        "latestRank":  4,
-                        "latestScore":  84,
-                        "latestSourcePriority":  1,
-                        "rank":  4,
-                        "score":  84,
-                        "compositeScore":  114,
-                        "latestSortRank":  77,
-                        "heatSortRank":  35,
+                        "rank":  7,
+                        "score":  78,
+                        "compositeScore":  106,
+                        "latestSortRank":  79,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -3290,77 +3791,22 @@
                                          "EP659 瘦瘦針進化論與 AI Slop 警報",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP661 被動元件主線與成熟製程補庫存辨識",
+                                                       "EP660 育兒邊界感與成熟製程覺醒"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  661,
+                        "hostDiscussionScore":  35,
+                        "hostDiscussionCompositeScore":  55,
                         "latestEpisode":  661,
                         "latestRank":  7,
                         "latestScore":  72,
                         "latestSourcePriority":  1,
                         "rank":  6,
                         "score":  72,
-                        "compositeScore":  112,
-                        "latestSortRank":  78,
-                        "heatSortRank":  36,
-                        "hostOwned":  false
-                    },
-                    {
-                        "code":  "5222",
-                        "themes":  [
-                                       "對應 EP665「通信、太空級材料與可靠驗證」的候選池要求。",
-                                       "低軌衛星 / Starlink / Direct to Cell",
-                                       "衛星 AI 算力 / 軌道資料中心"
-                                   ],
-                        "sources":  [
-                                        "AI 優先研究候選",
-                                        "Podcast 主題關聯"
-                                    ],
-                        "reasons":  [
-                                        "全訊屬RF與微波功率放大器候選，若衛星AI算力需要更高資料回傳、星間或地面通訊能力，RF前端與功率元件是應該優先查證的模組。它不是軌道資料中心本體，但在通訊鏈路與航太可靠度驗證中具有研究價值。",
-                                        "Podcast 提到 SpaceX、Starlink、Direct to Cell 或低軌衛星時，先建立 PCB、通訊、RF、終端與系統整合候選池；後續仍需驗證產品、客戶與營收占比。",
-                                        "Podcast 把衛星 AI 算力拆成太空級材料、散熱、能源、通訊、伺服器與發射相關曝險，這裡自動建立第一層候選池。"
-                                    ],
-                        "episodes":  [
-                                         "EP665 小天才初現與衛星算力遠眺",
-                                         "EP662 葡萄酒入坑誌與被動元件浪潮"
-                                     ],
-                        "latestEpisode":  665,
-                        "latestRank":  6,
-                        "latestScore":  80,
-                        "latestSourcePriority":  1,
-                        "rank":  6,
-                        "score":  80,
-                        "compositeScore":  110,
-                        "latestSortRank":  79,
-                        "heatSortRank":  37,
-                        "hostOwned":  false
-                    },
-                    {
-                        "code":  "6821",
-                        "themes":  [
-                                       "對應 EP665 從Starlink基本盤往衛星AI算力延伸的通訊與電源零組件檢查。",
-                                       "低軌衛星 / Starlink / Direct to Cell",
-                                       "衛星 AI 算力 / 軌道資料中心"
-                                   ],
-                        "sources":  [
-                                        "AI 優先研究候選",
-                                        "Podcast 主題關聯"
-                                    ],
-                        "reasons":  [
-                                        "聯寶可放在低軌衛星終端與接收設備的電源/磁性元件候選。EP665提醒原本Starlink終端、Router、Dish不是這次最核心，但它們仍是既有衛星網路基本盤；若衛星AI算力提高資料傳輸量，終端與地面接收設備仍需跟著升級。",
-                                        "Podcast 提到 SpaceX、Starlink、Direct to Cell 或低軌衛星時，先建立 PCB、通訊、RF、終端與系統整合候選池；後續仍需驗證產品、客戶與營收占比。",
-                                        "Podcast 把衛星 AI 算力拆成太空級材料、散熱、能源、通訊、伺服器與發射相關曝險，這裡自動建立第一層候選池。"
-                                    ],
-                        "episodes":  [
-                                         "EP665 小天才初現與衛星算力遠眺",
-                                         "EP662 葡萄酒入坑誌與被動元件浪潮"
-                                     ],
-                        "latestEpisode":  665,
-                        "latestRank":  7,
-                        "latestScore":  78,
-                        "latestSourcePriority":  1,
-                        "rank":  7,
-                        "score":  78,
-                        "compositeScore":  108,
+                        "compositeScore":  102,
                         "latestSortRank":  80,
-                        "heatSortRank":  38,
+                        "heatSortRank":  12,
                         "hostOwned":  false
                     },
                     {
@@ -3385,15 +3831,22 @@
                                          "EP660 育兒邊界感與成熟製程覺醒",
                                          "EP659 瘦瘦針進化論與 AI Slop 警報"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP660 育兒邊界感與成熟製程覺醒",
+                                                       "EP659 瘦瘦針進化論與 AI Slop 警報"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  660,
+                        "hostDiscussionScore":  20,
+                        "hostDiscussionCompositeScore":  38,
                         "latestEpisode":  660,
                         "latestRank":  4,
                         "latestScore":  74,
                         "latestSourcePriority":  1,
                         "rank":  4,
                         "score":  74,
-                        "compositeScore":  104,
+                        "compositeScore":  92,
                         "latestSortRank":  81,
-                        "heatSortRank":  39,
+                        "heatSortRank":  32,
                         "hostOwned":  false
                     },
                     {
@@ -3413,43 +3866,21 @@
                         "episodes":  [
                                          "EP660 育兒邊界感與成熟製程覺醒"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP660 育兒邊界感與成熟製程覺醒"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  660,
+                        "hostDiscussionScore":  20,
+                        "hostDiscussionCompositeScore":  33,
                         "latestEpisode":  660,
                         "latestRank":  2,
                         "latestScore":  78,
                         "latestSourcePriority":  1,
                         "rank":  2,
                         "score":  78,
-                        "compositeScore":  103,
+                        "compositeScore":  91,
                         "latestSortRank":  82,
-                        "heatSortRank":  40,
-                        "hostOwned":  false
-                    },
-                    {
-                        "code":  "3034",
-                        "themes":  [
-                                       "對應 EP660 對 DDIC、筆電拉貨與補庫存的討論。",
-                                       "IC 設計輪動：瑞昱與聯詠 [watchful]"
-                                   ],
-                        "sources":  [
-                                        "AI 優先研究候選",
-                                        "Podcast 直接列名"
-                                    ],
-                        "reasons":  [
-                                        "聯詠同樣被主持人列入開燈的 IC 設計代表。DDIC 與筆電/面板拉貨若只是怕漲價和關稅，必須嚴格驗證持續性。",
-                                        "主持人提到瑞昱、聯詠週五開燈，代表 IC 設計與 DDIC 也出現資金表態。研究上要看這是需求復甦，還是因記憶體、代工漲價與關稅導致客戶先拉貨。"
-                                    ],
-                        "episodes":  [
-                                         "EP660 育兒邊界感與成熟製程覺醒"
-                                     ],
-                        "latestEpisode":  660,
-                        "latestRank":  3,
-                        "latestScore":  76,
-                        "latestSourcePriority":  1,
-                        "rank":  3,
-                        "score":  76,
-                        "compositeScore":  101,
-                        "latestSortRank":  83,
-                        "heatSortRank":  41,
+                        "heatSortRank":  46,
                         "hostOwned":  false
                     },
                     {
@@ -3469,15 +3900,21 @@
                         "episodes":  [
                                          "EP665 小天才初現與衛星算力遠眺"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  665,
                         "latestRank":  12,
                         "latestScore":  68,
                         "latestSourcePriority":  1,
                         "rank":  12,
                         "score":  68,
-                        "compositeScore":  93,
-                        "latestSortRank":  84,
-                        "heatSortRank":  42,
+                        "compositeScore":  91,
+                        "latestSortRank":  83,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -3497,43 +3934,55 @@
                         "episodes":  [
                                          "EP665 小天才初現與衛星算力遠眺"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  665,
                         "latestRank":  13,
                         "latestScore":  66,
                         "latestSourcePriority":  1,
                         "rank":  13,
                         "score":  66,
-                        "compositeScore":  91,
-                        "latestSortRank":  85,
-                        "heatSortRank":  43,
+                        "compositeScore":  89,
+                        "latestSortRank":  84,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
-                        "code":  "4919",
+                        "code":  "3034",
                         "themes":  [
-                                       "對應主持人說新唐舊故事被重新拿出來講，重點要回到 MCU 改善。",
-                                       "先進製程設備、CPU Socket 與新唐 [watchful]"
+                                       "對應 EP660 對 DDIC、筆電拉貨與補庫存的討論。",
+                                       "IC 設計輪動：瑞昱與聯詠 [watchful]"
                                    ],
                         "sources":  [
                                         "AI 優先研究候選",
                                         "Podcast 直接列名"
                                     ],
                         "reasons":  [
-                                        "新唐在 Q\u0026A 中被提及，主持人提醒 Google/Microsoft 故事是兩年前的舊故事，真正關鍵是 MCU 是否改善，因此只列為低 conviction 觀察。",
-                                        "聽眾提到志聖、均豪、惠特、嘉澤、新唐等標的。主持人認為組合很專業，CPU Socket 可視為 CPU 主題外溢；新唐過去 Google/Microsoft 故事已被市場講過，真正要看 MCU 改善是否落地。"
+                                        "聯詠同樣被主持人列入開燈的 IC 設計代表。DDIC 與筆電/面板拉貨若只是怕漲價和關稅，必須嚴格驗證持續性。",
+                                        "主持人提到瑞昱、聯詠週五開燈，代表 IC 設計與 DDIC 也出現資金表態。研究上要看這是需求復甦，還是因記憶體、代工漲價與關稅導致客戶先拉貨。"
                                     ],
                         "episodes":  [
-                                         "EP661 被動元件主線與成熟製程補庫存辨識"
+                                         "EP660 育兒邊界感與成熟製程覺醒"
                                      ],
-                        "latestEpisode":  661,
-                        "latestRank":  8,
-                        "latestScore":  66,
+                        "hostDiscussionEpisodes":  [
+                                                       "EP660 育兒邊界感與成熟製程覺醒"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  660,
+                        "hostDiscussionScore":  20,
+                        "hostDiscussionCompositeScore":  33,
+                        "latestEpisode":  660,
+                        "latestRank":  3,
+                        "latestScore":  76,
                         "latestSourcePriority":  1,
-                        "rank":  8,
-                        "score":  66,
-                        "compositeScore":  91,
-                        "latestSortRank":  86,
-                        "heatSortRank":  44,
+                        "rank":  3,
+                        "score":  76,
+                        "compositeScore":  89,
+                        "latestSortRank":  85,
+                        "heatSortRank":  47,
                         "hostOwned":  false
                     },
                     {
@@ -3556,15 +4005,21 @@
                                          "EP665 小天才初現與衛星算力遠眺",
                                          "EP662 葡萄酒入坑誌與被動元件浪潮"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  665,
                         "latestRank":  16,
                         "latestScore":  60,
                         "latestSourcePriority":  1,
                         "rank":  16,
                         "score":  60,
-                        "compositeScore":  90,
-                        "latestSortRank":  87,
-                        "heatSortRank":  45,
+                        "compositeScore":  88,
+                        "latestSortRank":  86,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -3584,15 +4039,21 @@
                         "episodes":  [
                                          "EP665 小天才初現與衛星算力遠眺"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  665,
                         "latestRank":  14,
                         "latestScore":  64,
                         "latestSourcePriority":  1,
                         "rank":  14,
                         "score":  64,
-                        "compositeScore":  89,
-                        "latestSortRank":  88,
-                        "heatSortRank":  46,
+                        "compositeScore":  87,
+                        "latestSortRank":  87,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -3615,15 +4076,21 @@
                                          "EP665 小天才初現與衛星算力遠眺",
                                          "EP662 葡萄酒入坑誌與被動元件浪潮"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  665,
                         "latestRank":  17,
                         "latestScore":  58,
                         "latestSourcePriority":  1,
                         "rank":  17,
                         "score":  58,
-                        "compositeScore":  88,
-                        "latestSortRank":  89,
-                        "heatSortRank":  47,
+                        "compositeScore":  86,
+                        "latestSortRank":  88,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -3643,15 +4110,21 @@
                         "episodes":  [
                                          "EP665 小天才初現與衛星算力遠眺"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  665,
                         "latestRank":  15,
                         "latestScore":  62,
                         "latestSourcePriority":  1,
                         "rank":  15,
                         "score":  62,
-                        "compositeScore":  87,
-                        "latestSortRank":  90,
-                        "heatSortRank":  48,
+                        "compositeScore":  85,
+                        "latestSortRank":  89,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -3674,40 +4147,55 @@
                                          "EP665 小天才初現與衛星算力遠眺",
                                          "EP662 葡萄酒入坑誌與被動元件浪潮"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  665,
                         "latestRank":  18,
                         "latestScore":  56,
                         "latestSourcePriority":  1,
                         "rank":  18,
                         "score":  56,
-                        "compositeScore":  86,
-                        "latestSortRank":  91,
-                        "heatSortRank":  49,
+                        "compositeScore":  84,
+                        "latestSortRank":  90,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
-                        "code":  "2395",
+                        "code":  "4919",
                         "themes":  [
-                                       "對應 48:37-49:53 邊緣運算段落。"
+                                       "對應主持人說新唐舊故事被重新拿出來講，重點要回到 MCU 改善。",
+                                       "先進製程設備、CPU Socket 與新唐 [watchful]"
                                    ],
                         "sources":  [
-                                        "AI 優先研究候選"
+                                        "AI 優先研究候選",
+                                        "Podcast 直接列名"
                                     ],
                         "reasons":  [
-                                        "Q\u0026A 中聽眾提到之前問過研華與圓剛，主持人用邊緣運算框架回答。研華是台股 edge/工業電腦代表，但主持人說短期沒有明確催化。"
+                                        "新唐在 Q\u0026A 中被提及，主持人提醒 Google/Microsoft 故事是兩年前的舊故事，真正關鍵是 MCU 是否改善，因此只列為低 conviction 觀察。",
+                                        "聽眾提到志聖、均豪、惠特、嘉澤、新唐等標的。主持人認為組合很專業，CPU Socket 可視為 CPU 主題外溢；新唐過去 Google/Microsoft 故事已被市場講過，真正要看 MCU 改善是否落地。"
                                     ],
                         "episodes":  [
-                                         "EP658 紅酒哲學與 AI 取代論反擊"
+                                         "EP661 被動元件主線與成熟製程補庫存辨識"
                                      ],
-                        "latestEpisode":  658,
-                        "latestRank":  9,
-                        "latestScore":  58,
+                        "hostDiscussionEpisodes":  [
+                                                       "EP661 被動元件主線與成熟製程補庫存辨識"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  661,
+                        "hostDiscussionScore":  20,
+                        "hostDiscussionCompositeScore":  35,
+                        "latestEpisode":  661,
+                        "latestRank":  8,
+                        "latestScore":  66,
                         "latestSourcePriority":  1,
-                        "rank":  9,
-                        "score":  58,
-                        "compositeScore":  83,
-                        "latestSortRank":  92,
-                        "heatSortRank":  50,
+                        "rank":  8,
+                        "score":  66,
+                        "compositeScore":  81,
+                        "latestSortRank":  91,
+                        "heatSortRank":  39,
                         "hostOwned":  false
                     },
                     {
@@ -3727,40 +4215,21 @@
                         "episodes":  [
                                          "EP665 小天才初現與衛星算力遠眺"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  665,
                         "latestRank":  19,
                         "latestScore":  54,
                         "latestSourcePriority":  1,
                         "rank":  19,
                         "score":  54,
-                        "compositeScore":  79,
-                        "latestSortRank":  93,
-                        "heatSortRank":  51,
-                        "hostOwned":  false
-                    },
-                    {
-                        "code":  "2417",
-                        "themes":  [
-                                       "對應 48:37-49:53 邊緣運算段落。"
-                                   ],
-                        "sources":  [
-                                        "AI 優先研究候選"
-                                    ],
-                        "reasons":  [
-                                        "主持人在邊緣運算回答中提到先前被問到的研華與圓剛。圓剛可作為邊緣影像與 AI device 低優先觀察，重點是等催化而非當主線追。"
-                                    ],
-                        "episodes":  [
-                                         "EP658 紅酒哲學與 AI 取代論反擊"
-                                     ],
-                        "latestEpisode":  658,
-                        "latestRank":  10,
-                        "latestScore":  52,
-                        "latestSourcePriority":  1,
-                        "rank":  10,
-                        "score":  52,
                         "compositeScore":  77,
-                        "latestSortRank":  94,
-                        "heatSortRank":  52,
+                        "latestSortRank":  92,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -3780,15 +4249,83 @@
                         "episodes":  [
                                          "EP665 小天才初現與衛星算力遠眺"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  665,
                         "latestRank":  20,
                         "latestScore":  52,
                         "latestSourcePriority":  1,
                         "rank":  20,
                         "score":  52,
-                        "compositeScore":  77,
+                        "compositeScore":  75,
+                        "latestSortRank":  93,
+                        "heatSortRank":  null,
+                        "hostOwned":  false
+                    },
+                    {
+                        "code":  "2395",
+                        "themes":  [
+                                       "對應 48:37-49:53 邊緣運算段落。"
+                                   ],
+                        "sources":  [
+                                        "AI 優先研究候選"
+                                    ],
+                        "reasons":  [
+                                        "Q\u0026A 中聽眾提到之前問過研華與圓剛，主持人用邊緣運算框架回答。研華是台股 edge/工業電腦代表，但主持人說短期沒有明確催化。"
+                                    ],
+                        "episodes":  [
+                                         "EP658 紅酒哲學與 AI 取代論反擊"
+                                     ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
+                        "latestEpisode":  658,
+                        "latestRank":  9,
+                        "latestScore":  58,
+                        "latestSourcePriority":  1,
+                        "rank":  9,
+                        "score":  58,
+                        "compositeScore":  67,
+                        "latestSortRank":  94,
+                        "heatSortRank":  null,
+                        "hostOwned":  false
+                    },
+                    {
+                        "code":  "2417",
+                        "themes":  [
+                                       "對應 48:37-49:53 邊緣運算段落。"
+                                   ],
+                        "sources":  [
+                                        "AI 優先研究候選"
+                                    ],
+                        "reasons":  [
+                                        "主持人在邊緣運算回答中提到先前被問到的研華與圓剛。圓剛可作為邊緣影像與 AI device 低優先觀察，重點是等催化而非當主線追。"
+                                    ],
+                        "episodes":  [
+                                         "EP658 紅酒哲學與 AI 取代論反擊"
+                                     ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
+                        "latestEpisode":  658,
+                        "latestRank":  10,
+                        "latestScore":  52,
+                        "latestSourcePriority":  1,
+                        "rank":  10,
+                        "score":  52,
+                        "compositeScore":  61,
                         "latestSortRank":  95,
-                        "heatSortRank":  53,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -3818,15 +4355,21 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP660 育兒邊界感與成熟製程覺醒"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  660,
+                        "hostDiscussionScore":  35,
+                        "hostDiscussionCompositeScore":  48,
                         "latestEpisode":  665,
                         "latestRank":  9999,
                         "latestScore":  0,
                         "latestSourcePriority":  4,
                         "rank":  9999,
                         "score":  35,
-                        "compositeScore":  85,
+                        "compositeScore":  83,
                         "latestSortRank":  96,
-                        "heatSortRank":  56,
+                        "heatSortRank":  24,
                         "hostOwned":  false
                     },
                     {
@@ -3856,15 +4399,21 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP660 育兒邊界感與成熟製程覺醒"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  660,
+                        "hostDiscussionScore":  20,
+                        "hostDiscussionCompositeScore":  33,
                         "latestEpisode":  665,
                         "latestRank":  9999,
                         "latestScore":  0,
                         "latestSourcePriority":  4,
                         "rank":  9999,
                         "score":  20,
-                        "compositeScore":  70,
+                        "compositeScore":  68,
                         "latestSortRank":  97,
-                        "heatSortRank":  65,
+                        "heatSortRank":  48,
                         "hostOwned":  false
                     },
                     {
@@ -3884,15 +4433,22 @@
                                          "EP661 被動元件主線與成熟製程補庫存辨識",
                                          "EP660 育兒邊界感與成熟製程覺醒"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP661 被動元件主線與成熟製程補庫存辨識",
+                                                       "EP660 育兒邊界感與成熟製程覺醒"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  661,
+                        "hostDiscussionScore":  20,
+                        "hostDiscussionCompositeScore":  40,
                         "latestEpisode":  661,
                         "latestRank":  9999,
                         "latestScore":  20,
                         "latestSourcePriority":  2,
                         "rank":  9999,
                         "score":  20,
-                        "compositeScore":  50,
+                        "compositeScore":  40,
                         "latestSortRank":  98,
-                        "heatSortRank":  68,
+                        "heatSortRank":  28,
                         "hostOwned":  false
                     },
                     {
@@ -3909,15 +4465,21 @@
                         "episodes":  [
                                          "EP661 被動元件主線與成熟製程補庫存辨識"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP661 被動元件主線與成熟製程補庫存辨識"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  661,
+                        "hostDiscussionScore":  20,
+                        "hostDiscussionCompositeScore":  35,
                         "latestEpisode":  661,
                         "latestRank":  9999,
                         "latestScore":  20,
                         "latestSourcePriority":  2,
                         "rank":  9999,
                         "score":  20,
-                        "compositeScore":  45,
+                        "compositeScore":  35,
                         "latestSortRank":  99,
-                        "heatSortRank":  69,
+                        "heatSortRank":  34,
                         "hostOwned":  false
                     },
                     {
@@ -3934,15 +4496,21 @@
                         "episodes":  [
                                          "EP661 被動元件主線與成熟製程補庫存辨識"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP661 被動元件主線與成熟製程補庫存辨識"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  661,
+                        "hostDiscussionScore":  20,
+                        "hostDiscussionCompositeScore":  35,
                         "latestEpisode":  661,
                         "latestRank":  9999,
                         "latestScore":  20,
                         "latestSourcePriority":  2,
                         "rank":  9999,
                         "score":  20,
-                        "compositeScore":  45,
+                        "compositeScore":  35,
                         "latestSortRank":  100,
-                        "heatSortRank":  70,
+                        "heatSortRank":  42,
                         "hostOwned":  false
                     },
                     {
@@ -3959,15 +4527,21 @@
                         "episodes":  [
                                          "EP661 被動元件主線與成熟製程補庫存辨識"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP661 被動元件主線與成熟製程補庫存辨識"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  661,
+                        "hostDiscussionScore":  20,
+                        "hostDiscussionCompositeScore":  35,
                         "latestEpisode":  661,
                         "latestRank":  9999,
                         "latestScore":  20,
                         "latestSourcePriority":  2,
                         "rank":  9999,
                         "score":  20,
-                        "compositeScore":  45,
+                        "compositeScore":  35,
                         "latestSortRank":  101,
-                        "heatSortRank":  71,
+                        "heatSortRank":  45,
                         "hostOwned":  false
                     },
                     {
@@ -3984,15 +4558,21 @@
                         "episodes":  [
                                          "EP664 AI 算力強心針與被動元件全面噴射"
                                      ],
+                        "hostDiscussionEpisodes":  [
+                                                       "EP664 AI 算力強心針與被動元件全面噴射"
+                                                   ],
+                        "hostDiscussionLatestEpisode":  664,
+                        "hostDiscussionScore":  10,
+                        "hostDiscussionCompositeScore":  31,
                         "latestEpisode":  664,
                         "latestRank":  9999,
                         "latestScore":  10,
                         "latestSourcePriority":  2,
                         "rank":  9999,
                         "score":  10,
-                        "compositeScore":  35,
+                        "compositeScore":  31,
                         "latestSortRank":  102,
-                        "heatSortRank":  72,
+                        "heatSortRank":  49,
                         "hostOwned":  false
                     },
                     {
@@ -4019,15 +4599,21 @@
                                          "EP658 紅酒哲學與 AI 取代論反擊",
                                          "EP657 雕像玄學插曲與Intel封裝突破"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  665,
                         "latestRank":  9999,
                         "latestScore":  0,
                         "latestSourcePriority":  4,
                         "rank":  9999,
                         "score":  0,
-                        "compositeScore":  50,
+                        "compositeScore":  48,
                         "latestSortRank":  103,
-                        "heatSortRank":  83,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -4049,15 +4635,21 @@
                                          "EP660 育兒邊界感與成熟製程覺醒",
                                          "EP658 紅酒哲學與 AI 取代論反擊"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  665,
                         "latestRank":  9999,
                         "latestScore":  0,
                         "latestSourcePriority":  4,
                         "rank":  9999,
                         "score":  0,
-                        "compositeScore":  50,
+                        "compositeScore":  48,
                         "latestSortRank":  104,
-                        "heatSortRank":  96,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -4079,15 +4671,21 @@
                                          "EP660 育兒邊界感與成熟製程覺醒",
                                          "EP658 紅酒哲學與 AI 取代論反擊"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  665,
                         "latestRank":  9999,
                         "latestScore":  0,
                         "latestSourcePriority":  4,
                         "rank":  9999,
                         "score":  0,
-                        "compositeScore":  50,
+                        "compositeScore":  48,
                         "latestSortRank":  105,
-                        "heatSortRank":  98,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -4109,15 +4707,21 @@
                                          "EP660 育兒邊界感與成熟製程覺醒",
                                          "EP658 紅酒哲學與 AI 取代論反擊"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  665,
                         "latestRank":  9999,
                         "latestScore":  0,
                         "latestSourcePriority":  4,
                         "rank":  9999,
                         "score":  0,
-                        "compositeScore":  50,
+                        "compositeScore":  48,
                         "latestSortRank":  106,
-                        "heatSortRank":  104,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -4139,15 +4743,21 @@
                                          "EP660 育兒邊界感與成熟製程覺醒",
                                          "EP658 紅酒哲學與 AI 取代論反擊"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  665,
                         "latestRank":  9999,
                         "latestScore":  0,
                         "latestSourcePriority":  4,
                         "rank":  9999,
                         "score":  0,
-                        "compositeScore":  50,
+                        "compositeScore":  48,
                         "latestSortRank":  107,
-                        "heatSortRank":  105,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -4166,15 +4776,21 @@
                                          "EP664 AI 算力強心針與被動元件全面噴射",
                                          "EP658 紅酒哲學與 AI 取代論反擊"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  665,
                         "latestRank":  9999,
                         "latestScore":  0,
                         "latestSourcePriority":  4,
                         "rank":  9999,
                         "score":  0,
-                        "compositeScore":  35,
+                        "compositeScore":  33,
                         "latestSortRank":  108,
-                        "heatSortRank":  108,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -4193,15 +4809,21 @@
                                          "EP664 AI 算力強心針與被動元件全面噴射",
                                          "EP658 紅酒哲學與 AI 取代論反擊"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  665,
                         "latestRank":  9999,
                         "latestScore":  0,
                         "latestSourcePriority":  4,
                         "rank":  9999,
                         "score":  0,
-                        "compositeScore":  35,
+                        "compositeScore":  33,
                         "latestSortRank":  109,
-                        "heatSortRank":  109,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -4220,15 +4842,21 @@
                                          "EP664 AI 算力強心針與被動元件全面噴射",
                                          "EP658 紅酒哲學與 AI 取代論反擊"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  665,
                         "latestRank":  9999,
                         "latestScore":  0,
                         "latestSourcePriority":  4,
                         "rank":  9999,
                         "score":  0,
-                        "compositeScore":  35,
+                        "compositeScore":  33,
                         "latestSortRank":  110,
-                        "heatSortRank":  110,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -4247,15 +4875,21 @@
                                          "EP664 AI 算力強心針與被動元件全面噴射",
                                          "EP658 紅酒哲學與 AI 取代論反擊"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  665,
                         "latestRank":  9999,
                         "latestScore":  0,
                         "latestSourcePriority":  4,
                         "rank":  9999,
                         "score":  0,
-                        "compositeScore":  35,
+                        "compositeScore":  33,
                         "latestSortRank":  111,
-                        "heatSortRank":  111,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -4274,15 +4908,21 @@
                                          "EP664 AI 算力強心針與被動元件全面噴射",
                                          "EP658 紅酒哲學與 AI 取代論反擊"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  665,
                         "latestRank":  9999,
                         "latestScore":  0,
                         "latestSourcePriority":  4,
                         "rank":  9999,
                         "score":  0,
-                        "compositeScore":  35,
+                        "compositeScore":  33,
                         "latestSortRank":  112,
-                        "heatSortRank":  112,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -4301,15 +4941,21 @@
                                          "EP664 AI 算力強心針與被動元件全面噴射",
                                          "EP658 紅酒哲學與 AI 取代論反擊"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  665,
                         "latestRank":  9999,
                         "latestScore":  0,
                         "latestSourcePriority":  4,
                         "rank":  9999,
                         "score":  0,
-                        "compositeScore":  35,
+                        "compositeScore":  33,
                         "latestSortRank":  113,
-                        "heatSortRank":  113,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -4328,15 +4974,21 @@
                                          "EP664 AI 算力強心針與被動元件全面噴射",
                                          "EP658 紅酒哲學與 AI 取代論反擊"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  665,
                         "latestRank":  9999,
                         "latestScore":  0,
                         "latestSourcePriority":  4,
                         "rank":  9999,
                         "score":  0,
-                        "compositeScore":  35,
+                        "compositeScore":  33,
                         "latestSortRank":  114,
-                        "heatSortRank":  114,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -4355,15 +5007,21 @@
                                          "EP664 AI 算力強心針與被動元件全面噴射",
                                          "EP658 紅酒哲學與 AI 取代論反擊"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  665,
                         "latestRank":  9999,
                         "latestScore":  0,
                         "latestSourcePriority":  4,
                         "rank":  9999,
                         "score":  0,
-                        "compositeScore":  35,
+                        "compositeScore":  33,
                         "latestSortRank":  115,
-                        "heatSortRank":  115,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -4382,15 +5040,21 @@
                                          "EP664 AI 算力強心針與被動元件全面噴射",
                                          "EP658 紅酒哲學與 AI 取代論反擊"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  665,
                         "latestRank":  9999,
                         "latestScore":  0,
                         "latestSourcePriority":  4,
                         "rank":  9999,
                         "score":  0,
-                        "compositeScore":  35,
+                        "compositeScore":  33,
                         "latestSortRank":  116,
-                        "heatSortRank":  116,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -4409,15 +5073,21 @@
                                          "EP664 AI 算力強心針與被動元件全面噴射",
                                          "EP658 紅酒哲學與 AI 取代論反擊"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  665,
                         "latestRank":  9999,
                         "latestScore":  0,
                         "latestSourcePriority":  4,
                         "rank":  9999,
                         "score":  0,
-                        "compositeScore":  35,
+                        "compositeScore":  33,
                         "latestSortRank":  117,
-                        "heatSortRank":  117,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -4436,15 +5106,21 @@
                                          "EP664 AI 算力強心針與被動元件全面噴射",
                                          "EP658 紅酒哲學與 AI 取代論反擊"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  665,
                         "latestRank":  9999,
                         "latestScore":  0,
                         "latestSourcePriority":  4,
                         "rank":  9999,
                         "score":  0,
-                        "compositeScore":  35,
+                        "compositeScore":  33,
                         "latestSortRank":  118,
-                        "heatSortRank":  118,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -4463,15 +5139,21 @@
                                          "EP664 AI 算力強心針與被動元件全面噴射",
                                          "EP658 紅酒哲學與 AI 取代論反擊"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  665,
                         "latestRank":  9999,
                         "latestScore":  0,
                         "latestSourcePriority":  4,
                         "rank":  9999,
                         "score":  0,
-                        "compositeScore":  35,
+                        "compositeScore":  33,
                         "latestSortRank":  119,
-                        "heatSortRank":  119,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -4489,15 +5171,21 @@
                                          "EP665 小天才初現與衛星算力遠眺",
                                          "EP662 葡萄酒入坑誌與被動元件浪潮"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  665,
                         "latestRank":  9999,
                         "latestScore":  0,
                         "latestSourcePriority":  4,
                         "rank":  9999,
                         "score":  0,
-                        "compositeScore":  30,
+                        "compositeScore":  28,
                         "latestSortRank":  120,
-                        "heatSortRank":  120,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     },
                     {
@@ -4515,15 +5203,21 @@
                                          "EP665 小天才初現與衛星算力遠眺",
                                          "EP662 葡萄酒入坑誌與被動元件浪潮"
                                      ],
+                        "hostDiscussionEpisodes":  [
+
+                                                   ],
+                        "hostDiscussionLatestEpisode":  0,
+                        "hostDiscussionScore":  0,
+                        "hostDiscussionCompositeScore":  null,
                         "latestEpisode":  665,
                         "latestRank":  9999,
                         "latestScore":  0,
                         "latestSourcePriority":  4,
                         "rank":  9999,
                         "score":  0,
-                        "compositeScore":  30,
+                        "compositeScore":  28,
                         "latestSortRank":  121,
-                        "heatSortRank":  121,
+                        "heatSortRank":  null,
                         "hostOwned":  false
                     }
                 ]
