@@ -1013,6 +1013,26 @@
     .analysis-report-title a { color: var(--blue); text-decoration: none; }
     .analysis-snippet { margin: 0; color: var(--muted); font-size: 0.78rem; line-height: 1.55; overflow-wrap: anywhere; }
     .analysis-checklist { margin: 0; padding-left: 18px; display: grid; gap: 6px; color: var(--ink); line-height: 1.55; font-size: 0.86rem; }
+    .analysis-rules-card { padding: 0; }
+    .analysis-rules-summary { cursor: pointer; list-style: none; padding: 14px; }
+    .analysis-rules-summary::-webkit-details-marker { display: none; }
+    .analysis-rules-summary .card-head { margin-bottom: 0; }
+    .analysis-rules-summary .card-title::after {
+      content: "展開";
+      display: inline-block;
+      margin-left: 8px;
+      border: 1px solid var(--line-strong);
+      border-radius: 6px;
+      background: var(--panel);
+      color: var(--muted);
+      padding: 3px 7px;
+      font-size: 0.74rem;
+      line-height: 1.25;
+      vertical-align: 1px;
+    }
+    .analysis-rules-card[open] .analysis-rules-summary .card-title::after { content: "收合"; }
+    .analysis-rules-summary:hover .card-title::after { border-color: rgba(13, 121, 111, 0.3); background: var(--teal-soft); color: var(--teal); }
+    .analysis-rules-content { border-top: 1px solid var(--line); padding: 12px 14px 14px; }
     .analysis-rules-card .analysis-table { min-width: 860px; }
     .analysis-rule-note { color: var(--muted); font-size: 0.82rem; line-height: 1.55; margin-bottom: 8px; }
     .analysis-checkmark { color: var(--muted); font-weight: 800; margin-right: 3px; }
@@ -3099,13 +3119,13 @@ ${notes}`;
       clearBtn.textContent = "清除";
       searchRow.append(searchInput, clearBtn);
       page.appendChild(searchRow);
-      page.appendChild(renderStockDecisionRulesCard());
 
       const body = document.createElement("div");
       body.className = "content-grid";
       body.appendChild(renderSavedStockAnalysesCard(notes));
 
       page.appendChild(body);
+      page.appendChild(renderStockDecisionRulesCard());
       dom.main.appendChild(page);
 
       const updateSearchResults = () => {
@@ -3132,17 +3152,23 @@ ${notes}`;
     }
 
     function renderStockDecisionRulesCard() {
-      const card = sectionCard();
-      card.classList.add("analysis-rules-card");
-      card.appendChild(cardHead("個股判斷程度排序", [
+      const card = document.createElement("details");
+      card.className = "section-card analysis-rules-card";
+      const summary = document.createElement("summary");
+      summary.className = "analysis-rules-summary";
+      summary.appendChild(cardHead("個股判斷程度排序", [
         badge("0-3 分", "neutral"),
         badge("缺資料先待確認", "watchful")
       ]));
+      card.appendChild(summary);
+
+      const content = document.createElement("div");
+      content.className = "analysis-rules-content";
 
       const note = document.createElement("div");
       note.className = "analysis-rule-note";
       note.textContent = "每個面向只勾一格；缺資料不要硬評分，先標待確認。總分用來排優先順序，最後仍要回到基本面、股價位置、操作想法三句結論。";
-      card.appendChild(note);
+      content.appendChild(note);
 
       const wrap = document.createElement("div");
       wrap.className = "tw-table-wrap";
@@ -3177,7 +3203,7 @@ ${notes}`;
       });
       table.appendChild(tbody);
       wrap.appendChild(table);
-      card.appendChild(wrap);
+      content.appendChild(wrap);
 
       const bands = document.createElement("div");
       bands.className = "analysis-score-grid";
@@ -3191,7 +3217,8 @@ ${notes}`;
         box.append(strong, desc);
         bands.appendChild(box);
       });
-      card.appendChild(bands);
+      content.appendChild(bands);
+      card.appendChild(content);
       return card;
     }
 
