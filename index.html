@@ -3174,7 +3174,8 @@ ${notes}`;
     function renderStockAnalysisRankingMain() {
       dom.main.replaceChildren();
 
-      const rows = getStockAnalysisRankRows();
+      const rankData = getStockAnalysisRankData();
+      const rows = rankData.rows;
       const page = document.createElement("div");
       page.className = "analysis-page";
 
@@ -3190,21 +3191,23 @@ ${notes}`;
       const reportMeta = document.createElement("div");
       reportMeta.className = "analysis-meta";
       reportMeta.textContent = rows.length
-        ? `共 ${rows.length} 筆有分數 / ${state.stockAnalysisNotes.length} 篇筆記`
+        ? `共 ${rows.length} 檔有分數 / ${rankData.totalRankable} 筆有分數；已合併 ${rankData.duplicates.length} 組重複`
         : `共 ${state.stockAnalysisNotes.length} 篇筆記`;
       header.append(titleWrap, reportMeta);
       page.appendChild(header);
 
-      page.appendChild(renderStockAnalysisRankingSummary(rows));
-      page.appendChild(renderStockAnalysisRankingCard(rows));
+      page.appendChild(renderStockAnalysisRankingSummary(rankData));
+      page.appendChild(renderStockAnalysisRankingCard(rankData));
       dom.main.appendChild(page);
     }
 
-    function renderStockAnalysisRankingSummary(rows) {
+    function renderStockAnalysisRankingSummary(rankData) {
+      const rows = rankData.rows;
       const card = sectionCard();
       const topScore = rows[0];
       card.appendChild(cardHead("分數分布", [
-        badge(`${rows.length} 筆`, "neutral"),
+        badge(`${rows.length} 檔`, "neutral"),
+        rankData.duplicateHiddenCount ? badge(`隱藏 ${rankData.duplicateHiddenCount} 筆舊分析`, "watchful") : null,
         topScore ? badge(`最高 ${formatRankScore(topScore)}`, decisionBadgeType(topScore.score)) : null
       ]));
 
@@ -3221,7 +3224,7 @@ ${notes}`;
         const strong = document.createElement("strong");
         strong.textContent = `${range}｜${title}`;
         const desc = document.createElement("span");
-        desc.textContent = `${rows.filter(test).length} 筆`;
+        desc.textContent = `${rows.filter(test).length} 檔`;
         box.append(strong, desc);
         strip.appendChild(box);
       });
@@ -3229,11 +3232,12 @@ ${notes}`;
       return card;
     }
 
-    function renderStockAnalysisRankingCard(rows) {
+    function renderStockAnalysisRankingCard(rankData) {
+      const rows = rankData.rows;
       const card = sectionCard();
       card.appendChild(cardHead("個股分析排行", [
         badge("分數由高到低", "watchful"),
-        badge("同股不同日期分列", "neutral")
+        badge("同股保留最新", "neutral")
       ]));
 
       if (!state.stockAnalysisNotes.length) {
@@ -3250,6 +3254,16 @@ ${notes}`;
         note.textContent = "目前沒有含 decisionChecklist.score 的個股分析。";
         card.appendChild(note);
         return card;
+      }
+
+      if (rankData.duplicates.length) {
+        const note = document.createElement("div");
+        note.className = "analysis-rule-note";
+        note.textContent = `已合併重複分析：${rankData.duplicates.map(item => {
+          const hiddenDates = item.hidden.map(row => row.analysisDate || "未標日期").join("、");
+          return `${item.label} 保留 ${item.kept.analysisDate || "未標日期"}，隱藏 ${hiddenDates}`;
+        }).join("；")}。`;
+        card.appendChild(note);
       }
 
       const wrap = document.createElement("div");
@@ -3323,8 +3337,8 @@ ${notes}`;
       return card;
     }
 
-    function getStockAnalysisRankRows() {
-      return state.stockAnalysisNotes
+    function getStockAnalysisRankData() {
+      const allRows = state.stockAnalysisNotes
         .map((item, originalIndex) => {
           const checklist = normalizeDecisionChecklist(item.decisionChecklist || item.checklist || item.scoreChecklist);
           const score = getDecisionChecklistScore(checklist);
@@ -3345,7 +3359,31 @@ ${notes}`;
             conclusion: item.conclusion || ""
           };
         })
-        .filter(Boolean)
+        .filter(Boolean);
+
+      const groups = new Map();
+      allRows.forEach(row => {
+        const key = stockAnalysisRankKey(row);
+        if (!groups.has(key)) groups.set(key, []);
+        groups.get(key).push(row);
+      });
+
+      const rows = [];
+      const duplicates = [];
+      groups.forEach(group => {
+        group.sort(compareStockAnalysisFreshness);
+        const kept = group[0];
+        rows.push(kept);
+        if (group.length > 1) {
+          duplicates.push({
+            label: `${kept.ticker || ""} ${kept.company || ""}`.trim() || "未命名個股",
+            kept,
+            hidden: group.slice(1)
+          });
+        }
+      });
+
+      rows
         .sort((a, b) => {
           if (b.score !== a.score) return b.score - a.score;
           const dateCompare = String(b.analysisDate || "").localeCompare(String(a.analysisDate || ""), "zh-Hant");
@@ -3354,6 +3392,28 @@ ${notes}`;
           if (tickerCompare) return tickerCompare;
           return a.originalIndex - b.originalIndex;
         });
+
+      duplicates.sort((a, b) => a.label.localeCompare(b.label, "zh-Hant"));
+      return {
+        rows,
+        duplicates,
+        totalRankable: allRows.length,
+        duplicateHiddenCount: allRows.length - rows.length
+      };
+    }
+
+    function stockAnalysisRankKey(row) {
+      const ticker = String(row.ticker || "").trim();
+      if (ticker) return `ticker:${ticker}`;
+      const company = String(row.company || "").trim().toLowerCase();
+      if (company) return `company:${company}`;
+      return `row:${row.originalIndex}`;
+    }
+
+    function compareStockAnalysisFreshness(a, b) {
+      const dateCompare = String(b.analysisDate || "").localeCompare(String(a.analysisDate || ""), "zh-Hant");
+      if (dateCompare) return dateCompare;
+      return a.originalIndex - b.originalIndex;
     }
 
     function openStockAnalysisFromRanking(row) {
