@@ -1013,6 +1013,17 @@
     .analysis-report-title a { color: var(--blue); text-decoration: none; }
     .analysis-snippet { margin: 0; color: var(--muted); font-size: 0.78rem; line-height: 1.55; overflow-wrap: anywhere; }
     .analysis-checklist { margin: 0; padding-left: 18px; display: grid; gap: 6px; color: var(--ink); line-height: 1.55; font-size: 0.86rem; }
+    .analysis-rules-card .analysis-table { min-width: 860px; }
+    .analysis-rule-note { color: var(--muted); font-size: 0.82rem; line-height: 1.55; margin-bottom: 8px; }
+    .analysis-checkmark { color: var(--muted); font-weight: 800; margin-right: 3px; }
+    .analysis-score-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; margin-top: 10px; }
+    .analysis-score-band { border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel-2); padding: 8px 10px; min-width: 0; }
+    .analysis-score-band strong { display: block; line-height: 1.35; margin-bottom: 3px; }
+    .analysis-score-band span { display: block; color: var(--muted); font-size: 0.78rem; line-height: 1.45; }
+    .analysis-score-summary { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 8px; }
+    .analysis-score-summary .badge { white-space: normal; }
+    .analysis-decision-table { min-width: 680px; }
+    .analysis-decision-table td:nth-child(3) { white-space: nowrap; font-weight: 850; color: var(--teal); }
 
     .tw-page { padding: 16px; min-width: 0; max-width: 100%; }
     .tw-header { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px 12px; margin-bottom: 8px; min-width: 0; }
@@ -1658,6 +1669,27 @@
     ];
     const loadingWaitText = "資料載入中，請稍候 5-10 秒";
     const loadingJsonWaitText = "資料載入中，請稍候 5-10 秒；若仍未出現，可重新整理頁面";
+    const STOCK_DECISION_RULES = [
+      ["題材熱度", "冷門 / 退燒", "中性", "熱門", "主流題材 / 市場焦點"],
+      ["均線型態", "空頭排列", "均線糾結", "站上季線", "多頭排列"],
+      ["壓力位置", "壓力前轉弱", "壓力區震盪", "站上壓力", "站上後回測不破"],
+      ["支撐位置", "跌破支撐", "支撐附近震盪", "站上支撐", "回測支撐有守"],
+      ["大戶比例", "週減", "維持", "週增", "連續多週增加"],
+      ["營收 YoY", "衰退", "持平", "成長", "加速成長"],
+      ["營收 MoM", "衰退", "持平", "成長", "連續成長"],
+      ["量價結構", "下跌放量", "無量盤整", "上漲有量", "突破放量且回檔量縮"],
+      ["法人籌碼", "三大法人賣超", "買賣互抵", "外資 / 投信買超", "法人同步買或投信連買"],
+      ["融資籌碼", "融資暴增但股價不漲", "變化不大", "融資減且股價穩", "籌碼沉澱後轉強"],
+      ["毛利率 / EPS", "惡化", "持平", "改善", "營收、毛利、EPS 同步改善"],
+      ["估值位置", "已過度反映", "合理", "仍有空間", "基本面改善但股價尚未反映"],
+      ["事件催化", "無明確事件", "題材模糊", "近期有產品 / 法說 / 財報", "題材、財報、買盤同步"]
+    ];
+    const STOCK_DECISION_SCORE_BANDS = [
+      ["31-39 分", "優先名單", "強勢觀察，但仍看進場點"],
+      ["24-30 分", "中性偏多", "等拉回或突破確認"],
+      ["16-23 分", "觀察名單", "只觀察，不急著買"],
+      ["0-15 分", "暫時排除", "等資料轉強再重看"]
+    ];
 
     dom.folderBtn.addEventListener("click", chooseFolder);
     dom.filesBtn.addEventListener("click", () => dom.fileInput.click());
@@ -3069,6 +3101,7 @@ ${notes}`;
       clearBtn.textContent = "清除";
       searchRow.append(searchInput, clearBtn);
       page.appendChild(searchRow);
+      page.appendChild(renderStockDecisionRulesCard());
 
       const body = document.createElement("div");
       body.className = "content-grid";
@@ -3098,6 +3131,70 @@ ${notes}`;
         searchInput.focus();
       });
       updateSearchResults();
+    }
+
+    function renderStockDecisionRulesCard() {
+      const card = sectionCard();
+      card.classList.add("analysis-rules-card");
+      card.appendChild(cardHead("個股判斷程度排序", [
+        badge("0-3 分", "neutral"),
+        badge("缺資料先待確認", "watchful")
+      ]));
+
+      const note = document.createElement("div");
+      note.className = "analysis-rule-note";
+      note.textContent = "每個面向只勾一格；缺資料不要硬評分，先標待確認。總分用來排優先順序，最後仍要回到基本面、股價位置、操作想法三句結論。";
+      card.appendChild(note);
+
+      const wrap = document.createElement("div");
+      wrap.className = "tw-table-wrap";
+      const table = document.createElement("table");
+      table.className = "analysis-table";
+      const thead = document.createElement("thead");
+      const hrow = document.createElement("tr");
+      ["面向", "弱 0", "中性 1", "強 2", "很強 3"].forEach(text => {
+        const th = document.createElement("th");
+        th.textContent = text;
+        hrow.appendChild(th);
+      });
+      thead.appendChild(hrow);
+      table.appendChild(thead);
+
+      const tbody = document.createElement("tbody");
+      STOCK_DECISION_RULES.forEach(row => {
+        const tr = document.createElement("tr");
+        row.forEach((text, index) => {
+          const cell = document.createElement(index === 0 ? "th" : "td");
+          if (index > 0) {
+            const mark = document.createElement("span");
+            mark.className = "analysis-checkmark";
+            mark.textContent = "☐";
+            cell.append(mark, document.createTextNode(` ${text}`));
+          } else {
+            cell.textContent = text;
+          }
+          tr.appendChild(cell);
+        });
+        tbody.appendChild(tr);
+      });
+      table.appendChild(tbody);
+      wrap.appendChild(table);
+      card.appendChild(wrap);
+
+      const bands = document.createElement("div");
+      bands.className = "analysis-score-grid";
+      STOCK_DECISION_SCORE_BANDS.forEach(([range, title, text]) => {
+        const box = document.createElement("div");
+        box.className = "analysis-score-band";
+        const strong = document.createElement("strong");
+        strong.textContent = `${range}｜${title}`;
+        const desc = document.createElement("span");
+        desc.textContent = text;
+        box.append(strong, desc);
+        bands.appendChild(box);
+      });
+      card.appendChild(bands);
+      return card;
     }
 
     function analysisInput(label, value) {
@@ -3295,6 +3392,7 @@ ${notes}`;
       }
 
       appendDataAsOf(detail, item.dataAsOf);
+      appendDecisionChecklist(detail, item.decisionChecklist || item.checklist || item.scoreChecklist);
       appendStockAnalysisSections(detail, item.sections);
       appendTechnicalLevels(detail, item.technicalLevels);
       appendValuationScenarios(detail, item.valuationScenarios);
@@ -3310,6 +3408,121 @@ ${notes}`;
         .filter(([, value]) => value)
         .map(([key, value]) => `${key}: ${value}`);
       if (parts.length) appendField(parent, "資料基準", parts.join(" / "));
+    }
+
+    function appendDecisionChecklist(parent, checklist) {
+      const normalized = normalizeDecisionChecklist(checklist);
+      if (!normalized.items.length) return;
+
+      const block = document.createElement("div");
+      block.className = "analysis-section-block";
+      block.appendChild(fieldLabel("程度檢核"));
+
+      const scoreText = formatDecisionScoreTotal(normalized);
+      if (scoreText || normalized.grade || normalized.view || normalized.summary) {
+        const summary = document.createElement("div");
+        summary.className = "analysis-score-summary";
+        if (scoreText) summary.appendChild(badge(scoreText, "neutral"));
+        if (normalized.grade) summary.appendChild(badge(normalized.grade, decisionBadgeType(normalized.score)));
+        if (normalized.view) summary.appendChild(badge(normalized.view, "watchful"));
+        if (normalized.summary) summary.appendChild(badge(normalized.summary, "neutral"));
+        block.appendChild(summary);
+      }
+
+      const wrap = document.createElement("div");
+      wrap.className = "tw-table-wrap";
+      const table = document.createElement("table");
+      table.className = "analysis-table analysis-decision-table";
+      const thead = document.createElement("thead");
+      const hrow = document.createElement("tr");
+      ["面向", "判斷", "分數", "依據"].forEach(text => {
+        const th = document.createElement("th");
+        th.textContent = text;
+        hrow.appendChild(th);
+      });
+      thead.appendChild(hrow);
+      table.appendChild(thead);
+
+      const tbody = document.createElement("tbody");
+      normalized.items.forEach(item => {
+        const tr = document.createElement("tr");
+        [
+          item.factor || item.name || item.metric || "面向",
+          item.level || item.status || item.judgment || "待確認",
+          formatDecisionItemScore(item),
+          item.evidence || item.note || item.reason || "待補依據"
+        ].forEach(text => {
+          const td = document.createElement("td");
+          td.textContent = stringify(text);
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+      table.appendChild(tbody);
+      wrap.appendChild(table);
+      block.appendChild(wrap);
+
+      const notes = arr(normalized.notes);
+      if (notes.length) {
+        const list = document.createElement("ol");
+        list.className = "points";
+        notes.forEach(note => {
+          const li = document.createElement("li");
+          li.textContent = stringify(note);
+          list.appendChild(li);
+        });
+        block.appendChild(list);
+      }
+
+      parent.appendChild(block);
+    }
+
+    function normalizeDecisionChecklist(checklist) {
+      if (Array.isArray(checklist)) return { items: checklist };
+      if (!checklist || typeof checklist !== "object") return { items: [] };
+      return {
+        score: Number.isFinite(Number(checklist.score)) ? Number(checklist.score) : null,
+        maxScore: Number.isFinite(Number(checklist.maxScore)) ? Number(checklist.maxScore) : null,
+        grade: checklist.grade || checklist.rating || "",
+        view: checklist.view || checklist.actionView || "",
+        summary: checklist.summary || "",
+        notes: Array.isArray(checklist.notes) ? checklist.notes : [],
+        items: Array.isArray(checklist.items)
+          ? checklist.items
+          : Array.isArray(checklist.criteria)
+            ? checklist.criteria
+            : []
+      };
+    }
+
+    function formatDecisionScoreTotal(checklist) {
+      const numericScores = checklist.items
+        .map(item => Number(item.score))
+        .filter(score => Number.isFinite(score));
+      const score = Number.isFinite(checklist.score)
+        ? checklist.score
+        : numericScores.length
+          ? numericScores.reduce((sum, score) => sum + score, 0)
+          : null;
+      if (!Number.isFinite(score)) return "";
+      const maxScore = Number.isFinite(checklist.maxScore) ? checklist.maxScore : numericScores.length * 3;
+      return `${score}/${maxScore} 分`;
+    }
+
+    function formatDecisionItemScore(item) {
+      if (!item || item.score === null || item.score === undefined || item.score === "") return "待確認";
+      const score = Number(item.score);
+      if (!Number.isFinite(score)) return stringify(item.score);
+      return `${score}/3`;
+    }
+
+    function decisionBadgeType(score) {
+      const value = Number(score);
+      if (!Number.isFinite(value)) return "neutral";
+      if (value >= 31) return "bullish";
+      if (value >= 24) return "watchful";
+      if (value >= 16) return "neutral";
+      return "bearish";
     }
 
     function appendStockAnalysisSections(parent, sections) {
@@ -3446,6 +3659,7 @@ ${notes}`;
         item.summary,
         item.conclusion,
         JSON.stringify(item.dataAsOf || {}),
+        JSON.stringify(item.decisionChecklist || item.checklist || item.scoreChecklist || {}),
         JSON.stringify(item.sections || []),
         JSON.stringify(item.technicalLevels || {}),
         JSON.stringify(item.valuationScenarios || []),
@@ -3467,6 +3681,18 @@ ${notes}`;
       if (item.dataAsOf && typeof item.dataAsOf === "object") {
         const parts = Object.entries(item.dataAsOf).filter(([, v]) => v).map(([k, v]) => `${k}: ${v}`);
         if (parts.length) { lines.push(""); lines.push("資料基準"); lines.push(parts.join(" / ")); }
+      }
+      const decisionChecklist = normalizeDecisionChecklist(item.decisionChecklist || item.checklist || item.scoreChecklist);
+      if (decisionChecklist.items.length) {
+        lines.push(""); lines.push("程度檢核");
+        const scoreText = formatDecisionScoreTotal(decisionChecklist);
+        const summary = [scoreText, decisionChecklist.grade, decisionChecklist.view, decisionChecklist.summary].filter(Boolean).join(" / ");
+        if (summary) lines.push(summary);
+        decisionChecklist.items.forEach((row, i) => {
+          const evidence = row.evidence || row.note || row.reason || "";
+          const suffix = evidence ? ` - ${evidence}` : "";
+          lines.push(`${i + 1}. ${row.factor || row.name || row.metric || "面向"}：${row.level || row.status || row.judgment || "待確認"}（${formatDecisionItemScore(row)}）${suffix}`);
+        });
       }
       arr(item.sections || []).forEach(section => {
         lines.push(""); lines.push(section.title || "重點");
@@ -3598,29 +3824,46 @@ ${notes}`;
         "- 股價位置：便宜 / 合理 / 已反映偏多，原因是...",
         "- 操作想法：追價 / 等拉回 / 續抱 / 減碼觀察，條件是...",
         "",
-        "## 2. 最新行情與技術面",
+        "## 2. 程度排序檢核（每項只勾一格，0-3 分）",
+        "- 題材熱度：☐ 冷門 / 退燒 ☐ 中性 ☐ 熱門 ☐ 主流題材 / 市場焦點",
+        "- 均線型態：☐ 空頭排列 ☐ 均線糾結 ☐ 站上季線 ☐ 多頭排列",
+        "- 壓力位置：☐ 壓力前轉弱 ☐ 壓力區震盪 ☐ 站上壓力 ☐ 站上後回測不破",
+        "- 支撐位置：☐ 跌破支撐 ☐ 支撐附近震盪 ☐ 站上支撐 ☐ 回測支撐有守",
+        "- 大戶比例：☐ 週減 ☐ 維持 ☐ 週增 ☐ 連續多週增加",
+        "- 營收 YoY：☐ 衰退 ☐ 持平 ☐ 成長 ☐ 加速成長",
+        "- 營收 MoM：☐ 衰退 ☐ 持平 ☐ 成長 ☐ 連續成長",
+        "- 量價結構：☐ 下跌放量 ☐ 無量盤整 ☐ 上漲有量 ☐ 突破放量且回檔量縮",
+        "- 法人籌碼：☐ 三大法人賣超 ☐ 買賣互抵 ☐ 外資 / 投信買超 ☐ 法人同步買或投信連買",
+        "- 融資籌碼：☐ 融資暴增但股價不漲 ☐ 變化不大 ☐ 融資減且股價穩 ☐ 籌碼沉澱後轉強",
+        "- 毛利率 / EPS：☐ 惡化 ☐ 持平 ☐ 改善 ☐ 營收、毛利、EPS 同步改善",
+        "- 估值位置：☐ 已過度反映 ☐ 合理 ☐ 仍有空間 ☐ 基本面改善但股價尚未反映",
+        "- 事件催化：☐ 無明確事件 ☐ 題材模糊 ☐ 近期有產品 / 法說 / 財報 ☐ 題材、財報、買盤同步",
+        "- 總分：__/39；分級：優先名單 / 中性偏多 / 觀察名單 / 暫時排除",
+        "- 缺資料項目：...",
+        "",
+        "## 3. 最新行情與技術面",
         "- 收盤價、漲跌、成交量、5/20/60 日均線",
         "- 近期高低點、支撐區、壓力區、強弱分界",
         "- 量價是否支持目前走勢",
         "",
-        "## 3. 基本面",
+        "## 4. 基本面",
         "- 月營收：月增、年增、是否連續改善",
         "- 季財報：營收、毛利率、營益率、EPS、現金流",
         "- 產品結構：主要產品比重與成長來源",
         "- 產業供需：價格、庫存、稼動率、競爭狀況",
         "",
-        "## 4. ai_reports 參照",
+        "## 5. ai_reports 參照",
         `- 搜尋關鍵字：${state.analysis.keyword || `${ticker} ${company}`}`,
         "- 報告中的看多理由：...",
         "- 報告中的風險：...",
         "- 報告假設與最新數據是否一致：一致 / 不一致，原因是...",
         "",
-        "## 5. 估值情境",
+        "## 6. 估值情境",
         "- 保守：營收改善但毛利率回落，合理區間...",
         "- 中性：目前趨勢延續，合理區間...",
         "- 樂觀：產業缺貨或需求超預期，合理區間...",
         "",
-        "## 6. 風險與追蹤",
+        "## 7. 風險與追蹤",
         "- 失效條件：營收、報價、毛利率、法人籌碼、技術破位",
         "- 下一個觀察日期：月營收、法說會、財報公告",
         "- 結論更新條件：哪些數據出來後要改判斷"
