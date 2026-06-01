@@ -1735,10 +1735,12 @@
       state.activeView = state.activeView === "watchlist" ? "episode" : "watchlist";
       render();
     });
-    dom.portfolioBtn.addEventListener("click", () => {
-      state.activeView = state.activeView === "portfolio" ? "episode" : "portfolio";
-      render();
-    });
+    if (dom.portfolioBtn) {
+      dom.portfolioBtn.addEventListener("click", () => {
+        state.activeView = state.activeView === "portfolio" ? "episode" : "portfolio";
+        render();
+      });
+    }
     dom.sectorAnalysisBtn.addEventListener("click", () => {
       state.activeView = state.activeView === "sectorAnalysis" ? "episode" : "sectorAnalysis";
       render();
