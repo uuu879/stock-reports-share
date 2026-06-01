@@ -1621,7 +1621,7 @@
     <header class="topbar">
       <div class="brand">
         <div class="brand-title">投資觀測台</div>
-        <div class="brand-subtitle">&#21488;&#32929;&#28165;&#21934;&#12289;Podcast &#30740;&#31350;&#31558;&#35352;&#33287;&#20491;&#32929;&#20998;&#26512;</div>
+        <div class="brand-subtitle">&#21488;&#32929;&#28165;&#21934;&#12289;Podcast &#30740;&#31350;&#31558;&#35352;&#12289;&#26063;&#32676;&#20998;&#26512;&#33287;&#20491;&#32929;&#20998;&#26512;</div>
       </div>
       <div class="actions hidden">
         <button id="folderBtn" class="btn primary" type="button">選資料夾</button>
@@ -1640,6 +1640,7 @@
     <div class="layout">
       <aside class="sidebar">
         <button id="watchlistBtn" class="watchlist-pinned-btn" type="button">台股清單</button>
+        <button id="sectorAnalysisBtn" class="watchlist-pinned-btn" type="button">族群分析</button>
         <button id="analysisBtn" class="watchlist-pinned-btn" type="button">個股分析</button>
         <button id="rankingBtn" class="watchlist-pinned-btn" type="button">分析排行</button>
         <div id="episodeList" class="episode-list"></div>
@@ -1663,6 +1664,8 @@
       stockUniverse: [],
       aiResearchByEpisode: {},
       aiReports: [],
+      sectorAnalysisNotes: [],
+      sectorAnalysisQuery: "",
       stockAnalysisNotes: [],
       stockAnalysisQuery: "",
       twWatchlist: null,
@@ -1686,6 +1689,7 @@
       episodeList: document.getElementById("episodeList"),
       watchlistBtn: document.getElementById("watchlistBtn"),
       portfolioBtn: document.getElementById("portfolioBtn"),
+      sectorAnalysisBtn: document.getElementById("sectorAnalysisBtn"),
       analysisBtn: document.getElementById("analysisBtn"),
       rankingBtn: document.getElementById("rankingBtn"),
       main: document.getElementById("main")
@@ -1733,6 +1737,10 @@
     });
     dom.portfolioBtn.addEventListener("click", () => {
       state.activeView = state.activeView === "portfolio" ? "episode" : "portfolio";
+      render();
+    });
+    dom.sectorAnalysisBtn.addEventListener("click", () => {
+      state.activeView = state.activeView === "sectorAnalysis" ? "episode" : "sectorAnalysis";
       render();
     });
     dom.analysisBtn.addEventListener("click", () => {
@@ -1921,6 +1929,18 @@
         render();
       } catch (error) {
         state.stockAnalysisNotes = [];
+      }
+    }
+
+    async function tryLoadSectorAnalysisNotes() {
+      try {
+        const response = await fetch("sector_analysis_notes.json", { cache: "no-store" });
+        if (!response.ok) return;
+        const payload = await response.json();
+        state.sectorAnalysisNotes = Array.isArray(payload.analyses) ? payload.analyses : [];
+        render();
+      } catch (error) {
+        state.sectorAnalysisNotes = [];
       }
     }
 
@@ -2842,6 +2862,7 @@ ${notes}`;
 
       dom.watchlistBtn.classList.toggle("active", state.activeView === "watchlist");
       if (dom.portfolioBtn) dom.portfolioBtn.classList.toggle("active", state.activeView === "portfolio");
+      dom.sectorAnalysisBtn.classList.toggle("active", state.activeView === "sectorAnalysis");
       dom.analysisBtn.classList.toggle("active", state.activeView === "analysis");
       dom.rankingBtn.classList.toggle("active", state.activeView === "ranking");
       renderEpisodeList(episodes, pendingEpisodes);
@@ -2850,6 +2871,8 @@ ${notes}`;
         renderTwWatchlistMain();
       } else if (state.activeView === "portfolio") {
         renderPortfolioMain();
+      } else if (state.activeView === "sectorAnalysis") {
+        renderSectorAnalysisMain();
       } else if (state.activeView === "analysis") {
         renderStockAnalysisFrameworkMain();
       } else if (state.activeView === "ranking") {
@@ -3100,6 +3123,352 @@ ${notes}`;
       const hashTab = window.location.hash ? window.location.hash.slice(1) : "";
       const wanted = queryTab || hashTab || "nextSteps";
       return allowed.includes(wanted) ? wanted : "summary";
+    }
+
+    function renderSectorAnalysisMain() {
+      dom.main.replaceChildren();
+
+      const page = document.createElement("div");
+      page.className = "analysis-page";
+      const notes = getFilteredSectorAnalysisNotes();
+
+      const header = document.createElement("div");
+      header.className = "analysis-header";
+      const titleWrap = document.createElement("div");
+      const title = document.createElement("h2");
+      title.textContent = "族群分析筆記";
+      const meta = document.createElement("div");
+      meta.className = "analysis-meta";
+      meta.textContent = "彙整產業族群、供應鏈、代表公司與觀察指標。";
+      titleWrap.append(title, meta);
+      const reportMeta = document.createElement("div");
+      reportMeta.className = "analysis-meta";
+      header.append(titleWrap, reportMeta);
+      page.appendChild(header);
+
+      const searchRow = document.createElement("div");
+      searchRow.className = "analysis-search-row";
+      const searchInput = document.createElement("input");
+      searchInput.id = "sectorAnalysisSearchInput";
+      searchInput.className = "analysis-input analysis-search";
+      searchInput.type = "search";
+      searchInput.placeholder = "搜尋族群、題材、股票代號、公司、關鍵字";
+      searchInput.value = state.sectorAnalysisQuery || "";
+      searchInput.setAttribute("aria-label", "搜尋族群分析筆記");
+      const clearBtn = document.createElement("button");
+      clearBtn.type = "button";
+      clearBtn.className = "btn";
+      clearBtn.textContent = "清除";
+      searchRow.append(searchInput, clearBtn);
+      page.appendChild(searchRow);
+
+      const body = document.createElement("div");
+      body.className = "content-grid";
+      body.appendChild(renderSavedSectorAnalysesCard(notes));
+      page.appendChild(body);
+      dom.main.appendChild(page);
+
+      const updateSearchResults = () => {
+        const filteredNotes = getFilteredSectorAnalysisNotes();
+        const nextQuery = getSectorAnalysisQuery();
+        reportMeta.textContent = nextQuery
+          ? `符合 ${filteredNotes.length} / 共 ${state.sectorAnalysisNotes.length} 篇`
+          : `共 ${state.sectorAnalysisNotes.length} 篇`;
+        clearBtn.disabled = !nextQuery;
+        body.replaceChildren(renderSavedSectorAnalysesCard(filteredNotes));
+      };
+
+      searchInput.addEventListener("input", event => {
+        state.sectorAnalysisQuery = event.target.value;
+        updateSearchResults();
+      });
+      clearBtn.addEventListener("click", () => {
+        state.sectorAnalysisQuery = "";
+        searchInput.value = "";
+        updateSearchResults();
+        searchInput.focus();
+      });
+      updateSearchResults();
+    }
+
+    function renderSavedSectorAnalysesCard(notes) {
+      const list = document.createElement("div");
+      list.className = "analysis-saved-list";
+
+      if (!state.sectorAnalysisNotes.length) {
+        const note = document.createElement("div");
+        note.className = "empty";
+        note.textContent = "尚無已保存族群分析。之後可把產業整理寫入 sector_analysis_notes.json，這裡會自動顯示。";
+        list.appendChild(note);
+        return list;
+      }
+
+      if (!notes.length) {
+        const note = document.createElement("div");
+        note.className = "empty";
+        note.textContent = `沒有找到「${state.sectorAnalysisQuery.trim()}」相關的族群分析。`;
+        list.appendChild(note);
+        return list;
+      }
+
+      notes.forEach(item => {
+        list.appendChild(renderSavedSectorAnalysisItem(item));
+      });
+      return list;
+    }
+
+    function renderSavedSectorAnalysisItem(item) {
+      const row = sectionCard();
+      row.classList.add("analysis-stock-card");
+      const title = item.title || item.theme || "族群分析";
+
+      const top = document.createElement("div");
+      top.className = "analysis-stock-top";
+
+      const toggle = document.createElement("button");
+      toggle.type = "button";
+      toggle.className = "analysis-stock-toggle";
+      toggle.setAttribute("aria-expanded", "false");
+
+      const main = document.createElement("div");
+      main.className = "analysis-stock-main";
+
+      const titleRow = document.createElement("div");
+      titleRow.className = "analysis-stock-title-row";
+
+      const titleNode = document.createElement("span");
+      titleNode.className = "analysis-stock-title";
+      titleNode.textContent = title;
+      titleRow.appendChild(titleNode);
+      if (item.theme) titleRow.appendChild(badge(item.theme, "theme"));
+      if (item.analysisDate) titleRow.appendChild(badge(item.analysisDate, "neutral"));
+      main.appendChild(titleRow);
+
+      if (item.stance) {
+        const stance = document.createElement("div");
+        stance.className = "analysis-stock-stance";
+        stance.textContent = item.stance;
+        main.appendChild(stance);
+      }
+
+      const preview = document.createElement("div");
+      preview.className = "analysis-stock-preview";
+      preview.textContent = item.summary || item.stance || "尚未填寫摘要。";
+      main.appendChild(preview);
+
+      const stateLabel = document.createElement("span");
+      stateLabel.className = "analysis-stock-state";
+      stateLabel.textContent = "展開";
+      toggle.append(main, stateLabel);
+
+      const copyBtn = document.createElement("button");
+      copyBtn.type = "button";
+      copyBtn.className = "btn stock-copy-btn";
+      copyBtn.title = "複製全部內容";
+      copyBtn.textContent = "複製";
+      copyBtn.addEventListener("click", () => {
+        navigator.clipboard.writeText(buildSectorAnalysisCopyText(item)).then(() => {
+          copyBtn.textContent = "已複製 ✓";
+          copyBtn.classList.add("copied");
+          setTimeout(() => { copyBtn.textContent = "複製"; copyBtn.classList.remove("copied"); }, 2000);
+        }).catch(() => {
+          copyBtn.textContent = "失敗";
+          setTimeout(() => { copyBtn.textContent = "複製"; }, 2000);
+        });
+      });
+
+      const actions = document.createElement("div");
+      actions.className = "analysis-stock-actions";
+      actions.appendChild(copyBtn);
+      top.append(toggle, actions);
+      row.appendChild(top);
+
+      const detail = document.createElement("div");
+      detail.className = "analysis-stock-detail";
+      detail.hidden = true;
+
+      toggle.addEventListener("click", () => {
+        const expanded = detail.hidden;
+        detail.hidden = !expanded;
+        row.classList.toggle("expanded", expanded);
+        toggle.setAttribute("aria-expanded", String(expanded));
+        stateLabel.textContent = expanded ? "收合" : "展開";
+      });
+
+      if (item.summary) {
+        const summary = document.createElement("div");
+        summary.className = "body-text";
+        summary.textContent = item.summary;
+        detail.appendChild(summary);
+      }
+
+      appendSectorMeta(detail, item);
+      if (arr(item.whyNow).length) appendList(detail, "為什麼現在看", item.whyNow);
+      appendSectorCategories(detail, item.categories);
+      appendSectorAdjacentGroups(detail, item.adjacentGroups);
+      if (arr(item.risks).length) appendList(detail, "風險", item.risks);
+      if (arr(item.monitoringSignals).length) appendList(detail, "追蹤指標", item.monitoringSignals);
+      if (arr(item.contextNotes).length) appendList(detail, "備註", item.contextNotes);
+      appendStockAnalysisSourceLinks(detail, item.sources);
+      if (item.notInvestmentAdvice) appendField(detail, "提醒", item.notInvestmentAdvice);
+
+      row.appendChild(detail);
+      return row;
+    }
+
+    function appendSectorMeta(parent, item) {
+      const parts = [
+        item.analysisDate ? `日期：${item.analysisDate}` : "",
+        item.source ? `來源：${item.source}` : "",
+        item.verificationStatus ? `查核狀態：${item.verificationStatus}` : ""
+      ].filter(Boolean);
+      if (parts.length) appendField(parent, "資料基準", parts.join(" / "));
+    }
+
+    function appendSectorCategories(parent, categories) {
+      const rows = arr(categories);
+      if (!rows.length) return;
+
+      const block = document.createElement("div");
+      block.className = "analysis-section-block";
+      block.appendChild(fieldLabel("分類與代表公司"));
+
+      rows.forEach(category => {
+        const group = document.createElement("div");
+        group.className = "analysis-section-block";
+        const name = category.name || "未命名分類";
+        group.appendChild(fieldLabel(name));
+        if (arr(category.keywords).length) appendChipList(group, "關鍵字", category.keywords);
+        if (category.summary) appendField(group, "定位", category.summary);
+        appendSectorCompanyTable(group, category.companies);
+        block.appendChild(group);
+      });
+
+      parent.appendChild(block);
+    }
+
+    function appendSectorCompanyTable(parent, companies) {
+      const rows = arr(companies);
+      if (!rows.length) return;
+
+      const wrap = document.createElement("div");
+      wrap.className = "tw-table-wrap";
+      const table = document.createElement("table");
+      table.className = "analysis-table";
+      table.appendChild(tableHead(["代號", "公司", "角色", "AI 曝險", "財報 / 估值重點", "備註"]));
+
+      const tbody = document.createElement("tbody");
+      rows.forEach(company => {
+        const tr = document.createElement("tr");
+        [
+          company.ticker,
+          company.name,
+          company.role,
+          company.aiExposure,
+          arr(company.financialNotes).join("；"),
+          arr(company.keyPoints).join("；")
+        ].forEach(text => {
+          const td = document.createElement("td");
+          td.textContent = stringify(text);
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+      table.appendChild(tbody);
+      wrap.appendChild(table);
+      parent.appendChild(wrap);
+    }
+
+    function appendSectorAdjacentGroups(parent, groups) {
+      const rows = arr(groups);
+      if (!rows.length) return;
+
+      const block = document.createElement("div");
+      block.className = "analysis-section-block";
+      block.appendChild(fieldLabel("旁邊受惠族群"));
+
+      const wrap = document.createElement("div");
+      wrap.className = "tw-table-wrap";
+      const table = document.createElement("table");
+      table.className = "analysis-table";
+      table.appendChild(tableHead(["代號", "公司", "族群", "投資線索"]));
+
+      const tbody = document.createElement("tbody");
+      rows.forEach(item => {
+        const tr = document.createElement("tr");
+        [item.ticker, item.name, item.group, item.thesis].forEach(text => {
+          const td = document.createElement("td");
+          td.textContent = stringify(text);
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+      table.appendChild(tbody);
+      wrap.appendChild(table);
+      block.appendChild(wrap);
+      parent.appendChild(block);
+    }
+
+    function getFilteredSectorAnalysisNotes() {
+      const query = getSectorAnalysisQuery();
+      if (!query) return state.sectorAnalysisNotes;
+      return state.sectorAnalysisNotes.filter(item => buildSectorAnalysisSearchText(item).includes(query));
+    }
+
+    function getSectorAnalysisQuery() {
+      return String(state.sectorAnalysisQuery || "").trim().toLowerCase();
+    }
+
+    function buildSectorAnalysisSearchText(item) {
+      return [
+        item.title,
+        item.theme,
+        item.stance,
+        item.summary,
+        item.source,
+        item.verificationStatus,
+        JSON.stringify(item.whyNow || []),
+        JSON.stringify(item.categories || []),
+        JSON.stringify(item.adjacentGroups || []),
+        JSON.stringify(item.risks || []),
+        JSON.stringify(item.monitoringSignals || []),
+        JSON.stringify(item.contextNotes || []),
+        JSON.stringify(item.sources || [])
+      ].filter(Boolean).join(" ").toLowerCase();
+    }
+
+    function buildSectorAnalysisCopyText(item) {
+      const lines = [];
+      lines.push(item.title || item.theme || "族群分析");
+      if (item.analysisDate) lines.push(item.analysisDate);
+      if (item.stance) { lines.push(""); lines.push(item.stance); }
+      if (item.summary) { lines.push(""); lines.push(item.summary); }
+      if (arr(item.whyNow).length) {
+        lines.push(""); lines.push("為什麼現在看");
+        arr(item.whyNow).forEach((point, index) => lines.push(`${index + 1}. ${stringify(point)}`));
+      }
+      arr(item.categories).forEach(category => {
+        lines.push(""); lines.push(category.name || "分類");
+        if (arr(category.keywords).length) lines.push(`關鍵字：${arr(category.keywords).join("、")}`);
+        if (category.summary) lines.push(`定位：${category.summary}`);
+        arr(category.companies).forEach(company => {
+          lines.push(`- ${company.ticker || ""} ${company.name || ""}：${[company.role, company.aiExposure, arr(company.financialNotes).join("；")].filter(Boolean).join(" / ")}`);
+        });
+      });
+      if (arr(item.adjacentGroups).length) {
+        lines.push(""); lines.push("旁邊受惠族群");
+        arr(item.adjacentGroups).forEach(group => lines.push(`- ${group.ticker || ""} ${group.name || ""}：${[group.group, group.thesis].filter(Boolean).join(" / ")}`));
+      }
+      if (arr(item.risks).length) {
+        lines.push(""); lines.push("風險");
+        arr(item.risks).forEach((point, index) => lines.push(`${index + 1}. ${stringify(point)}`));
+      }
+      if (arr(item.monitoringSignals).length) {
+        lines.push(""); lines.push("追蹤指標");
+        arr(item.monitoringSignals).forEach((point, index) => lines.push(`${index + 1}. ${stringify(point)}`));
+      }
+      if (item.notInvestmentAdvice) { lines.push(""); lines.push(item.notInvestmentAdvice); }
+      return lines.join("\n");
     }
 
     function renderStockAnalysisFrameworkMain() {
@@ -6735,6 +7104,7 @@ ${notes}`;
     tryLoadPendingManifest();
     tryLoadAiResearchManifest();
     tryLoadAiReportsManifest();
+    tryLoadSectorAnalysisNotes();
     tryLoadStockAnalysisNotes();
     render();
   </script>

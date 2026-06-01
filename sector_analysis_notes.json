@@ -1,0 +1,153 @@
+{
+  "updatedAt": "2026-06-01",
+  "analyses": [
+    {
+      "id": "passive-components-ai-2026-06-01",
+      "title": "AI 伺服器被動元件族群：鉭電容、MLCC、鋁電容",
+      "theme": "被動元件",
+      "analysisDate": "2026-06-01",
+      "source": "使用者整理 / 股癌 Podcast 謝孟恭提及被動元件主題",
+      "sourceUrl": "",
+      "verificationStatus": "使用者提供內容，尚未由 Codex 即時查核公開來源。",
+      "stance": "AI 伺服器與下一代 800V HVDC 架構拉高高階被動元件用量，但多數題材股評價已反映部分成長預期，後續要用月營收、AI 伺服器出貨、貴金屬價格與匯率驗證。",
+      "summary": "這份筆記把被動元件拆成鉭電容、MLCC、鋁電容/固態電容三條主線。核心邏輯是 GB300 與下一代 Vera Rubin 架構提高高可靠度電容與高壓被動元件需求，日韓高階產能鎖定特規後，中低階與部分高壓訂單可能外溢到台廠。投資上不是閉眼追價，而是先建立公司名單，再追蹤營收 YoY、AI 伺服器出貨、銀價/貴金屬成本、新台幣匯率與中國產能開出的價格風險。",
+      "whyNow": [
+        "AI 伺服器是這波結構性多頭的核心驅動。",
+        "輝達 GB300 單櫃約使用 3 萬顆 MLCC，約為手機用量的 30 倍。",
+        "下一代 Vera Rubin 導入 800V HVDC 高壓直流架構，高壓 MLCC、TLVR 電感、固態/鉭電容用量可能再提升。",
+        "日韓大廠把產能鎖在高階特規，中低階訂單外溢到台廠。"
+      ],
+      "categories": [
+        {
+          "name": "鉭電容",
+          "keywords": ["高可靠度", "AI GPU 電源", "龍頭壟斷"],
+          "summary": "鉭電容具體積小、容值高、耐高溫等特性，是 AI GPU 旁路電容與高可靠度電源設計的重要料件。",
+          "companies": [
+            {
+              "ticker": "2327",
+              "name": "國巨",
+              "role": "併購基美 Kemet 後成為鉭電容全球市占第一。",
+              "aiExposure": "已導入 GB300 設計；鉭電容用於 AI GPU 旁路電容與高可靠度電源。",
+              "financialNotes": ["2025 EPS 11.51 元", "2026 Q1 毛利率 38.1%，創 14 季新高"],
+              "keyPoints": ["被動元件平台型公司", "鉭電容龍頭", "AI 電源高可靠度需求受惠"]
+            }
+          ]
+        },
+        {
+          "name": "MLCC",
+          "keywords": ["高壓", "大尺寸", "800V HVDC"],
+          "summary": "AI 伺服器用量與高壓架構同步推升高壓、大尺寸 MLCC 需求，供應商重點在高壓品規格、瓷粉自給與高階 NP0 能力。",
+          "companies": [
+            {
+              "ticker": "2492",
+              "name": "華新科",
+              "role": "前五大 MLCC 廠。",
+              "aiExposure": "推 1000V 以上高壓 MLCC，對應 800V HVDC 與伺服器電源架構升級。",
+              "financialNotes": ["P/B 約 1.2 倍，估值相對偏低"],
+              "keyPoints": ["高壓 MLCC", "估值低檔修復觀察"]
+            },
+            {
+              "ticker": "3026",
+              "name": "禾伸堂",
+              "role": "高階 NP0 MLCC 市占約 80-90%。",
+              "aiExposure": "部分 GB300 / VR200 供應具獨家性。",
+              "financialNotes": ["2026 Q1 EPS 創 4 年新高"],
+              "keyPoints": ["高階 NP0", "AI 伺服器規格升級受惠"]
+            },
+            {
+              "ticker": "6173",
+              "name": "信昌電",
+              "role": "大尺寸高壓 MLCC 與上游瓷粉自給。",
+              "aiExposure": "受惠高壓、大尺寸 MLCC 需求與供應鏈自給能力。",
+              "financialNotes": ["2026 Q1 年增近 70%"],
+              "keyPoints": ["上游瓷粉", "大尺寸高壓 MLCC"]
+            }
+          ]
+        },
+        {
+          "name": "鋁電容 / 固態電容",
+          "keywords": ["伺服器電源", "BBU", "NVLink"],
+          "summary": "鋁電容與固態電容受惠伺服器電源、BBU 與高速互連電源穩定需求，觀察重點在伺服器營收占比、車用比重與 AI 平台導入。",
+          "companies": [
+            {
+              "ticker": "2472",
+              "name": "立隆電",
+              "role": "全球第五大鋁電廠。",
+              "aiExposure": "伺服器電源與車用鋁電容需求受惠。",
+              "financialNotes": ["車用占 36%", "2025 淨利年增 217%"],
+              "keyPoints": ["鋁電容", "車用與伺服器雙線"]
+            },
+            {
+              "ticker": "6449",
+              "name": "鈺邦",
+              "role": "捲繞型固態電容全球第一。",
+              "aiExposure": "NVLink Switch V-Chip 主供，伺服器營收占比快速攀升。",
+              "financialNotes": ["伺服器營收占比快速攀升"],
+              "keyPoints": ["固態電容", "NVLink Switch", "伺服器電源"]
+            },
+            {
+              "ticker": "8042",
+              "name": "金山電",
+              "role": "固液混合鋁電容供應商。",
+              "aiExposure": "固液混合鋁電容打入 GB300 / BBU。",
+              "financialNotes": ["2026 Q1 EPS 暴衝"],
+              "keyPoints": ["固液混合鋁電容", "GB300", "BBU"]
+            }
+          ]
+        }
+      ],
+      "adjacentGroups": [
+        {
+          "ticker": "3357",
+          "name": "台慶科",
+          "group": "電感",
+          "thesis": "TLVR 電感切入 CSP，且持有鈺邦 28%。"
+        },
+        {
+          "ticker": "2456",
+          "name": "奇力新",
+          "group": "電感 / 電阻",
+          "thesis": "國巨集團電感與電阻整合，PE 約 14 倍、殖利率約 3.2%。"
+        },
+        {
+          "ticker": "2428",
+          "name": "興勤",
+          "group": "熱敏電阻",
+          "thesis": "車用熱敏電阻，PE 約 13-15 倍。"
+        },
+        {
+          "ticker": "3042",
+          "name": "晶技",
+          "group": "石英元件",
+          "thesis": "AI 光通訊與車用雙引擎。"
+        }
+      ],
+      "risks": [
+        "中小型題材股 PE 已到 40-60 倍，評價偏貴。",
+        "銀價 2025 年漲超過 130%，可能壓縮毛利。",
+        "新台幣升值，外銷廠每升值 1% 約吃掉 0.9% EPS。",
+        "2027 年中國高階產能開出後，可能引發價格戰。",
+        "消費電子需求仍疲弱。"
+      ],
+      "monitoringSignals": [
+        "月營收 YoY 是否延續成長或加速。",
+        "AI 伺服器出貨數據與 GB300 / Vera Rubin 供應鏈拉貨節奏。",
+        "貴金屬價格，尤其銀價與相關材料成本。",
+        "新台幣匯率對外銷廠毛利與 EPS 的壓力。",
+        "高壓 MLCC、TLVR 電感、固態/鉭電容是否取得更多 AI 平台設計導入。"
+      ],
+      "contextNotes": [
+        "原文最後提到「定錨產業筆記投資分享會」與 KOL 票優惠碼 7evenguy；本 viewer 僅保存研究脈絡，不構成課程推薦。",
+        "本筆記是產業介紹與候選清單，不是買進建議。"
+      ],
+      "sources": [
+        {
+          "name": "使用者提供整理內容",
+          "url": "",
+          "note": "包含股癌 Podcast 提及內容、使用者翻閱台股公開資料後整理的公司與財報線索。"
+        }
+      ],
+      "notInvestmentAdvice": "僅供研究與紀錄，不構成投資建議。"
+    }
+  ]
+}

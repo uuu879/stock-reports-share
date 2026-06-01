@@ -8,6 +8,7 @@ Included public content:
 - AI full reports
 - Taiwan watchlists and XQ import lists
 - Stock analysis notes
+- Sector analysis notes
 - Taiwan stock universe
 
 Intentionally excluded:
