@@ -2,6 +2,299 @@
   "updatedAt": "2026-06-01",
   "analyses": [
     {
+      "id": "nvidia-mgx-taiwan-supply-chain-2026-06-01",
+      "title": "NVIDIA MGX / AI Factory 台灣供應鏈：21 家核心夥伴簡表",
+      "theme": "NVIDIA MGX 供應鏈",
+      "analysisDate": "2026-06-01",
+      "source": "使用者提供名單 / 2026-05-29 NVIDIA AI Factory MGX Ecosystem Ceremony 公開報導",
+      "sourceUrl": "",
+      "verificationStatus": "已用中央社、自由財經、三立新聞網轉載報導初步交叉確認活動與名單；尚未逐家公司查核營收占比、訂單規模與財報貢獻。",
+      "stance": "MGX / AI Factory 不是單一零組件題材，而是從晶圓代工、載板與PCB、電源、散熱、機構件、連接器線材到系統組裝的一整條硬體供應鏈。短線容易被「輝達點名」帶動情緒，後續要回到各公司實際出貨、毛利率與月營收驗證。",
+      "summary": "這份筆記先把輝達 MGX 台灣供應鏈 21 家公司依功能拆成七個族群。核心邏輯是 Vera Rubin / AI Factory 進入機櫃級、資料中心級競爭後，一台 AI 超級電腦需要大量高速訊號、電源配送、液冷散熱、機構支撐與系統整合；台灣供應鏈的強項在於能把這些零組件快速組成可量產的整機平台。現階段先建立研究地圖，不直接等同於買進訊號。",
+      "whyNow": [
+        "2026-05-29 黃仁勳出席 NVIDIA AI Factory MGX Ecosystem Ceremony，公開感謝台灣 MGX 供應鏈夥伴。",
+        "公開報導提到為迎接 Vera Rubin 架構，輝達在台灣製造 AI 超級電腦的產能今年將倍增。",
+        "MGX 機櫃內含大量零組件，投資線索從 GPU 本身外溢到電源、散熱、連接器、PCB、機構件與組裝。",
+        "被點名名單橫跨權值龍頭與中小型零組件股，適合先依族群建立觀察表，再用營收與法人籌碼驗證強弱。"
+      ],
+      "categories": [
+        {
+          "name": "晶圓代工 / 先進製程",
+          "keywords": ["GPU", "Vera Rubin", "先進製程", "AI 算力"],
+          "summary": "AI Factory 的最上游仍是先進晶片製造能力。台積電是輝達 GPU 與先進封裝生態的核心地基，股價反應通常較穩，但也是整條供應鏈景氣與估值上限的錨。",
+          "companies": [
+            {
+              "ticker": "2330",
+              "name": "台積電",
+              "role": "晶圓代工龍頭，承接輝達高階 GPU / AI 晶片製造與先進製程需求。",
+              "aiExposure": "AI GPU、Vera Rubin 與資料中心晶片需求的最核心上游。",
+              "financialNotes": ["先以月營收、法說資本支出、先進製程與先進封裝產能展望追蹤。"],
+              "keyPoints": ["供應鏈核心錨", "權值防守", "AI 景氣總開關"]
+            }
+          ]
+        },
+        {
+          "name": "載板 / PCB / 高速材料",
+          "keywords": ["ABF", "PCB", "CCL", "高速傳輸", "軟板"],
+          "summary": "機櫃級 AI 系統需要高速、低損耗、高層數的板材與載板，族群重點是材料規格升級、良率、客戶認證與 AI 伺服器營收占比。",
+          "companies": [
+            {
+              "ticker": "3037",
+              "name": "欣興",
+              "role": "高階 ABF 載板與 PCB 供應商。",
+              "aiExposure": "對應高階運算晶片封裝載體與 AI 伺服器板需求。",
+              "financialNotes": ["追蹤 ABF 稼動率、AI 載板出貨與產品組合。"],
+              "keyPoints": ["ABF 載板", "高階封裝載體"]
+            },
+            {
+              "ticker": "2383",
+              "name": "台光電",
+              "role": "高頻高速銅箔基板 / CCL 供應商。",
+              "aiExposure": "AI 伺服器與高速交換系統需要低損耗板材。",
+              "financialNotes": ["追蹤高速材料營收占比、毛利率與新平台認證。"],
+              "keyPoints": ["高速材料", "低損耗 CCL"]
+            },
+            {
+              "ticker": "4958",
+              "name": "臻鼎-KY",
+              "role": "PCB 龍頭，公開報導提到新入列 MGX 背板名單。",
+              "aiExposure": "高階 AI 伺服器板與載板布局是主要觀察點。",
+              "financialNotes": ["追蹤 AI 伺服器相關板材貢獻是否放大。"],
+              "keyPoints": ["PCB 龍頭", "新入列題材"]
+            },
+            {
+              "ticker": "6269",
+              "name": "台郡",
+              "role": "軟板供應商。",
+              "aiExposure": "高速互連與機櫃內部訊號傳輸可能帶來軟板應用。",
+              "financialNotes": ["需確認 AI 伺服器軟板產品比重與客戶進度。"],
+              "keyPoints": ["軟板", "高速互連觀察"]
+            }
+          ]
+        },
+        {
+          "name": "電源 / 配電 / 能源管理",
+          "keywords": ["Power rack", "電源供應", "配電", "800V HVDC", "BBU"],
+          "summary": "AI Factory 的功耗快速拉高，電源與配電從一般伺服器零件升級為資料中心級瓶頸。觀察重點在高功率電源櫃、BBU、800V HVDC 與液冷電力架構導入。",
+          "companies": [
+            {
+              "ticker": "2308",
+              "name": "台達電",
+              "role": "電源管理與能源解決方案龍頭。",
+              "aiExposure": "高功率伺服器電源、電源櫃與資料中心能源管理。",
+              "financialNotes": ["追蹤 AI 電源營收占比、毛利率與 800V HVDC 導入進度。"],
+              "keyPoints": ["電源核心", "資料中心能源管理"]
+            },
+            {
+              "ticker": "2301",
+              "name": "光寶科",
+              "role": "電源供應與電子模組供應商。",
+              "aiExposure": "高功率電源、伺服器電源與相關模組。",
+              "financialNotes": ["追蹤伺服器電源營收、AI 平台拉貨與產品組合。"],
+              "keyPoints": ["伺服器電源", "AI 電源外溢"]
+            }
+          ]
+        },
+        {
+          "name": "散熱 / 熱管理",
+          "keywords": ["液冷", "水冷", "均熱片", "熱管", "散熱模組"],
+          "summary": "Vera Rubin 與機櫃級 AI 系統功耗提高後，液冷、均熱片、熱管與水冷零件成為關鍵瓶頸。這一族群彈性高，但也最容易受規格變更與消息面影響。",
+          "companies": [
+            {
+              "ticker": "3324",
+              "name": "雙鴻",
+              "role": "散熱模組廠。",
+              "aiExposure": "AI 伺服器水冷 / 風冷散熱模組。",
+              "financialNotes": ["追蹤水冷產品占比、毛利率與客戶平台切換。"],
+              "keyPoints": ["液冷散熱", "平台規格風險"]
+            },
+            {
+              "ticker": "3017",
+              "name": "奇鋐",
+              "role": "散熱模組與水冷解決方案供應商。",
+              "aiExposure": "AI GPU、ASIC 與機櫃級液冷需求。",
+              "financialNotes": ["追蹤月營收是否持續創高、水冷產能與 ASP。"],
+              "keyPoints": ["水冷龍頭", "高波動核心股"]
+            },
+            {
+              "ticker": "3338",
+              "name": "泰碩",
+              "role": "散熱模組與熱管理零件供應商。",
+              "aiExposure": "水冷與氣冷散熱零件外溢受惠。",
+              "financialNotes": ["需確認 AI 伺服器出貨占比與毛利率改善。"],
+              "keyPoints": ["散熱零件", "中小型彈性"]
+            },
+            {
+              "ticker": "3653",
+              "name": "健策",
+              "role": "均熱片 / 熱管理與精密金屬零件供應商。",
+              "aiExposure": "AI 晶片與高功率模組熱管理。",
+              "financialNotes": ["追蹤均熱片、散熱件與高階平台認證。"],
+              "keyPoints": ["均熱片", "高階熱管理"]
+            }
+          ]
+        },
+        {
+          "name": "機構件 / 機殼 / 滑軌 / 精密零件",
+          "keywords": ["機櫃", "機殼", "滑軌", "軸承", "快接頭"],
+          "summary": "AI 超級電腦重量、功耗與維修需求提高，讓機櫃、機殼、滑軌、軸承與水冷快接頭也成為供應鏈的一部分。這類公司要看規格升級能否轉成 ASP 與毛利率提升。",
+          "companies": [
+            {
+              "ticker": "2474",
+              "name": "可成",
+              "role": "機殼與內部機構件供應商，公開報導提到新入列 MGX 生態系。",
+              "aiExposure": "高階 AI 伺服器機殼與機架級機構件。",
+              "financialNotes": ["追蹤 AI 機構件是否放量與資本配置。"],
+              "keyPoints": ["新入列題材", "機構件轉型"]
+            },
+            {
+              "ticker": "8210",
+              "name": "勤誠",
+              "role": "伺服器機殼與機櫃供應商。",
+              "aiExposure": "AI 伺服器機箱、機櫃與系統整合外殼。",
+              "financialNotes": ["追蹤 AI 機箱出貨、毛利率與產能利用率。"],
+              "keyPoints": ["伺服器機殼", "機櫃需求"]
+            },
+            {
+              "ticker": "5426",
+              "name": "振發",
+              "role": "機殼 / 機構件供應商。",
+              "aiExposure": "AI 伺服器機構件與機櫃外殼需求。",
+              "financialNotes": ["需確認 MGX 相關產品出貨與營收占比。"],
+              "keyPoints": ["機構件", "題材待驗證"]
+            },
+            {
+              "ticker": "2059",
+              "name": "川湖",
+              "role": "伺服器滑軌龍頭。",
+              "aiExposure": "重型 AI 伺服器與機櫃需要高承重滑軌。",
+              "financialNotes": ["追蹤伺服器滑軌 ASP、毛利率與客戶拉貨。"],
+              "keyPoints": ["滑軌龍頭", "高承重規格"]
+            },
+            {
+              "ticker": "6584",
+              "name": "南俊國際",
+              "role": "滑軌與機構件供應商。",
+              "aiExposure": "高承重伺服器滑軌與機櫃機構件。",
+              "financialNotes": ["需確認 AI 伺服器滑軌出貨與客戶結構。"],
+              "keyPoints": ["滑軌第二梯隊", "中小型彈性"]
+            },
+            {
+              "ticker": "6805",
+              "name": "富世達",
+              "role": "軸承、精密零件與水冷快接頭延伸布局。",
+              "aiExposure": "伺服器機構精密零件與水冷系統快接頭。",
+              "financialNotes": ["追蹤水冷快接頭是否形成實質營收。"],
+              "keyPoints": ["精密零件", "水冷快接頭"]
+            }
+          ]
+        },
+        {
+          "name": "連接器 / 線材 / 高速傳輸",
+          "keywords": ["連接器", "線材", "高速訊號", "大電流", "銅纜"],
+          "summary": "機櫃內部高速訊號與大電流傳輸需求提高，連接器與線材規格同步升級。觀察重點是高速 / 高功率產品占比、客戶認證與良率。",
+          "companies": [
+            {
+              "ticker": "3665",
+              "name": "貿聯-KY",
+              "role": "線束、線材與連接解決方案供應商。",
+              "aiExposure": "AI 伺服器機櫃內部高速線材與電力連接。",
+              "financialNotes": ["追蹤資料中心線束營收與毛利率。"],
+              "keyPoints": ["線材", "資料中心連接"]
+            },
+            {
+              "ticker": "6290",
+              "name": "良維",
+              "role": "電源線與連接線材供應商。",
+              "aiExposure": "高功率伺服器與機櫃電力連接線材。",
+              "financialNotes": ["需確認 AI 伺服器線材占比與 ASP 改善。"],
+              "keyPoints": ["電源線材", "高功率連接"]
+            },
+            {
+              "ticker": "3533",
+              "name": "嘉澤",
+              "role": "連接器與 CPU socket 供應商。",
+              "aiExposure": "高階伺服器 socket、連接器與平台升級需求。",
+              "financialNotes": ["追蹤伺服器 socket 規格升級、毛利率與客戶平台。"],
+              "keyPoints": ["Socket", "高階連接器"]
+            }
+          ]
+        },
+        {
+          "name": "系統組裝 / AI Factory 整合",
+          "keywords": ["EMS", "系統組裝", "機櫃整合", "測試"],
+          "summary": "AI Factory 最後需要把晶片、電源、散熱、板卡、線材與機構件整合成可交付的大型系統。組裝廠的重點是客戶訂單、產能、交付能力與毛利率能否跟上系統複雜度。",
+          "companies": [
+            {
+              "ticker": "2317",
+              "name": "鴻海",
+              "role": "電子代工與系統組裝龍頭。",
+              "aiExposure": "MGX / AI Factory 系統組裝、測試與交付。",
+              "financialNotes": ["追蹤 AI 伺服器營收占比、毛利率與海外產能。"],
+              "keyPoints": ["整機組裝", "AI Factory 交付能力"]
+            }
+          ]
+        }
+      ],
+      "adjacentGroups": [
+        {
+          "ticker": "",
+          "name": "液冷供應鏈",
+          "group": "泵浦 / CDU / 快接頭 / 冷板",
+          "thesis": "MGX 與 Vera Rubin 若持續往機櫃級液冷推進，除散熱模組外，CDU、泵浦、接頭、冷板與管路也要建立候選池。"
+        },
+        {
+          "ticker": "",
+          "name": "高速網通與交換器",
+          "group": "Switch / 網通 / 光通",
+          "thesis": "AI Factory 不只需要算力，也需要 NVLink、InfiniBand、Spectrum-X、交換器與光通訊；本筆記先聚焦使用者提供的 21 家名單，後續可另開網通/光通族群。"
+        },
+        {
+          "ticker": "",
+          "name": "BBU 與高壓電源零組件",
+          "group": "電源備援 / 被動元件 / 功率元件",
+          "thesis": "800V HVDC、BBU 與高功率電源櫃可能帶動被動元件、功率半導體與電池備援需求，需和既有被動元件筆記交叉追蹤。"
+        }
+      ],
+      "risks": [
+        "被點名不等於已大量出貨，也不等於營收占比已經顯著放大。",
+        "MGX / Vera Rubin 規格仍可能調整，散熱、電源、線材與機構件容易受設計變更影響。",
+        "若短線股價先反映題材，後續月營收或毛利率未跟上，容易出現評價修正。",
+        "大型權值股與中小零組件股的風險型態不同，不適合用同一套本益比或漲幅期待比較。",
+        "AI 伺服器供應鏈有客戶集中、匯率、產能擴張與價格競爭風險。"
+      ],
+      "monitoringSignals": [
+        "各公司 2026 年月營收 YoY / MoM 是否連續改善，尤其 AI 伺服器相關營收占比是否提高。",
+        "Vera Rubin / MGX 平台是否如期量產，客戶是否擴大拉貨。",
+        "散熱族群水冷占比、電源族群高功率產品占比、PCB/載板族群高階材料占比是否提升。",
+        "法人買賣超與股價相對強弱：同一族群中誰先突破、誰利多不漲、誰回檔守支撐。",
+        "法說會對 AI 伺服器、資料中心、MGX、Vera Rubin、液冷、800V HVDC 等關鍵字的揭露程度。"
+      ],
+      "contextNotes": [
+        "這是簡版族群地圖，先服務搜尋與回顧；尚未做個股深度分析與估值排序。",
+        "使用者原文中的「光寶」以光寶科（2301）紀錄；「可成」以可成（2474）紀錄。",
+        "中央社報導現場展示牆名單曾出現立錡；本筆記先依使用者指定的 21 家清單建立，後續若要擴充可另加相鄰族群。"
+      ],
+      "sources": [
+        {
+          "name": "中央社：迎接 Vera Rubin，黃仁勳稱在台 AI 超級電腦產能倍增",
+          "url": "https://www.cna.com.tw/news/afe/202605290299.aspx",
+          "note": "確認 2026-05-29 NVIDIA AI Factory MGX Ecosystem Ceremony、台灣產能倍增、150 家合作夥伴與現場展示牆名單。"
+        },
+        {
+          "name": "自由財經：黃仁勳 MGX 背板新增臻鼎、可成",
+          "url": "https://ec.ltn.com.tw/article/breakingnews/5454338",
+          "note": "確認臻鼎-KY、可成等新入列與多家 MGX 台灣供應鏈名單。"
+        },
+        {
+          "name": "三立新聞網 / 鏡週刊轉載：輝達點名 MGX 台灣供應鏈 21 家",
+          "url": "https://www.mirrormedia.mg/external/amp/setn_1847614",
+          "note": "名單與使用者提供內容高度一致，作為 21 家清單來源之一。"
+        }
+      ],
+      "notInvestmentAdvice": "僅供研究與紀錄，不構成投資建議。"
+    },
+    {
       "id": "passive-components-ai-2026-06-01",
       "title": "AI 伺服器被動元件族群：鉭電容、MLCC、鋁電容",
       "theme": "被動元件",
