@@ -2165,6 +2165,15 @@
       return number ? `EP${number}` : fileName.replace(/\.json$/i, "");
     }
 
+    function sidebarEpisodeTitle(ep) {
+      const number = Number(ep && ep.number) || 0;
+      const rawTitle = String((ep && ep.title) || "").trim();
+      if (!number) return rawTitle || "未命名集數";
+      const duplicatePrefix = new RegExp(`^EP\\s*0*${number}\\b\\s*(?:[|｜·:：\\-–—]+\\s*)?`, "i");
+      const cleanedTitle = rawTitle.replace(duplicatePrefix, "").trim();
+      return cleanedTitle ? `EP${number} ${cleanedTitle}` : `EP${number}`;
+    }
+
     function clearAll() {
       state.episodes = [];
       state.pendingEpisodes = [];
@@ -3039,7 +3048,7 @@ ${notes}`;
 
         const name = document.createElement("div");
         name.className = "episode-name";
-        name.textContent = `${ep.number ? `EP${ep.number} ` : ""}${ep.title}`;
+        name.textContent = sidebarEpisodeTitle(ep);
 
         const meta = document.createElement("div");
         meta.className = "episode-meta";
@@ -3063,7 +3072,7 @@ ${notes}`;
 
         const name = document.createElement("div");
         name.className = "episode-name";
-        name.textContent = `${ep.number ? `EP${ep.number} ` : ""}${ep.title}`;
+        name.textContent = sidebarEpisodeTitle(ep);
 
         const meta = document.createElement("div");
         meta.className = "episode-meta";
