@@ -1642,6 +1642,7 @@
         <button id="watchlistBtn" class="watchlist-pinned-btn" type="button">台股清單</button>
         <button id="sectorAnalysisBtn" class="watchlist-pinned-btn" type="button">族群分析</button>
         <button id="analysisBtn" class="watchlist-pinned-btn" type="button">個股分析</button>
+        <button id="marketScreenBtn" class="watchlist-pinned-btn" type="button">初步分析</button>
         <button id="rankingBtn" class="watchlist-pinned-btn" type="button">分析排行</button>
         <div id="episodeList" class="episode-list"></div>
       </aside>
@@ -1669,6 +1670,7 @@
       stockAnalysisNotes: [],
       stockAnalysisQuery: "",
       twWatchlist: null,
+      marketScreen: null,
       analysis: {
         ticker: "2337",
         company: "旺宏",
@@ -1691,6 +1693,7 @@
       portfolioBtn: document.getElementById("portfolioBtn"),
       sectorAnalysisBtn: document.getElementById("sectorAnalysisBtn"),
       analysisBtn: document.getElementById("analysisBtn"),
+      marketScreenBtn: document.getElementById("marketScreenBtn"),
       rankingBtn: document.getElementById("rankingBtn"),
       main: document.getElementById("main")
     };
@@ -1747,6 +1750,10 @@
     });
     dom.analysisBtn.addEventListener("click", () => {
       state.activeView = state.activeView === "analysis" ? "episode" : "analysis";
+      render();
+    });
+    dom.marketScreenBtn.addEventListener("click", () => {
+      state.activeView = state.activeView === "marketScreen" ? "episode" : "marketScreen";
       render();
     });
     dom.rankingBtn.addEventListener("click", () => {
@@ -1864,6 +1871,18 @@
         render();
       } catch (error) {
         state.twWatchlist = null;
+      }
+    }
+
+    async function tryLoadMarketScreen() {
+      try {
+        const response = await fetch("tw_watchlists/tw_watchlist_market_screen_latest.json", { cache: "no-store" });
+        if (!response.ok) return;
+        const payload = await response.json();
+        state.marketScreen = payload && Array.isArray(payload.records) ? payload : null;
+        render();
+      } catch (error) {
+        state.marketScreen = null;
       }
     }
 
@@ -2866,6 +2885,7 @@ ${notes}`;
       if (dom.portfolioBtn) dom.portfolioBtn.classList.toggle("active", state.activeView === "portfolio");
       dom.sectorAnalysisBtn.classList.toggle("active", state.activeView === "sectorAnalysis");
       dom.analysisBtn.classList.toggle("active", state.activeView === "analysis");
+      dom.marketScreenBtn.classList.toggle("active", state.activeView === "marketScreen");
       dom.rankingBtn.classList.toggle("active", state.activeView === "ranking");
       renderEpisodeList(episodes, pendingEpisodes);
 
@@ -2877,6 +2897,8 @@ ${notes}`;
         renderSectorAnalysisMain();
       } else if (state.activeView === "analysis") {
         renderStockAnalysisFrameworkMain();
+      } else if (state.activeView === "marketScreen") {
+        renderMarketScreenMain();
       } else if (state.activeView === "ranking") {
         renderStockAnalysisRankingMain();
       } else if (state.activePendingId) {
@@ -3570,6 +3592,156 @@ ${notes}`;
       page.appendChild(renderStockAnalysisRankingSummary(rankData));
       page.appendChild(renderStockAnalysisRankingCard(rankData));
       dom.main.appendChild(page);
+    }
+
+    function renderMarketScreenMain() {
+      dom.main.replaceChildren();
+
+      const payload = state.marketScreen;
+      const page = document.createElement("div");
+      page.className = "analysis-page";
+
+      const header = document.createElement("div");
+      header.className = "analysis-header";
+      const titleWrap = document.createElement("div");
+      const title = document.createElement("h2");
+      title.textContent = "初步分析";
+      const meta = document.createElement("div");
+      meta.className = "analysis-meta";
+      meta.textContent = "Podcast 熱度池結合 FINMIND 輕量 facts 的市場快速初篩。";
+      titleWrap.append(title, meta);
+      const reportMeta = document.createElement("div");
+      reportMeta.className = "analysis-meta";
+      reportMeta.textContent = payload
+        ? `${payload.generatedAt || ""} · 共 ${payload.count || 0} 檔 · 第二輪 ${payload.shortlistCount || 0} 檔`
+        : "尚未載入快速初篩報告";
+      header.append(titleWrap, reportMeta);
+      page.appendChild(header);
+
+      const disclaimer = document.createElement("div");
+      disclaimer.className = "tw-disclaimer";
+      disclaimer.textContent = "提醒：這是 19 分制研究優先排序，不是買進建議。第二輪仍需補 TDCC 大戶趨勢、完整財報、新聞、MOPS 與 ai_reports，再進入 39 分制個股分析。";
+      page.appendChild(disclaimer);
+
+      if (!payload || !Array.isArray(payload.records) || !payload.records.length) {
+        const empty = document.createElement("div");
+        empty.className = "empty";
+        empty.textContent = "尚無快速初篩報告。請先執行 scripts/batch_score_tw_watchlist.py。";
+        page.appendChild(empty);
+        dom.main.appendChild(page);
+        return;
+      }
+
+      page.appendChild(renderMarketScreenSummary(payload));
+      page.appendChild(renderMarketScreenCard("建議進入第二輪", arr(payload.shortlist), true));
+      page.appendChild(renderMarketScreenCard("完整 50 檔排序", arr(payload.records), false));
+      dom.main.appendChild(page);
+    }
+
+    function renderMarketScreenSummary(payload) {
+      const card = sectionCard();
+      const rows = arr(payload.records);
+      const shortlist = arr(payload.shortlist);
+      const complete = rows.filter(row => Number(row.coveragePct) >= 100).length;
+      const missing = rows.filter(row => arr(row.missingFactors).length).length;
+      card.appendChild(cardHead("快速初篩摘要", [
+        badge(`${rows.length} 檔`, "neutral"),
+        badge(`第二輪 ${shortlist.length} 檔`, "watchful"),
+        badge(`完整資料 ${complete} 檔`, "neutral"),
+        missing ? badge(`缺漏 ${missing} 檔`, "watchful") : null
+      ]));
+
+      const note = document.createElement("div");
+      note.className = "analysis-rule-note";
+      note.textContent = "分數由均線與股價位置、量價結構、法人籌碼、融資變化、月營收、估值快照與 Podcast 熱度組成。Coverage 不足的 ETF 或缺資料標的不進入第二輪 shortlist。";
+      card.appendChild(note);
+      return card;
+    }
+
+    function renderMarketScreenCard(title, rows, shortlistOnly) {
+      const card = sectionCard();
+      card.appendChild(cardHead(title, [
+        badge(`${rows.length} 檔`, "neutral"),
+        shortlistOnly ? badge("待補深度資料", "watchful") : badge("19 分制", "neutral")
+      ]));
+
+      if (!rows.length) {
+        const empty = document.createElement("div");
+        empty.className = "empty";
+        empty.textContent = "目前沒有符合條件的標的。";
+        card.appendChild(empty);
+        return card;
+      }
+
+      const wrap = document.createElement("div");
+      wrap.className = "tw-table-wrap";
+      const table = document.createElement("table");
+      table.className = "analysis-table";
+      const thead = document.createElement("thead");
+      const hrow = document.createElement("tr");
+      ["排名", "股票", "快速分數", "標準化", "Coverage", "Podcast 熱度", "營收 YoY", "法人近 5 日", "缺漏", "分項"].forEach(text => {
+        const th = document.createElement("th");
+        th.textContent = text;
+        hrow.appendChild(th);
+      });
+      thead.appendChild(hrow);
+      table.appendChild(thead);
+
+      const tbody = document.createElement("tbody");
+      rows.forEach(row => {
+        const tr = document.createElement("tr");
+        const snapshot = row.snapshot || {};
+        const podcast = row.podcast || {};
+        const missing = arr(row.missingFactors);
+        [
+          row.screenRank || "-",
+          `${row.code || ""} ${row.name || ""}`.trim(),
+          `${row.screenScore ?? "-"}/${row.screenMaxScore || 19}`,
+          row.normalizedScore !== null && row.normalizedScore !== undefined && Number.isFinite(Number(row.normalizedScore)) ? `${row.normalizedScore}` : "待確認",
+          row.coveragePct !== null && row.coveragePct !== undefined && Number.isFinite(Number(row.coveragePct)) ? `${row.coveragePct}%` : "待確認",
+          podcast.heatSortRank ? `#${podcast.heatSortRank}` : "待確認",
+          formatMarketScreenPct(snapshot.revenueYoyPct),
+          formatMarketScreenNumber(snapshot.institutional5d),
+          missing.length ? missing.join("、") : "-"
+        ].forEach(text => {
+          const td = document.createElement("td");
+          td.textContent = String(text);
+          tr.appendChild(td);
+        });
+
+        const actionCell = document.createElement("td");
+        const detail = document.createElement("details");
+        const summary = document.createElement("summary");
+        summary.textContent = "查看";
+        const list = document.createElement("ul");
+        list.className = "analysis-checklist";
+        arr(row.items).forEach(item => {
+          const li = document.createElement("li");
+          const score = item.score === null || item.score === undefined ? "待確認" : `${item.score}/${item.maxScore || 0}`;
+          li.textContent = `${item.factor || "未命名"}｜${score}｜${item.evidence || ""}`;
+          list.appendChild(li);
+        });
+        detail.append(summary, list);
+        actionCell.appendChild(detail);
+        tr.appendChild(actionCell);
+        tbody.appendChild(tr);
+      });
+      table.appendChild(tbody);
+      wrap.appendChild(table);
+      card.appendChild(wrap);
+      return card;
+    }
+
+    function formatMarketScreenPct(value) {
+      if (value === null || value === undefined || value === "") return "待確認";
+      const number = Number(value);
+      return Number.isFinite(number) ? `${number.toFixed(2)}%` : "待確認";
+    }
+
+    function formatMarketScreenNumber(value) {
+      if (value === null || value === undefined || value === "") return "待確認";
+      const number = Number(value);
+      return Number.isFinite(number) ? number.toLocaleString("zh-Hant") : "待確認";
     }
 
     function renderStockAnalysisRankingSummary(rankData) {
@@ -7102,6 +7274,7 @@ ${notes}`;
     }
     tryLoadStockUniverse();
     tryLoadTwWatchlistManifest();
+    tryLoadMarketScreen();
     tryLoadManifest();
     tryLoadPendingManifest();
     tryLoadAiResearchManifest();
