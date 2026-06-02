@@ -3173,8 +3173,8 @@ ${notes}`;
 
     function getInitialView() {
       const allowed = ["episode", "portfolio", "watchlist", "sectorAnalysis", "analysis", "marketScreen", "dailyAlerts", "ranking"];
-      const wanted = new URLSearchParams(window.location.search).get("view") || "portfolio";
-      return allowed.includes(wanted) ? wanted : "portfolio";
+      const wanted = new URLSearchParams(window.location.search).get("view") || "dailyAlerts";
+      return allowed.includes(wanted) ? wanted : "dailyAlerts";
     }
 
     function renderSectorAnalysisMain() {
