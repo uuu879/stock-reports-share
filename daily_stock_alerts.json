@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-06-03T00:46:29+08:00",
+  "generatedAt": "2026-06-03T01:00:57+08:00",
   "nearThresholdPct": 5.0,
   "count": 38,
-  "alertCount": 20,
+  "alertCount": 19,
   "alerts": [
     {
       "ticker": "2449",
@@ -129,69 +129,6 @@
         {
           "name": "TPEx 法說簡報：上詮光纖通信股份有限公司",
           "url": "https://www.tpex.org.tw/event/web/supervise_11411/1.3363%E4%B8%8A%E8%A9%AE.pdf"
-        }
-      ]
-    },
-    {
-      "ticker": "5009",
-      "company": "榮剛",
-      "analysisDate": "2026-05-31",
-      "analysisType": "初步分析",
-      "priceDate": "2026-06-02",
-      "close": 35.95,
-      "priceSource": "FinMind TaiwanStockPrice",
-      "status": "inside",
-      "statusText": "已進入觀察區",
-      "distancePct": 0.0,
-      "nearestZone": {
-        "low": 35.0,
-        "high": 36.0,
-        "label": "35.0-36.0元：5日與20日均線附近，也是5/29收盤區間"
-      },
-      "zones": [
-        {
-          "low": 35.0,
-          "high": 36.0,
-          "label": "35.0-36.0元：5日與20日均線附近，也是5/29收盤區間"
-        },
-        {
-          "low": 33.0,
-          "high": 34.0,
-          "label": "33.0-34.0元：60日均線與近60日回升支撐區"
-        }
-      ],
-      "stance": "20/39，僅觀察、不急著買；籌碼略改善，但等5-6月營收轉正與Q2毛利率確認。",
-      "summary": "榮剛（5009）評分20/39，落在僅觀察、不急著買區間。特殊鋼、航太、能源與軍工題材有下半年催化，本機Podcast資料庫也把它列為衛星AI算力的航太特殊材料候選；但這條太空材料連結仍待查證。官方資料顯示2026年4月營收10.39億元，MoM +0.67%、YoY -0.25%，1-4月累計YoY -3.96%；2026Q1 EPS 0.50元、低於去年同期0.63元。籌碼面較健康：5/29收36.05元、站上MA60約33.95元，TDCC 400張以上持股比例一週由48.95%升至49.01%，融資由9,369張降至9,228張。結論是可以追蹤，但還不是舒服的直接買進點。",
-      "importantMessages": [
-        "20/39落在僅觀察、不急著買區間；籌碼改善只是加分項，尚不足以抵銷財報與年營收未轉強。",
-        "TDCC大戶比例僅小幅週增，法人也只確認5/29單日買超，仍需觀察一至兩週是否持續。",
-        "若5-6月營收轉為年增、Q2營益率改善，且股價放量站回40-41元後回測不破，可提高研究權重。",
-        "若收盤跌破33元、月營收續弱，或高階新產能只增加折舊而沒有帶動產品組合，應降低研究權重。"
-      ],
-      "sourceLinks": [
-        {
-          "name": "TPEx OpenAPI - 上櫃股票行情",
-          "url": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes"
-        },
-        {
-          "name": "TPEx OpenAPI - 本益比、殖利率、股價淨值比",
-          "url": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_peratio_analysis"
-        },
-        {
-          "name": "TPEx OpenAPI - 三大法人買賣明細",
-          "url": "https://www.tpex.org.tw/openapi/v1/tpex_3insti_daily_trading"
-        },
-        {
-          "name": "TPEx OpenAPI - 融資融券餘額",
-          "url": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_margin_balance"
-        },
-        {
-          "name": "TPEx - 融資融券餘額歷史查詢",
-          "url": "https://www.tpex.org.tw/www/zh-tw/margin/balance?date=2026%2F05%2F29&id=&response=json"
-        },
-        {
-          "name": "TDCC - 集保戶股權分散表",
-          "url": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock"
         }
       ]
     },
@@ -1371,69 +1308,6 @@
         {
           "name": "TPEx 法說簡報：上詮光纖通信股份有限公司",
           "url": "https://www.tpex.org.tw/event/web/supervise_11411/1.3363%E4%B8%8A%E8%A9%AE.pdf"
-        }
-      ]
-    },
-    {
-      "ticker": "5009",
-      "company": "榮剛",
-      "analysisDate": "2026-05-31",
-      "analysisType": "初步分析",
-      "priceDate": "2026-06-02",
-      "close": 35.95,
-      "priceSource": "FinMind TaiwanStockPrice",
-      "status": "inside",
-      "statusText": "已進入觀察區",
-      "distancePct": 0.0,
-      "nearestZone": {
-        "low": 35.0,
-        "high": 36.0,
-        "label": "35.0-36.0元：5日與20日均線附近，也是5/29收盤區間"
-      },
-      "zones": [
-        {
-          "low": 35.0,
-          "high": 36.0,
-          "label": "35.0-36.0元：5日與20日均線附近，也是5/29收盤區間"
-        },
-        {
-          "low": 33.0,
-          "high": 34.0,
-          "label": "33.0-34.0元：60日均線與近60日回升支撐區"
-        }
-      ],
-      "stance": "20/39，僅觀察、不急著買；籌碼略改善，但等5-6月營收轉正與Q2毛利率確認。",
-      "summary": "榮剛（5009）評分20/39，落在僅觀察、不急著買區間。特殊鋼、航太、能源與軍工題材有下半年催化，本機Podcast資料庫也把它列為衛星AI算力的航太特殊材料候選；但這條太空材料連結仍待查證。官方資料顯示2026年4月營收10.39億元，MoM +0.67%、YoY -0.25%，1-4月累計YoY -3.96%；2026Q1 EPS 0.50元、低於去年同期0.63元。籌碼面較健康：5/29收36.05元、站上MA60約33.95元，TDCC 400張以上持股比例一週由48.95%升至49.01%，融資由9,369張降至9,228張。結論是可以追蹤，但還不是舒服的直接買進點。",
-      "importantMessages": [
-        "20/39落在僅觀察、不急著買區間；籌碼改善只是加分項，尚不足以抵銷財報與年營收未轉強。",
-        "TDCC大戶比例僅小幅週增，法人也只確認5/29單日買超，仍需觀察一至兩週是否持續。",
-        "若5-6月營收轉為年增、Q2營益率改善，且股價放量站回40-41元後回測不破，可提高研究權重。",
-        "若收盤跌破33元、月營收續弱，或高階新產能只增加折舊而沒有帶動產品組合，應降低研究權重。"
-      ],
-      "sourceLinks": [
-        {
-          "name": "TPEx OpenAPI - 上櫃股票行情",
-          "url": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes"
-        },
-        {
-          "name": "TPEx OpenAPI - 本益比、殖利率、股價淨值比",
-          "url": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_peratio_analysis"
-        },
-        {
-          "name": "TPEx OpenAPI - 三大法人買賣明細",
-          "url": "https://www.tpex.org.tw/openapi/v1/tpex_3insti_daily_trading"
-        },
-        {
-          "name": "TPEx OpenAPI - 融資融券餘額",
-          "url": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_margin_balance"
-        },
-        {
-          "name": "TPEx - 融資融券餘額歷史查詢",
-          "url": "https://www.tpex.org.tw/www/zh-tw/margin/balance?date=2026%2F05%2F29&id=&response=json"
-        },
-        {
-          "name": "TDCC - 集保戶股權分散表",
-          "url": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock"
         }
       ]
     },
@@ -3544,6 +3418,45 @@
         {
           "name": "財訊快報：智原先進製程與封裝進入量產初升段",
           "url": "https://www.investor.com.tw/onlineNews/NewsContent.asp?articleNo=14202604290097"
+        }
+      ]
+    },
+    {
+      "ticker": "5009",
+      "company": "榮剛",
+      "analysisDate": "2026-06-03",
+      "analysisType": "深度分析",
+      "priceDate": "2026-06-02",
+      "close": 35.95,
+      "priceSource": "FinMind TaiwanStockPrice",
+      "status": "missing",
+      "statusText": "缺少最新價格或可解析觀察區",
+      "distancePct": null,
+      "nearestZone": null,
+      "zones": [],
+      "stance": "20/39，題材結構佳但短線追高不划算（空手觀望）。榮剛為全球前十大合金棒鋼廠，航太（波音/空巴回升）、軍工（槍管材、飛彈殼體，2026Q1 接單明顯成長）、能源（油氣回溫＋AI 資料中心用電）三引擎，並切入 AI 伺服器液冷（CDU/CDM）不鏽鋼供應鏈，毛利率連三季回升（19.1%→23.2%→24.38%）、千張大戶 8 週淨增。但月營收 YoY 仍持平偏弱、2026Q1 EPS 0.5 元 YoY -21%、PER 約 18 倍不便宜，且股價 5 月衝上 40-42 元失敗回落，6/2 收 35.95 已跌破月線 36.37 與市場認定 36.5 關鍵支撐。空手者不追現價，優先等拉回 33-34 元季線區分批，或帶量站回 37 元且投信回補再追。",
+      "summary": "榮剛（5009，上櫃）2026-06-02 收 35.95 元，站上上彎季線（60 日均線 33.98）但跌破月線（36.37）與市場認定的 36.5 關鍵支撐，量縮整理；5 月一度放量衝上 40-42 元後失敗回落。基本面是航太、軍工、能源與 AI 伺服器液冷不鏽鋼題材帶動的毛利率復甦：毛利率由 2025Q3 的 19.1% 回升到 2026Q1 的 24.38%、營益率 2.7%→11.2%，但月營收 YoY 約 -0.25% 仍偏平、2026Q1 EPS 0.5 元 YoY -21%，估值 PER 約 18 倍、PBR 1.24 倍不算便宜。籌碼面乾淨（融資使用率約 6%、千張大戶近 8 週淨增 0.76pp、人數 43→49），法人近 20 日買超約 243 萬股但最近一兩日轉小賣、投信未參與，題材好但短線追高 CP 值低。",
+      "importantMessages": [
+        "月營收 YoY 仍持平偏弱、2026Q1 EPS YoY -21%，毛利率改善屬早期復甦而非營收爆發。",
+        "柳營新廠 2027Q1 量產為中期產能催化，2026 年內主要是毛利率與訂單能見度的故事。",
+        "5009 為上櫃股，XQ 匯入代碼為 5009.TWO。"
+      ],
+      "sourceLinks": [
+        {
+          "name": "理財周刊：航太軍工雙引擎火熱！榮剛(5009)放量突破40元",
+          "url": "https://www.moneyweekly.com.tw/ArticleData/Info/Article/225746"
+        },
+        {
+          "name": "MoneyDJ／LINE TODAY：榮剛航太/軍工/能源訂單穩，關鍵製程稼動率提升",
+          "url": "https://today.line.me/tw/v3/article/RBkG8GM"
+        },
+        {
+          "name": "財報狗 5009 榮剛",
+          "url": "https://statementdog.com/analysis/5009"
+        },
+        {
+          "name": "TDCC 集保戶股權分散表（歷史週查詢）",
+          "url": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock"
         }
       ]
     }
