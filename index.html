@@ -1659,7 +1659,7 @@
       pendingEpisodes: [],
       activeId: null,
       activePendingId: null,
-      activeView: "episode",
+      activeView: getInitialView(),
       tab: getInitialTab(),
       query: "",
       stockUniverse: [],
@@ -3147,6 +3147,12 @@ ${notes}`;
       const hashTab = window.location.hash ? window.location.hash.slice(1) : "";
       const wanted = queryTab || hashTab || "nextSteps";
       return allowed.includes(wanted) ? wanted : "summary";
+    }
+
+    function getInitialView() {
+      const allowed = ["episode", "portfolio", "watchlist", "sectorAnalysis", "analysis", "marketScreen", "ranking"];
+      const wanted = new URLSearchParams(window.location.search).get("view") || "portfolio";
+      return allowed.includes(wanted) ? wanted : "portfolio";
     }
 
     function renderSectorAnalysisMain() {
