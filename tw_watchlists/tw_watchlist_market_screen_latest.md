@@ -1,6 +1,6 @@
 # 台股 Podcast 熱度池市場快速初篩
 
-- 產生時間：2026-06-02T23:31:25
+- 產生時間：2026-06-03T00:12:31
 - 股票數：50
 - FINMIND 輕量資料集：TaiwanStockPrice, TaiwanStockInstitutionalInvestorsBuySell, TaiwanStockMarginPurchaseShortSale, TaiwanStockMonthRevenue, TaiwanStockPER
 - 用途：先挑出值得進入 TDCC、財報、新聞與 ai_reports 深度分析的標的，不是買進建議。

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-02T23:31:25",
+  "generatedAt": "2026-06-03T00:12:31",
   "source": "tw_watchlist_recent_heat + FinMind lightweight facts",
   "count": 50,
   "shortlistCount": 12,
@@ -96,8 +96,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 1,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 1
     },
     {
       "code": "3231",
@@ -175,8 +175,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 2,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 2
     },
     {
       "code": "2382",
@@ -255,8 +255,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 3,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 3
     },
     {
       "code": "2344",
@@ -335,8 +335,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 4,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 4
     },
     {
       "code": "2408",
@@ -415,8 +415,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 5,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 5
     },
     {
       "code": "6173",
@@ -495,8 +495,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 6,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 6
     },
     {
       "code": "2337",
@@ -575,8 +575,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 7,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 7
     },
     {
       "code": "2379",
@@ -654,8 +654,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 8,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 8
     },
     {
       "code": "3034",
@@ -733,8 +733,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 9,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 9
     },
     {
       "code": "2330",
@@ -813,8 +813,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 10,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 10
     },
     {
       "code": "2327",
@@ -893,8 +893,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 11,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 11
     },
     {
       "code": "5347",
@@ -973,8 +973,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 12,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 12
     }
   ],
   "records": [
@@ -1055,8 +1055,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 1,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 1
     },
     {
       "code": "3231",
@@ -1134,8 +1134,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 2,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 2
     },
     {
       "code": "2382",
@@ -1214,8 +1214,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 3,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 3
     },
     {
       "code": "2344",
@@ -1294,8 +1294,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 4,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 4
     },
     {
       "code": "2408",
@@ -1374,8 +1374,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 5,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 5
     },
     {
       "code": "6173",
@@ -1454,8 +1454,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 6,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 6
     },
     {
       "code": "2337",
@@ -1534,8 +1534,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 7,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 7
     },
     {
       "code": "2379",
@@ -1613,8 +1613,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 8,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 8
     },
     {
       "code": "3034",
@@ -1692,8 +1692,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 9,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 9
     },
     {
       "code": "2330",
@@ -1772,8 +1772,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 10,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 10
     },
     {
       "code": "2327",
@@ -1852,8 +1852,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 11,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 11
     },
     {
       "code": "5347",
@@ -1932,8 +1932,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 12,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 12
     },
     {
       "code": "6449",
@@ -2012,8 +2012,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 13,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 13
     },
     {
       "code": "3026",
@@ -2092,8 +2092,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 14,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 14
     },
     {
       "code": "6669",
@@ -2172,8 +2172,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 15,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 15
     },
     {
       "code": "3189",
@@ -2252,8 +2252,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 16,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 16
     },
     {
       "code": "3260",
@@ -2332,8 +2332,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 17,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 17
     },
     {
       "code": "3624",
@@ -2412,8 +2412,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 18,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 18
     },
     {
       "code": "3324",
@@ -2492,8 +2492,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 19,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 19
     },
     {
       "code": "8042",
@@ -2572,8 +2572,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 20,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 20
     },
     {
       "code": "3533",
@@ -2652,8 +2652,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 21,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 21
     },
     {
       "code": "3090",
@@ -2731,8 +2731,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 22,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 22
     },
     {
       "code": "3450",
@@ -2810,8 +2810,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 23,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 23
     },
     {
       "code": "6451",
@@ -2889,8 +2889,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 24,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 24
     },
     {
       "code": "2472",
@@ -2969,8 +2969,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 25,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 25
     },
     {
       "code": "3443",
@@ -3049,8 +3049,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 26,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 26
     },
     {
       "code": "4919",
@@ -3128,8 +3128,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 27,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 27
     },
     {
       "code": "5536",
@@ -3208,8 +3208,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 28,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 28
     },
     {
       "code": "6274",
@@ -3288,8 +3288,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 29,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 29
     },
     {
       "code": "8291",
@@ -3368,8 +3368,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 30,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 30
     },
     {
       "code": "2375",
@@ -3448,8 +3448,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 31,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 31
     },
     {
       "code": "2303",
@@ -3527,8 +3527,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 32,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 32
     },
     {
       "code": "6488",
@@ -3607,8 +3607,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 33,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 33
     },
     {
       "code": "2404",
@@ -3687,8 +3687,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 34,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 34
     },
     {
       "code": "3037",
@@ -3767,8 +3767,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 35,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 35
     },
     {
       "code": "3017",
@@ -3847,8 +3847,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 36,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 36
     },
     {
       "code": "2454",
@@ -3927,8 +3927,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 37,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 37
     },
     {
       "code": "3661",
@@ -4007,8 +4007,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 38,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 38
     },
     {
       "code": "3653",
@@ -4087,8 +4087,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 39,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 39
     },
     {
       "code": "4979",
@@ -4167,8 +4167,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 40,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 40
     },
     {
       "code": "6706",
@@ -4245,8 +4245,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 41,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 41
     },
     {
       "code": "8046",
@@ -4325,8 +4325,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 42,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 42
     },
     {
       "code": "2467",
@@ -4403,8 +4403,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 43,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 43
     },
     {
       "code": "3081",
@@ -4483,8 +4483,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 44,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 44
     },
     {
       "code": "5443",
@@ -4561,8 +4561,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 45,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 45
     },
     {
       "code": "3163",
@@ -4641,8 +4641,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 46,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 46
     },
     {
       "code": "3363",
@@ -4720,8 +4720,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 47,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 47
     },
     {
       "code": "4977",
@@ -4799,8 +4799,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 48,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 48
     },
     {
       "code": "6442",
@@ -4878,8 +4878,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 49,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 49
     },
     {
       "code": "0050",
@@ -4961,8 +4961,8 @@
         ]
       },
       "errors": [],
-      "screenRank": 50,
-      "cacheMode": "daily-cache"
+      "cacheMode": "finmind-api",
+      "screenRank": 50
     }
   ]
 }
