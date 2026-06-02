@@ -1,0 +1,4968 @@
+{
+  "generatedAt": "2026-06-02T23:31:25",
+  "source": "tw_watchlist_recent_heat + FinMind lightweight facts",
+  "count": 50,
+  "shortlistCount": 12,
+  "datasets": [
+    "TaiwanStockPrice",
+    "TaiwanStockInstitutionalInvestorsBuySell",
+    "TaiwanStockMarginPurchaseShortSale",
+    "TaiwanStockMonthRevenue",
+    "TaiwanStockPER"
+  ],
+  "scoreMax": 19,
+  "notes": [
+    "快速初篩分數用來挑選第二輪研究名單，不等於買進建議。",
+    "缺資料項目不硬評分；normalizedScore 以實際取得資料的有效滿分計算。",
+    "第二輪 shortlist 只納入 scoredMaxScore >= 16 的標的，避免 ETF 或資料缺漏標的因標準化分數失真。",
+    "同一天重跑預設沿用 .podcast-work/market_screen_cache；要強制刷新 FINMIND 時加 --refresh。",
+    "第二輪再補 TDCC 近 8 週大戶、完整財報、新聞、MOPS 與 ai_reports。"
+  ],
+  "shortlist": [
+    {
+      "code": "2492",
+      "name": "華新科",
+      "market": "上市",
+      "industry": "20. 電子零組件",
+      "screenScore": 16,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 84.2,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 456.0/403.4/267.7/177.38。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "價漲，量能未失控：日漲跌 9.62%，量比近 5 日均量 1.28x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步買超：5 日 10,856,008，20 日 59,713,800 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -242 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "年月雙增且 YoY 成長明顯：MoM 8.87%，YoY 16.04%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 87.36，PBR 4.13。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 6/50，熱度分數 60。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 456.0,
+        "changePct": 9.62,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 8.87,
+        "revenueYoyPct": 16.04,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 10856008.0,
+        "institutional20d": 59713800.0
+      },
+      "podcast": {
+        "heatSortRank": 6,
+        "hostDiscussionCompositeScore": 60,
+        "themes": [
+          "對應 EP666 Q&A「華新科跟光頡等臺灣備用廠商也在法說會表示會持續擴產」。",
+          "被動元件 / MLCC / 鋁電容 / 電感 / 電阻",
+          "對應EP662被動元件浪潮、電容與MLCC後續可能持續出現新狀況段落。"
+        ]
+      },
+      "errors": [],
+      "screenRank": 1,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "3231",
+      "name": "緯創",
+      "market": "上市",
+      "industry": "17. 電腦及週邊設備",
+      "screenScore": 16,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 84.2,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 191.0/162.6/146.32/137.6。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "上漲放量：日漲跌 9.77%，量比近 5 日均量 4.36x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步買超：5 日 164,047,001，20 日 194,081,864 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -5,709 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "YoY 成長：MoM -14.89%，YoY 111.99%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 1,
+          "maxScore": 2,
+          "evidence": "估值中性：PER 19.16，PBR 3.19。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 18/50，熱度分數 50。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 191.0,
+        "changePct": 9.77,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": -14.89,
+        "revenueYoyPct": 111.99,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 164047001.0,
+        "institutional20d": 194081864.0
+      },
+      "podcast": {
+        "heatSortRank": 18,
+        "hostDiscussionCompositeScore": 50,
+        "themes": [
+          "AI 伺服器 / Blackwell / 機櫃零組件",
+          "AI 伺服器 V 世代與 EMS 保產能 [bullish]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 2,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "2382",
+      "name": "廣達",
+      "market": "上市",
+      "industry": "17. 電腦及週邊設備",
+      "screenScore": 15,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 78.9,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 400.5/346.5/328.25/311.25。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "上漲放量：日漲跌 7.52%，量比近 5 日均量 2.55x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步買超：5 日 31,626,299，20 日 4,394,724 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -6,102 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "YoY 成長：MoM -6.31%，YoY 120.71%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 20.14，PBR 7.44。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 17/50，熱度分數 50。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 400.5,
+        "changePct": 7.52,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": -6.31,
+        "revenueYoyPct": 120.71,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 31626299.0,
+        "institutional20d": 4394724.0
+      },
+      "podcast": {
+        "heatSortRank": 17,
+        "hostDiscussionCompositeScore": 50,
+        "themes": [
+          "對應 EP666「鴻海跟廣達都直接鎖漲停」與老AI復辟段落。",
+          "AI 伺服器 / Blackwell / 機櫃零組件",
+          "對應 EP665「算力銷售或出租」與「AI伺服器放到軌道上」的伺服器模組。"
+        ]
+      },
+      "errors": [],
+      "screenRank": 3,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "2344",
+      "name": "華邦電",
+      "market": "上市",
+      "industry": "16. 半導體",
+      "screenScore": 15,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 78.9,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 184.5/161.9/131.78/109.62。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "價漲，量能未失控：日漲跌 9.82%，量比近 5 日均量 0.80x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步買超：5 日 75,661,480，20 日 404,991,948 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -318 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "年月雙增且 YoY 成長明顯：MoM 32.71%，YoY 182.22%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 54.75，PBR 7.12。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 20/50，熱度分數 48。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 184.5,
+        "changePct": 9.82,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 32.71,
+        "revenueYoyPct": 182.22,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 75661480.0,
+        "institutional20d": 404991948.0
+      },
+      "podcast": {
+        "heatSortRank": 20,
+        "hostDiscussionCompositeScore": 48,
+        "themes": [
+          "記憶體 / HBM / DDR / NAND",
+          "CPU 主線、socket、載板與記憶體外溢 [bullish]",
+          "記憶體與 SNDK [bullish]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 4,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "2408",
+      "name": "南亞科",
+      "market": "上市",
+      "industry": "16. 半導體",
+      "screenScore": 15,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 78.9,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 419.5/356.8/314.0/255.46。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "價漲，量能未失控：日漲跌 9.96%，量比近 5 日均量 1.00x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步買超：5 日 145,748,791，20 日 160,010,432 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -144 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "年月雙增且 YoY 成長明顯：MoM 40.29%，YoY 717.33%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 37.56，PBR 6.74。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 21/50，熱度分數 48。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 419.5,
+        "changePct": 9.96,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 40.29,
+        "revenueYoyPct": 717.33,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 145748791.0,
+        "institutional20d": 160010432.0
+      },
+      "podcast": {
+        "heatSortRank": 21,
+        "hostDiscussionCompositeScore": 48,
+        "themes": [
+          "記憶體 / HBM / DDR / NAND",
+          "CPU 主線、socket、載板與記憶體外溢 [bullish]",
+          "記憶體與 SNDK [bullish]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 5,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "6173",
+      "name": "信昌電",
+      "market": "上櫃",
+      "industry": "20. 電子零組件",
+      "screenScore": 14,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 73.7,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 231.5/230.2/177.05/106.17。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "下跌且量價偏弱：日漲跌 -2.32%，量比近 5 日均量 1.10x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步買超：5 日 405,759，20 日 17,629,783 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -112 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "年月雙增且 YoY 成長明顯：MoM 13.04%，YoY 20.36%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 62.06，PBR 4.45。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 8/50，熱度分數 60。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 231.5,
+        "changePct": -2.32,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 13.04,
+        "revenueYoyPct": 20.36,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 405759.0,
+        "institutional20d": 17629783.0
+      },
+      "podcast": {
+        "heatSortRank": 8,
+        "hostDiscussionCompositeScore": 60,
+        "themes": [
+          "被動元件 / MLCC / 鋁電容 / 電感 / 電阻",
+          "被動元件總主線 [bullish]",
+          "MLCC、47uF 與 22uF 料號 [bullish]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 6,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "2337",
+      "name": "旺宏",
+      "market": "上市",
+      "industry": "16. 半導體",
+      "screenScore": 14,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 73.7,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 175.5/165.0/158.75/142.21。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "價漲，量能未失控：日漲跌 4.78%，量比近 5 日均量 1.25x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步買超：5 日 93,105,933，20 日 83,571,587 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 1,
+          "maxScore": 2,
+          "evidence": "融資增加，需留意追價槓桿：融資日變化 1,324 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "年月雙增且 YoY 成長明顯：MoM 33.71%，YoY 153.71%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 0.0，PBR 6.86。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 13/50，熱度分數 53。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 175.5,
+        "changePct": 4.78,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 33.71,
+        "revenueYoyPct": 153.71,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 93105933.0,
+        "institutional20d": 83571587.0
+      },
+      "podcast": {
+        "heatSortRank": 13,
+        "hostDiscussionCompositeScore": 53,
+        "themes": [
+          "記憶體 / HBM / DDR / NAND",
+          "CPU 主線、socket、載板與記憶體外溢 [bullish]",
+          "記憶體與 SNDK [bullish]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 7,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "2379",
+      "name": "瑞昱",
+      "market": "上市",
+      "industry": "16. 半導體",
+      "screenScore": 14,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 73.7,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 653.0/608.2/576.25/529.65。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "上漲放量：日漲跌 7.22%，量比近 5 日均量 2.19x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步買超：5 日 2,461,417，20 日 11,200,880 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 1,
+          "maxScore": 2,
+          "evidence": "融資增加，需留意追價槓桿：融資日變化 444 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "年月雙增且 YoY 成長明顯：MoM 2.88%，YoY 11.28%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 23.51，PBR 7.45。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 46/50，熱度分數 33。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 653.0,
+        "changePct": 7.22,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 2.88,
+        "revenueYoyPct": 11.28,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 2461417.0,
+        "institutional20d": 11200880.0
+      },
+      "podcast": {
+        "heatSortRank": 46,
+        "hostDiscussionCompositeScore": 33,
+        "themes": [
+          "對應主持人提到瑞昱、聯詠轉強，可能類似 CPU/記憶體早期股價先行。",
+          "IC 設計輪動：瑞昱與聯詠 [watchful]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 8,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "3034",
+      "name": "聯詠",
+      "market": "上市",
+      "industry": "16. 半導體",
+      "screenScore": 14,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 73.7,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 507.0/488.8/481.52/424.23。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "上漲放量：日漲跌 2.11%，量比近 5 日均量 1.65x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步買超：5 日 2,812,744，20 日 25,194,879 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 1,
+          "maxScore": 2,
+          "evidence": "融資增加，需留意追價槓桿：融資日變化 68 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "YoY 成長：MoM 8.93%，YoY 1.16%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 1,
+          "maxScore": 2,
+          "evidence": "估值中性：PER 20.78，PBR 4.29。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 47/50，熱度分數 33。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 507.0,
+        "changePct": 2.11,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 8.93,
+        "revenueYoyPct": 1.16,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 2812744.0,
+        "institutional20d": 25194879.0
+      },
+      "podcast": {
+        "heatSortRank": 47,
+        "hostDiscussionCompositeScore": 33,
+        "themes": [
+          "對應 EP660 對 DDIC、筆電拉貨與補庫存的討論。",
+          "IC 設計輪動：瑞昱與聯詠 [watchful]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 9,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "2330",
+      "name": "台積電",
+      "market": "上市",
+      "industry": "16. 半導體",
+      "screenScore": 13,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 68.4,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 2380.0/2337.0/2273.75/2067.83。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "價漲，量能未失控：日漲跌 1.06%，量比近 5 日均量 0.74x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "近 5 日轉為買超：5 日 15,943,612，20 日 -23,312,963 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 1,
+          "maxScore": 2,
+          "evidence": "融資增加，需留意追價槓桿：融資日變化 56 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "YoY 成長：MoM -1.08%，YoY 17.50%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 32.0，PBR 10.48。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 1/50，熱度分數 81。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 2380.0,
+        "changePct": 1.06,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": -1.08,
+        "revenueYoyPct": 17.5,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 15943612.0,
+        "institutional20d": -23312963.0
+      },
+      "podcast": {
+        "heatSortRank": 1,
+        "hostDiscussionCompositeScore": 81,
+        "themes": [
+          "Google TPU / AI ASIC / 半導體測試",
+          "晶圓代工 / OSAT / 先進封裝產能",
+          "對應 EP664「AI 算力投資與產能爭奪」以及晶圓代工產能瓶頸。"
+        ]
+      },
+      "errors": [],
+      "screenRank": 10,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "2327",
+      "name": "國巨*",
+      "market": "上市",
+      "industry": "20. 電子零組件",
+      "screenScore": 13,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 68.4,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 846.0/763.4/556.75/375.38。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "價漲，量能未失控：日漲跌 7.09%，量比近 5 日均量 0.83x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近 20 日仍買超，但短線轉弱：5 日 -3,627,816，20 日 26,749,383 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 1,
+          "maxScore": 2,
+          "evidence": "融資增加，需留意追價槓桿：融資日變化 376 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "年月雙增且 YoY 成長明顯：MoM 3.00%，YoY 22.04%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 66.61，PBR 10.43。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 4/50，熱度分數 60。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 846.0,
+        "changePct": 7.09,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 3.0,
+        "revenueYoyPct": 22.04,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": -3627816.0,
+        "institutional20d": 26749383.0
+      },
+      "podcast": {
+        "heatSortRank": 4,
+        "hostDiscussionCompositeScore": 60,
+        "themes": [
+          "對應 EP666「被動元件還是非常強勢」「市場只有在看MLCC」。",
+          "被動元件 / MLCC / 鋁電容 / 電感 / 電阻",
+          "對應 EP664 的被動元件全面噴射、高壓 MLCC、供需瓶頸與報價/交期。"
+        ]
+      },
+      "errors": [],
+      "screenRank": 11,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "5347",
+      "name": "世界",
+      "market": "上櫃",
+      "industry": "16. 半導體",
+      "screenScore": 13,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 68.4,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 171.5/169.2/168.32/140.2。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "下跌且量價偏弱：日漲跌 -4.19%，量比近 5 日均量 1.33x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步買超：5 日 5,601,934，20 日 131,680,238 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -3,571 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "YoY 成長：MoM -18.50%，YoY 9.58%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 41.33，PBR 4.68。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 7/50，熱度分數 60。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 171.5,
+        "changePct": -4.19,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": -18.5,
+        "revenueYoyPct": 9.58,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 5601934.0,
+        "institutional20d": 131680238.0
+      },
+      "podcast": {
+        "heatSortRank": 7,
+        "hostDiscussionCompositeScore": 60,
+        "themes": [
+          "對應主持人說世界先進較不像單純補庫存，因特殊製程與新加坡廠產能被預訂。",
+          "成熟製程與 legacy 補庫存 [watchful]",
+          "對應 EP660「成熟製程與 consumer/industrial/auto 輪動」主線。"
+        ]
+      },
+      "errors": [],
+      "screenRank": 12,
+      "cacheMode": "daily-cache"
+    }
+  ],
+  "records": [
+    {
+      "code": "2492",
+      "name": "華新科",
+      "market": "上市",
+      "industry": "20. 電子零組件",
+      "screenScore": 16,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 84.2,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 456.0/403.4/267.7/177.38。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "價漲，量能未失控：日漲跌 9.62%，量比近 5 日均量 1.28x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步買超：5 日 10,856,008，20 日 59,713,800 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -242 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "年月雙增且 YoY 成長明顯：MoM 8.87%，YoY 16.04%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 87.36，PBR 4.13。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 6/50，熱度分數 60。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 456.0,
+        "changePct": 9.62,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 8.87,
+        "revenueYoyPct": 16.04,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 10856008.0,
+        "institutional20d": 59713800.0
+      },
+      "podcast": {
+        "heatSortRank": 6,
+        "hostDiscussionCompositeScore": 60,
+        "themes": [
+          "對應 EP666 Q&A「華新科跟光頡等臺灣備用廠商也在法說會表示會持續擴產」。",
+          "被動元件 / MLCC / 鋁電容 / 電感 / 電阻",
+          "對應EP662被動元件浪潮、電容與MLCC後續可能持續出現新狀況段落。"
+        ]
+      },
+      "errors": [],
+      "screenRank": 1,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "3231",
+      "name": "緯創",
+      "market": "上市",
+      "industry": "17. 電腦及週邊設備",
+      "screenScore": 16,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 84.2,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 191.0/162.6/146.32/137.6。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "上漲放量：日漲跌 9.77%，量比近 5 日均量 4.36x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步買超：5 日 164,047,001，20 日 194,081,864 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -5,709 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "YoY 成長：MoM -14.89%，YoY 111.99%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 1,
+          "maxScore": 2,
+          "evidence": "估值中性：PER 19.16，PBR 3.19。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 18/50，熱度分數 50。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 191.0,
+        "changePct": 9.77,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": -14.89,
+        "revenueYoyPct": 111.99,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 164047001.0,
+        "institutional20d": 194081864.0
+      },
+      "podcast": {
+        "heatSortRank": 18,
+        "hostDiscussionCompositeScore": 50,
+        "themes": [
+          "AI 伺服器 / Blackwell / 機櫃零組件",
+          "AI 伺服器 V 世代與 EMS 保產能 [bullish]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 2,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "2382",
+      "name": "廣達",
+      "market": "上市",
+      "industry": "17. 電腦及週邊設備",
+      "screenScore": 15,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 78.9,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 400.5/346.5/328.25/311.25。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "上漲放量：日漲跌 7.52%，量比近 5 日均量 2.55x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步買超：5 日 31,626,299，20 日 4,394,724 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -6,102 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "YoY 成長：MoM -6.31%，YoY 120.71%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 20.14，PBR 7.44。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 17/50，熱度分數 50。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 400.5,
+        "changePct": 7.52,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": -6.31,
+        "revenueYoyPct": 120.71,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 31626299.0,
+        "institutional20d": 4394724.0
+      },
+      "podcast": {
+        "heatSortRank": 17,
+        "hostDiscussionCompositeScore": 50,
+        "themes": [
+          "對應 EP666「鴻海跟廣達都直接鎖漲停」與老AI復辟段落。",
+          "AI 伺服器 / Blackwell / 機櫃零組件",
+          "對應 EP665「算力銷售或出租」與「AI伺服器放到軌道上」的伺服器模組。"
+        ]
+      },
+      "errors": [],
+      "screenRank": 3,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "2344",
+      "name": "華邦電",
+      "market": "上市",
+      "industry": "16. 半導體",
+      "screenScore": 15,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 78.9,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 184.5/161.9/131.78/109.62。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "價漲，量能未失控：日漲跌 9.82%，量比近 5 日均量 0.80x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步買超：5 日 75,661,480，20 日 404,991,948 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -318 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "年月雙增且 YoY 成長明顯：MoM 32.71%，YoY 182.22%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 54.75，PBR 7.12。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 20/50，熱度分數 48。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 184.5,
+        "changePct": 9.82,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 32.71,
+        "revenueYoyPct": 182.22,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 75661480.0,
+        "institutional20d": 404991948.0
+      },
+      "podcast": {
+        "heatSortRank": 20,
+        "hostDiscussionCompositeScore": 48,
+        "themes": [
+          "記憶體 / HBM / DDR / NAND",
+          "CPU 主線、socket、載板與記憶體外溢 [bullish]",
+          "記憶體與 SNDK [bullish]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 4,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "2408",
+      "name": "南亞科",
+      "market": "上市",
+      "industry": "16. 半導體",
+      "screenScore": 15,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 78.9,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 419.5/356.8/314.0/255.46。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "價漲，量能未失控：日漲跌 9.96%，量比近 5 日均量 1.00x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步買超：5 日 145,748,791，20 日 160,010,432 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -144 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "年月雙增且 YoY 成長明顯：MoM 40.29%，YoY 717.33%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 37.56，PBR 6.74。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 21/50，熱度分數 48。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 419.5,
+        "changePct": 9.96,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 40.29,
+        "revenueYoyPct": 717.33,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 145748791.0,
+        "institutional20d": 160010432.0
+      },
+      "podcast": {
+        "heatSortRank": 21,
+        "hostDiscussionCompositeScore": 48,
+        "themes": [
+          "記憶體 / HBM / DDR / NAND",
+          "CPU 主線、socket、載板與記憶體外溢 [bullish]",
+          "記憶體與 SNDK [bullish]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 5,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "6173",
+      "name": "信昌電",
+      "market": "上櫃",
+      "industry": "20. 電子零組件",
+      "screenScore": 14,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 73.7,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 231.5/230.2/177.05/106.17。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "下跌且量價偏弱：日漲跌 -2.32%，量比近 5 日均量 1.10x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步買超：5 日 405,759，20 日 17,629,783 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -112 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "年月雙增且 YoY 成長明顯：MoM 13.04%，YoY 20.36%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 62.06，PBR 4.45。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 8/50，熱度分數 60。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 231.5,
+        "changePct": -2.32,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 13.04,
+        "revenueYoyPct": 20.36,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 405759.0,
+        "institutional20d": 17629783.0
+      },
+      "podcast": {
+        "heatSortRank": 8,
+        "hostDiscussionCompositeScore": 60,
+        "themes": [
+          "被動元件 / MLCC / 鋁電容 / 電感 / 電阻",
+          "被動元件總主線 [bullish]",
+          "MLCC、47uF 與 22uF 料號 [bullish]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 6,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "2337",
+      "name": "旺宏",
+      "market": "上市",
+      "industry": "16. 半導體",
+      "screenScore": 14,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 73.7,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 175.5/165.0/158.75/142.21。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "價漲，量能未失控：日漲跌 4.78%，量比近 5 日均量 1.25x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步買超：5 日 93,105,933，20 日 83,571,587 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 1,
+          "maxScore": 2,
+          "evidence": "融資增加，需留意追價槓桿：融資日變化 1,324 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "年月雙增且 YoY 成長明顯：MoM 33.71%，YoY 153.71%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 0.0，PBR 6.86。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 13/50，熱度分數 53。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 175.5,
+        "changePct": 4.78,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 33.71,
+        "revenueYoyPct": 153.71,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 93105933.0,
+        "institutional20d": 83571587.0
+      },
+      "podcast": {
+        "heatSortRank": 13,
+        "hostDiscussionCompositeScore": 53,
+        "themes": [
+          "記憶體 / HBM / DDR / NAND",
+          "CPU 主線、socket、載板與記憶體外溢 [bullish]",
+          "記憶體與 SNDK [bullish]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 7,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "2379",
+      "name": "瑞昱",
+      "market": "上市",
+      "industry": "16. 半導體",
+      "screenScore": 14,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 73.7,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 653.0/608.2/576.25/529.65。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "上漲放量：日漲跌 7.22%，量比近 5 日均量 2.19x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步買超：5 日 2,461,417，20 日 11,200,880 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 1,
+          "maxScore": 2,
+          "evidence": "融資增加，需留意追價槓桿：融資日變化 444 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "年月雙增且 YoY 成長明顯：MoM 2.88%，YoY 11.28%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 23.51，PBR 7.45。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 46/50，熱度分數 33。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 653.0,
+        "changePct": 7.22,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 2.88,
+        "revenueYoyPct": 11.28,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 2461417.0,
+        "institutional20d": 11200880.0
+      },
+      "podcast": {
+        "heatSortRank": 46,
+        "hostDiscussionCompositeScore": 33,
+        "themes": [
+          "對應主持人提到瑞昱、聯詠轉強，可能類似 CPU/記憶體早期股價先行。",
+          "IC 設計輪動：瑞昱與聯詠 [watchful]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 8,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "3034",
+      "name": "聯詠",
+      "market": "上市",
+      "industry": "16. 半導體",
+      "screenScore": 14,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 73.7,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 507.0/488.8/481.52/424.23。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "上漲放量：日漲跌 2.11%，量比近 5 日均量 1.65x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步買超：5 日 2,812,744，20 日 25,194,879 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 1,
+          "maxScore": 2,
+          "evidence": "融資增加，需留意追價槓桿：融資日變化 68 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "YoY 成長：MoM 8.93%，YoY 1.16%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 1,
+          "maxScore": 2,
+          "evidence": "估值中性：PER 20.78，PBR 4.29。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 47/50，熱度分數 33。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 507.0,
+        "changePct": 2.11,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 8.93,
+        "revenueYoyPct": 1.16,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 2812744.0,
+        "institutional20d": 25194879.0
+      },
+      "podcast": {
+        "heatSortRank": 47,
+        "hostDiscussionCompositeScore": 33,
+        "themes": [
+          "對應 EP660 對 DDIC、筆電拉貨與補庫存的討論。",
+          "IC 設計輪動：瑞昱與聯詠 [watchful]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 9,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "2330",
+      "name": "台積電",
+      "market": "上市",
+      "industry": "16. 半導體",
+      "screenScore": 13,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 68.4,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 2380.0/2337.0/2273.75/2067.83。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "價漲，量能未失控：日漲跌 1.06%，量比近 5 日均量 0.74x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "近 5 日轉為買超：5 日 15,943,612，20 日 -23,312,963 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 1,
+          "maxScore": 2,
+          "evidence": "融資增加，需留意追價槓桿：融資日變化 56 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "YoY 成長：MoM -1.08%，YoY 17.50%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 32.0，PBR 10.48。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 1/50，熱度分數 81。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 2380.0,
+        "changePct": 1.06,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": -1.08,
+        "revenueYoyPct": 17.5,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 15943612.0,
+        "institutional20d": -23312963.0
+      },
+      "podcast": {
+        "heatSortRank": 1,
+        "hostDiscussionCompositeScore": 81,
+        "themes": [
+          "Google TPU / AI ASIC / 半導體測試",
+          "晶圓代工 / OSAT / 先進封裝產能",
+          "對應 EP664「AI 算力投資與產能爭奪」以及晶圓代工產能瓶頸。"
+        ]
+      },
+      "errors": [],
+      "screenRank": 10,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "2327",
+      "name": "國巨*",
+      "market": "上市",
+      "industry": "20. 電子零組件",
+      "screenScore": 13,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 68.4,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 846.0/763.4/556.75/375.38。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "價漲，量能未失控：日漲跌 7.09%，量比近 5 日均量 0.83x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近 20 日仍買超，但短線轉弱：5 日 -3,627,816，20 日 26,749,383 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 1,
+          "maxScore": 2,
+          "evidence": "融資增加，需留意追價槓桿：融資日變化 376 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "年月雙增且 YoY 成長明顯：MoM 3.00%，YoY 22.04%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 66.61，PBR 10.43。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 4/50，熱度分數 60。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 846.0,
+        "changePct": 7.09,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 3.0,
+        "revenueYoyPct": 22.04,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": -3627816.0,
+        "institutional20d": 26749383.0
+      },
+      "podcast": {
+        "heatSortRank": 4,
+        "hostDiscussionCompositeScore": 60,
+        "themes": [
+          "對應 EP666「被動元件還是非常強勢」「市場只有在看MLCC」。",
+          "被動元件 / MLCC / 鋁電容 / 電感 / 電阻",
+          "對應 EP664 的被動元件全面噴射、高壓 MLCC、供需瓶頸與報價/交期。"
+        ]
+      },
+      "errors": [],
+      "screenRank": 11,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "5347",
+      "name": "世界",
+      "market": "上櫃",
+      "industry": "16. 半導體",
+      "screenScore": 13,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 68.4,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 171.5/169.2/168.32/140.2。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "下跌且量價偏弱：日漲跌 -4.19%，量比近 5 日均量 1.33x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步買超：5 日 5,601,934，20 日 131,680,238 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -3,571 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "YoY 成長：MoM -18.50%，YoY 9.58%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 41.33，PBR 4.68。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 7/50，熱度分數 60。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 171.5,
+        "changePct": -4.19,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": -18.5,
+        "revenueYoyPct": 9.58,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 5601934.0,
+        "institutional20d": 131680238.0
+      },
+      "podcast": {
+        "heatSortRank": 7,
+        "hostDiscussionCompositeScore": 60,
+        "themes": [
+          "對應主持人說世界先進較不像單純補庫存，因特殊製程與新加坡廠產能被預訂。",
+          "成熟製程與 legacy 補庫存 [watchful]",
+          "對應 EP660「成熟製程與 consumer/industrial/auto 輪動」主線。"
+        ]
+      },
+      "errors": [],
+      "screenRank": 12,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "6449",
+      "name": "鈺邦",
+      "market": "上市",
+      "industry": "20. 電子零組件",
+      "screenScore": 13,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 68.4,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "收盤站上月線與季線：close/MA5/MA20/MA60 = 372.0/384.6/280.6/201.55。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "下跌且量價偏弱：日漲跌 -9.49%，量比近 5 日均量 1.69x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步買超：5 日 161,334，20 日 3,569,844 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -49 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "年月雙增且 YoY 成長明顯：MoM 14.74%，YoY 26.30%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 48.37，PBR 5.95。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 9/50，熱度分數 60。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 372.0,
+        "changePct": -9.49,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 14.74,
+        "revenueYoyPct": 26.3,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 161334.0,
+        "institutional20d": 3569844.0
+      },
+      "podcast": {
+        "heatSortRank": 9,
+        "hostDiscussionCompositeScore": 60,
+        "themes": [
+          "被動元件 / MLCC / 鋁電容 / 電感 / 電阻",
+          "被動元件總主線 [bullish]",
+          "鋁電容、固態電容與 OS-CON [bullish]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 13,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "3026",
+      "name": "禾伸堂",
+      "market": "上市",
+      "industry": "20. 電子零組件",
+      "screenScore": 13,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 68.4,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 650.0/635.2/443.5/261.87。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "下跌且量價偏弱：日漲跌 -3.27%，量比近 5 日均量 1.49x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步買超：5 日 1,106,488，20 日 17,445,464 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -27 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "年月雙增且 YoY 成長明顯：MoM 10.67%，YoY 21.12%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 83.76，PBR 11.13。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 14/50，熱度分數 53。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 650.0,
+        "changePct": -3.27,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 10.67,
+        "revenueYoyPct": 21.12,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 1106488.0,
+        "institutional20d": 17445464.0
+      },
+      "podcast": {
+        "heatSortRank": 14,
+        "hostDiscussionCompositeScore": 53,
+        "themes": [
+          "被動元件 / MLCC / 鋁電容 / 電感 / 電阻",
+          "對應 EP664 點名高壓 MLCC、47 麥/22 麥、power rack 與 AI 電源瓶頸。",
+          "對應 EP663 對高階 CSP / Cloud / AI 電源相關被動元件缺貨與漲價循環的討論。"
+        ]
+      },
+      "errors": [],
+      "screenRank": 14,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "6669",
+      "name": "緯穎",
+      "market": "上市",
+      "industry": "17. 電腦及週邊設備",
+      "screenScore": 13,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 68.4,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 5475.0/5292.0/5271.0/4396.42。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "震盪或量縮整理：日漲跌 -0.73%，量比近 5 日均量 0.79x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步買超：5 日 348,039，20 日 1,097,787 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -47 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "YoY 成長：MoM -16.14%，YoY 29.67%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 18.35，PBR 7.26。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 19/50，熱度分數 50。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 5475.0,
+        "changePct": -0.73,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": -16.14,
+        "revenueYoyPct": 29.67,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 348039.0,
+        "institutional20d": 1097787.0
+      },
+      "podcast": {
+        "heatSortRank": 19,
+        "hostDiscussionCompositeScore": 50,
+        "themes": [
+          "AI 伺服器 / Blackwell / 機櫃零組件",
+          "對應 EP665「SpaceX可能變成新型Neo Cloud，進行算力銷售或出租」。",
+          "衛星 AI 算力 / 軌道資料中心"
+        ]
+      },
+      "errors": [],
+      "screenRank": 15,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "3189",
+      "name": "景碩",
+      "market": "上市",
+      "industry": "16. 半導體",
+      "screenScore": 13,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 68.4,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 743.0/725.8/580.73/452.37。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "下跌且量價偏弱：日漲跌 -4.01%，量比近 5 日均量 0.33x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步買超：5 日 1,524,749，20 日 23,995,450 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -419 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "年月雙增且 YoY 成長明顯：MoM 3.38%，YoY 26.75%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 209.3，PBR 9.07。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 24/50，熱度分數 48。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 743.0,
+        "changePct": -4.01,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 3.38,
+        "revenueYoyPct": 26.75,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 1524749.0,
+        "institutional20d": 23995450.0
+      },
+      "podcast": {
+        "heatSortRank": 24,
+        "hostDiscussionCompositeScore": 48,
+        "themes": [
+          "載板 / CCL / 高速材料",
+          "CPU / Socket / Server side 零組件",
+          "CPU 主線、socket、載板與記憶體外溢 [bullish]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 16,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "3260",
+      "name": "威剛",
+      "market": "上櫃",
+      "industry": "16. 半導體",
+      "screenScore": 13,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 68.4,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "收盤站上月線與季線：close/MA5/MA20/MA60 = 469.5/425.7/428.5/403.87。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "上漲放量：日漲跌 9.95%，量比近 5 日均量 4.02x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "近 5 日轉為買超：5 日 6,591,204，20 日 -12,523,313 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 1,
+          "maxScore": 2,
+          "evidence": "融資增加，需留意追價槓桿：融資日變化 132 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "年月雙增且 YoY 成長明顯：MoM 0.18%，YoY 169.51%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 9.38，PBR 5.41。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 25/50，熱度分數 48。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 469.5,
+        "changePct": 9.95,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 0.18,
+        "revenueYoyPct": 169.51,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 6591204.0,
+        "institutional20d": -12523313.0
+      },
+      "podcast": {
+        "heatSortRank": 25,
+        "hostDiscussionCompositeScore": 48,
+        "themes": [
+          "記憶體 / HBM / DDR / NAND",
+          "記憶體與 SNDK [bullish]",
+          "對應 30:48-33:36 記憶體模組 Q&A。"
+        ]
+      },
+      "errors": [],
+      "screenRank": 17,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "3624",
+      "name": "光頡",
+      "market": "上櫃",
+      "industry": "20. 電子零組件",
+      "screenScore": 13,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 68.4,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 122.0/107.8/84.61/62.34。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "價漲，量能未失控：日漲跌 7.96%，量比近 5 日均量 0.91x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步買超：5 日 1,027,624，20 日 13,287,320 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -503 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "YoY 成長：MoM -1.05%，YoY 20.97%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 58.94，PBR 4.01。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 26/50，熱度分數 48。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 122.0,
+        "changePct": 7.96,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": -1.05,
+        "revenueYoyPct": 20.97,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 1027624.0,
+        "institutional20d": 13287320.0
+      },
+      "podcast": {
+        "heatSortRank": 26,
+        "hostDiscussionCompositeScore": 48,
+        "themes": [
+          "對應 EP666 Q&A「華新科跟光頡等臺灣被動廠商也在法說會表示會持續擴產」。",
+          "被動元件 / MLCC / 鋁電容 / 電感 / 電阻",
+          "鋁電容、電感與電阻第二層受惠 [bullish]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 18,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "3324",
+      "name": "雙鴻",
+      "market": "上櫃",
+      "industry": "23. 其他電子",
+      "screenScore": 13,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 68.4,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 1165.0/1083.0/1040.35/1035.17。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "上漲放量：日漲跌 1.75%，量比近 5 日均量 2.03x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "近 5 日轉為買超：5 日 3,668,360，20 日 -4,501,124 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -264 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "YoY 成長：MoM -14.62%，YoY 40.90%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 33.62，PBR 8.08。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 30/50，熱度分數 40。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 1165.0,
+        "changePct": 1.75,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": -14.62,
+        "revenueYoyPct": 40.9,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 3668360.0,
+        "institutional20d": -4501124.0
+      },
+      "podcast": {
+        "heatSortRank": 30,
+        "hostDiscussionCompositeScore": 40,
+        "themes": [
+          "AI 伺服器 / Blackwell / 機櫃零組件",
+          "散熱族群與小作文消息 [watchful]",
+          "CPU / Socket / Server side 零組件"
+        ]
+      },
+      "errors": [],
+      "screenRank": 19,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "8042",
+      "name": "金山電",
+      "market": "上櫃",
+      "industry": "20. 電子零組件",
+      "screenScore": 12,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 63.2,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 162.0/157.5/119.8/78.39。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "下跌且量價偏弱：日漲跌 -4.14%，量比近 5 日均量 0.74x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近 20 日仍買超，但短線轉弱：5 日 -236,406，20 日 11,128,116 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -332 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "年月雙增且 YoY 成長明顯：MoM 14.99%，YoY 32.83%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 51.76，PBR 4.97。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 10/50，熱度分數 60。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 162.0,
+        "changePct": -4.14,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 14.99,
+        "revenueYoyPct": 32.83,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": -236406.0,
+        "institutional20d": 11128116.0
+      },
+      "podcast": {
+        "heatSortRank": 10,
+        "hostDiscussionCompositeScore": 60,
+        "themes": [
+          "被動元件 / MLCC / 鋁電容 / 電感 / 電阻",
+          "對應主持人提到台灣鋁電容廠跟隨海外強勢與供需變化。",
+          "被動元件總主線 [bullish]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 20,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "3533",
+      "name": "嘉澤",
+      "market": "上市",
+      "industry": "20. 電子零組件",
+      "screenScore": 12,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 63.2,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 2615.0/2610.0/2583.5/2324.42。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "下跌且量價偏弱：日漲跌 -2.24%，量比近 5 日均量 0.84x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步買超：5 日 58,701，20 日 784,635 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -34 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "YoY 成長：MoM -4.29%，YoY 15.21%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 36.74，PBR 7.0。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 12/50，熱度分數 55。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 2615.0,
+        "changePct": -2.24,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": -4.29,
+        "revenueYoyPct": 15.21,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 58701.0,
+        "institutional20d": 784635.0
+      },
+      "podcast": {
+        "heatSortRank": 12,
+        "hostDiscussionCompositeScore": 55,
+        "themes": [
+          "對應主持人回應聽眾持有 CPU Socket 嘉澤，並稱其為 CPU 題材 spillover。",
+          "先進製程設備、CPU Socket 與新唐 [watchful]",
+          "CPU / Socket / Server side 零組件"
+        ]
+      },
+      "errors": [],
+      "screenRank": 21,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "3090",
+      "name": "日電貿",
+      "market": "上市",
+      "industry": "20. 電子零組件",
+      "screenScore": 12,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 63.2,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "收盤站上月線與季線：close/MA5/MA20/MA60 = 220.0/224.4/172.82/122.79。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "下跌且量價偏弱：日漲跌 -5.78%，量比近 5 日均量 0.67x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步買超：5 日 2,958,423，20 日 18,845,939 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -170 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "年月雙增且 YoY 成長明顯：MoM 18.11%，YoY 28.14%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 45.83，PBR 3.59。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 23/50，熱度分數 48。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 220.0,
+        "changePct": -5.78,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 18.11,
+        "revenueYoyPct": 28.14,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 2958423.0,
+        "institutional20d": 18845939.0
+      },
+      "podcast": {
+        "heatSortRank": 23,
+        "hostDiscussionCompositeScore": 48,
+        "themes": [
+          "被動元件 / MLCC / 鋁電容 / 電感 / 電阻",
+          "鋁電容、電感與電阻第二層受惠 [bullish]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 22,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "3450",
+      "name": "聯鈞",
+      "market": "上市",
+      "industry": "16. 半導體",
+      "screenScore": 12,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 63.2,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 548.0/511.9/449.7/347.41。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "上漲放量：日漲跌 1.67%，量比近 5 日均量 2.56x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近 20 日仍買超，但短線轉弱：5 日 -560,352，20 日 10,553,384 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 1,
+          "maxScore": 2,
+          "evidence": "融資增加，需留意追價槓桿：融資日變化 182 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "年月雙增且 YoY 成長明顯：MoM 20.62%，YoY 45.50%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 163.1，PBR 15.31。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 38/50，熱度分數 35。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 548.0,
+        "changePct": 1.67,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 20.62,
+        "revenueYoyPct": 45.5,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": -560352.0,
+        "institutional20d": 10553384.0
+      },
+      "podcast": {
+        "heatSortRank": 38,
+        "hostDiscussionCompositeScore": 35,
+        "themes": [
+          "光通 / 雷射 / 光模組",
+          "光通族群 [watchful]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 23,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "6451",
+      "name": "訊芯-KY",
+      "market": "上市",
+      "industry": "16. 半導體",
+      "screenScore": 12,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 63.2,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 659.0/605.4/532.4/412.73。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "上漲放量：日漲跌 5.10%，量比近 5 日均量 1.67x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步買超：5 日 644,001，20 日 2,934,285 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 1,
+          "maxScore": 2,
+          "evidence": "融資增加，需留意追價槓桿：融資日變化 115 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "MoM 回升，但 YoY 尚未轉正：MoM 11.80%，YoY -2.79%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 0.0，PBR 9.98。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 50/50，熱度分數 31。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 659.0,
+        "changePct": 5.1,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 11.8,
+        "revenueYoyPct": -2.79,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 644001.0,
+        "institutional20d": 2934285.0
+      },
+      "podcast": {
+        "heatSortRank": 50,
+        "hostDiscussionCompositeScore": 31,
+        "themes": [
+          "光通 / 雷射 / 光模組",
+          "訊芯-KY 與 AI infra 題材股 [watchful]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 24,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "2472",
+      "name": "立隆電",
+      "market": "上市",
+      "industry": "20. 電子零組件",
+      "screenScore": 11,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 57.9,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 380.0/370.3/271.27/187.79。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "下跌且量價偏弱：日漲跌 -3.06%，量比近 5 日均量 0.38x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "近 5 日轉為買超：5 日 577,351，20 日 -2,540,930 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "股價未漲但融資增加：融資日變化 402 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "年月雙增且 YoY 成長明顯：MoM 7.19%，YoY 14.52%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 43.93，PBR 6.51。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 5/50，熱度分數 60。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 380.0,
+        "changePct": -3.06,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 7.19,
+        "revenueYoyPct": 14.52,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 577351.0,
+        "institutional20d": -2540930.0
+      },
+      "podcast": {
+        "heatSortRank": 5,
+        "hostDiscussionCompositeScore": 60,
+        "themes": [
+          "對應 EP666「鋁電容這邊出事情了」「全球缺口大概是高達20幾%」。",
+          "被動元件 / MLCC / 鋁電容 / 電感 / 電阻",
+          "對應EP662 Panasonic OS-CON舊產品淘汰、EDLC/SCAP超級電容漲價與鋁電解電容段落。"
+        ]
+      },
+      "errors": [],
+      "screenRank": 25,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "3443",
+      "name": "創意",
+      "market": "上市",
+      "industry": "16. 半導體",
+      "screenScore": 11,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 57.9,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "收盤站上季線，但短線尚未轉強：close/MA5/MA20/MA60 = 4535.0/4710.0/5016.25/3646.75。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "下跌且量價偏弱：日漲跌 -2.58%，量比近 5 日均量 0.74x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步買超：5 日 129,808，20 日 1,413,157 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -110 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "年月雙增且 YoY 成長明顯：MoM 11.23%，YoY 156.85%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 136.43，PBR 41.67。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 15/50，熱度分數 51。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 4535.0,
+        "changePct": -2.58,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 11.23,
+        "revenueYoyPct": 156.85,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 129808.0,
+        "institutional20d": 1413157.0
+      },
+      "podcast": {
+        "heatSortRank": 15,
+        "hostDiscussionCompositeScore": 51,
+        "themes": [
+          "Google TPU / AI ASIC / 半導體測試",
+          "對應 EP659「台股 ASIC 全噴」與 Google chain 段落。",
+          "台股 ASIC：創意與世芯-KY [bullish]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 26,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "4919",
+      "name": "新唐",
+      "market": "上市",
+      "industry": "16. 半導體",
+      "screenScore": 11,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 57.9,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 211.0/201.1/181.55/133.85。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "價漲，量能未失控：日漲跌 1.44%，量比近 5 日均量 0.15x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近 20 日仍買超，但短線轉弱：5 日 -588,159，20 日 71,985 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -1,150 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "YoY 成長：MoM -19.81%，YoY 1.59%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 0.0，PBR 6.7。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 39/50，熱度分數 35。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 211.0,
+        "changePct": 1.44,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": -19.81,
+        "revenueYoyPct": 1.59,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": -588159.0,
+        "institutional20d": 71985.0
+      },
+      "podcast": {
+        "heatSortRank": 39,
+        "hostDiscussionCompositeScore": 35,
+        "themes": [
+          "對應主持人說新唐舊故事被重新拿出來講，重點要回到 MCU 改善。",
+          "先進製程設備、CPU Socket 與新唐 [watchful]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 27,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "5536",
+      "name": "聖暉*",
+      "market": "上櫃",
+      "industry": "23. 其他電子",
+      "screenScore": 11,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 57.9,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "收盤站上月線與季線：close/MA5/MA20/MA60 = 998.0/1028.2/959.5/831.57。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "震盪或量縮整理：日漲跌 -0.70%，量比近 5 日均量 0.44x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步買超：5 日 616,839，20 日 4,497,533 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -2 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "YoY 成長：MoM -21.27%，YoY 15.17%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 27.72，PBR 9.45。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 43/50，熱度分數 35。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 998.0,
+        "changePct": -0.7,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": -21.27,
+        "revenueYoyPct": 15.17,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 616839.0,
+        "institutional20d": 4497533.0
+      },
+      "podcast": {
+        "heatSortRank": 43,
+        "hostDiscussionCompositeScore": 35,
+        "themes": [
+          "建廠工程 / 無塵室 / 廠務",
+          "對應 EP664「建廠工程與無塵室受惠落後」。",
+          "廠務工程：漢唐與聖暉 [watchful]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 28,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "6274",
+      "name": "台燿",
+      "market": "上櫃",
+      "industry": "20. 電子零組件",
+      "screenScore": 11,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 57.9,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "收盤站上月線與季線：close/MA5/MA20/MA60 = 1590.0/1631.0/1452.25/976.16。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "下跌且量價偏弱：日漲跌 -6.74%，量比近 5 日均量 0.87x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步買超：5 日 2,109,423，20 日 3,766,378 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -487 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "年月雙增且 YoY 成長明顯：MoM 21.91%，YoY 95.61%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 114.88，PBR 25.42。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 48/50，熱度分數 33。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 1590.0,
+        "changePct": -6.74,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 21.91,
+        "revenueYoyPct": 95.61,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 2109423.0,
+        "institutional20d": 3766378.0
+      },
+      "podcast": {
+        "heatSortRank": 48,
+        "hostDiscussionCompositeScore": 33,
+        "themes": [
+          "載板 / CCL / 高速材料",
+          "CPU / Socket / Server side 零組件",
+          "NVIDIA 散熱材料與 TIM / BOM 調整供應鏈 [watchful]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 29,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "8291",
+      "name": "尚茂",
+      "market": "上櫃",
+      "industry": "20. 電子零組件",
+      "screenScore": 9,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 17,
+      "normalizedScore": 52.9,
+      "coveragePct": 89.5,
+      "shortlistEligible": true,
+      "missingFactors": [
+        "融資變化"
+      ],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "收盤站上月線與季線：close/MA5/MA20/MA60 = 97.2/115.84/75.18/32.05。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "下跌且量價偏弱：日漲跌 -10.00%，量比近 5 日均量 0.14x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步買超：5 日 4,342，20 日 5,816 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": null,
+          "maxScore": 2,
+          "evidence": "缺少融資資料。"
+        },
+        {
+          "factor": "月營收",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "年月雙增且 YoY 成長明顯：MoM 78.64%，YoY 345.27%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 0.0，PBR 25.99。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 49/50，熱度分數 31。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 97.2,
+        "changePct": -10.0,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 78.64,
+        "revenueYoyPct": 345.27,
+        "institutionalDate": "2026-05-29",
+        "institutional5d": 4342.0,
+        "institutional20d": 5816.0
+      },
+      "podcast": {
+        "heatSortRank": 49,
+        "hostDiscussionCompositeScore": 31,
+        "themes": [
+          "8291 與處置制度 [neutral]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 30,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "2375",
+      "name": "凱美",
+      "market": "上市",
+      "industry": "20. 電子零組件",
+      "screenScore": 10,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 52.6,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 162.5/160.3/119.98/94.49。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "震盪或量縮整理：日漲跌 -0.91%，量比近 5 日均量 0.17x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近 20 日仍買超，但短線轉弱：5 日 -254,625，20 日 4,494,430 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -402 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "MoM 回升，但 YoY 尚未轉正：MoM 7.03%，YoY -0.29%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 49.39，PBR 1.76。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 11/50，熱度分數 55。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 162.5,
+        "changePct": -0.91,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 7.03,
+        "revenueYoyPct": -0.29,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": -254625.0,
+        "institutional20d": 4494430.0
+      },
+      "podcast": {
+        "heatSortRank": 11,
+        "hostDiscussionCompositeScore": 55,
+        "themes": [
+          "被動元件 / MLCC / 鋁電容 / 電感 / 電阻",
+          "被動元件總主線 [bullish]",
+          "鋁電容、固態電容與 OS-CON [bullish]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 31,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "2303",
+      "name": "聯電",
+      "market": "上市",
+      "industry": "16. 半導體",
+      "screenScore": 9,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 47.4,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "收盤站上月線與季線：close/MA5/MA20/MA60 = 141.5/143.5/116.5/81.89。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "下跌且量價偏弱：日漲跌 -3.08%，量比近 5 日均量 1.16x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近 20 日仍買超，但短線轉弱：5 日 -156,433,701，20 日 8,598,827 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -7,123 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "年月雙增且 YoY 成長明顯：MoM 8.80%，YoY 10.80%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 35.55，PBR 4.38。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 28/50，熱度分數 40。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 141.5,
+        "changePct": -3.08,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 8.8,
+        "revenueYoyPct": 10.8,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": -156433701.0,
+        "institutional20d": 8598827.0
+      },
+      "podcast": {
+        "heatSortRank": 28,
+        "hostDiscussionCompositeScore": 40,
+        "themes": [
+          "成熟製程與 legacy 補庫存 [watchful]",
+          "成熟製程與 legacy 輪動 [watchful]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 32,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "6488",
+      "name": "環球晶",
+      "market": "上櫃",
+      "industry": "16. 半導體",
+      "screenScore": 9,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 47.4,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "收盤站上月線與季線：close/MA5/MA20/MA60 = 940.0/952.4/800.95/595.78。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "震盪或量縮整理：日漲跌 -1.05%，量比近 5 日均量 0.15x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步買超：5 日 8,154,362，20 日 13,639,612 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -167 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "年月雙減：MoM -12.82%，YoY -10.13%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 57.99，PBR 4.81。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 32/50，熱度分數 38。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 940.0,
+        "changePct": -1.05,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": -12.82,
+        "revenueYoyPct": -10.13,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 8154362.0,
+        "institutional20d": 13639612.0
+      },
+      "podcast": {
+        "heatSortRank": 32,
+        "hostDiscussionCompositeScore": 38,
+        "themes": [
+          "對應 EP660 中矽晶圓與成熟製程族群開始轉強的段落。",
+          "矽晶圓與環球晶 [watchful]",
+          "對應一軍軟掉後二軍候補的矽晶圓段落。"
+        ]
+      },
+      "errors": [],
+      "screenRank": 33,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "2404",
+      "name": "漢唐",
+      "market": "上市",
+      "industry": "23. 其他電子",
+      "screenScore": 9,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 47.4,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "收盤站上月線與季線：close/MA5/MA20/MA60 = 1150.0/1175.0/1089.45/997.22。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "下跌且量價偏弱：日漲跌 -2.13%，量比近 5 日均量 0.79x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近 20 日仍買超，但短線轉弱：5 日 -762,742，20 日 11,514,180 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -45 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "年月雙增且 YoY 成長明顯：MoM 5.39%，YoY 102.23%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 21.38，PBR 15.1。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 33/50，熱度分數 35。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 1150.0,
+        "changePct": -2.13,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 5.39,
+        "revenueYoyPct": 102.23,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": -762742.0,
+        "institutional20d": 11514180.0
+      },
+      "podcast": {
+        "heatSortRank": 33,
+        "hostDiscussionCompositeScore": 35,
+        "themes": [
+          "建廠工程 / 無塵室 / 廠務",
+          "對應 EP664「建廠工程與無塵室受惠落後」。",
+          "對應主持人提到漢唐 Q1 財報、毛利率與市場對台積電相關工程股的疑慮。"
+        ]
+      },
+      "errors": [],
+      "screenRank": 34,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "3037",
+      "name": "欣興",
+      "market": "上市",
+      "industry": "20. 電子零組件",
+      "screenScore": 8,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 42.1,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "收盤站上月線與季線：close/MA5/MA20/MA60 = 975.0/1037.0/924.7/712.99。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "下跌且量價偏弱：日漲跌 -7.14%，量比近 5 日均量 1.16x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近 20 日仍買超，但短線轉弱：5 日 -8,200,479，20 日 5,231,170 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "股價未漲但融資增加：融資日變化 178 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "年月雙增且 YoY 成長明顯：MoM 6.53%，YoY 27.64%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 143.38，PBR 13.66。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 22/50，熱度分數 48。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 975.0,
+        "changePct": -7.14,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 6.53,
+        "revenueYoyPct": 27.64,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": -8200479.0,
+        "institutional20d": 5231170.0
+      },
+      "podcast": {
+        "heatSortRank": 22,
+        "hostDiscussionCompositeScore": 48,
+        "themes": [
+          "載板 / CCL / 高速材料",
+          "CPU / Socket / Server side 零組件",
+          "CPU 主線、socket、載板與記憶體外溢 [bullish]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 35,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "3017",
+      "name": "奇鋐",
+      "market": "上市",
+      "industry": "17. 電腦及週邊設備",
+      "screenScore": 8,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 42.1,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 2700.0/2686.0/2543.75/2347.17。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "下跌且量價偏弱：日漲跌 -3.05%，量比近 5 日均量 0.70x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "近 5 日轉為買超：5 日 872,379，20 日 -5,366,181 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "股價未漲但融資增加：融資日變化 100 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "YoY 成長：MoM -13.24%，YoY 71.62%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 44.36，PBR 23.47。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 29/50，熱度分數 40。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 2700.0,
+        "changePct": -3.05,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": -13.24,
+        "revenueYoyPct": 71.62,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": 872379.0,
+        "institutional20d": -5366181.0
+      },
+      "podcast": {
+        "heatSortRank": 29,
+        "hostDiscussionCompositeScore": 40,
+        "themes": [
+          "AI 伺服器 / Blackwell / 機櫃零組件",
+          "對應 EP665「軌道伺服器上散熱片可能超級大，太陽能板與散熱都可能帶來巨額收入」。",
+          "衛星 AI 算力 / 軌道資料中心"
+        ]
+      },
+      "errors": [],
+      "screenRank": 36,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "2454",
+      "name": "聯發科",
+      "market": "上市",
+      "industry": "16. 半導體",
+      "screenScore": 7,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 36.8,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 4525.0/4488.0/3818.25/2527.25。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "震盪或量縮整理：日漲跌 -0.66%，量比近 5 日均量 0.80x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步賣超：5 日 -1,831,941，20 日 -7,271,162 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "股價未漲但融資增加：融資日變化 2 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "年月雙減：MoM -26.07%，YoY -4.14%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 72.11，PBR 18.51。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 3/50，熱度分數 70。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 4525.0,
+        "changePct": -0.66,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": -26.07,
+        "revenueYoyPct": -4.14,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": -1831941.0,
+        "institutional20d": -7271162.0
+      },
+      "podcast": {
+        "heatSortRank": 3,
+        "hostDiscussionCompositeScore": 70,
+        "themes": [
+          "Google TPU / AI ASIC / 半導體測試",
+          "對應 EP664「Google TPU Cloud 與 TPU supply chain」。",
+          "台積電、聯發科與權值防守 [watchful]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 37,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "3661",
+      "name": "世芯-KY",
+      "market": "上市",
+      "industry": "16. 半導體",
+      "screenScore": 7,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 36.8,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "收盤站上季線，但短線尚未轉強：close/MA5/MA20/MA60 = 4575.0/4529.0/4737.75/3816.17。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "下跌且量價偏弱：日漲跌 -5.77%，量比近 5 日均量 0.90x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近 20 日仍買超，但短線轉弱：5 日 -297,912，20 日 330,486 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -27 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "MoM 回升，但 YoY 尚未轉正：MoM 10.32%，YoY -32.31%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 67.05，PBR 8.64。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 16/50，熱度分數 51。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 4575.0,
+        "changePct": -5.77,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 10.32,
+        "revenueYoyPct": -32.31,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": -297912.0,
+        "institutional20d": 330486.0
+      },
+      "podcast": {
+        "heatSortRank": 16,
+        "hostDiscussionCompositeScore": 51,
+        "themes": [
+          "Google TPU / AI ASIC / 半導體測試",
+          "對應主持人提到 3661 高度綁定 Amazon Trainium。",
+          "台股 ASIC：創意與世芯-KY [bullish]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 38,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "3653",
+      "name": "健策",
+      "market": "上市",
+      "industry": "20. 電子零組件",
+      "screenScore": 7,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 36.8,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "收盤低於季線：close/MA5/MA20/MA60 = 3990.0/3709.0/3624.5/4020.67。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "價漲，量能未失控：日漲跌 3.91%，量比近 5 日均量 1.39x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步賣超：5 日 -532,737，20 日 -3,458,503 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 1,
+          "maxScore": 2,
+          "evidence": "融資增加，需留意追價槓桿：融資日變化 9 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "年月雙增且 YoY 成長明顯：MoM 6.82%，YoY 26.92%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 110.37，PBR 27.64。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 31/50，熱度分數 40。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 3990.0,
+        "changePct": 3.91,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 6.82,
+        "revenueYoyPct": 26.92,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": -532737.0,
+        "institutional20d": -3458503.0
+      },
+      "podcast": {
+        "heatSortRank": 31,
+        "hostDiscussionCompositeScore": 40,
+        "themes": [
+          "AI 伺服器 / Blackwell / 機櫃零組件",
+          "散熱族群與小作文消息 [watchful]",
+          "CPU / Socket / Server side 零組件"
+        ]
+      },
+      "errors": [],
+      "screenRank": 39,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "4979",
+      "name": "華星光",
+      "market": "上櫃",
+      "industry": "19. 通信網路",
+      "screenScore": 6,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 31.6,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 630.0/627.2/622.2/523.51。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "下跌且量價偏弱：日漲跌 -3.08%，量比近 5 日均量 1.74x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步賣超：5 日 -2,398,842，20 日 -8,949,999 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "股價未漲但融資增加：融資日變化 49 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "YoY 成長：MoM -8.59%，YoY 7.73%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 113.92，PBR 21.7。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 41/50，熱度分數 35。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 630.0,
+        "changePct": -3.08,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": -8.59,
+        "revenueYoyPct": 7.73,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": -2398842.0,
+        "institutional20d": -8949999.0
+      },
+      "podcast": {
+        "heatSortRank": 41,
+        "hostDiscussionCompositeScore": 35,
+        "themes": [
+          "光通 / 雷射 / 光模組",
+          "對應 EP663 Q&A 中主持人認為光通市場長線成長性很好、不要只看短線跌幅的觀點。",
+          "光通族群 [watchful]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 40,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "6706",
+      "name": "惠特",
+      "market": "上市",
+      "industry": "18. 光電",
+      "screenScore": 6,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 31.6,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "收盤站上月線與季線：close/MA5/MA20/MA60 = 207.0/209.6/181.2/147.84。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "下跌且量價偏弱：日漲跌 -4.39%，量比近 5 日均量 0.58x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步賣超：5 日 -3,767,877，20 日 -6,867,584 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -823 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "年月雙減：MoM -2.72%，YoY -41.84%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 1,
+          "maxScore": 2,
+          "evidence": "估值中性：PER 0.0，PBR 4.32。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 45/50，熱度分數 35。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 207.0,
+        "changePct": -4.39,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": -2.72,
+        "revenueYoyPct": -41.84,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": -3767877.0,
+        "institutional20d": -6867584.0
+      },
+      "podcast": {
+        "heatSortRank": 45,
+        "hostDiscussionCompositeScore": 35,
+        "themes": [
+          "先進製程設備、CPU Socket 與新唐 [watchful]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 41,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "8046",
+      "name": "南電",
+      "market": "上市",
+      "industry": "20. 電子零組件",
+      "screenScore": 5,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 26.3,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "收盤站上季線，但短線尚未轉強：close/MA5/MA20/MA60 = 862.0/874.0/873.1/729.33。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "下跌且量價偏弱：日漲跌 -4.75%，量比近 5 日均量 0.67x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步賣超：5 日 -5,773,286，20 日 -8,696,220 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "股價未漲但融資增加：融資日變化 806 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "年月雙增且 YoY 成長明顯：MoM 3.73%，YoY 39.47%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 182.63，PBR 11.93。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 27/50，熱度分數 48。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 862.0,
+        "changePct": -4.75,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 3.73,
+        "revenueYoyPct": 39.47,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": -5773286.0,
+        "institutional20d": -8696220.0
+      },
+      "podcast": {
+        "heatSortRank": 27,
+        "hostDiscussionCompositeScore": 48,
+        "themes": [
+          "載板 / CCL / 高速材料",
+          "對應 EP663 的 Broadcom、substrate 載板雙拼、Google TPU 與老 AI 復活線。",
+          "CPU / Socket / Server side 零組件"
+        ]
+      },
+      "errors": [],
+      "screenRank": 42,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "2467",
+      "name": "志聖",
+      "market": "上市",
+      "industry": "20. 電子零組件",
+      "screenScore": 5,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 26.3,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "收盤站上季線，但短線尚未轉強：close/MA5/MA20/MA60 = 588.0/623.6/604.05/507.55。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "下跌且量價偏弱：日漲跌 -7.69%，量比近 5 日均量 1.34x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近 20 日仍買超，但短線轉弱：5 日 -1,493,025，20 日 1,744,499 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "股價未漲但融資增加：融資日變化 61 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "YoY 成長：MoM -0.26%，YoY 86.98%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 78.19，PBR 11.03。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 34/50，熱度分數 35。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 588.0,
+        "changePct": -7.69,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": -0.26,
+        "revenueYoyPct": 86.98,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": -1493025.0,
+        "institutional20d": 1744499.0
+      },
+      "podcast": {
+        "heatSortRank": 34,
+        "hostDiscussionCompositeScore": 35,
+        "themes": [
+          "先進製程設備、CPU Socket 與新唐 [watchful]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 43,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "3081",
+      "name": "聯亞",
+      "market": "上櫃",
+      "industry": "19. 通信網路",
+      "screenScore": 5,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 26.3,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "收盤站上季線，但短線尚未轉強：close/MA5/MA20/MA60 = 2575.0/2682.0/2737.25/2271.17。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "下跌且量價偏弱：日漲跌 -4.10%，量比近 5 日均量 1.00x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步賣超：5 日 -2,194,967，20 日 -1,403,986 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "股價未漲但融資增加：融資日變化 103 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "年月雙增且 YoY 成長明顯：MoM 15.16%，YoY 115.38%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 338.37，PBR 56.2。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 35/50，熱度分數 35。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 2575.0,
+        "changePct": -4.1,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 15.16,
+        "revenueYoyPct": 115.38,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": -2194967.0,
+        "institutional20d": -1403986.0
+      },
+      "podcast": {
+        "heatSortRank": 35,
+        "hostDiscussionCompositeScore": 35,
+        "themes": [
+          "光通 / 雷射 / 光模組",
+          "對應EP662主持人說除了被動元件，也喜歡光通、先進製程與power題材的段落。",
+          "光通族群 [watchful]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 44,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "5443",
+      "name": "均豪",
+      "market": "上櫃",
+      "industry": "16. 半導體",
+      "screenScore": 5,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 26.3,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "收盤站上季線，但短線尚未轉強：close/MA5/MA20/MA60 = 121.5/124.7/124.95/114.17。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "下跌且量價偏弱：日漲跌 -4.33%，量比近 5 日均量 0.77x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步賣超：5 日 -2,134,273，20 日 -5,201,688 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "股價未漲但融資增加：融資日變化 116 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "年月雙增且 YoY 成長明顯：MoM 4.24%，YoY 24.44%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 53.29，PBR 1.61。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 42/50，熱度分數 35。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 121.5,
+        "changePct": -4.33,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 4.24,
+        "revenueYoyPct": 24.44,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": -2134273.0,
+        "institutional20d": -5201688.0
+      },
+      "podcast": {
+        "heatSortRank": 42,
+        "hostDiscussionCompositeScore": 35,
+        "themes": [
+          "先進製程設備、CPU Socket 與新唐 [watchful]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 45,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "3163",
+      "name": "波若威",
+      "market": "上櫃",
+      "industry": "19. 通信網路",
+      "screenScore": 3,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 15.8,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "收盤低於季線：close/MA5/MA20/MA60 = 988.0/1045.6/1047.0/1020.65。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "下跌且量價偏弱：日漲跌 -6.79%，量比近 5 日均量 1.18x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步賣超：5 日 -4,490,876，20 日 -5,495,347 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "股價未漲但融資增加：融資日變化 165 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "YoY 成長：MoM -19.53%，YoY 16.50%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 114.35，PBR 24.92。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 36/50，熱度分數 35。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 988.0,
+        "changePct": -6.79,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": -19.53,
+        "revenueYoyPct": 16.5,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": -4490876.0,
+        "institutional20d": -5495347.0
+      },
+      "podcast": {
+        "heatSortRank": 36,
+        "hostDiscussionCompositeScore": 35,
+        "themes": [
+          "光通 / 雷射 / 光模組",
+          "對應 EP663 的光通與光設備觀察線。",
+          "光通族群 [watchful]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 46,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "3363",
+      "name": "上詮",
+      "market": "上櫃",
+      "industry": "19. 通信網路",
+      "screenScore": 3,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 15.8,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "收盤站上季線，但短線尚未轉強：close/MA5/MA20/MA60 = 804.0/814.4/831.9/757.18。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "下跌且量價偏弱：日漲跌 -0.62%，量比近 5 日均量 1.22x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步賣超：5 日 -901,473，20 日 -2,469,830 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "股價未漲但融資增加：融資日變化 11 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "MoM 回升，但 YoY 尚未轉正：MoM 9.10%，YoY -37.30%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 0.0，PBR 15.93。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 37/50，熱度分數 35。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 804.0,
+        "changePct": -0.62,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": 9.1,
+        "revenueYoyPct": -37.3,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": -901473.0,
+        "institutional20d": -2469830.0
+      },
+      "podcast": {
+        "heatSortRank": 37,
+        "hostDiscussionCompositeScore": 35,
+        "themes": [
+          "光通 / 雷射 / 光模組",
+          "光通族群 [watchful]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 47,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "4977",
+      "name": "眾達-KY",
+      "market": "上市",
+      "industry": "19. 通信網路",
+      "screenScore": 3,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 15.8,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "收盤站上月線與季線：close/MA5/MA20/MA60 = 212.5/214.3/212.38/202.36。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "下跌且量價偏弱：日漲跌 -2.07%，量比近 5 日均量 1.42x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步賣超：5 日 -1,738,794，20 日 -1,346,923 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "股價未漲但融資增加：融資日變化 142 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "年月雙減：MoM -33.50%，YoY -43.18%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 47.12，PBR 4.38。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 40/50，熱度分數 35。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 212.5,
+        "changePct": -2.07,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": -33.5,
+        "revenueYoyPct": -43.18,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": -1738794.0,
+        "institutional20d": -1346923.0
+      },
+      "podcast": {
+        "heatSortRank": 40,
+        "hostDiscussionCompositeScore": 35,
+        "themes": [
+          "光通 / 雷射 / 光模組",
+          "光通族群 [watchful]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 48,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "6442",
+      "name": "光聖",
+      "market": "上市",
+      "industry": "19. 通信網路",
+      "screenScore": 2,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 19,
+      "normalizedScore": 10.5,
+      "coveragePct": 100.0,
+      "shortlistEligible": true,
+      "missingFactors": [],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "收盤低於季線：close/MA5/MA20/MA60 = 1880.0/1909.0/1911.5/1970.58。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "震盪或量縮整理：日漲跌 -0.27%，量比近 5 日均量 0.54x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步賣超：5 日 -2,155,745，20 日 -3,502,754 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "股價未漲但融資增加：融資日變化 6 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "年月雙減：MoM -12.49%，YoY -16.21%。"
+        },
+        {
+          "factor": "估值快照",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "估值偏高，需用成長性另行驗證：PER 70.92，PBR 20.77。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 1,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 44/50，熱度分數 35。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 1880.0,
+        "changePct": -0.27,
+        "revenueDate": "2026-05-01",
+        "revenueMomPct": -12.49,
+        "revenueYoyPct": -16.21,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": -2155745.0,
+        "institutional20d": -3502754.0
+      },
+      "podcast": {
+        "heatSortRank": 44,
+        "hostDiscussionCompositeScore": 35,
+        "themes": [
+          "光通 / 雷射 / 光模組",
+          "光通族群 [watchful]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 49,
+      "cacheMode": "daily-cache"
+    },
+    {
+      "code": "0050",
+      "name": "元大台灣50",
+      "market": "",
+      "industry": "",
+      "screenScore": 10,
+      "screenMaxScore": 19,
+      "scoredMaxScore": 14,
+      "normalizedScore": 71.4,
+      "coveragePct": 73.7,
+      "shortlistEligible": false,
+      "missingFactors": [
+        "月營收",
+        "估值快照"
+      ],
+      "items": [
+        {
+          "factor": "均線與股價位置",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "收盤與均線呈多頭排列：close/MA5/MA20/MA60 = 105.7/103.93/98.27/86.58。"
+        },
+        {
+          "factor": "量價結構",
+          "score": 2,
+          "maxScore": 3,
+          "evidence": "價漲，量能未失控：日漲跌 0.19%，量比近 5 日均量 1.01x。"
+        },
+        {
+          "factor": "法人籌碼",
+          "score": 0,
+          "maxScore": 3,
+          "evidence": "近 5 日與近 20 日同步賣超：5 日 -123,736,820，20 日 -540,317,451 股。"
+        },
+        {
+          "factor": "融資變化",
+          "score": 2,
+          "maxScore": 2,
+          "evidence": "融資減少：融資日變化 -661 張。"
+        },
+        {
+          "factor": "月營收",
+          "score": null,
+          "maxScore": 3,
+          "evidence": "缺少月營收資料，ETF 或部分標的可能不適用。"
+        },
+        {
+          "factor": "估值快照",
+          "score": null,
+          "maxScore": 2,
+          "evidence": "缺少 PER / PBR；ETF 或虧損公司可能不適用。"
+        },
+        {
+          "factor": "Podcast 熱度",
+          "score": 3,
+          "maxScore": 3,
+          "evidence": "近十集主持人討論熱度排名 2/50，熱度分數 80。"
+        }
+      ],
+      "snapshot": {
+        "priceDate": "2026-06-02",
+        "close": 105.7,
+        "changePct": 0.19,
+        "revenueDate": null,
+        "revenueMomPct": null,
+        "revenueYoyPct": null,
+        "institutionalDate": "2026-06-02",
+        "institutional5d": -123736820.0,
+        "institutional20d": -540317451.0
+      },
+      "podcast": {
+        "heatSortRank": 2,
+        "hostDiscussionCompositeScore": 80,
+        "themes": [
+          "0050 [bullish]",
+          "0050、債券、貨幣基金與 Cash [neutral]",
+          "ETF 與指數參與經濟成長 [bullish]"
+        ]
+      },
+      "errors": [],
+      "screenRank": 50,
+      "cacheMode": "daily-cache"
+    }
+  ]
+}
