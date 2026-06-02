@@ -1643,6 +1643,7 @@
         <button id="sectorAnalysisBtn" class="watchlist-pinned-btn" type="button">族群分析</button>
         <button id="analysisBtn" class="watchlist-pinned-btn" type="button">個股分析</button>
         <button id="marketScreenBtn" class="watchlist-pinned-btn" type="button">初步分析</button>
+        <button id="dailyAlertsBtn" class="watchlist-pinned-btn" type="button">每日提醒</button>
         <button id="rankingBtn" class="watchlist-pinned-btn" type="button">分析排行</button>
         <div id="episodeList" class="episode-list"></div>
       </aside>
@@ -1671,6 +1672,7 @@
       stockAnalysisQuery: "",
       twWatchlist: null,
       marketScreen: null,
+      dailyAlerts: null,
       analysis: {
         ticker: "2337",
         company: "旺宏",
@@ -1694,6 +1696,7 @@
       sectorAnalysisBtn: document.getElementById("sectorAnalysisBtn"),
       analysisBtn: document.getElementById("analysisBtn"),
       marketScreenBtn: document.getElementById("marketScreenBtn"),
+      dailyAlertsBtn: document.getElementById("dailyAlertsBtn"),
       rankingBtn: document.getElementById("rankingBtn"),
       main: document.getElementById("main")
     };
@@ -1754,6 +1757,10 @@
     });
     dom.marketScreenBtn.addEventListener("click", () => {
       state.activeView = state.activeView === "marketScreen" ? "episode" : "marketScreen";
+      render();
+    });
+    dom.dailyAlertsBtn.addEventListener("click", () => {
+      state.activeView = state.activeView === "dailyAlerts" ? "episode" : "dailyAlerts";
       render();
     });
     dom.rankingBtn.addEventListener("click", () => {
@@ -1883,6 +1890,18 @@
         render();
       } catch (error) {
         state.marketScreen = null;
+      }
+    }
+
+    async function tryLoadDailyAlerts() {
+      try {
+        const response = await fetch("daily_stock_alerts.json", { cache: "no-store" });
+        if (!response.ok) return;
+        const payload = await response.json();
+        state.dailyAlerts = payload && Array.isArray(payload.records) ? payload : null;
+        render();
+      } catch (error) {
+        state.dailyAlerts = null;
       }
     }
 
@@ -2886,6 +2905,7 @@ ${notes}`;
       dom.sectorAnalysisBtn.classList.toggle("active", state.activeView === "sectorAnalysis");
       dom.analysisBtn.classList.toggle("active", state.activeView === "analysis");
       dom.marketScreenBtn.classList.toggle("active", state.activeView === "marketScreen");
+      dom.dailyAlertsBtn.classList.toggle("active", state.activeView === "dailyAlerts");
       dom.rankingBtn.classList.toggle("active", state.activeView === "ranking");
       renderEpisodeList(episodes, pendingEpisodes);
 
@@ -2899,6 +2919,8 @@ ${notes}`;
         renderStockAnalysisFrameworkMain();
       } else if (state.activeView === "marketScreen") {
         renderMarketScreenMain();
+      } else if (state.activeView === "dailyAlerts") {
+        renderDailyAlertsMain();
       } else if (state.activeView === "ranking") {
         renderStockAnalysisRankingMain();
       } else if (state.activePendingId) {
@@ -3150,7 +3172,7 @@ ${notes}`;
     }
 
     function getInitialView() {
-      const allowed = ["episode", "portfolio", "watchlist", "sectorAnalysis", "analysis", "marketScreen", "ranking"];
+      const allowed = ["episode", "portfolio", "watchlist", "sectorAnalysis", "analysis", "marketScreen", "dailyAlerts", "ranking"];
       const wanted = new URLSearchParams(window.location.search).get("view") || "portfolio";
       return allowed.includes(wanted) ? wanted : "portfolio";
     }
@@ -3730,6 +3752,133 @@ ${notes}`;
         detail.append(summary, list);
         actionCell.appendChild(detail);
         tr.appendChild(actionCell);
+        tbody.appendChild(tr);
+      });
+      table.appendChild(tbody);
+      wrap.appendChild(table);
+      card.appendChild(wrap);
+      return card;
+    }
+
+    function renderDailyAlertsMain() {
+      dom.main.replaceChildren();
+
+      const payload = state.dailyAlerts;
+      const records = arr(payload && payload.records);
+      const alerts = arr(payload && payload.alerts);
+      const page = document.createElement("div");
+      page.className = "analysis-page";
+
+      const header = document.createElement("div");
+      header.className = "analysis-header";
+      const titleWrap = document.createElement("div");
+      const title = document.createElement("h2");
+      title.textContent = "每日提醒";
+      const meta = document.createElement("div");
+      meta.className = "analysis-meta";
+      meta.textContent = "依個股分析筆記中的支撐與回測區，檢查最新收盤價是否接近觀察位置。";
+      titleWrap.append(title, meta);
+      const reportMeta = document.createElement("div");
+      reportMeta.className = "analysis-meta";
+      reportMeta.textContent = payload
+        ? `${payload.generatedAt || ""} · 共 ${records.length} 檔 · 提醒 ${alerts.length} 檔`
+        : "尚未載入每日提醒";
+      header.append(titleWrap, reportMeta);
+      page.appendChild(header);
+
+      const disclaimer = document.createElement("div");
+      disclaimer.className = "tw-disclaimer";
+      disclaimer.textContent = `提醒：觀察區來自既有個股分析，不是自動買進建議。預設只提示已進入觀察區，或距離區間上緣 ${payload && payload.nearThresholdPct !== undefined ? payload.nearThresholdPct : 5}% 內的股票；重要消息仍需人工確認是否有新變化。`;
+      page.appendChild(disclaimer);
+
+      if (!payload || !records.length) {
+        const empty = document.createElement("div");
+        empty.className = "empty";
+        empty.textContent = "尚無每日提醒報告。請先執行 scripts/generate_daily_stock_alerts.py。";
+        page.appendChild(empty);
+        dom.main.appendChild(page);
+        return;
+      }
+
+      page.appendChild(renderDailyAlertsCard("接近觀察區", alerts, true));
+      page.appendChild(renderDailyAlertsCard("全部已分析股票", records, false));
+      dom.main.appendChild(page);
+    }
+
+    function renderDailyAlertsCard(title, rows, alertOnly) {
+      const card = sectionCard();
+      card.appendChild(cardHead(title, [
+        badge(`${rows.length} 檔`, alertOnly ? "watchful" : "neutral"),
+        alertOnly ? badge("需人工複核", "watchful") : badge("同股保留最新分析", "neutral")
+      ]));
+
+      if (!rows.length) {
+        const empty = document.createElement("div");
+        empty.className = "empty";
+        empty.textContent = "目前沒有股票接近既有分析的觀察區。";
+        card.appendChild(empty);
+        return card;
+      }
+
+      const wrap = document.createElement("div");
+      wrap.className = "tw-table-wrap";
+      const table = document.createElement("table");
+      table.className = "analysis-table";
+      const thead = document.createElement("thead");
+      const hrow = document.createElement("tr");
+      ["股票", "最新收盤", "狀態", "最近觀察區", "分析日期", "重要消息與來源"].forEach(text => {
+        const th = document.createElement("th");
+        th.textContent = text;
+        hrow.appendChild(th);
+      });
+      thead.appendChild(hrow);
+      table.appendChild(thead);
+
+      const tbody = document.createElement("tbody");
+      rows.forEach(row => {
+        const tr = document.createElement("tr");
+        const zone = row.nearestZone || {};
+        [
+          `${row.ticker || ""} ${row.company || ""}`.trim(),
+          row.close === null || row.close === undefined ? "待確認" : `${row.close} 元\n${row.priceDate || "未標日期"}`,
+          row.statusText || "待確認",
+          zone.label || "未解析到區間",
+          [row.analysisType, row.analysisDate].filter(Boolean).join(" · ") || "未標日期"
+        ].forEach(text => {
+          const td = document.createElement("td");
+          td.textContent = String(text);
+          tr.appendChild(td);
+        });
+
+        const detailCell = document.createElement("td");
+        const detail = document.createElement("details");
+        const summary = document.createElement("summary");
+        summary.textContent = "查看";
+        const list = document.createElement("ul");
+        list.className = "analysis-checklist";
+        arr(row.importantMessages).forEach(text => {
+          const li = document.createElement("li");
+          li.textContent = text;
+          list.appendChild(li);
+        });
+        arr(row.sourceLinks).forEach(source => {
+          const li = document.createElement("li");
+          const link = document.createElement("a");
+          link.href = source.url || "#";
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.textContent = source.name || source.url || "來源";
+          li.append("來源：", link);
+          list.appendChild(li);
+        });
+        if (!list.childNodes.length) {
+          const li = document.createElement("li");
+          li.textContent = row.summary || "尚無重要消息摘要。";
+          list.appendChild(li);
+        }
+        detail.append(summary, list);
+        detailCell.appendChild(detail);
+        tr.appendChild(detailCell);
         tbody.appendChild(tr);
       });
       table.appendChild(tbody);
@@ -7281,6 +7430,7 @@ ${notes}`;
     tryLoadStockUniverse();
     tryLoadTwWatchlistManifest();
     tryLoadMarketScreen();
+    tryLoadDailyAlerts();
     tryLoadManifest();
     tryLoadPendingManifest();
     tryLoadAiResearchManifest();

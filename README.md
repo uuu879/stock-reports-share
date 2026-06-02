@@ -9,6 +9,7 @@ Included public content:
 - Taiwan watchlists and XQ import lists
 - Stock analysis notes
 - Sector analysis notes
+- Daily stock-analysis observation alerts
 - Taiwan stock universe
 
 Intentionally excluded:
