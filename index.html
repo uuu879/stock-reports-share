@@ -1006,6 +1006,7 @@
     .analysis-table th { background: var(--panel-2); padding: 7px 10px; text-align: left; font-weight: 700; color: var(--muted); border-bottom: 1px solid var(--line); white-space: nowrap; }
     .analysis-table td { padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; line-height: 1.5; }
     .analysis-table tr:last-child td { border-bottom: 0; }
+    .daily-alerts-table .daily-alerts-stock { font-weight: 850; color: var(--ink); white-space: nowrap; }
     .analysis-template { width: 100%; min-height: 330px; resize: vertical; border: 1px solid var(--line-strong); border-radius: var(--radius); background: var(--panel); color: var(--ink); padding: 10px; line-height: 1.6; font-family: Consolas, "Microsoft JhengHei", monospace; font-size: 0.82rem; }
     .analysis-report-list { display: grid; gap: 8px; max-height: 360px; overflow-y: auto; padding-right: 2px; }
     .analysis-report { border: 1px solid var(--line); border-radius: var(--radius); padding: 10px; background: var(--panel); }
@@ -1495,6 +1496,72 @@
       .tw-summary-row td.tw-target-cell::before,
       .tw-summary-row td.tw-detail-action::before {
         display: none;
+      }
+
+      .daily-alerts-wrap {
+        border: 0;
+        overflow: visible;
+      }
+
+      .daily-alerts-table,
+      .daily-alerts-table thead,
+      .daily-alerts-table tbody,
+      .daily-alerts-table tr,
+      .daily-alerts-table td {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+      }
+
+      .daily-alerts-table {
+        border-collapse: separate;
+        border-spacing: 0;
+        background: transparent;
+      }
+
+      .daily-alerts-table thead {
+        display: none;
+      }
+
+      .daily-alerts-table tr {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--panel);
+        margin-bottom: 10px;
+        padding: 10px 12px;
+        box-shadow: var(--shadow-soft);
+        overflow: hidden;
+      }
+
+      .daily-alerts-table td {
+        border-bottom: 0;
+        padding: 6px 0;
+        line-height: 1.45;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+      }
+
+      .daily-alerts-table td::before {
+        content: attr(data-label);
+        display: block;
+        margin-bottom: 2px;
+        color: var(--muted);
+        font-size: 0.68rem;
+        font-weight: 850;
+      }
+
+      .daily-alerts-table .daily-alerts-stock {
+        font-size: 0.98rem;
+        white-space: normal;
+      }
+
+      .daily-alerts-table .daily-alerts-stock::before {
+        display: none;
+      }
+
+      .daily-alerts-table .daily-alerts-detail details {
+        max-width: none;
       }
 
       .tw-tags {
@@ -3821,12 +3888,13 @@ ${notes}`;
       }
 
       const wrap = document.createElement("div");
-      wrap.className = "tw-table-wrap";
+      wrap.className = "tw-table-wrap daily-alerts-wrap";
       const table = document.createElement("table");
-      table.className = "analysis-table";
+      table.className = "analysis-table daily-alerts-table";
+      const labels = ["股票", "最新收盤", "狀態", "最近觀察區", "分析日期", "重要消息與來源"];
       const thead = document.createElement("thead");
       const hrow = document.createElement("tr");
-      ["股票", "最新收盤", "狀態", "最近觀察區", "分析日期", "重要消息與來源"].forEach(text => {
+      labels.forEach(text => {
         const th = document.createElement("th");
         th.textContent = text;
         hrow.appendChild(th);
@@ -3844,13 +3912,17 @@ ${notes}`;
           row.statusText || "待確認",
           zone.label || "未解析到區間",
           [row.analysisType, row.analysisDate].filter(Boolean).join(" · ") || "未標日期"
-        ].forEach(text => {
+        ].forEach((text, index) => {
           const td = document.createElement("td");
           td.textContent = String(text);
+          td.dataset.label = labels[index];
+          if (index === 0) td.className = "daily-alerts-stock";
           tr.appendChild(td);
         });
 
         const detailCell = document.createElement("td");
+        detailCell.className = "daily-alerts-detail";
+        detailCell.dataset.label = labels[5];
         const detail = document.createElement("details");
         const summary = document.createElement("summary");
         summary.textContent = "查看";
