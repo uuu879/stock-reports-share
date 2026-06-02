@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-06-03T01:00:57+08:00",
+  "generatedAt": "2026-06-03T01:06:04+08:00",
   "nearThresholdPct": 5.0,
-  "count": 38,
-  "alertCount": 19,
+  "count": 39,
+  "alertCount": 23,
   "alerts": [
     {
       "ticker": "2449",
@@ -194,6 +194,63 @@
         {
           "name": "TWSE OpenAPI - 融資融券",
           "url": "https://openapi.twse.com.tw/v1/exchangeReport/MI_MARGN"
+        }
+      ]
+    },
+    {
+      "ticker": "3533",
+      "company": "嘉澤",
+      "analysisDate": "2026-06-03",
+      "analysisType": "深度分析",
+      "priceDate": "2026-06-02",
+      "close": 2615.0,
+      "priceSource": "FinMind TaiwanStockPrice",
+      "status": "near",
+      "statusText": "距觀察區上緣 0.19%",
+      "distancePct": 0.19,
+      "nearestZone": {
+        "low": 2580.0,
+        "high": 2610.0,
+        "label": "2580-2610（5 日、20 日均線與短線回測觀察區）"
+      },
+      "zones": [
+        {
+          "low": 2580.0,
+          "high": 2610.0,
+          "label": "2580-2610（5 日、20 日均線與短線回測觀察區）"
+        }
+      ],
+      "stance": "27/39，基本面與籌碼俱佳的 CPU Socket／AI 伺服器連接器龍頭，但估值偏高、價位偏貴，偏多不追高。嘉澤 2026Q1 營收 93.28 億元創單季新高（YoY +20.12%）、毛利率 49.5%、本業獲利 27.1 億元，伺服器營收占比首度過半，單季 EPS 21.37 元（含匯兌業外）。近四季 EPS 約 70 元，6/2 收 2615 元、PER 36.74 倍、PBR 7.0 倍，估值已反映高成長。千張大戶近 3 週由 40.30% 拉回升至 45.76%、外資近 20 日買超約 78.5 萬股、融資僅 599 張且續減，籌碼乾淨。空手者宜等回測季線上緣 2580-2610 量縮或突破 2740／2955 後回測不破再分批，不追高在 2700 以上。",
+      "summary": "嘉澤（3533）為全球前三大 CPU Socket 廠，供應 Intel／AMD，產品結構已由 PC 轉向伺服器、AI 與高速運算。截至 2026-06-02 收 2615 元（-2.24%），站上 5/20/60 日均線 2610／2583.5／2324.42 元，呈多頭排列；近 60 個交易日盤中高低 2955／1430 元。2026Q1 營收 93.28 億元創新高、YoY +20.12%、毛利率 49.5%、營益率約 29%，單季 EPS 21.37 元（含匯兌業外貢獻）；2026 年 4 月營收 33.92 億元、MoM -4.29%、YoY +15.21%。法說報喜，公司指引全年營收成長 15-20%，新成長動能（快接、SOCAMM、NPO/CPO socket、液冷、PCIe Gen6/DDR5）放量集中於 2026 下半年；大和將目標價由 2000 元上調至 3000 元，法人對 2026 全年 EPS 樂觀看到 95 元。籌碼面：外資近 20 日買超、千張大戶近 3 週明顯回補、融資餘額僅 599 張且續減，籌碼乾淨。風險為估值偏貴、高價股波動大、Q1 EPS 含匯兌、主持人對 CPU 題材已轉賣方心態，以及 AI capex 與 server 平台放量不如預期。",
+      "importantMessages": [
+        "總分 27/39，落在 24-30 中性偏多區間：基本面與籌碼俱佳，但估值偏貴、價位偏高且近壓力，宜等回測或突破確認。",
+        "大戶比例採 TDCC largeHolder.trend（official-query，isStale=false）：千張近 3 週連續回補但 8 週區間曾走低，保守給 2 分。",
+        "毛利率/EPS 給 3 分但 Q1 含匯兌業外，需以 H2 本業毛利率延續性驗證。"
+      ],
+      "sourceLinks": [
+        {
+          "name": "FinMind API（股價、PER/PBR、法人、外資持股、融資券、月營收、財報）",
+          "url": "https://api.finmindtrade.com/api/v4/data"
+        },
+        {
+          "name": "TDCC 集保戶股權分散表（最新截面與歷史週查詢）",
+          "url": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock"
+        },
+        {
+          "name": "鉅亨網：嘉澤（3533-TW）伺服器插槽龍頭 迎接 AI 液冷新商機",
+          "url": "https://news.cnyes.com/news/id/6175869"
+        },
+        {
+          "name": "鉅亨網：嘉澤（3533-TW）AI 伺服器升級關鍵供應商 高速連接模組引爆成長動能",
+          "url": "https://m.cnyes.com/news/id/6120427"
+        },
+        {
+          "name": "CMoney：嘉澤 Q1 營運創歷史單季新高 EPS 達 21.37 元、毛利率 49.5%",
+          "url": "https://cmnews.com.tw/article/newsyoudeservetoknow-e41ca328-549b-11f1-82b8-7cd27c11a22d"
+        },
+        {
+          "name": "理財周刊：嘉澤法說報喜 法人估 2026 全年 EPS 挑戰 95 元",
+          "url": "https://today.line.me/tw/v3/article/LXpnoRn"
         }
       ]
     },
@@ -673,6 +730,122 @@
       ]
     },
     {
+      "ticker": "2404",
+      "company": "漢唐",
+      "analysisDate": "2026-05-31",
+      "analysisType": "初步分析",
+      "priceDate": "2026-06-02",
+      "close": 1150.0,
+      "priceSource": "FinMind TaiwanStockPrice",
+      "status": "near",
+      "statusText": "距觀察區上緣 2.68%",
+      "distancePct": 2.68,
+      "nearestZone": {
+        "low": 1100.0,
+        "high": 1120.0,
+        "label": "1,100-1,120元：5/21突破區與短線次支撐。"
+      },
+      "zones": [
+        {
+          "low": 1100.0,
+          "high": 1120.0,
+          "label": "1,100-1,120元：5/21突破區與短線次支撐。"
+        },
+        {
+          "low": 1025.0,
+          "high": 1071.0,
+          "label": "1,025-1,071元：5/20附近價格與MA20區域，中期風險觀察帶。"
+        }
+      ],
+      "stance": "中性偏多但不追高；24/39，列研究名單，等1,150元支撐確認或重新站回1,245-1,265元。",
+      "summary": "漢唐（2404）受惠台系晶圓代工廠、美系記憶體廠與先進封裝擴廠，2026Q1營收202.88億元、YoY +76.16%，毛利率23.32%、營益率19.57%、EPS 16.31元；4月營收81.07億元再維持高檔，MoM +5.39%、YoY +102.23%。基本面不是只有題材，但股價5/26盤中衝到1,345元後，5/29回到1,155元，短線已從落後補漲切換成高波動整理。初步判斷值得深度追蹤，但不適合直接追價。",
+      "importantMessages": [
+        "本次24/39代表適合放入研究名單，等待拉回或突破確認，不代表適合在急漲後追價。",
+        "本機EP664報告曾將前四月營收寫成383.95億元；TWSE OpenAPI最新資料為283.95億元，本分析採官方數字。",
+        "Yahoo大戶籌碼為TDCC資料的第三方整理代理；若進入深度分析，應再補官方集保分級資料與最新一週更新。"
+      ],
+      "sourceLinks": [
+        {
+          "name": "TWSE 個股日成交資訊 2404",
+          "url": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date=20260531&stockNo=2404&response=json"
+        },
+        {
+          "name": "TWSE OpenAPI 每月營業收入彙總表",
+          "url": "https://openapi.twse.com.tw/v1/opendata/t187ap05_L"
+        },
+        {
+          "name": "TWSE OpenAPI 綜合損益表 一般業",
+          "url": "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci"
+        },
+        {
+          "name": "MOPS 2404 115年第1季損益表",
+          "url": "https://mopsov.twse.com.tw/mops/web/ajax_t164sb04?encodeURIComponent=1&step=1&firstin=1&off=1&co_id=2404&year=115&season=1"
+        },
+        {
+          "name": "TWSE 個股本益比、殖利率及股價淨值比",
+          "url": "https://www.twse.com.tw/rwd/zh/afterTrading/BWIBBU_d?date=20260529&selectType=ALL&response=json"
+        },
+        {
+          "name": "TWSE 三大法人買賣超日報",
+          "url": "https://www.twse.com.tw/rwd/zh/fund/T86?date=20260529&selectType=ALLBUT0999&response=json"
+        }
+      ]
+    },
+    {
+      "ticker": "5009",
+      "company": "榮剛",
+      "analysisDate": "2026-06-03",
+      "analysisType": "深度分析",
+      "priceDate": "2026-06-02",
+      "close": 35.95,
+      "priceSource": "FinMind TaiwanStockPrice",
+      "status": "near",
+      "statusText": "距觀察區上緣 2.71%",
+      "distancePct": 2.71,
+      "nearestZone": {
+        "low": 33.0,
+        "high": 35.0,
+        "label": "33-35（季線 33.98 至近期低點 35.0 的回測布局帶，空手分批首選區）"
+      },
+      "zones": [
+        {
+          "low": 33.0,
+          "high": 35.0,
+          "label": "33-35（季線 33.98 至近期低點 35.0 的回測布局帶，空手分批首選區）"
+        },
+        {
+          "low": 30.0,
+          "high": 31.0,
+          "label": "30-31（近 60 日低點 30.4 一帶，深度回測加碼參考）"
+        }
+      ],
+      "stance": "20/39，題材結構佳但短線追高不划算（空手觀望）。榮剛為全球前十大合金棒鋼廠，航太（波音/空巴回升）、軍工（槍管材、飛彈殼體，2026Q1 接單明顯成長）、能源（油氣回溫＋AI 資料中心用電）三引擎，並切入 AI 伺服器液冷（CDU/CDM）不鏽鋼供應鏈，毛利率連三季回升（19.1%→23.2%→24.38%）、千張大戶 8 週淨增。但月營收 YoY 仍持平偏弱、2026Q1 EPS 0.5 元 YoY -21%、PER 約 18 倍不便宜，且股價 5 月衝上 40-42 元失敗回落，6/2 收 35.95 已跌破月線 36.37 與市場認定 36.5 關鍵支撐。空手者不追現價，優先等拉回 33-34 元季線區分批，或帶量站回 37 元且投信回補再追。",
+      "summary": "榮剛（5009，上櫃）2026-06-02 收 35.95 元，站上上彎季線（60 日均線 33.98）但跌破月線（36.37）與市場認定的 36.5 關鍵支撐，量縮整理；5 月一度放量衝上 40-42 元後失敗回落。基本面是航太、軍工、能源與 AI 伺服器液冷不鏽鋼題材帶動的毛利率復甦：毛利率由 2025Q3 的 19.1% 回升到 2026Q1 的 24.38%、營益率 2.7%→11.2%，但月營收 YoY 約 -0.25% 仍偏平、2026Q1 EPS 0.5 元 YoY -21%，估值 PER 約 18 倍、PBR 1.24 倍不算便宜。籌碼面乾淨（融資使用率約 6%、千張大戶近 8 週淨增 0.76pp、人數 43→49），法人近 20 日買超約 243 萬股但最近一兩日轉小賣、投信未參與，題材好但短線追高 CP 值低。",
+      "importantMessages": [
+        "月營收 YoY 仍持平偏弱、2026Q1 EPS YoY -21%，毛利率改善屬早期復甦而非營收爆發。",
+        "柳營新廠 2027Q1 量產為中期產能催化，2026 年內主要是毛利率與訂單能見度的故事。",
+        "5009 為上櫃股，XQ 匯入代碼為 5009.TWO。"
+      ],
+      "sourceLinks": [
+        {
+          "name": "理財周刊：航太軍工雙引擎火熱！榮剛(5009)放量突破40元",
+          "url": "https://www.moneyweekly.com.tw/ArticleData/Info/Article/225746"
+        },
+        {
+          "name": "MoneyDJ／LINE TODAY：榮剛航太/軍工/能源訂單穩，關鍵製程稼動率提升",
+          "url": "https://today.line.me/tw/v3/article/RBkG8GM"
+        },
+        {
+          "name": "財報狗 5009 榮剛",
+          "url": "https://statementdog.com/analysis/5009"
+        },
+        {
+          "name": "TDCC 集保戶股權分散表（歷史週查詢）",
+          "url": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock"
+        }
+      ]
+    },
+    {
       "ticker": "1313",
       "company": "聯成",
       "analysisDate": "2026-06-02",
@@ -1118,6 +1291,73 @@
         {
           "name": "TWSE OpenAPI - 融資融券",
           "url": "https://openapi.twse.com.tw/v1/exchangeReport/MI_MARGN"
+        }
+      ]
+    },
+    {
+      "ticker": "3017",
+      "company": "奇鋐",
+      "analysisDate": "2026-05-31",
+      "analysisType": "深度分析",
+      "priceDate": "2026-06-02",
+      "close": 2700.0,
+      "priceSource": "FinMind TaiwanStockPrice",
+      "status": "near",
+      "statusText": "距觀察區上緣 4.65%",
+      "distancePct": 4.65,
+      "nearestZone": {
+        "low": 2540.0,
+        "high": 2580.0,
+        "label": "2,540-2,580元：20日線與5/28-5/29回測區"
+      },
+      "zones": [
+        {
+          "low": 2540.0,
+          "high": 2580.0,
+          "label": "2,540-2,580元：20日線與5/28-5/29回測區"
+        },
+        {
+          "low": 2300.0,
+          "high": 2400.0,
+          "label": "2,300-2,400元：前波整理區與重要風險線"
+        },
+        {
+          "low": 2000.0,
+          "high": 2100.0,
+          "label": "2,000-2,100元：若高成長假設被下修，才可能回測的中期支撐"
+        }
+      ],
+      "stance": "中性偏多但不追高；25/39，持有者續抱守風險線，空手等回測或5-6月營收、Q2毛利率確認。",
+      "summary": "奇鋐（3017，AVC）是AI伺服器散熱與液冷升級的核心股。2026Q1營收490.38億元、YoY +110.2%，毛利率29.77%、營益率24.51%、EPS 20.17元，財報已把液冷與伺服器需求轉成獲利；4月營收156.31億元仍YoY +71.62%、1-4月累計YoY +99.34%，但MoM -13.24%顯示Q2有新舊平台交替。5/29收2,665元，高於5/20/60日均線且三大法人近五日合計買超約1,483張，但大戶比例週減、P/E 43.79、P/B 23.16，估值已要求下半年水冷板、分歧管與ASIC專案如期放量。",
+      "importantMessages": [
+        "本次25/39代表可以放在研究與持股追蹤名單，但不代表適合追高。",
+        "若5月或6月營收重新站回170-180億元級距、Q2毛利率維持30%附近，且大戶比例止跌，評分可上修。",
+        "若跌破2,300-2,400元且月營收連續低於140億元，或水冷/ASIC時程延後，應下修為只觀察。"
+      ],
+      "sourceLinks": [
+        {
+          "name": "TWSE 個股日成交資訊 3017",
+          "url": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date=20260531&stockNo=3017&response=json"
+        },
+        {
+          "name": "TWSE 個股日本益比、殖利率及股價淨值比",
+          "url": "https://www.twse.com.tw/rwd/zh/afterTrading/BWIBBU_d?date=20260529&selectType=ALL&response=json"
+        },
+        {
+          "name": "TWSE 三大法人買賣超日報",
+          "url": "https://www.twse.com.tw/rwd/zh/fund/T86?date=20260529&selectType=ALLBUT0999&response=json"
+        },
+        {
+          "name": "MoneyDJ：奇鋐115年4月營收",
+          "url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=f1a55b6f-536c-4807-9709-475d5bc3a925"
+        },
+        {
+          "name": "MOPS 3017 115年第1季損益表",
+          "url": "https://mopsov.twse.com.tw/mops/web/ajax_t164sb04?encodeURIComponent=1&step=1&firstin=1&off=1&co_id=3017&year=115&season=1"
+        },
+        {
+          "name": "MOPS 3017 115年第1季資產負債表",
+          "url": "https://mopsov.twse.com.tw/mops/web/ajax_t164sb03?encodeURIComponent=1&step=1&firstin=1&off=1&co_id=3017&year=115&season=1"
         }
       ]
     },
@@ -1377,6 +1617,63 @@
       ]
     },
     {
+      "ticker": "3533",
+      "company": "嘉澤",
+      "analysisDate": "2026-06-03",
+      "analysisType": "深度分析",
+      "priceDate": "2026-06-02",
+      "close": 2615.0,
+      "priceSource": "FinMind TaiwanStockPrice",
+      "status": "near",
+      "statusText": "距觀察區上緣 0.19%",
+      "distancePct": 0.19,
+      "nearestZone": {
+        "low": 2580.0,
+        "high": 2610.0,
+        "label": "2580-2610（5 日、20 日均線與短線回測觀察區）"
+      },
+      "zones": [
+        {
+          "low": 2580.0,
+          "high": 2610.0,
+          "label": "2580-2610（5 日、20 日均線與短線回測觀察區）"
+        }
+      ],
+      "stance": "27/39，基本面與籌碼俱佳的 CPU Socket／AI 伺服器連接器龍頭，但估值偏高、價位偏貴，偏多不追高。嘉澤 2026Q1 營收 93.28 億元創單季新高（YoY +20.12%）、毛利率 49.5%、本業獲利 27.1 億元，伺服器營收占比首度過半，單季 EPS 21.37 元（含匯兌業外）。近四季 EPS 約 70 元，6/2 收 2615 元、PER 36.74 倍、PBR 7.0 倍，估值已反映高成長。千張大戶近 3 週由 40.30% 拉回升至 45.76%、外資近 20 日買超約 78.5 萬股、融資僅 599 張且續減，籌碼乾淨。空手者宜等回測季線上緣 2580-2610 量縮或突破 2740／2955 後回測不破再分批，不追高在 2700 以上。",
+      "summary": "嘉澤（3533）為全球前三大 CPU Socket 廠，供應 Intel／AMD，產品結構已由 PC 轉向伺服器、AI 與高速運算。截至 2026-06-02 收 2615 元（-2.24%），站上 5/20/60 日均線 2610／2583.5／2324.42 元，呈多頭排列；近 60 個交易日盤中高低 2955／1430 元。2026Q1 營收 93.28 億元創新高、YoY +20.12%、毛利率 49.5%、營益率約 29%，單季 EPS 21.37 元（含匯兌業外貢獻）；2026 年 4 月營收 33.92 億元、MoM -4.29%、YoY +15.21%。法說報喜，公司指引全年營收成長 15-20%，新成長動能（快接、SOCAMM、NPO/CPO socket、液冷、PCIe Gen6/DDR5）放量集中於 2026 下半年；大和將目標價由 2000 元上調至 3000 元，法人對 2026 全年 EPS 樂觀看到 95 元。籌碼面：外資近 20 日買超、千張大戶近 3 週明顯回補、融資餘額僅 599 張且續減，籌碼乾淨。風險為估值偏貴、高價股波動大、Q1 EPS 含匯兌、主持人對 CPU 題材已轉賣方心態，以及 AI capex 與 server 平台放量不如預期。",
+      "importantMessages": [
+        "總分 27/39，落在 24-30 中性偏多區間：基本面與籌碼俱佳，但估值偏貴、價位偏高且近壓力，宜等回測或突破確認。",
+        "大戶比例採 TDCC largeHolder.trend（official-query，isStale=false）：千張近 3 週連續回補但 8 週區間曾走低，保守給 2 分。",
+        "毛利率/EPS 給 3 分但 Q1 含匯兌業外，需以 H2 本業毛利率延續性驗證。"
+      ],
+      "sourceLinks": [
+        {
+          "name": "FinMind API（股價、PER/PBR、法人、外資持股、融資券、月營收、財報）",
+          "url": "https://api.finmindtrade.com/api/v4/data"
+        },
+        {
+          "name": "TDCC 集保戶股權分散表（最新截面與歷史週查詢）",
+          "url": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock"
+        },
+        {
+          "name": "鉅亨網：嘉澤（3533-TW）伺服器插槽龍頭 迎接 AI 液冷新商機",
+          "url": "https://news.cnyes.com/news/id/6175869"
+        },
+        {
+          "name": "鉅亨網：嘉澤（3533-TW）AI 伺服器升級關鍵供應商 高速連接模組引爆成長動能",
+          "url": "https://m.cnyes.com/news/id/6120427"
+        },
+        {
+          "name": "CMoney：嘉澤 Q1 營運創歷史單季新高 EPS 達 21.37 元、毛利率 49.5%",
+          "url": "https://cmnews.com.tw/article/newsyoudeservetoknow-e41ca328-549b-11f1-82b8-7cd27c11a22d"
+        },
+        {
+          "name": "理財周刊：嘉澤法說報喜 法人估 2026 全年 EPS 挑戰 95 元",
+          "url": "https://today.line.me/tw/v3/article/LXpnoRn"
+        }
+      ]
+    },
+    {
       "ticker": "4977",
       "company": "眾達-KY",
       "analysisDate": "2026-06-02",
@@ -1852,6 +2149,122 @@
       ]
     },
     {
+      "ticker": "2404",
+      "company": "漢唐",
+      "analysisDate": "2026-05-31",
+      "analysisType": "初步分析",
+      "priceDate": "2026-06-02",
+      "close": 1150.0,
+      "priceSource": "FinMind TaiwanStockPrice",
+      "status": "near",
+      "statusText": "距觀察區上緣 2.68%",
+      "distancePct": 2.68,
+      "nearestZone": {
+        "low": 1100.0,
+        "high": 1120.0,
+        "label": "1,100-1,120元：5/21突破區與短線次支撐。"
+      },
+      "zones": [
+        {
+          "low": 1100.0,
+          "high": 1120.0,
+          "label": "1,100-1,120元：5/21突破區與短線次支撐。"
+        },
+        {
+          "low": 1025.0,
+          "high": 1071.0,
+          "label": "1,025-1,071元：5/20附近價格與MA20區域，中期風險觀察帶。"
+        }
+      ],
+      "stance": "中性偏多但不追高；24/39，列研究名單，等1,150元支撐確認或重新站回1,245-1,265元。",
+      "summary": "漢唐（2404）受惠台系晶圓代工廠、美系記憶體廠與先進封裝擴廠，2026Q1營收202.88億元、YoY +76.16%，毛利率23.32%、營益率19.57%、EPS 16.31元；4月營收81.07億元再維持高檔，MoM +5.39%、YoY +102.23%。基本面不是只有題材，但股價5/26盤中衝到1,345元後，5/29回到1,155元，短線已從落後補漲切換成高波動整理。初步判斷值得深度追蹤，但不適合直接追價。",
+      "importantMessages": [
+        "本次24/39代表適合放入研究名單，等待拉回或突破確認，不代表適合在急漲後追價。",
+        "本機EP664報告曾將前四月營收寫成383.95億元；TWSE OpenAPI最新資料為283.95億元，本分析採官方數字。",
+        "Yahoo大戶籌碼為TDCC資料的第三方整理代理；若進入深度分析，應再補官方集保分級資料與最新一週更新。"
+      ],
+      "sourceLinks": [
+        {
+          "name": "TWSE 個股日成交資訊 2404",
+          "url": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date=20260531&stockNo=2404&response=json"
+        },
+        {
+          "name": "TWSE OpenAPI 每月營業收入彙總表",
+          "url": "https://openapi.twse.com.tw/v1/opendata/t187ap05_L"
+        },
+        {
+          "name": "TWSE OpenAPI 綜合損益表 一般業",
+          "url": "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci"
+        },
+        {
+          "name": "MOPS 2404 115年第1季損益表",
+          "url": "https://mopsov.twse.com.tw/mops/web/ajax_t164sb04?encodeURIComponent=1&step=1&firstin=1&off=1&co_id=2404&year=115&season=1"
+        },
+        {
+          "name": "TWSE 個股本益比、殖利率及股價淨值比",
+          "url": "https://www.twse.com.tw/rwd/zh/afterTrading/BWIBBU_d?date=20260529&selectType=ALL&response=json"
+        },
+        {
+          "name": "TWSE 三大法人買賣超日報",
+          "url": "https://www.twse.com.tw/rwd/zh/fund/T86?date=20260529&selectType=ALLBUT0999&response=json"
+        }
+      ]
+    },
+    {
+      "ticker": "5009",
+      "company": "榮剛",
+      "analysisDate": "2026-06-03",
+      "analysisType": "深度分析",
+      "priceDate": "2026-06-02",
+      "close": 35.95,
+      "priceSource": "FinMind TaiwanStockPrice",
+      "status": "near",
+      "statusText": "距觀察區上緣 2.71%",
+      "distancePct": 2.71,
+      "nearestZone": {
+        "low": 33.0,
+        "high": 35.0,
+        "label": "33-35（季線 33.98 至近期低點 35.0 的回測布局帶，空手分批首選區）"
+      },
+      "zones": [
+        {
+          "low": 33.0,
+          "high": 35.0,
+          "label": "33-35（季線 33.98 至近期低點 35.0 的回測布局帶，空手分批首選區）"
+        },
+        {
+          "low": 30.0,
+          "high": 31.0,
+          "label": "30-31（近 60 日低點 30.4 一帶，深度回測加碼參考）"
+        }
+      ],
+      "stance": "20/39，題材結構佳但短線追高不划算（空手觀望）。榮剛為全球前十大合金棒鋼廠，航太（波音/空巴回升）、軍工（槍管材、飛彈殼體，2026Q1 接單明顯成長）、能源（油氣回溫＋AI 資料中心用電）三引擎，並切入 AI 伺服器液冷（CDU/CDM）不鏽鋼供應鏈，毛利率連三季回升（19.1%→23.2%→24.38%）、千張大戶 8 週淨增。但月營收 YoY 仍持平偏弱、2026Q1 EPS 0.5 元 YoY -21%、PER 約 18 倍不便宜，且股價 5 月衝上 40-42 元失敗回落，6/2 收 35.95 已跌破月線 36.37 與市場認定 36.5 關鍵支撐。空手者不追現價，優先等拉回 33-34 元季線區分批，或帶量站回 37 元且投信回補再追。",
+      "summary": "榮剛（5009，上櫃）2026-06-02 收 35.95 元，站上上彎季線（60 日均線 33.98）但跌破月線（36.37）與市場認定的 36.5 關鍵支撐，量縮整理；5 月一度放量衝上 40-42 元後失敗回落。基本面是航太、軍工、能源與 AI 伺服器液冷不鏽鋼題材帶動的毛利率復甦：毛利率由 2025Q3 的 19.1% 回升到 2026Q1 的 24.38%、營益率 2.7%→11.2%，但月營收 YoY 約 -0.25% 仍偏平、2026Q1 EPS 0.5 元 YoY -21%，估值 PER 約 18 倍、PBR 1.24 倍不算便宜。籌碼面乾淨（融資使用率約 6%、千張大戶近 8 週淨增 0.76pp、人數 43→49），法人近 20 日買超約 243 萬股但最近一兩日轉小賣、投信未參與，題材好但短線追高 CP 值低。",
+      "importantMessages": [
+        "月營收 YoY 仍持平偏弱、2026Q1 EPS YoY -21%，毛利率改善屬早期復甦而非營收爆發。",
+        "柳營新廠 2027Q1 量產為中期產能催化，2026 年內主要是毛利率與訂單能見度的故事。",
+        "5009 為上櫃股，XQ 匯入代碼為 5009.TWO。"
+      ],
+      "sourceLinks": [
+        {
+          "name": "理財周刊：航太軍工雙引擎火熱！榮剛(5009)放量突破40元",
+          "url": "https://www.moneyweekly.com.tw/ArticleData/Info/Article/225746"
+        },
+        {
+          "name": "MoneyDJ／LINE TODAY：榮剛航太/軍工/能源訂單穩，關鍵製程稼動率提升",
+          "url": "https://today.line.me/tw/v3/article/RBkG8GM"
+        },
+        {
+          "name": "財報狗 5009 榮剛",
+          "url": "https://statementdog.com/analysis/5009"
+        },
+        {
+          "name": "TDCC 集保戶股權分散表（歷史週查詢）",
+          "url": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock"
+        }
+      ]
+    },
+    {
       "ticker": "1313",
       "company": "聯成",
       "analysisDate": "2026-06-02",
@@ -2297,6 +2710,73 @@
         {
           "name": "TWSE OpenAPI - 融資融券",
           "url": "https://openapi.twse.com.tw/v1/exchangeReport/MI_MARGN"
+        }
+      ]
+    },
+    {
+      "ticker": "3017",
+      "company": "奇鋐",
+      "analysisDate": "2026-05-31",
+      "analysisType": "深度分析",
+      "priceDate": "2026-06-02",
+      "close": 2700.0,
+      "priceSource": "FinMind TaiwanStockPrice",
+      "status": "near",
+      "statusText": "距觀察區上緣 4.65%",
+      "distancePct": 4.65,
+      "nearestZone": {
+        "low": 2540.0,
+        "high": 2580.0,
+        "label": "2,540-2,580元：20日線與5/28-5/29回測區"
+      },
+      "zones": [
+        {
+          "low": 2540.0,
+          "high": 2580.0,
+          "label": "2,540-2,580元：20日線與5/28-5/29回測區"
+        },
+        {
+          "low": 2300.0,
+          "high": 2400.0,
+          "label": "2,300-2,400元：前波整理區與重要風險線"
+        },
+        {
+          "low": 2000.0,
+          "high": 2100.0,
+          "label": "2,000-2,100元：若高成長假設被下修，才可能回測的中期支撐"
+        }
+      ],
+      "stance": "中性偏多但不追高；25/39，持有者續抱守風險線，空手等回測或5-6月營收、Q2毛利率確認。",
+      "summary": "奇鋐（3017，AVC）是AI伺服器散熱與液冷升級的核心股。2026Q1營收490.38億元、YoY +110.2%，毛利率29.77%、營益率24.51%、EPS 20.17元，財報已把液冷與伺服器需求轉成獲利；4月營收156.31億元仍YoY +71.62%、1-4月累計YoY +99.34%，但MoM -13.24%顯示Q2有新舊平台交替。5/29收2,665元，高於5/20/60日均線且三大法人近五日合計買超約1,483張，但大戶比例週減、P/E 43.79、P/B 23.16，估值已要求下半年水冷板、分歧管與ASIC專案如期放量。",
+      "importantMessages": [
+        "本次25/39代表可以放在研究與持股追蹤名單，但不代表適合追高。",
+        "若5月或6月營收重新站回170-180億元級距、Q2毛利率維持30%附近，且大戶比例止跌，評分可上修。",
+        "若跌破2,300-2,400元且月營收連續低於140億元，或水冷/ASIC時程延後，應下修為只觀察。"
+      ],
+      "sourceLinks": [
+        {
+          "name": "TWSE 個股日成交資訊 3017",
+          "url": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date=20260531&stockNo=3017&response=json"
+        },
+        {
+          "name": "TWSE 個股日本益比、殖利率及股價淨值比",
+          "url": "https://www.twse.com.tw/rwd/zh/afterTrading/BWIBBU_d?date=20260529&selectType=ALL&response=json"
+        },
+        {
+          "name": "TWSE 三大法人買賣超日報",
+          "url": "https://www.twse.com.tw/rwd/zh/fund/T86?date=20260529&selectType=ALLBUT0999&response=json"
+        },
+        {
+          "name": "MoneyDJ：奇鋐115年4月營收",
+          "url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=f1a55b6f-536c-4807-9709-475d5bc3a925"
+        },
+        {
+          "name": "MOPS 3017 115年第1季損益表",
+          "url": "https://mopsov.twse.com.tw/mops/web/ajax_t164sb04?encodeURIComponent=1&step=1&firstin=1&off=1&co_id=3017&year=115&season=1"
+        },
+        {
+          "name": "MOPS 3017 115年第1季資產負債表",
+          "url": "https://mopsov.twse.com.tw/mops/web/ajax_t164sb03?encodeURIComponent=1&step=1&firstin=1&off=1&co_id=3017&year=115&season=1"
         }
       ]
     },
@@ -2798,6 +3278,61 @@
       ]
     },
     {
+      "ticker": "2308",
+      "company": "台達電",
+      "analysisDate": "2026-05-27",
+      "analysisType": "",
+      "priceDate": "2026-06-02",
+      "close": 2360.0,
+      "priceSource": "FinMind TaiwanStockPrice",
+      "status": "far",
+      "statusText": "距觀察區上緣 9.77%",
+      "distancePct": 9.77,
+      "nearestZone": {
+        "low": 2100.0,
+        "high": 2150.0,
+        "label": "2,100-2,150 元：近期強攻前整理帶，短線回測第一觀察區。"
+      },
+      "zones": [
+        {
+          "low": 2100.0,
+          "high": 2150.0,
+          "label": "2,100-2,150 元：近期強攻前整理帶，短線回測第一觀察區。"
+        }
+      ],
+      "stance": "基本面強勁，估值已高，空手不追歷史新高",
+      "summary": "台達電 2026Q1 EPS 7.91 元創單季歷史紀錄，4 月營收 586.92 億元年增 43.92% 同期新高，法說確認 ±400V HVDC 今年量產出貨、800V H2 小量起步。股價已站上歷史高點 2,330-2,350 元，以法人共識 EPS 37-42 元計本益比達 56-63 倍，所有舊目標價已被超越；基本面故事兌現中，但股價高空域讓空手者難以找到好的風險報酬切入點。",
+      "importantMessages": [
+        "台達電 2026Q1 EPS 7.91 元創單季歷史紀錄，4 月營收 586.92 億元年增 43.92% 同期新高，法說確認 ±400V HVDC 今年量產出貨、800V H2 小量起步。股價已站上歷史高點 2,330-2,350 元，以法人共識 EPS 37-42 元計本益比達 56-63 倍，所有舊目標價已被超越；基本面故事兌現中，但股價高空域讓空手者難以找到好的風險報酬切入點。"
+      ],
+      "sourceLinks": [
+        {
+          "name": "台達電法說會重點 Q1 EPS 7.91 元 ±400V 今年出貨（豐雲學堂）",
+          "url": "https://www.sinotrade.com.tw/richclub/hotstock/%E5%8F%B0%E9%81%94%E9%9B%BB-2308-%E5%81%9A%E4%BB%80%E9%BA%BC-%E6%B3%95%E8%AA%AA%E6%9C%83%E9%87%8D%E9%BB%9E%E6%9C%89%E5%93%AA%E4%BA%9B-Q1-EPS-7-91%E5%85%83%E6%94%B9%E5%AF%AB%E5%96%AE%E5%AD%A3%E7%B4%80%E9%8C%84-%C2%B1400V%E4%BB%8A%E5%B9%B4%E5%87%BA%E8%B2%A8-800V%E8%93%84%E5%8B%A22027%E5%B9%B4%E6%94%BE%E9%87%8F-%E8%82%A1%E5%B8%82%E8%A9%B1%E9%A1%8C-69f3237ae912b0007968ba63"
+        },
+        {
+          "name": "台達電 4 月營收 586.92 億元年增 43.92%（鉅亨）",
+          "url": "https://news.cnyes.com/news/id/6449848"
+        },
+        {
+          "name": "Factset EPS 預估上修至 37.12 元 目標價 1960 元（鉅亨）",
+          "url": "https://news.cnyes.com/news/id/6429625"
+        },
+        {
+          "name": "外資調升 2026-2028 EPS 至 41.5-98.5 元（CMoney）",
+          "url": "https://cmnews.com.tw/article/newsyoudeservetoknow-930a6df6-4777-11f1-8e9e-3d579fa396bb"
+        },
+        {
+          "name": "HVDC 導入加速 ±400V 率先出貨 800V 蓄勢（TechNews）",
+          "url": "https://technews.tw/2026/04/30/hvdc-400-800-hvdc/"
+        },
+        {
+          "name": "輝達 Vera Rubin 800V 電源雙雄佈局（豐雲學堂）",
+          "url": "https://www.sinotrade.com.tw/richclub/industry/%E8%BC%9D%E9%81%94-Vera-Rubin-%E9%9B%BB%E5%8A%9B%E7%A1%AC%E8%A6%8F-800V-%E8%AE%8A%E9%9D%A9%E5%95%9F%E5%8B%95-%E5%8F%B0%E5%BB%A0%E9%9B%BB%E6%BA%90%E9%9B%99%E9%9B%84%E5%8F%B0%E9%81%94%E9%9B%BB-%E5%85%89%E5%AF%B6%E7%A7%91%E7%9A%84%E5%8D%83%E9%87%91%E8%A1%8C%E6%83%85%E5%B8%83%E5%B1%80-%E7%94%A2%E6%A5%AD%E7%86%B1%E8%A9%B1-69f863454d59ab006c07f1b8"
+        }
+      ]
+    },
+    {
       "ticker": "4919",
       "company": "新唐",
       "analysisDate": "2026-05-31",
@@ -3201,190 +3736,6 @@
       ]
     },
     {
-      "ticker": "3017",
-      "company": "奇鋐",
-      "analysisDate": "2026-05-31",
-      "analysisType": "深度分析",
-      "priceDate": "2026-06-02",
-      "close": 2700.0,
-      "priceSource": "FinMind TaiwanStockPrice",
-      "status": "far",
-      "statusText": "距觀察區上緣 400.00%",
-      "distancePct": 400.0,
-      "nearestZone": {
-        "low": 2.0,
-        "high": 540.0,
-        "label": "2,540-2,580元：20日線與5/28-5/29回測區"
-      },
-      "zones": [
-        {
-          "low": 2.0,
-          "high": 540.0,
-          "label": "2,540-2,580元：20日線與5/28-5/29回測區"
-        },
-        {
-          "low": 2.0,
-          "high": 300.0,
-          "label": "2,300-2,400元：前波整理區與重要風險線"
-        },
-        {
-          "low": 0.0,
-          "high": 2.0,
-          "label": "2,000-2,100元：若高成長假設被下修，才可能回測的中期支撐"
-        }
-      ],
-      "stance": "中性偏多但不追高；25/39，持有者續抱守風險線，空手等回測或5-6月營收、Q2毛利率確認。",
-      "summary": "奇鋐（3017，AVC）是AI伺服器散熱與液冷升級的核心股。2026Q1營收490.38億元、YoY +110.2%，毛利率29.77%、營益率24.51%、EPS 20.17元，財報已把液冷與伺服器需求轉成獲利；4月營收156.31億元仍YoY +71.62%、1-4月累計YoY +99.34%，但MoM -13.24%顯示Q2有新舊平台交替。5/29收2,665元，高於5/20/60日均線且三大法人近五日合計買超約1,483張，但大戶比例週減、P/E 43.79、P/B 23.16，估值已要求下半年水冷板、分歧管與ASIC專案如期放量。",
-      "importantMessages": [
-        "本次25/39代表可以放在研究與持股追蹤名單，但不代表適合追高。",
-        "若5月或6月營收重新站回170-180億元級距、Q2毛利率維持30%附近，且大戶比例止跌，評分可上修。",
-        "若跌破2,300-2,400元且月營收連續低於140億元，或水冷/ASIC時程延後，應下修為只觀察。"
-      ],
-      "sourceLinks": [
-        {
-          "name": "TWSE 個股日成交資訊 3017",
-          "url": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date=20260531&stockNo=3017&response=json"
-        },
-        {
-          "name": "TWSE 個股日本益比、殖利率及股價淨值比",
-          "url": "https://www.twse.com.tw/rwd/zh/afterTrading/BWIBBU_d?date=20260529&selectType=ALL&response=json"
-        },
-        {
-          "name": "TWSE 三大法人買賣超日報",
-          "url": "https://www.twse.com.tw/rwd/zh/fund/T86?date=20260529&selectType=ALLBUT0999&response=json"
-        },
-        {
-          "name": "MoneyDJ：奇鋐115年4月營收",
-          "url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=f1a55b6f-536c-4807-9709-475d5bc3a925"
-        },
-        {
-          "name": "MOPS 3017 115年第1季損益表",
-          "url": "https://mopsov.twse.com.tw/mops/web/ajax_t164sb04?encodeURIComponent=1&step=1&firstin=1&off=1&co_id=3017&year=115&season=1"
-        },
-        {
-          "name": "MOPS 3017 115年第1季資產負債表",
-          "url": "https://mopsov.twse.com.tw/mops/web/ajax_t164sb03?encodeURIComponent=1&step=1&firstin=1&off=1&co_id=3017&year=115&season=1"
-        }
-      ]
-    },
-    {
-      "ticker": "2404",
-      "company": "漢唐",
-      "analysisDate": "2026-05-31",
-      "analysisType": "初步分析",
-      "priceDate": "2026-06-02",
-      "close": 1150.0,
-      "priceSource": "FinMind TaiwanStockPrice",
-      "status": "far",
-      "statusText": "距觀察區上緣 1050.00%",
-      "distancePct": 1050.0,
-      "nearestZone": {
-        "low": 1.0,
-        "high": 100.0,
-        "label": "1,100-1,120元：5/21突破區與短線次支撐。"
-      },
-      "zones": [
-        {
-          "low": 1.0,
-          "high": 100.0,
-          "label": "1,100-1,120元：5/21突破區與短線次支撐。"
-        },
-        {
-          "low": 1.0,
-          "high": 25.0,
-          "label": "1,025-1,071元：5/20附近價格與MA20區域，中期風險觀察帶。"
-        }
-      ],
-      "stance": "中性偏多但不追高；24/39，列研究名單，等1,150元支撐確認或重新站回1,245-1,265元。",
-      "summary": "漢唐（2404）受惠台系晶圓代工廠、美系記憶體廠與先進封裝擴廠，2026Q1營收202.88億元、YoY +76.16%，毛利率23.32%、營益率19.57%、EPS 16.31元；4月營收81.07億元再維持高檔，MoM +5.39%、YoY +102.23%。基本面不是只有題材，但股價5/26盤中衝到1,345元後，5/29回到1,155元，短線已從落後補漲切換成高波動整理。初步判斷值得深度追蹤，但不適合直接追價。",
-      "importantMessages": [
-        "本次24/39代表適合放入研究名單，等待拉回或突破確認，不代表適合在急漲後追價。",
-        "本機EP664報告曾將前四月營收寫成383.95億元；TWSE OpenAPI最新資料為283.95億元，本分析採官方數字。",
-        "Yahoo大戶籌碼為TDCC資料的第三方整理代理；若進入深度分析，應再補官方集保分級資料與最新一週更新。"
-      ],
-      "sourceLinks": [
-        {
-          "name": "TWSE 個股日成交資訊 2404",
-          "url": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date=20260531&stockNo=2404&response=json"
-        },
-        {
-          "name": "TWSE OpenAPI 每月營業收入彙總表",
-          "url": "https://openapi.twse.com.tw/v1/opendata/t187ap05_L"
-        },
-        {
-          "name": "TWSE OpenAPI 綜合損益表 一般業",
-          "url": "https://openapi.twse.com.tw/v1/opendata/t187ap06_L_ci"
-        },
-        {
-          "name": "MOPS 2404 115年第1季損益表",
-          "url": "https://mopsov.twse.com.tw/mops/web/ajax_t164sb04?encodeURIComponent=1&step=1&firstin=1&off=1&co_id=2404&year=115&season=1"
-        },
-        {
-          "name": "TWSE 個股本益比、殖利率及股價淨值比",
-          "url": "https://www.twse.com.tw/rwd/zh/afterTrading/BWIBBU_d?date=20260529&selectType=ALL&response=json"
-        },
-        {
-          "name": "TWSE 三大法人買賣超日報",
-          "url": "https://www.twse.com.tw/rwd/zh/fund/T86?date=20260529&selectType=ALLBUT0999&response=json"
-        }
-      ]
-    },
-    {
-      "ticker": "2308",
-      "company": "台達電",
-      "analysisDate": "2026-05-27",
-      "analysisType": "",
-      "priceDate": "2026-06-02",
-      "close": 2360.0,
-      "priceSource": "FinMind TaiwanStockPrice",
-      "status": "far",
-      "statusText": "距觀察區上緣 2260.00%",
-      "distancePct": 2260.0,
-      "nearestZone": {
-        "low": 2.0,
-        "high": 100.0,
-        "label": "2,100-2,150 元：近期強攻前整理帶，短線回測第一觀察區。"
-      },
-      "zones": [
-        {
-          "low": 2.0,
-          "high": 100.0,
-          "label": "2,100-2,150 元：近期強攻前整理帶，短線回測第一觀察區。"
-        }
-      ],
-      "stance": "基本面強勁，估值已高，空手不追歷史新高",
-      "summary": "台達電 2026Q1 EPS 7.91 元創單季歷史紀錄，4 月營收 586.92 億元年增 43.92% 同期新高，法說確認 ±400V HVDC 今年量產出貨、800V H2 小量起步。股價已站上歷史高點 2,330-2,350 元，以法人共識 EPS 37-42 元計本益比達 56-63 倍，所有舊目標價已被超越；基本面故事兌現中，但股價高空域讓空手者難以找到好的風險報酬切入點。",
-      "importantMessages": [
-        "台達電 2026Q1 EPS 7.91 元創單季歷史紀錄，4 月營收 586.92 億元年增 43.92% 同期新高，法說確認 ±400V HVDC 今年量產出貨、800V H2 小量起步。股價已站上歷史高點 2,330-2,350 元，以法人共識 EPS 37-42 元計本益比達 56-63 倍，所有舊目標價已被超越；基本面故事兌現中，但股價高空域讓空手者難以找到好的風險報酬切入點。"
-      ],
-      "sourceLinks": [
-        {
-          "name": "台達電法說會重點 Q1 EPS 7.91 元 ±400V 今年出貨（豐雲學堂）",
-          "url": "https://www.sinotrade.com.tw/richclub/hotstock/%E5%8F%B0%E9%81%94%E9%9B%BB-2308-%E5%81%9A%E4%BB%80%E9%BA%BC-%E6%B3%95%E8%AA%AA%E6%9C%83%E9%87%8D%E9%BB%9E%E6%9C%89%E5%93%AA%E4%BA%9B-Q1-EPS-7-91%E5%85%83%E6%94%B9%E5%AF%AB%E5%96%AE%E5%AD%A3%E7%B4%80%E9%8C%84-%C2%B1400V%E4%BB%8A%E5%B9%B4%E5%87%BA%E8%B2%A8-800V%E8%93%84%E5%8B%A22027%E5%B9%B4%E6%94%BE%E9%87%8F-%E8%82%A1%E5%B8%82%E8%A9%B1%E9%A1%8C-69f3237ae912b0007968ba63"
-        },
-        {
-          "name": "台達電 4 月營收 586.92 億元年增 43.92%（鉅亨）",
-          "url": "https://news.cnyes.com/news/id/6449848"
-        },
-        {
-          "name": "Factset EPS 預估上修至 37.12 元 目標價 1960 元（鉅亨）",
-          "url": "https://news.cnyes.com/news/id/6429625"
-        },
-        {
-          "name": "外資調升 2026-2028 EPS 至 41.5-98.5 元（CMoney）",
-          "url": "https://cmnews.com.tw/article/newsyoudeservetoknow-930a6df6-4777-11f1-8e9e-3d579fa396bb"
-        },
-        {
-          "name": "HVDC 導入加速 ±400V 率先出貨 800V 蓄勢（TechNews）",
-          "url": "https://technews.tw/2026/04/30/hvdc-400-800-hvdc/"
-        },
-        {
-          "name": "輝達 Vera Rubin 800V 電源雙雄佈局（豐雲學堂）",
-          "url": "https://www.sinotrade.com.tw/richclub/industry/%E8%BC%9D%E9%81%94-Vera-Rubin-%E9%9B%BB%E5%8A%9B%E7%A1%AC%E8%A6%8F-800V-%E8%AE%8A%E9%9D%A9%E5%95%9F%E5%8B%95-%E5%8F%B0%E5%BB%A0%E9%9B%BB%E6%BA%90%E9%9B%99%E9%9B%84%E5%8F%B0%E9%81%94%E9%9B%BB-%E5%85%89%E5%AF%B6%E7%A7%91%E7%9A%84%E5%8D%83%E9%87%91%E8%A1%8C%E6%83%85%E5%B8%83%E5%B1%80-%E7%94%A2%E6%A5%AD%E7%86%B1%E8%A9%B1-69f863454d59ab006c07f1b8"
-        }
-      ]
-    },
-    {
       "ticker": "3035",
       "company": "智原",
       "analysisDate": "2026-05-31",
@@ -3418,45 +3769,6 @@
         {
           "name": "財訊快報：智原先進製程與封裝進入量產初升段",
           "url": "https://www.investor.com.tw/onlineNews/NewsContent.asp?articleNo=14202604290097"
-        }
-      ]
-    },
-    {
-      "ticker": "5009",
-      "company": "榮剛",
-      "analysisDate": "2026-06-03",
-      "analysisType": "深度分析",
-      "priceDate": "2026-06-02",
-      "close": 35.95,
-      "priceSource": "FinMind TaiwanStockPrice",
-      "status": "missing",
-      "statusText": "缺少最新價格或可解析觀察區",
-      "distancePct": null,
-      "nearestZone": null,
-      "zones": [],
-      "stance": "20/39，題材結構佳但短線追高不划算（空手觀望）。榮剛為全球前十大合金棒鋼廠，航太（波音/空巴回升）、軍工（槍管材、飛彈殼體，2026Q1 接單明顯成長）、能源（油氣回溫＋AI 資料中心用電）三引擎，並切入 AI 伺服器液冷（CDU/CDM）不鏽鋼供應鏈，毛利率連三季回升（19.1%→23.2%→24.38%）、千張大戶 8 週淨增。但月營收 YoY 仍持平偏弱、2026Q1 EPS 0.5 元 YoY -21%、PER 約 18 倍不便宜，且股價 5 月衝上 40-42 元失敗回落，6/2 收 35.95 已跌破月線 36.37 與市場認定 36.5 關鍵支撐。空手者不追現價，優先等拉回 33-34 元季線區分批，或帶量站回 37 元且投信回補再追。",
-      "summary": "榮剛（5009，上櫃）2026-06-02 收 35.95 元，站上上彎季線（60 日均線 33.98）但跌破月線（36.37）與市場認定的 36.5 關鍵支撐，量縮整理；5 月一度放量衝上 40-42 元後失敗回落。基本面是航太、軍工、能源與 AI 伺服器液冷不鏽鋼題材帶動的毛利率復甦：毛利率由 2025Q3 的 19.1% 回升到 2026Q1 的 24.38%、營益率 2.7%→11.2%，但月營收 YoY 約 -0.25% 仍偏平、2026Q1 EPS 0.5 元 YoY -21%，估值 PER 約 18 倍、PBR 1.24 倍不算便宜。籌碼面乾淨（融資使用率約 6%、千張大戶近 8 週淨增 0.76pp、人數 43→49），法人近 20 日買超約 243 萬股但最近一兩日轉小賣、投信未參與，題材好但短線追高 CP 值低。",
-      "importantMessages": [
-        "月營收 YoY 仍持平偏弱、2026Q1 EPS YoY -21%，毛利率改善屬早期復甦而非營收爆發。",
-        "柳營新廠 2027Q1 量產為中期產能催化，2026 年內主要是毛利率與訂單能見度的故事。",
-        "5009 為上櫃股，XQ 匯入代碼為 5009.TWO。"
-      ],
-      "sourceLinks": [
-        {
-          "name": "理財周刊：航太軍工雙引擎火熱！榮剛(5009)放量突破40元",
-          "url": "https://www.moneyweekly.com.tw/ArticleData/Info/Article/225746"
-        },
-        {
-          "name": "MoneyDJ／LINE TODAY：榮剛航太/軍工/能源訂單穩，關鍵製程稼動率提升",
-          "url": "https://today.line.me/tw/v3/article/RBkG8GM"
-        },
-        {
-          "name": "財報狗 5009 榮剛",
-          "url": "https://statementdog.com/analysis/5009"
-        },
-        {
-          "name": "TDCC 集保戶股權分散表（歷史週查詢）",
-          "url": "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock"
         }
       ]
     }
