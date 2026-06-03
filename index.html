@@ -1007,6 +1007,8 @@
     .analysis-table td { padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; line-height: 1.5; }
     .analysis-table tr:last-child td { border-bottom: 0; }
     .daily-alerts-table .daily-alerts-stock { font-weight: 850; color: var(--ink); white-space: nowrap; }
+    .daily-alerts-stock-main { display: grid; gap: 4px; }
+    .daily-alerts-analysis-link { width: max-content; font-size: 0.76rem; font-weight: 800; }
     .analysis-template { width: 100%; min-height: 330px; resize: vertical; border: 1px solid var(--line-strong); border-radius: var(--radius); background: var(--panel); color: var(--ink); padding: 10px; line-height: 1.6; font-family: Consolas, "Microsoft JhengHei", monospace; font-size: 0.82rem; }
     .analysis-report-list { display: grid; gap: 8px; max-height: 360px; overflow-y: auto; padding-right: 2px; }
     .analysis-report { border: 1px solid var(--line); border-radius: var(--radius); padding: 10px; background: var(--panel); }
@@ -3944,17 +3946,41 @@ ${notes}`;
       rows.forEach(row => {
         const tr = document.createElement("tr");
         const zone = row.nearestZone || {};
-        [
-          `${row.ticker || ""} ${row.company || ""}`.trim(),
+        const stockTitle = `${row.ticker || ""} ${row.company || ""}`.trim();
+        const stockQuery = stockTitle;
+        const cells = [
           row.close === null || row.close === undefined ? "待確認" : `${row.close} 元\n${row.priceDate || "未標日期"}`,
           row.statusText || "待確認",
           zone.label || "未解析到區間",
           [row.analysisType, row.analysisDate].filter(Boolean).join(" · ") || "未標日期"
-        ].forEach((text, index) => {
+        ];
+
+        const stockCell = document.createElement("td");
+        stockCell.className = "daily-alerts-stock";
+        stockCell.dataset.label = labels[0];
+        const stockWrap = document.createElement("div");
+        stockWrap.className = "daily-alerts-stock-main";
+        const stockName = document.createElement("span");
+        stockName.textContent = stockTitle || "未命名股票";
+        stockWrap.appendChild(stockName);
+        if (stockQuery) {
+          const analysisLink = document.createElement("a");
+          analysisLink.className = "tw-detail-toggle daily-alerts-analysis-link";
+          analysisLink.href = `?view=analysis&stock=${encodeURIComponent(stockQuery)}`;
+          analysisLink.textContent = "開啟個股分析";
+          analysisLink.addEventListener("click", event => {
+            event.preventDefault();
+            openStockAnalysis(stockQuery);
+          });
+          stockWrap.appendChild(analysisLink);
+        }
+        stockCell.appendChild(stockWrap);
+        tr.appendChild(stockCell);
+
+        cells.forEach((text, index) => {
           const td = document.createElement("td");
           td.textContent = String(text);
-          td.dataset.label = labels[index];
-          if (index === 0) td.className = "daily-alerts-stock";
+          td.dataset.label = labels[index + 1];
           tr.appendChild(td);
         });
 
@@ -4224,10 +4250,14 @@ ${notes}`;
       return a.originalIndex - b.originalIndex;
     }
 
-    function openStockAnalysisFromRanking(row) {
-      state.stockAnalysisQuery = `${row.ticker || ""} ${row.company || ""}`.trim();
+    function openStockAnalysis(query) {
+      state.stockAnalysisQuery = String(query || "").trim();
       state.activeView = "analysis";
       render();
+    }
+
+    function openStockAnalysisFromRanking(row) {
+      openStockAnalysis(`${row.ticker || ""} ${row.company || ""}`.trim());
     }
 
     function formatRankScore(row) {
