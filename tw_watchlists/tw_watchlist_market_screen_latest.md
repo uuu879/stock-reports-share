@@ -1,6 +1,6 @@
 # 台股 Podcast 熱度池市場快速初篩
 
-- 產生時間：2026-06-03T22:38:16
+- 產生時間：2026-06-03T23:11:17
 - 股票數：50
 - FINMIND 輕量資料集：TaiwanStockPrice, TaiwanStockInstitutionalInvestorsBuySell, TaiwanStockMarginPurchaseShortSale, TaiwanStockMonthRevenue, TaiwanStockPER
 - 用途：先挑出值得進入 TDCC、財報、新聞與 ai_reports 深度分析的標的，不是買進建議。
@@ -21,6 +21,10 @@
 | 10 | 3324 雙鴻 | 13 | 19 | 68.4 | 100.0% | - |
 | 11 | 5536 聖暉* | 13 | 19 | 68.4 | 100.0% | - |
 | 12 | 3034 聯詠 | 13 | 19 | 68.4 | 100.0% | - |
+
+## 我的持倉快速判斷
+
+- 未讀到本地持倉，或本次沒有掃描持倉標的。
 
 ## 完整排序
 

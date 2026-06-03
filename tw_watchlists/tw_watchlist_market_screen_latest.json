@@ -1,7 +1,9 @@
 {
-  "generatedAt": "2026-06-03T22:38:16",
+  "generatedAt": "2026-06-03T23:11:17",
   "source": "tw_watchlist_recent_heat + FinMind lightweight facts",
   "count": 50,
+  "portfolioCount": 0,
+  "portfolioScreenedCount": 0,
   "shortlistCount": 12,
   "datasets": [
     "TaiwanStockPrice",
@@ -978,6 +980,7 @@
       "screenRank": 12
     }
   ],
+  "portfolioActions": [],
   "records": [
     {
       "code": "3231",
