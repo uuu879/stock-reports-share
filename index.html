@@ -1156,6 +1156,14 @@
     .pf-tag { border-radius: 4px; padding: 1px 7px; font-size: 0.72rem; font-weight: 700; white-space: nowrap; }
     .pf-tag-long { background: var(--teal-soft); color: var(--teal); }
     .pf-tag-short { background: var(--amber-soft); color: var(--amber); }
+    .pf-action-note { margin: -4px 0 12px; color: var(--muted); font-size: 12px; line-height: 1.5; }
+    .pf-action-pill { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 2px; max-width: 170px; border-radius: 5px; padding: 4px 7px; font-size: 0.74rem; font-weight: 800; line-height: 1.2; white-space: normal; }
+    .pf-action-score { font-size: 0.68rem; font-weight: 700; opacity: .86; }
+    .pf-action-add { background: var(--teal-soft); color: var(--teal); }
+    .pf-action-hold { background: var(--blue-soft); color: var(--blue); }
+    .pf-action-trim { background: var(--amber-soft); color: var(--amber); }
+    .pf-action-stop { background: var(--red-soft); color: var(--red); }
+    .pf-action-missing { background: var(--panel-2); color: var(--muted); border: 1px solid var(--line); }
     .pf-form-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 10px; }
     @media (max-width: 900px) { .pf-summary-grid { grid-template-columns: repeat(2, 1fr); } }
 
@@ -1739,6 +1747,7 @@
       stockAnalysisQuery: "",
       twWatchlist: null,
       marketScreen: null,
+      portfolioMarketScreen: null,
       dailyAlerts: null,
       analysis: {
         ticker: "2337",
@@ -1957,6 +1966,18 @@
         render();
       } catch (error) {
         state.marketScreen = null;
+      }
+    }
+
+    async function tryLoadPortfolioMarketScreen() {
+      try {
+        const response = await fetch(".podcast-work/portfolio_market_screen_latest.json", { cache: "no-store" });
+        if (!response.ok) return;
+        const payload = await response.json();
+        state.portfolioMarketScreen = payload && Array.isArray(payload.portfolioActions) ? payload : null;
+        render();
+      } catch (error) {
+        state.portfolioMarketScreen = null;
       }
     }
 
@@ -7511,6 +7532,7 @@ ${notes}`;
     tryLoadStockUniverse();
     tryLoadTwWatchlistManifest();
     tryLoadMarketScreen();
+    tryLoadPortfolioMarketScreen();
     tryLoadDailyAlerts();
     tryLoadManifest();
     tryLoadPendingManifest();
