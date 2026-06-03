@@ -4,7 +4,7 @@
 
 **來源 JSON：** EP667_analysis.json
 
-**報告產生時間：** 2026-06-03T22:33:24
+**報告產生時間：** 2026-06-03T22:38:12
 
 > 此為優先研究報告，不是買進建議。網路資料與公司狀況有時效性，仍需用最新公告、法說會、財報與報價資料確認。
 
@@ -376,11 +376,50 @@ EP667 的主線是 Computex 後 AI infra 從單一 GPU / ASIC 故事推向 total
 
 ## 優先主題
 
-### 未提供. 光通訊、CPO 與 data center 光連線 (primary)
-### 未提供. AIPC、地端 AI 與 edge computing (primary)
-### 未提供. AI 軟體層、data lake 與端側部署服務 (primary)
-### 未提供. NVIDIA / TSMC 龍頭補漲 (secondary)
-### 未提供. 功率半導體、IDM 與 PMIC (secondary)
+### 1. 光通訊、CPO 與 data center 光連線 (primary)
+**重要性：** 這是本集 Computex AI infra 最明確的硬體主線。主持人認為從伺服器、rack、data center 到 data center 之間，光連線已形成強共識，後續資金可能再次往光通訊方向跑。
+
+**Podcast 證據：** 段落 43-46 與 75-77：主持人說 Marvell 演講核心是光是必行方向，從 pluggable 到 CPO 已被市場熟悉，且再次強調光是未來主軸。
+
+**相關標的：** 光通訊、CPO 與 data center 光連線、Computex AI infra 總主線、Marvell
+
+**下一步：** 建立光通訊、CPO、矽光子、高速連接與 data center interconnect 候選池，逐一查產品規格、客戶、量產時程、月營收與毛利率。
+
+### 2. AIPC、地端 AI 與 edge computing (primary)
+**重要性：** 這是本集從 NVIDIA 發表延伸出的新應用線。若開源模型與端側算力足以滿足一般人和企業需求，AIPC 可能從上一輪的雷聲大雨點小，變成帶動筆電、端側 server、OEM 與高階零組件的新需求。
+
+**Podcast 證據：** 段落 48-65 與 78-85：主持人談 DGX Spark / 類 GB10、AIPC 第二次挑戰、地端模型可省 token fee 與傳輸費，並提到 AIPC 用料提升與 edge computing 契機。
+
+**相關標的：** AIPC 與地端 AI、NVIDIA、MediaTek / 聯發科、開源模型、edge computing 與端側部署
+
+**下一步：** 建立 AIPC / edge AI 候選清單，分成 OEM/ODM、晶片設計、板材、散熱、電源與被動元件，驗證 AI PC 出貨、ASP、用料升級與毛利改善。
+
+### 3. AI 軟體層、data lake 與端側部署服務 (primary)
+**重要性：** 這是本集把 AI infra 從硬體延伸到商務落地的主線。主持人認為模型能力逐漸接近需求後，data lake、軟體疊層、資料治理、客戶取得與服務包裝能力會變成關鍵。
+
+**Podcast 證據：** 段落 51-59 與 77-83：主持人引用 Snowflake 員工分享，說前段可由大型模型處理，後段資料整理、data lake 與內建模型使用由平台收費；若地端或開源模型追上，軟體層可能改善損益。
+
+**相關標的：** Snowflake 與 data lake 軟體層、AI 軟體層、data lake 與端側部署服務、開源模型、edge computing 與端側部署
+
+**下一步：** 追蹤企業 AI 軟體平台、data lake、端側部署與 SI 類公司，重點查 AI 功能收入、客戶採用、毛利率、模型成本與資料治理能力。
+
+### 4. NVIDIA / TSMC 龍頭補漲 (secondary)
+**重要性：** 這是本集的資金輪動觀察線。主持人認為 NVIDIA 與 TSMC 都是大龍頭，但市場常追逐更會動的小標股；若資金回流龍頭，兩者有補漲機會。
+
+**Podcast 證據：** 段落 67-70 與 Q&A 4 段落 97-98：主持人說 TSMC 與 NVIDIA 類似大龍頭但相對便宜；TSMC 形態轉強，NVIDIA 突破往上走，確實有機會。
+
+**相關標的：** NVIDIA、TSMC / 台積電、AI 龍頭相對便宜與小標股追逐現象
+
+**下一步：** 追蹤 NVIDIA 與 TSMC 的突破後量價、法人資金、投信資金規則落地、月營收與法說展望，確認補漲是否有基本面與資金雙重支撐。
+
+### 5. 功率半導體、IDM 與 PMIC (secondary)
+**重要性：** 這是本集 Q&A 中最明確的下一波漲價題材觀察線。主持人認為功率元件與功率半導體基本面改善，可能成為下一波題材匯聚點，但還需要缺貨與拉貨確認。
+
+**Podcast 證據：** Q&A 4 段落 93-98：主持人說功率元件或功率半導體基本面有顯著改善，可能是下一波題材匯聚點；但目前尚未看到全面性大缺貨，需看電源櫃表現與大量拉貨。
+
+**相關標的：** 功率元件、功率半導體、IDM 與 PMIC
+
+**下一步：** 建立功率半導體、PMIC、電源管理與 AI server 電源候選池，查 ASP、交期、缺貨、power rack 拉貨、月營收與毛利率是否同步改善。
 
 ## 台股候選公司建立路徑
 
