@@ -1159,7 +1159,9 @@
     .pf-tag-long { background: var(--teal-soft); color: var(--teal); }
     .pf-tag-short { background: var(--amber-soft); color: var(--amber); }
     .pf-action-note { margin: -4px 0 12px; color: var(--muted); font-size: 12px; line-height: 1.5; }
-    .pf-action-pill { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 2px; max-width: 170px; border-radius: 5px; padding: 4px 7px; font-size: 0.74rem; font-weight: 800; line-height: 1.2; white-space: normal; }
+    .pf-action-pill { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 2px; max-width: 170px; border: 0; border-radius: 5px; padding: 4px 7px; font: inherit; font-size: 0.74rem; font-weight: 800; line-height: 1.2; text-align: left; white-space: normal; cursor: pointer; }
+    .pf-action-pill:hover { filter: brightness(.97); text-decoration: underline; text-underline-offset: 2px; }
+    .pf-action-pill:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
     .pf-action-score { font-size: 0.68rem; font-weight: 700; opacity: .86; }
     .pf-action-add { background: var(--teal-soft); color: var(--teal); }
     .pf-action-hold { background: var(--blue-soft); color: var(--blue); }
