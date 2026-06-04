@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-04T19:04:30",
+  "generatedAt": "2026-06-04T19:06:04",
   "source": "tw_watchlist_recent_heat + FinMind lightweight facts",
   "count": 50,
   "portfolioCount": 0,
@@ -98,7 +98,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 1
     },
     {
@@ -178,7 +178,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 2
     },
     {
@@ -257,7 +257,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 3
     },
     {
@@ -337,7 +337,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 4
     },
     {
@@ -417,7 +417,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 5
     },
     {
@@ -497,7 +497,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 6
     },
     {
@@ -577,7 +577,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 7
     },
     {
@@ -657,7 +657,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 8
     },
     {
@@ -737,7 +737,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 9
     },
     {
@@ -816,7 +816,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 10
     },
     {
@@ -896,7 +896,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 11
     },
     {
@@ -976,7 +976,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 12
     }
   ],
@@ -1059,7 +1059,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 1
     },
     {
@@ -1139,7 +1139,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 2
     },
     {
@@ -1218,7 +1218,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 3
     },
     {
@@ -1298,7 +1298,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 4
     },
     {
@@ -1378,7 +1378,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 5
     },
     {
@@ -1458,7 +1458,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 6
     },
     {
@@ -1538,7 +1538,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 7
     },
     {
@@ -1618,7 +1618,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 8
     },
     {
@@ -1698,7 +1698,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 9
     },
     {
@@ -1777,7 +1777,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 10
     },
     {
@@ -1857,7 +1857,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 11
     },
     {
@@ -1937,7 +1937,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 12
     },
     {
@@ -2016,7 +2016,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 13
     },
     {
@@ -2096,7 +2096,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 14
     },
     {
@@ -2176,7 +2176,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 15
     },
     {
@@ -2256,7 +2256,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 16
     },
     {
@@ -2336,7 +2336,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 17
     },
     {
@@ -2416,7 +2416,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 18
     },
     {
@@ -2494,7 +2494,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 19
     },
     {
@@ -2573,7 +2573,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 20
     },
     {
@@ -2653,7 +2653,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 21
     },
     {
@@ -2733,7 +2733,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 22
     },
     {
@@ -2813,7 +2813,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 23
     },
     {
@@ -2893,7 +2893,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 24
     },
     {
@@ -2973,7 +2973,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 25
     },
     {
@@ -3053,7 +3053,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 26
     },
     {
@@ -3133,7 +3133,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 27
     },
     {
@@ -3212,7 +3212,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 28
     },
     {
@@ -3291,7 +3291,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 29
     },
     {
@@ -3371,7 +3371,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 30
     },
     {
@@ -3451,7 +3451,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 31
     },
     {
@@ -3530,7 +3530,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 32
     },
     {
@@ -3609,7 +3609,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 33
     },
     {
@@ -3688,7 +3688,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 34
     },
     {
@@ -3768,7 +3768,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 35
     },
     {
@@ -3848,7 +3848,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 36
     },
     {
@@ -3928,7 +3928,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 37
     },
     {
@@ -4008,7 +4008,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 38
     },
     {
@@ -4086,7 +4086,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 39
     },
     {
@@ -4166,7 +4166,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 40
     },
     {
@@ -4245,7 +4245,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 41
     },
     {
@@ -4325,7 +4325,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 42
     },
     {
@@ -4405,7 +4405,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 43
     },
     {
@@ -4485,7 +4485,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 44
     },
     {
@@ -4565,7 +4565,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 45
     },
     {
@@ -4645,7 +4645,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 46
     },
     {
@@ -4725,7 +4725,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 47
     },
     {
@@ -4803,7 +4803,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 48
     },
     {
@@ -4882,7 +4882,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 49
     },
     {
@@ -4965,7 +4965,7 @@
         ]
       },
       "errors": [],
-      "cacheMode": "finmind-api",
+      "cacheMode": "daily-cache",
       "screenRank": 50
     }
   ]
